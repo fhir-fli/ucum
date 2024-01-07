@@ -1,0 +1,16 @@
+name: ucum
+description: Dart Library Mimicking the UCUM-LHC Library Functionality
+version: 0.0.1-dev1
+homepage: https://www.fhirfli.dev/
+repository: https://github.com/fhir-fli/ucum
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+
+dev_dependencies:
+  # flutter pub run import_sorter:main
+  lints: ^3.0.0
+  test: ^1.25.0
+  

@@ -34,7 +34,7 @@ class UcumUnit {
     this.csCode_,
     this.ciCode_,
     this.property_,
-    dynamic magnitude_,
+    this.magnitude_,
     List<int> dim_,
     this.printSymbol_,
     this.class_,
@@ -55,9 +55,7 @@ class UcumUnit {
     this.baseFactorStr_,
     this.baseFactor_,
     this.defError_,
-  )   : dim_ = Dimension(dim_),
-        magnitude_ =
-            magnitude_ is num || magnitude_ is BigInt ? magnitude_ : null;
+  ) : dim_ = Dimension(dim_);
 
   // Constructor
   UcumUnit.namedConstructor({

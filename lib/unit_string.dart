@@ -64,11 +64,12 @@ class UnitString {
   ///
   /// The string returned may be updated if the input string contained unit
   /// names, e.g., "pound".  The unit code ([lb_av] for pound) is placed in
-  /// the string returned, a the returned messages array includes a note
+  /// the string returned, the returned messages array includes a note
   /// explaining the substitution.
   ReturnObject parseString(String uStr, String? valConv, bool? suggest) {
     uStr = uStr.trim();
 
+    /// Make sure we have something to work with
     if (uStr.isEmpty) {
       throw Exception('Please specify a unit expression to be validated.');
     }
@@ -127,7 +128,7 @@ class UnitString {
         throw Exception('Blank spaces are not allowed in unit expressions.');
       }
 
-      // assign the array returned to retObj.  It will contain 2 elements:
+      //  assign the array returned to retObj.  It will contain 2 elements:
       //  the unit returned in position 0; and the origString (possibly
       //  modified) in position 1.  The origString in position 1 will not
       //  be changed by subsequent processing.
@@ -183,6 +184,7 @@ class UnitString {
     bool endProcessing = retMsg_.length > 0;
 
     ParenProcessing parensResp = _processParens(uStr, origString);
+    // print('parensResp: $parensResp');
     endProcessing = parensResp.endProcessing;
 
     List<Uarray> uArray = <Uarray>[];
@@ -192,6 +194,7 @@ class UnitString {
       origString = parensResp.origString;
 
       ParenProcessing mkUArray = _makeUnitsArray(uStr, origString);
+      // print('mkUArray: $mkUArray');
       endProcessing = mkUArray.endProcessing;
       if (!endProcessing) {
         uArray = mkUArray.uArray ?? uArray;
@@ -499,7 +502,6 @@ class UnitString {
             // mg/2.kJ - because mg/2 would be performed, followed by .kJ.  Instead,
             // handling 2kJ as a parenthesized unit will make sure mg is divided by
             // 2.kJ.
-
             if (UcumUtils.isNumericString(uArray1[n])) {
               RegExpMatch? numRes2 = startNumCheck.firstMatch(uArray1[n]!);
               if (numRes2 != null &&
@@ -562,9 +564,7 @@ class UnitString {
       } // end if a processing error didn't occur in getParensUnit
     } // end if the string did not begin with a '.' with no following digit
     return ParenProcessing(
-        unitString: uArray.join('.'),
-        origString: origString,
-        endProcessing: endProcessing);
+        origString: origString, endProcessing: endProcessing, uArray: uArray);
   } // end _makeUnitsArray
 
   // Helper method to check valid annotation (adapt as needed)
@@ -1080,12 +1080,13 @@ class UnitString {
   /// be performed on each unit/unit or unit/number pair in the array.  This
   /// should only be called from within this class (or by test code).
   UcumUnit? _performUnitArithmetic(List<Uarray> uArray, String origString) {
-    dynamic finalUnit = uArray[0].un;
+    String? finalUnit = uArray[0].un;
+    UcumUnit? finalUcumUnit;
     if (UcumUtils.isIntegerUnit(finalUnit)) {
-      finalUnit = UcumUnit.namedConstructor(
-          csCode_: finalUnit,
+      finalUcumUnit = UcumUnit.namedConstructor(
+          csCode_: finalUnit!,
           ciCode_: finalUnit,
-          magnitude_: finalUnit,
+          // magnitude_: finalUnit,
           name_: finalUnit);
     }
 
@@ -1093,16 +1094,17 @@ class UnitString {
     bool endProcessing = false;
 
     for (int u2 = 1; u2 < uLen && !endProcessing; u2++) {
-      dynamic nextUnit = uArray[u2].un;
+      String? nextUnit = uArray[u2].un;
+      UcumUnit? nextUcumUnit;
       if (UcumUtils.isIntegerUnit(nextUnit)) {
-        nextUnit = UcumUnit.namedConstructor(
-            csCode_: nextUnit,
+        nextUcumUnit = UcumUnit.namedConstructor(
+            csCode_: nextUnit!,
             ciCode_: nextUnit,
-            magnitude_: nextUnit,
+            // magnitude_: nextUnit,
             name_: nextUnit);
       }
 
-      if (nextUnit == null || (nextUnit is! UcumUnit)) {
+      if (nextUnit == null || nextUcumUnit == null) {
         String msgString =
             'Unit string ($origString) contains unrecognized element';
         if (nextUnit != null) {
@@ -1116,18 +1118,18 @@ class UnitString {
           String? thisOp = uArray[u2].op;
           bool isDiv = thisOp == '/';
 
-          finalUnit = isDiv
-              ? finalUnit.divide(nextUnit)
-              : finalUnit.multiplyThese(nextUnit);
+          finalUcumUnit = isDiv
+              ? finalUcumUnit?.divide(nextUcumUnit)
+              : finalUcumUnit?.multiplyThese(nextUcumUnit);
         } catch (err) {
           retMsg_.insert(0, err.toString());
           endProcessing = true;
-          finalUnit = null;
+          finalUcumUnit = null;
         }
       }
     }
 
-    return finalUnit;
+    return finalUcumUnit;
   }
 
   /// This tests a string to see if it starts with characters and ends with

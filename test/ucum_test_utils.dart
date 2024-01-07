@@ -21,7 +21,7 @@ class UcumTestUtils {
       UcumUnit curUnit = allUnits[u];
       if (!curUnit.isBase_) {
         if (curUnit.source_ == 'UCUM') {
-          // Performing checks for non-base units from the UCUM list
+          /// Performing checks for non-base units from the UCUM list
           if (curUnit.csUnitString_ != null &&
               curUnit.csUnitString_ != '1' &&
               !curUnit.isArbitrary_ &&

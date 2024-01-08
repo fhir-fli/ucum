@@ -177,29 +177,34 @@ class AnnotatedText {
   AnnotatedText(this.pStr, this.startText, this.endText);
 }
 
-class ParenProcessing {
+class ProcessingObject {
   String? unitString;
   String origString;
   bool endProcessing;
-  List<Uarray>? uArray;
+  List<String>? uStrArray;
+  List<UArrayObject>? uArray;
 
-  ParenProcessing({
+  ProcessingObject({
     this.unitString,
     required this.origString,
     required this.endProcessing,
+    this.uStrArray,
     this.uArray,
   });
 
   @override
   String toString() {
-    String outputString = 'ParenProcssing: ';
+    String outputString = 'ProcessingObject: ';
     if (unitString != null) {
       outputString += '\nunitString: $unitString, ';
     }
     outputString += '\norigString: $origString, ';
     outputString += '\nendProcessing: $endProcessing, ';
-    for (int i = 0; i < (uArray?.length ?? 0); i++) {
-      outputString += '\nuArray[$i]: ${uArray![i].op}, ${uArray![i].un}, ';
+    if (uStrArray != null && uStrArray!.isNotEmpty) {
+      outputString += '\nuStrArray: $uStrArray';
+    }
+    if (uArray != null && uArray!.isNotEmpty) {
+      outputString += '\nuArray: $uArray';
     }
     return outputString;
   }
@@ -211,10 +216,13 @@ class ParensUnit {
   ParensUnit(this.unit, this.endProcessing);
 }
 
-class Uarray {
-  String? op;
-  String? un;
-  Uarray(this.op, this.un);
+class UArrayObject {
+  String? operation;
+  String? unit;
+  UArrayObject(this.operation, this.unit);
+
+  @override
+  String toString() => 'Uarray{op: $operation, un: $unit}';
 }
 
 // * pStr: <String>

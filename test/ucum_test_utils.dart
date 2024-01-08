@@ -1,24 +1,26 @@
+import 'package:test/test.dart';
 import 'package:ucum/ucum_pkg.dart';
 
 class UcumTestUtils {
   // Constructor in Dart can be empty if it doesn't do anything.
   UcumTestUtils();
 
-  List<dynamic> checkAllDimensions() {
-    List<dynamic> problems = [];
+  List<String> checkAllDimensions() {
+    /// Basic initializations for singletons for:
+    ///  UcumJsonDefs, UnitString, and UnitTables
     UcumJsonDefs.instance.loadUcumDefs();
-
     UnitString uString = UnitString.instance;
+    List<UcumUnit> allUnits = UnitTables.instance.allUnitsByDef();
+    expect(allUnits.length, equals(772));
+
+    List<String> problems = <String>[];
     ReturnObject? parseResp;
     UcumUnit? parsedUnit;
 
-    List<UcumUnit> allUnits = UnitTables.instance.allUnitsByDef();
-    var uLen = allUnits.length;
-    for (var u = 0; u < uLen; u++) {
+    for (final UcumUnit curUnit in allUnits) {
       bool skipped = false;
       String whoCalled = '';
       String whoReturned = '';
-      UcumUnit curUnit = allUnits[u];
       if (!curUnit.isBase_) {
         if (curUnit.source_ == 'UCUM') {
           /// Performing checks for non-base units from the UCUM list
@@ -33,6 +35,7 @@ class UcumTestUtils {
             if (curUnit.csUnitString_ != null) {
               parseResp =
                   uString.parseString(curUnit.csUnitString_!, null, null);
+              print('parseResp = $parseResp');
               whoReturned = 'parseString returned ';
               if ((parseResp.units?.isNotEmpty ?? false)) {
                 whoReturned =
@@ -105,6 +108,9 @@ class UcumTestUtils {
             }
           }
         }
+      } else {
+        expect(['m', 's', 'g', 'rad', 'K', 'C', 'cd'].contains(curUnit.csCode_),
+            equals(true));
       }
     }
     return problems;

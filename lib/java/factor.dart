@@ -31,42 +31,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  *******************************************************************************/
 
-package org.fhir.ucum;
+library org.fhir.ucum;
 
+import 'ucum.dart';
 
-public class Factor extends Component {
-	
-	private int value;
+class Factor extends Component {
+  int value;
 
-	/**
-	 * 
-	 */
-	public Factor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
+  /**
 	 * @param value
 	 */
-	public Factor(int value) {
-		super();
-		this.value = value;
-	}
-
-	/**
-	 * @return the value
-	 */
-	public int getValue() {
-		return value;
-	}
-
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(int value) {
-		this.value = value;
-	}
-
-	
+  Factor(this.value);
 }

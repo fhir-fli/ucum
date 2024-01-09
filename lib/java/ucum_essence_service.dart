@@ -1,346 +1,269 @@
-/*******************************************************************************
-BSD 3-Clause License
+import 'dart:io';
 
-Copyright (c) 2006+, Health Intersections Pty Ltd
-All rights reserved.
+import 'ucum.dart'; // Import for File operations
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+// UcumEssenceService implements the UcumService interface
+class UcumEssenceService implements UcumService {
+  static const String ucumOid = '2.16.840.1.113883.6.8';
 
-* Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
+  late UcumModel model;
+  Registry handlers = Registry();
 
-* Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
+  // Private constructor
+  UcumEssenceService._();
 
-* Neither the name of the copyright holder nor the names of its
-  contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
+  // Constructor with Stream
+  UcumEssenceService.fromStream(Stream<List<int>> stream) {
+    try {
+      // Dart doesn't have direct support for parsing Streams synchronously,
+      // so this may need to be handled asynchronously in your actual implementation.
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  static Future<UcumEssenceService> fromFile(String filename) async {
+    var file = File(filename);
+    if (!file.existsSync()) {
+      throw UcumException('File does not exist');
+    }
+    try {
+      var parser = XmlDefinitionsParser();
+      var model = await parser.parse(file.readAsStringSync());
+      return UcumEssenceService._()..model = model;
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 
- *******************************************************************************/
+  String paramError(String method, String param, String msg) {
+    return '${this.runtimeType}.$method.$param is not acceptable: $msg';
+  }
 
-package org.fhir.ucum;
+  @override
+  UcumVersionDetails ucumIdentification() {
+    return UcumVersionDetails(model.revisionDate, model.version);
+  }
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+  @override
+  UcumModel getModel() {
+    return model;
+  }
 
-import org.fhir.ucum.definitions.DefinitionsProvider;
-import org.fhir.ucum.definitions.DefinitionsProviderFactory;
-import org.fhir.ucum.definitions.XmlDefinitionsParser;
-import org.fhir.ucum.special.Registry;
+  @override
+  List<UcumConcept> search(ConceptKind kind, String text, bool isRegex) {
+    assert(text.isNotEmpty,
+        paramError('search', 'text', 'must not be null or empty'));
+    return Search().doSearch(model, kind, text, isRegex);
+  }
 
+  @override
+  List<String> validateUCUM() {
+    return UcumValidator(model: model, handlers: handlers).validate();
+  }
 
-/**
- * implements UCUM services. Applications must provide a copy of 
- * ucum-essence.xml as either a stream or a file name to create 
- * the services.
- * 
- * the provided ucum-essence.xml must be released on 25 Apr 2008 
- * or more recent. Note that if the ucum-essence.xml file does not 
- * contain a release date on an attribute of the root element, it 
- * is not more recent than this date (Gunther added it on this date for 
- * this usage, thanks)
- * 
- * See UcumService for documentation concerning the services this class provides
- * 
- * @author Grahame Grieve
- *
- */
-public class UcumEssenceService implements UcumService {
+  @override
+  Set<String> getProperties() {
+    Set<String> result = <String>{};
+    for (var unit in model.definedUnits) {
+      result.add(unit.property);
+    }
+    return result;
+  }
 
-	public static final String UCUM_OID = "2.16.840.1.113883.6.8";
-	
-	private UcumModel model;
-	private Registry handlers = new Registry();
-	
-	/**
-	 * Create an instance of Ucum services. Stream must point to a
-	 * valid ucum-essence file (see class documentation) 
-	 * @throws UcumException 
-	 */
-	public UcumEssenceService(InputStream stream) throws UcumException  {
-		super();
-		assert stream != null : paramError("factory", "stream", "must not be null");
-		try {
-			model = DefinitionsProviderFactory.getProvider().parse(stream);
-		} catch (Exception e) {
-			throw new UcumException(e); 
-		}
-	}
+  @override
+  String validate(String unit) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    try {
+      new ExpressionParser(model).parse(unit);
+      return '';
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
-	/**
-	 * Create an instance of Ucum services. filename must point to a
-	 * valid ucum-essence file (see class documentation) 	
-	 * @throws UcumException 
-	 */
-	public UcumEssenceService(String filename) throws UcumException  {
-		super();
-		assert new File(filename).exists() : paramError("factory", "file", "must exist");
-		try {
-			model = new XmlDefinitionsParser().parse(filename);
-		} catch (Exception e) {
-			throw new UcumException(e); 
-		}
-	}
+// Dart translation of validateInProperty method
+  String validateInProperty(String unit, String property) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    assert(
+        property.isNotEmpty,
+        paramError(
+            'validateInProperty', 'property', 'must not be null or empty'));
 
-	private String paramError(String method, String param, String msg) {
-		return getClass().getName()+"."+method+"."+param+" is not acceptable: "+msg;
-	}
+    try {
+      // Assuming Term, ExpressionParser, Converter, Canonical, ExpressionComposer are implemented in Dart
+      Term term = ExpressionParser(model).parse(unit);
+      Canonical can = Converter(model, handlers).convert(term);
+      String cu = ExpressionComposer().composeCanonical(can, false);
+      if (can.units.length == 1) {
+        if (property == can.units[0].base.property) {
+          return '';
+        } else {
+          return 'unit $unit is of the property type ${can.units[0].base.property} ($cu), not $property as required.';
+        }
+      }
+      // Defined special case
+      if (property == 'concentration' && (cu == 'g/L' || cu == 'mol/L')) {
+        return '';
+      }
+      return 'unit $unit has the base units $cu, and are not from the property $property as required.';
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
+// Dart translation of validateCanonicalUnits method
+  String validateCanonicalUnits(String unit, String canonical) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    assert(
+        canonical.isNotEmpty,
+        paramError('validateCanonicalUnits', 'canonical',
+            'must not be null or empty'));
 
-	@Override
-  public UcumVersionDetails ucumIdentification() {
-		return new UcumVersionDetails(model.getRevisionDate(), model.getVersion());
-	}
-	
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#getModel()
-	 */
-	@Override
-  public UcumModel getModel() {
-		return model;
-	}
-	
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#search(org.eclipse.ohf.ucum.model.ConceptKind, java.lang.String, boolean)
-	 */
-	@Override
-  public List<Concept> search(ConceptKind kind, String text, boolean isRegex) {
-		assert checkStringParam(text) : paramError("search", "text", "must not be null or empty");
-		return new Search().doSearch(model, kind, text, isRegex);
-	}
+    try {
+      Term term = ExpressionParser(model).parse(unit);
+      Canonical can = Converter(model, handlers).convert(term);
+      String cu = ExpressionComposer().composeCanonical(can, false);
+      if (canonical != cu) {
+        return 'unit $unit has the base units $cu, not $canonical as required.';
+      }
+      return '';
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
+  // Dart translation of the `analyse` method
+  String analyse(String unit) {
+    if (Utilities.noString(unit)) {
+      return "(unity)";
+    }
+    assert(checkStringParam(unit),
+        paramError('analyse', 'unit', 'must not be null or empty'));
+    Term term = ExpressionParser(model).parse(unit);
+    return FormalStructureComposer().compose(term);
+  }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#validateUCUM()
-	 */
-	@Override
-  public List<String> validateUCUM() {		
-		return new UcumValidator(model, handlers).validate();		
-	}
+// Dart translation of the `getCanonicalUnits` method
+  String getCanonicalUnits(String unit) {
+    assert(checkStringParam(unit),
+        paramError('getCanonicalUnits', 'unit', 'must not be null or empty'));
+    try {
+      Term term = ExpressionParser(model).parse(unit);
+      return ExpressionComposer()
+          .composeCanonical(Converter(model, handlers).convert(term), false);
+    } catch (e) {
+      throw UcumException('Error processing $unit: ${e.toString()}');
+    }
+  }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#getProperties()
-	 */
-	@Override
-  public Set<String> getProperties() {
-		Set<String> result = new HashSet<String>();
-		for (DefinedUnit unit : model.getDefinedUnits()) {
-			result.add(unit.getProperty());
-		}
-		return result;		
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#validate(java.lang.String)
-	 */
-	@Override
-  public String validate(String unit) {
-		assert unit != null : paramError("validate", "unit", "must not be null");
-		try {
-			new ExpressionParser(model).parse(unit);
-			return null;
-		} catch (Exception e) {
-			return e.getMessage();
-		}
-	}
+// Dart translation of the `getDefinedForms` method
+  List<DefinedUnit> getDefinedForms(String code) {
+    assert(checkStringParam(code),
+        paramError('getDefinedForms', 'code', 'must not be null or empty'));
+    List<DefinedUnit> result = [];
+    for (DefinedUnit unit in model.definedUnits) {
+      if (!unit.isSpecial && code == getCanonicalUnits(unit.code)) {
+        result.add(unit);
+      }
+    }
+    return result;
+  }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#validateInProperty(java.lang.String, java.lang.String)
-	 */
-	@Override
-  public String validateInProperty(String unit, String property) {
-		assert checkStringParam(unit) : paramError("validate", "unit", "must not be null or empty");
-		assert checkStringParam(property) : paramError("validateInProperty", "property", "must not be null or empty");
-		try {
-			Term term = new ExpressionParser(model).parse(unit);
-			Canonical can = new Converter(model, handlers).convert(term);
-			String cu = new ExpressionComposer().compose(can, false);
-			if (can.getUnits().size() == 1) {
-					if (property.equals(can.getUnits().get(0).getBase().getProperty()))
-						return null;
-					else
-						return "unit "+unit+" is of the property type "+can.getUnits().get(0).getBase().getProperty()+" ("+cu+"), not "+property+" as required.";
-			}
-			// defined special case
-			if ("concentration".equals(property) && ("g/L".equals(cu) || "mol/L".equals(cu)))
-				return null;
-			
-			return "unit "+unit+" has the base units "+cu+", and are not from the property "+property+" as required.";
-		} catch (Exception e) {
-			return e.getMessage();
-		}
-	}
+  bool checkStringParam(String s) {
+    return s.isNotEmpty;
+  }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#validateCanonicalUnits(java.lang.String, java.lang.String)
-	 */
-	@Override
-  public String validateCanonicalUnits(String unit, String canonical) {
-		assert checkStringParam(unit) : paramError("validate", "unit", "must not be null or empty");
-		assert checkStringParam(canonical) : paramError("validateCanonicalUnits", "canonical", "must not be null or empty");
-		try {
-			Term term = new ExpressionParser(model).parse(unit);
-			Canonical can = new Converter(model, handlers).convert(term);
-			String cu = new ExpressionComposer().compose(can, false);
-			if (!canonical.equals(cu))
-				return "unit "+unit+" has the base units "+cu+", not "+canonical+" as required.";
-			return null;
-		} catch (Exception e) {
-			return e.getMessage();
-		}
-	}
+// Dart translation of the `getCanonicalForm` method
+  Pair getCanonicalForm(Pair value) {
+    assert(
+        checkStringParam(value.code),
+        paramError(
+            'getCanonicalForm', 'value.code', 'must not be null or empty'));
 
-	/**
-	 * given a unit, return a formal description of what the units stand for using
-	 * full names 
-	 * @param units the unit code
-	 * @return formal description
-	 * @throws UcumException 
-	 * @ 
-	 */
-	@Override
-  public String analyse(String unit) throws UcumException  {
-		if (Utilities.noString(unit))
-			return "(unity)";
-		assert checkStringParam(unit) : paramError("analyse", "unit", "must not be null or empty");
-		Term term = new ExpressionParser(model).parse(unit);
-		return new FormalStructureComposer().compose(term);
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#getCanonicalUnits(java.lang.String)
-	 */
-	@Override
-  public String getCanonicalUnits(String unit) throws UcumException  {
-		assert checkStringParam(unit) : paramError("getCanonicalUnits", "unit", "must not be null or empty");
-		try {
-			Term term = new ExpressionParser(model).parse(unit);
-			return new ExpressionComposer().compose(new Converter(model, handlers).convert(term), false);	
-		} catch (Exception e) {
-			throw new UcumException("Error processing "+unit+": "+e.getMessage(), e);
-		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#getDefinedForms(java.lang.String)
-	 */
-	@Override
-  public List<DefinedUnit> getDefinedForms(String code) throws UcumException  {
-		assert checkStringParam(code) : paramError("getDefinedForms", "code", "must not be null or empty");
-		List<DefinedUnit> result = new ArrayList<DefinedUnit>(); 
-		BaseUnit base = model.getBaseUnit(code);
-		if (base != null) {
-			for (DefinedUnit unit : model.getDefinedUnits()) {
-				if (!unit.isSpecial() && code.equals(getCanonicalUnits(unit.getCode())))
-					result.add(unit);
-			}
-		}		
-		return result;
-	}
-	
-	private boolean checkStringParam(String s) {
-		return s != null && !s.equals("");
-	}
+    Term term = ExpressionParser(model).parse(value.code);
+    Canonical c = Converter(model, handlers).convert(term);
+    Pair p;
+    p = Pair(value.value.multiply(c.value),
+        ExpressionComposer().composeCanonical(c, false));
+    if (value.value.isWholeNumber()) {
+      p.value.checkForCouldBeWholeNumber();
+    }
+    return p;
+  }
 
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#getCanonicalForm(org.eclipse.ohf.ucum.UcumEssenceService.Pair)
-	 */
-	@Override
-	public Pair getCanonicalForm(Pair value) throws UcumException  {
-	  assert value != null : paramError("getCanonicalForm", "value", "must not be null");
-	  assert checkStringParam(value.getCode()) : paramError("getCanonicalForm", "value.code", "must not be null or empty");
+  @override
+  Decimal convert(Decimal value, String sourceUnit, String destUnit) {
+    assert(checkStringParam(sourceUnit),
+        paramError("convert", "sourceUnit", "must not be null or empty"));
+    assert(checkStringParam(destUnit),
+        paramError("convert", "destUnit", "must not be null or empty"));
 
-	  Term term = new ExpressionParser(model).parse(value.getCode());
-	  Canonical c = new Converter(model, handlers).convert(term);
-	  Pair p = null;
-	  if (value.getValue() == null)
-	    p = new Pair(null, new ExpressionComposer().compose(c, false));
-	  else {
-	    p = new Pair(value.getValue().multiply(c.getValue()), new ExpressionComposer().compose(c, false));
-	    if (value.getValue().isWholeNumber()) {
-	      // whole numbers are tricky - they have implied infinite precision, but we need to check for digit errors in the last couple of digits
-	      p.getValue().checkForCouldBeWholeNumber();
-	    }
-	  }		
-	  return p;
-	}
+    if (sourceUnit == destUnit) {
+      return value;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ohf.ucum.UcumServiceEx#convert(java.math.BigDecimal, java.lang.String, java.lang.String)
-	 */
-	@Override
-	public Decimal convert(Decimal value, String sourceUnit, String destUnit) throws UcumException  {
-	  assert value != null : paramError("convert", "value", "must not be null");
-	  assert checkStringParam(sourceUnit) : paramError("convert", "sourceUnit", "must not be null or empty");
-	  assert checkStringParam(destUnit) : paramError("convert", "destUnit", "must not be null or empty");
+    Canonical src = Converter(model, handlers)
+        .convert(ExpressionParser(model).parse(sourceUnit));
+    Canonical dst = Converter(model, handlers)
+        .convert(ExpressionParser(model).parse(destUnit));
+    String s = ExpressionComposer().composeCanonical(src, false);
+    String d = ExpressionComposer().composeCanonical(dst, false);
 
-	  if (sourceUnit.equals(destUnit))
-	    return value;
+    if (s != d) {
+      throw UcumException(
+          "Unable to convert between units $sourceUnit and $destUnit as they do not have matching canonical forms ($s and $d respectively)");
+    }
 
-	  Canonical src = new Converter(model, handlers).convert(new ExpressionParser(model).parse(sourceUnit));
-	  Canonical dst = new Converter(model, handlers).convert(new ExpressionParser(model).parse(destUnit));
-	  String s = new ExpressionComposer().compose(src, false);
-	  String d = new ExpressionComposer().compose(dst, false);
-	  if (!s.equals(d))
-	    throw new UcumException("Unable to convert between units "+sourceUnit+" and "+destUnit+" as they do not have matching canonical forms ("+s+" and "+d+" respectively)");
-	  Decimal canValue = value.multiply(src.getValue());
-	  Decimal res = canValue.divide(dst.getValue());
-	  if (value.isWholeNumber()) {
-	    // whole numbers are tricky - they have implied infinite precision, but we need to check for digit errors in the last couple of digits
-	    res.checkForCouldBeWholeNumber();
-	  }
-	  return res;
-	}
+    Decimal canValue = value.multiply(src.value);
+    Decimal res = canValue.divide(dst.value);
 
-	@Override
-  public Pair multiply(Pair o1, Pair o2) throws UcumException  {
-	  Pair res = new Pair(o1.getValue().multiply(o2.getValue()), o1.getCode() +"."+o2.getCode());
-	  return getCanonicalForm(res);
-	}
+    if (value.isWholeNumber()) {
+      res.checkForCouldBeWholeNumber();
+    }
 
-  @Override
-  public Pair divideBy(Pair dividend, Pair divisor) throws UcumException  {
-    Pair res = new Pair(dividend.getValue().divide(divisor.getValue()), 
-        (dividend.getCode().contains("/") || dividend.getCode().contains("*") ? "("+ dividend.getCode() +")" : dividend.getCode())+"/"+(divisor.getCode().contains("/") || divisor.getCode().contains("*") ? "("+ divisor.getCode()+")" : divisor.getCode()));
+    return res;
+  }
+
+  @override
+  Pair divideBy(Pair dividend, Pair divisor) {
+    String code = (dividend.code.contains("/") || dividend.code.contains("*")
+            ? "(${dividend.code})"
+            : dividend.code) +
+        "/" +
+        (divisor.code.contains("/") || divisor.code.contains("*")
+            ? "(${divisor.code})"
+            : divisor.code);
+    Pair res = Pair(dividend.value.divide(divisor.value), code);
     return getCanonicalForm(res);
   }
 
-	@Override
-  public String getCommonDisplay(String code) {
-		//TODO: improvements
-	  return code.replace("[", "").replace("]", "");
+  @override
+  String getCommonDisplay(String code) {
+    return code.replaceAll("[", "").replaceAll("]", "");
   }
 
-  @Override
-  public boolean isComparable(String units1, String units2) throws UcumException  {
-    if (units1 == null)
-      return false;
-    if (units2 == null)
-      return false;
-    
+  @override
+  bool isComparable(String units1, String units2) {
     String u1 = getCanonicalUnits(units1);
     String u2 = getCanonicalUnits(units2);
-    return u1.equals(u2);
+    return u1 == u2;
   }
 
+  @override
+  Pair multiply(Pair o1, Pair o2) {
+    // Assuming the Pair class has a constructor that takes a Decimal and a String
+    // and that Decimal has a multiply method.
+    try {
+      var resultValue = o1.value.multiply(o2.value);
+      var resultCode = '${o1.code}.${o2.code}';
+      Pair result = Pair(resultValue, resultCode);
+      return getCanonicalForm(result);
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 }

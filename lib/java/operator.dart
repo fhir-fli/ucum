@@ -31,9 +31,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  *******************************************************************************/
 
-package org.fhir.ucum;
+library org.fhir.ucum;
 
-public enum Operator {
-	MULTIPLICATION,
-	DIVISION;
+enum Operator {
+  multiplication,
+  division,
+  // MULTIPLICATION,
+  // DIVISION;
 }

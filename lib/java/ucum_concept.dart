@@ -44,9 +44,15 @@ class UcumConcept {
   String? printSymbol;
 
   /// Names for the concept.
-  List<String> names = [];
+  List<String> names;
 
-  UcumConcept({required this.kind, required this.code, required this.codeUC});
+  UcumConcept(
+      {required this.kind,
+      required this.code,
+      required this.codeUC,
+      this.printSymbol,
+      List<String>? names})
+      : names = names ?? [];
 
   String getDescription() {
     return '${kind.toString().toLowerCase()} $code (\'${names.isNotEmpty ? names.first : ""}\')';

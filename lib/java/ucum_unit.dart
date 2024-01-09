@@ -33,9 +33,16 @@ import 'ucum.dart';
 
 abstract class UcumUnit extends UcumConcept {
   /// Kind of thing this base unit represents.
-  late String property;
+  String property;
+  bool? metric;
 
-  UcumUnit({required super.kind, required super.code, required super.codeUC});
+  UcumUnit({
+    required super.kind,
+    required super.code,
+    required super.codeUC,
+    required this.property,
+    this.metric,
+  });
 
   /// Method to get the description.
   @override

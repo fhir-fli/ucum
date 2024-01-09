@@ -1,3 +1,5 @@
+import 'ucum.dart';
+
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -34,45 +36,132 @@ class Converter {
   Converter(this.model, this.handlers);
 
   Canonical convert(Term term) {
-    // Implementation of convert method
-    // Removed try-catch block as Dart does not support checked exceptions
     return normalise("  ", term);
   }
 
   Canonical normalise(String indent, Term term) {
-    // Implementation of normalise method
-    // Similar changes as in convert method
-    // Dart's exception handling will be used if necessary
-  }
+    Canonical result =
+        Canonical(Decimal.fromString("1.000000000000000000000000000000"));
 
-  Canonical convert(Term term) {
-    // Implementation of convert method
-    return normalise("  ", term);
-  }
+    debugTerm(indent, "canonicalise", term);
+    bool div = false;
+    Term? t = term;
+    while (t != null) {
+      if (t.comp is Term) {
+        Canonical temp = normalise(indent + "  ", t.comp as Term);
+        if (div) {
+          result.value = result.value.divide(temp.value);
+          for (var c in temp.units) {
+            c.exponent = -c.exponent;
+          }
+        } else {
+          result.value = result.value.multiply(temp.value);
+        }
+        result.units.addAll(temp.units);
+      } else if (t.comp is Factor) {
+        if (div) {
+          result.value = result.value.divideInt((t.comp as Factor).value);
+        } else {
+          result.value = result.value.multiplyInt((t.comp as Factor).value);
+        }
+      } else if (t.comp is Symbol) {
+        Symbol o = t.comp as Symbol;
+        Canonical temp = normaliseSymbol(indent, o);
+        if (div) {
+          result.value = result.value.divide(temp.value);
+          for (var c in temp.units) {
+            c.exponent = -c.exponent;
+          }
+        } else {
+          result.value = result.value.multiply(temp.value);
+        }
+        result.units.addAll(temp.units);
+      }
+      div = t.op == Operator.division;
+      t = t.term;
+    }
 
-  Canonical normalise(String indent, Term term) {
-    Canonical result = Canonical(Decimal("1.000000000000000000000000000000"));
-    // ... Rest of the normalise method implementation for Term
+    debugCanonical(indent, "collate", result);
+
+    for (int i = result.units.length - 1; i >= 0; i--) {
+      CanonicalUnit sf = result.units[i];
+      for (int j = i - 1; j >= 0; j--) {
+        CanonicalUnit st = result.units[j];
+        if (st.base == sf.base) {
+          st.exponent = sf.exponent + st.exponent;
+          result.units.removeAt(i);
+          break;
+        }
+      }
+    }
+
+    for (int i = result.units.length - 1; i >= 0; i--) {
+      if (result.units[i].exponent == 0) {
+        result.units.removeAt(i);
+      }
+    }
+
+    debugCanonical(indent, "sort", result);
+    result.units.sort((CanonicalUnit lhs, CanonicalUnit rhs) =>
+        lhs.base.code.compareTo(rhs.base.code));
+    debugCanonical(indent, "done", result);
+
+    return result;
   }
 
   Canonical normaliseSymbol(String indent, Symbol sym) {
-    Canonical result = Canonical(Decimal("1.000000000000000000000000000000"));
+    Canonical result =
+        Canonical(Decimal.fromString("1.000000000000000000000000000000"));
 
-    // Implementation of normalise for Symbol
-    // Adjustments for Dart syntax and exception handling
+    if (sym.exponent != null) {
+      if (sym.unit is BaseUnit) {
+        result.units.add(CanonicalUnit(sym.unit as BaseUnit, sym.exponent!));
+      } else {
+        Canonical can = expandDefinedUnit(indent, sym.unit as DefinedUnit);
+        for (var c in can.units) {
+          c.exponent = c.exponent * sym.exponent!;
+        }
+        result.units.addAll(can.units);
+        if (sym.exponent! > 0) {
+          for (int i = 0; i < sym.exponent!; i++) {
+            result.value = result.value.multiply(can.value);
+          }
+        } else {
+          for (int i = 0; i > sym.exponent!; i--) {
+            result.value = result.value.divide(can.value);
+          }
+        }
+      }
+      if (sym.prefix != null) {
+        if (sym.exponent! > 0) {
+          for (int i = 0; i < sym.exponent!; i++) {
+            result.value = sym.prefix?.value == null
+                ? result.value
+                : result.value.multiply(sym.prefix!.value);
+          }
+        } else {
+          for (int i = 0; i > sym.exponent!; i--) {
+            result.value = sym.prefix?.value == null
+                ? result.value
+                : result.value.divide(sym.prefix!.value);
+          }
+        }
+      }
+    }
+    return result;
   }
 
   Canonical expandDefinedUnit(String indent, DefinedUnit unit) {
-    String u = unit.value.unit;
-    Decimal v = unit.value.value;
+    String? u = unit.value.unit;
+    Decimal? v = unit.value.value;
 
     if (unit.isSpecial) {
       if (!handlers.exists(unit.code)) {
         throw UcumException("Not handled yet (special unit)");
       } else {
-        u = handlers.get(unit.code).units;
-        v = handlers.get(unit.code).value;
-        if (handlers.get(unit.code).hasOffset) {
+        u = handlers.get(unit.code)?.getUnits();
+        v = handlers.get(unit.code)?.getValue();
+        if (handlers.get(unit.code)?.hasOffset() ?? false) {
           // Handling for special case with offset
           throw UcumException(
               "Not handled yet (special unit with offset from 0 at intersect)");
@@ -80,18 +169,20 @@ class Converter {
       }
     }
 
-    Term t = ExpressionParser(model).parse(u);
-    debug(indent, "now handle", t);
+    Term t = u == null ? Term() : ExpressionParser(model).parse(u);
+    debugTerm(indent, "now handle", t);
     Canonical result = normalise(indent + "  ", t);
-    result.multiplyValue(v);
+    if (v != null) {
+      result.value = result.value.multiply(v);
+    }
     return result;
   }
 
-  void debug(String indent, String state, Term unit) {
+  void debugTerm(String indent, String state, Term unit) {
     print(indent + state + ": " + ExpressionComposer().compose(unit));
   }
 
-  void debug(String indent, String state, Canonical can) {
-    print(indent + state + ": " + ExpressionComposer().compose(can));
+  void debugCanonical(String indent, String state, Canonical can) {
+    print(indent + state + ": " + ExpressionComposer().composeCanonical(can));
   }
 }

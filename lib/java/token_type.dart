@@ -31,16 +31,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  *******************************************************************************/
 
-package org.fhir.ucum;
+library org.fhir.ucum;
 
-public enum TokenType {
-	NONE,
-	NUMBER,
-	SYMBOL,
-	SOLIDUS,
-	PERIOD,
-	OPEN,
-	CLOSE,
-	ANNOTATION;
-
+enum TokenType {
+  none,
+  number,
+  symbol,
+  solidus,
+  period,
+  open,
+  close,
+  annotation,
+  // NONE,
+  // NUMBER,
+  // SYMBOL,
+  // SOLIDUS,
+  // PERIOD,
+  // OPEN,
+  // CLOSE,
+  // ANNOTATION;
 }

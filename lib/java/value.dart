@@ -1,3 +1,5 @@
+import 'ucum.dart';
+
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -40,6 +42,6 @@ class Value {
       required this.text});
 
   String getDescription() {
-    return value == null ? unit : '${value.toString()}$unit';
+    return '${value.toString()}$unit';
   }
 }

@@ -37,31 +37,19 @@ class Canonical {
 
   Canonical(this.value);
 
-  Decimal getValue() {
-    return value;
-  }
-
-  List<CanonicalUnit> getUnits() {
-    return units;
-  }
-
-  void setValue(Decimal newValue) {
-    value = newValue;
-  }
-
-  void multiplyValue(Decimal multiplicand) {
+  void multiplyValueDecimal(Decimal multiplicand) {
     value = value * multiplicand;
   }
 
-  void multiplyValue(int multiplicand) {
+  void multiplyValueInt(int multiplicand) {
     value = value * Decimal.fromInt(multiplicand);
   }
 
-  void divideValue(Decimal divisor) {
+  void divideValueDecimal(Decimal divisor) {
     value = value / divisor;
   }
 
-  void divideValue(int divisor) {
+  void divideValueInt(int divisor) {
     value = value / Decimal.fromInt(divisor);
   }
 }
@@ -71,16 +59,4 @@ class CanonicalUnit {
   int exponent;
 
   CanonicalUnit(this.base, this.exponent);
-
-  BaseUnit getBase() {
-    return base;
-  }
-
-  int getExponent() {
-    return exponent;
-  }
-
-  void setExponent(int newExponent) {
-    exponent = newExponent;
-  }
 }

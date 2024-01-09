@@ -36,6 +36,10 @@ class BaseUnit extends UcumUnit {
   String dim;
 
   /// Constructor for BaseUnit.
-  BaseUnit({required super.code, required super.codeUC, required this.dim})
+  BaseUnit(
+      {required super.code,
+      required super.codeUC,
+      required super.property,
+      required this.dim})
       : super(kind: ConceptKind.baseUnit);
 }

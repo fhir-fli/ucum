@@ -31,15 +31,11 @@ import 'ucum.dart';
 
 class Value {
   String unit;
-  String unitUC;
-  Decimal value;
-  String text;
+  String? unitUC;
+  Decimal? value;
+  String? text;
 
-  Value(
-      {required this.unit,
-      required this.unitUC,
-      required this.value,
-      required this.text});
+  Value({required this.unit, required this.unitUC, this.value, this.text});
 
   String getDescription() {
     return '${value.toString()}$unit';

@@ -13,18 +13,43 @@ class XmlDefinitionsParser implements DefinitionsProvider {
     }
   }
 
+  DateTime? parseDateFromVersionControlString(String versionControlString) {
+    final datePattern =
+        RegExp(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4})');
+
+    final match = datePattern.firstMatch(versionControlString);
+    if (match != null) {
+      final dateString = match.group(1)!;
+      final dateComponents = dateString.split(' ');
+
+      final datePart = dateComponents[0];
+      final timePart = dateComponents[1];
+      final offsetPart = dateComponents[2];
+
+      final dateTimeString = '${datePart}T$timePart$offsetPart';
+      return DateTime.parse(dateTimeString);
+    } else {
+      return null;
+      // throw FormatException('Invalid date format in version control string');
+    }
+  }
+
   UcumModel parseFromString(String contents) {
     var document = XmlDocument.parse(contents);
     var rootElement = document.findElements('root').first;
 
     // Parse attributes
-    var version = rootElement.getAttribute('version') ?? '';
-    var revision = rootElement.getAttribute('revision') ?? '';
-    var revisionDateAttribute = rootElement.getAttribute('revision-date');
+    String version = rootElement.getAttribute('version') ?? '';
+    String revision = rootElement.getAttribute('revision') ?? '';
+    String? revisionDateAttribute = rootElement.getAttribute('revision-date');
     DateTime? revisionDate;
 
     if (revisionDateAttribute != null) {
-      revisionDate = DateTime.parse(revisionDateAttribute);
+      DateTime? revisionDate =
+          parseDateFromVersionControlString(revisionDateAttribute);
+      if (revisionDate == null) {
+        revisionDate = DateTime.parse(revisionDateAttribute);
+      }
     }
 
     var ucumModel = UcumModel(version, revision, revisionDate);
@@ -58,13 +83,21 @@ class XmlDefinitionsParser implements DefinitionsProvider {
 
     var unit = DefinedUnit(
       code: element.getAttribute('Code')!,
-      codeUC: element.getAttribute('CODE')!,
+      codeUC: element.getAttribute('CODE'),
       property: '', // You may need to provide a default value for property
       metric: element.getAttribute('isMetric') == 'yes',
       isSpecial: element.getAttribute('isSpecial') == 'yes',
       class_: element.getAttribute('class'),
       value: value,
     );
+
+    print('code: ${element.getAttribute('Code')}');
+    print('CODE: ${element.getAttribute('CODE')}');
+    print('');
+    print(element.getAttribute('isMetric'));
+    print(element.getAttribute('isSpecial'));
+    print(element.getAttribute('class'));
+    print(value);
 
     unit.metric = element.getAttribute('isMetric') == 'yes';
     unit.isSpecial = element.getAttribute('isSpecial') == 'yes';
@@ -86,6 +119,8 @@ class XmlDefinitionsParser implements DefinitionsProvider {
   }
 
   Value parseValue(XmlElement x, String context) {
+    print(x);
+    print(context);
     Decimal? val;
     if (x.getAttribute('value') != null) {
       try {
@@ -99,14 +134,22 @@ class XmlDefinitionsParser implements DefinitionsProvider {
         throw UcumException('Error reading $context: ${e.toString()}');
       }
     }
+    print(x.getAttribute('Unit'));
+    print(x.getAttribute('UNIT'));
+    print('val: $val');
+    print('text: ${x.text}');
     final value = Value(
       unit: x.getAttribute('Unit')!,
-      unitUC: x.getAttribute('UNIT')!,
-      value: val!,
+      unitUC: x.getAttribute('UNIT'),
+      value: val,
       text: x.text,
     );
 
     value.text = x.text;
+    print(x.getAttribute('Unit'));
+    print(x.getAttribute('UNIT'));
+    print('val: $val');
+    print('text: ${x.text}');
     return value;
   }
 

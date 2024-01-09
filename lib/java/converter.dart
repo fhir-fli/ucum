@@ -155,7 +155,7 @@ class Converter {
     String? u = unit.value.unit;
     Decimal? v = unit.value.value;
 
-    if (unit.isSpecial) {
+    if (unit.isSpecial ?? false) {
       if (!handlers.exists(unit.code)) {
         throw UcumException("Not handled yet (special unit)");
       } else {

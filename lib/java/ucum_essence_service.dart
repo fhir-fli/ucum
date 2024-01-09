@@ -22,14 +22,15 @@ class UcumEssenceService implements UcumService {
     }
   }
 
-  static Future<UcumEssenceService> fromFile(String filename) async {
-    var file = File(filename);
+  static Future<UcumEssenceService> fromFile(String filepath) async {
+    var file = File(filepath);
     if (!file.existsSync()) {
       throw UcumException('File does not exist');
     }
     try {
       var parser = XmlDefinitionsParser();
-      var model = await parser.parse(file.readAsStringSync());
+      var model = await parser.parse(filepath);
+      print(model.definedUnits.length);
       return UcumEssenceService._()..model = model;
     } catch (e) {
       throw UcumException(e.toString());
@@ -166,7 +167,7 @@ class UcumEssenceService implements UcumService {
         paramError('getDefinedForms', 'code', 'must not be null or empty'));
     List<DefinedUnit> result = [];
     for (DefinedUnit unit in model.definedUnits) {
-      if (!unit.isSpecial && code == getCanonicalUnits(unit.code)) {
+      if (!(unit.isSpecial ?? false) && code == getCanonicalUnits(unit.code)) {
         result.add(unit);
       }
     }

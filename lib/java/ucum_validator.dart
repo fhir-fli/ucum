@@ -56,7 +56,7 @@ class UcumValidator {
 
   void checkUnits() {
     for (var unit in model.definedUnits) {
-      if (!unit.isSpecial) {
+      if (!(unit.isSpecial ?? false)) {
         checkUnitCode(unit.value.unit, false);
       } else if (!handlers.exists(unit.code)) {
         result.add('No Handler for ${unit.code}');

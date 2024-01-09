@@ -31,7 +31,7 @@ import 'ucum.dart';
 
 class DefinedUnit extends UcumUnit {
   bool? metric;
-  bool isSpecial;
+  bool? isSpecial;
   String? class_;
   Value value;
 

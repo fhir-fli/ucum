@@ -38,7 +38,7 @@ class UcumConcept {
   String code;
 
   /// Case insensitive code for this concept.
-  String codeUC;
+  String? codeUC;
 
   /// Print symbol for this code.
   String? printSymbol;
@@ -49,7 +49,7 @@ class UcumConcept {
   UcumConcept(
       {required this.kind,
       required this.code,
-      required this.codeUC,
+      this.codeUC,
       this.printSymbol,
       List<String>? names})
       : names = names ?? [];

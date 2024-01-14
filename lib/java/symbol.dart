@@ -69,4 +69,8 @@ class Symbol extends Component {
       exponent = -exponent!;
     }
   }
+
+  @override
+  String toString() =>
+      'Symbol(Unit: $unit, Prefix: $prefix, Exponent: $exponent)';
 }

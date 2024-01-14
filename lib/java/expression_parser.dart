@@ -59,21 +59,21 @@ class ExpressionParser {
         lexer.consume();
       } else {
         res.setComp(parseComp(lexer));
-      }
 
-      if (lexer.type != TokenType.none && lexer.type != TokenType.close) {
-        if (lexer.type == TokenType.solidus) {
-          res.setOp(Operator.division);
-          lexer.consume();
-        } else if (lexer.type == TokenType.period) {
-          res.setOp(Operator.multiplication);
-          lexer.consume();
-        } else if (lexer.type == TokenType.annotation) {
-          res.setOp(Operator.multiplication); // Implicit multiplication
-        } else {
-          lexer.error("Expected '/' or '.'");
+        if (lexer.type != TokenType.none && lexer.type != TokenType.close) {
+          if (lexer.type == TokenType.solidus) {
+            res.setOp(Operator.division);
+            lexer.consume();
+          } else if (lexer.type == TokenType.period) {
+            res.setOp(Operator.multiplication);
+            lexer.consume();
+          } else if (lexer.type == TokenType.annotation) {
+            res.setOp(Operator.multiplication); // Implicit multiplication
+          } else {
+            lexer.error("Expected '/' or '.'");
+          }
+          res.setTerm(parseTerm(lexer, false));
         }
-        res.setTerm(parseTerm(lexer, false));
       }
     }
     return res;

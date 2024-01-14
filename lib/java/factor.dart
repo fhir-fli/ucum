@@ -42,4 +42,7 @@ class Factor extends Component {
 	 * @param value
 	 */
   Factor(this.value);
+
+  @override
+  String toString() => 'Factor(value: $value)';
 }

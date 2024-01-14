@@ -40,4 +40,8 @@ class Value {
   String getDescription() {
     return '${value.toString()}$unit';
   }
+
+  @override
+  String toString() =>
+      'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
 }

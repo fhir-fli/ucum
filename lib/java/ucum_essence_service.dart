@@ -30,7 +30,6 @@ class UcumEssenceService implements UcumService {
     try {
       var parser = XmlDefinitionsParser();
       var model = await parser.parse(filepath);
-      print(model.definedUnits.length);
       return UcumEssenceService._()..model = model;
     } catch (e) {
       throw UcumException(e.toString());
@@ -206,6 +205,9 @@ class UcumEssenceService implements UcumService {
     if (sourceUnit == destUnit) {
       return value;
     }
+
+    print(ExpressionParser(model).parse(sourceUnit));
+    print(ExpressionParser(model).parse(destUnit));
 
     Canonical src = Converter(model, handlers)
         .convert(ExpressionParser(model).parse(sourceUnit));

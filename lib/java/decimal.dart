@@ -1,18 +1,25 @@
+import 'dart:convert';
 import 'dart:math' as math;
+import 'dart:math';
 
 import 'ucum_exception.dart';
 import 'utilities.dart';
 
 class Decimal {
-  int? precision;
-  bool? scientific;
-  bool? negative;
-  String? digits;
-  int? decimal;
+  late int precision;
+  late bool scientific;
+  late bool negative;
+  late String digits;
+  late int decimal;
   static const _int32MinValue = -2147483647;
   static const _int32MaxValue = 2147483647;
 
-  Decimal();
+  Decimal()
+      : precision = 0,
+        scientific = false,
+        negative = false,
+        digits = '',
+        decimal = 0;
 
   Decimal.fromString(String? value, [int? precision]) {
     if (value != null) {
@@ -42,7 +49,7 @@ class Decimal {
   void setValueDecimal(String value) {
     scientific = false;
     negative = value.startsWith("-");
-    if (negative ?? false) {
+    if (negative) {
       value = value.substring(1);
     }
 
@@ -59,16 +66,23 @@ class Decimal {
       throw UcumException("'$value' is not a valid decimal");
     } else {
       decimal = dec;
-      precision = countSignificants(value);
-      digits = value.replaceFirst('.', '');
-      while (digits!.startsWith('0')) {
-        digits = digits!.substring(1);
-        decimal = decimal! - 1;
+      if (allZeros(value, 1)) {
+        precision = value.length - 1;
+      } else {
+        precision = countSignificants(value);
+      }
+      digits = delete(value, decimal, 1);
+      if (allZeros(digits, 0)) {
+        precision = precision + 1;
+      }
+      while (digits.startsWith('0')) {
+        digits = digits.substring(1);
+        decimal--;
       }
     }
   }
 
-  bool allZeros(String? s, int start) {
+  bool allZeros(String? s, [int start = 0]) {
     if (s == null) {
       return false;
     } else {
@@ -113,39 +127,26 @@ class Decimal {
 
     // Adjust for exponent
     int exp = int.parse(e);
-    decimal = decimal! + exp;
+    decimal = decimal + exp;
   }
 
-  String stringMultiply(String char, int count) {
-    return char * count;
-  }
+  String stringMultiply(String char, int count) =>
+      Utilities.padLeft('', char, count);
 
-  String insert(String ins, String value, int offset) {
-    return offset == 0
-        ? ins + value
-        : value.substring(0, offset) + ins + value.substring(offset);
-  }
+  String insert(String ins, String value, int offset) => offset == 0
+      ? ins + value
+      : value.substring(0, offset) + ins + value.substring(offset);
 
   @override
-  String toString() {
-    return asDecimal();
-  }
+  String toString() => asDecimal();
 
-  Decimal copy() {
-    return Decimal.fromString(this.asDecimal());
-  }
+  Decimal copy() => Decimal.fromString(this.asDecimal());
 
-  static Decimal zero() {
-    return Decimal.fromString("0");
-  }
+  static Decimal zero() => Decimal.fromString("0");
 
-  bool isZero() {
-    return allZeros(digits, 0);
-  }
+  bool isZero() => allZeros(digits, 0);
 
-  static Decimal one() {
-    return Decimal.fromString("1");
-  }
+  static Decimal one() => Decimal.fromString("1");
 
   bool isOne() {
     Decimal one = Decimal.one();
@@ -159,18 +160,29 @@ class Decimal {
     return false;
   }
 
-  int comparesTo(Decimal other) {
-    if ((negative ?? false) && !(other.negative ?? false)) {
-      return -1;
-    } else if (!(negative ?? false) && (other.negative ?? false)) {
-      return 1;
+  int comparesTo(Decimal? other) {
+    if (other == null) {
+      return 0;
     } else {
-      int maxDecimal = math.max(decimal ?? 0, other.decimal ?? 0);
-      String s1 = '0' * (maxDecimal - (decimal ?? 0)) + (digits ?? '');
-      String s2 =
-          '0' * (maxDecimal - (other.decimal ?? 0)) + (other.digits ?? '');
-      int result = s1.compareTo(s2);
-      return (negative ?? false) ? -result : result;
+      if (negative && !other.negative) {
+        return -1;
+      } else if (!negative && other.negative) {
+        return 1;
+      } else {
+        int maxDecimal = math.max(decimal, other.decimal);
+        String s1 = ('0' * (maxDecimal - decimal + 1)) + digits;
+        String s2 = ('0' * (maxDecimal - other.decimal + 1)) + other.digits;
+        if (s1.length < s2.length) {
+          s1 = s1 + stringMultiply('0', s2.length - s1.length);
+        } else if (s2.length < s1.length) {
+          s2 = s2 + stringMultiply('0', s1.length - s2.length);
+        }
+        int result = s1.compareTo(s2);
+        if (negative) {
+          result = -result;
+        }
+        return result;
+      }
     }
   }
 
@@ -179,18 +191,22 @@ class Decimal {
   }
 
   String asDecimal() {
-    String result = digits!;
-    if (decimal != digits!.length) {
-      if (decimal! < 0) {
-        result = "0." + '0' * (0 - decimal!) + digits!;
-      } else if (decimal! < result.length) {
-        result =
-            result.substring(0, decimal!) + '.' + result.substring(decimal!);
+    String result = digits;
+    if (decimal != digits.length) {
+      if (decimal < 0) {
+        result = '0.' + ('0' * (0 - decimal)) + digits;
+      } else if (decimal < result.length) {
+        if (decimal == 0) {
+          result = '0.' + result;
+        } else {
+          result =
+              result.substring(0, decimal) + '.' + result.substring(decimal);
+        }
       } else {
-        result = result + '0' * (decimal! - result.length);
+        result = result + '0' * (decimal - result.length);
       }
     }
-    if (negative! && result != '0') {
+    if (negative && result != '0') {
       result = "-" + result;
     }
     return result;
@@ -212,83 +228,77 @@ class Decimal {
   }
 
   String asScientific() {
-    String result = digits ?? '';
+    String result = digits;
     bool zero = allZeros(result, 0);
     if (zero) {
-      result = (precision ?? 0) < 2 ? "0e0" : "0.${'0' * (precision! - 1)}e0";
+      result = precision < 2 ? "0e0" : "0.${'0' * (precision - 1)}e0";
     } else {
-      if ((digits ?? '').length > 1) {
+      if (digits.length > 1) {
         result = insert(".", result, 1);
       }
-      result += "e${(decimal ?? 0) - 1}";
+      result += "e${decimal - 1}";
     }
-    if ((negative ?? false) && !zero) {
+    if (negative && !zero) {
       result = '-$result';
     }
     return result;
   }
 
   Decimal trunc() {
-    if (this.isZero() || this.decimal! <= 0) {
-      return Decimal.fromString("0");
+    if (isZero() || decimal <= 0) {
+      return zero();
     }
 
-    String truncatedDigits =
-        this.digits!.substring(0, math.min(this.digits!.length, this.decimal!));
-    return Decimal.fromString(truncatedDigits);
+    Decimal result = copy();
+
+    if (result.digits.length >= result.decimal)
+      result.digits = result.digits.substring(0, result.decimal);
+    if (Utilities.noString(result.digits)) {
+      result.digits = "0";
+      result.decimal = 1;
+      result.negative = false;
+    }
+    return result;
   }
 
   Decimal add(Decimal other) {
-    // Basic checks for zero
-    if (this.isZero()) return other;
-    if (other.isZero()) return this;
-
-    // Align both numbers by their decimal points for addition
-    int maxDecimal = math.max(this.decimal!, other.decimal!);
-    String thisDigits = this.digits!.padRight(maxDecimal, '0');
-    String otherDigits = other.digits!.padRight(maxDecimal, '0');
-
-    // Perform addition digit by digit
-    int carry = 0;
-    StringBuffer result = StringBuffer();
-    for (int i = maxDecimal - 1; i >= 0; i--) {
-      int sum = int.parse(thisDigits[i]) + int.parse(otherDigits[i]) + carry;
-      carry = sum ~/ 10;
-      result.write(sum % 10);
+    if (negative == other.negative) {
+      Decimal result = doAdd(other);
+      result.negative = negative;
+      return result;
+    } else if (negative) {
+      return other.doSubtract(this);
+    } else {
+      return doSubtract(other);
     }
-    if (carry > 0) result.write(carry);
-    String finalResult = result.toString().split('').reversed.join('');
-
-    // Create new Decimal instance with the result
-    return Decimal.fromString(finalResult);
   }
 
   Decimal subtract(Decimal other) {
     Decimal result;
-    if ((negative ?? false) && !(other.negative ?? false)) {
+    if (negative && !other.negative) {
       result = doAdd(other);
       result.negative = true;
-    } else if (!(negative ?? false) && (other.negative ?? false)) {
+    } else if (!negative && other.negative) {
       result = doAdd(other);
-    } else if ((negative ?? false) && (other.negative ?? false)) {
+    } else if (negative && other.negative) {
       result = doSubtract(other);
-      result.negative = !(result.negative ?? false);
+      result.negative = !result.negative;
     } else {
       result = other.doSubtract(this);
-      result.negative = !(result.negative ?? false);
+      result.negative = !result.negative;
     }
     return result;
   }
 
   Decimal doAdd(Decimal other) {
-    int max = math.max(decimal ?? 0, other.decimal ?? 0);
-    String s1 = '0' * (max - (decimal ?? 0)) + (digits ?? '');
-    String s2 = '0' * (max - (other.decimal ?? 0)) + (other.digits ?? '');
+    int max = math.max(decimal, other.decimal);
+    String s1 = stringMultiply('0', max - decimal + 1) + digits;
+    String s2 = stringMultiply('0', (max - other.decimal + 1)) + other.digits;
 
     if (s1.length < s2.length) {
-      s1 = s1.padRight(s2.length, '0');
+      s1 = s1 + stringMultiply('0', s2.length - s1.length);
     } else if (s2.length < s1.length) {
-      s2 = s2.padRight(s1.length, '0');
+      s2 = s2 + stringMultiply('0', s1.length - s2.length);
     }
 
     String s3 = stringAddition(s1, s2);
@@ -296,95 +306,144 @@ class Decimal {
     if (s3.isNotEmpty && s3[0] == '1') {
       max++;
     } else {
-      s3 = s3.substring(1);
+      s3 = delete(s3, 0, 1);
     }
 
+    if (max != s3.length) {
+      if (max < 0) {
+        throw Exception("Unhandled");
+      } else if (max < s3.length) {
+        s3 = insert('.', s3, max);
+      } else {
+        throw Exception("Unhandled");
+      }
+    }
+
+    print('S1: $s1 - S2: $s2 - S3: $s3 - MAX: $max');
+
     Decimal result = Decimal();
-    result.setValueDecimal(s3);
-    result.scientific = (scientific ?? false) || (other.scientific ?? false);
-    result.precision = math.min(precision ?? 0, other.precision ?? 0);
+    try {
+      result.setValueDecimal(s3);
+    } catch (e) {
+      // won't happen
+    }
+    result.scientific = scientific || other.scientific;
+    if (decimal < other.decimal) {
+      result.precision = precision;
+    } else if (other.decimal < decimal) {
+      result.precision = other.precision;
+    } else {
+      result.precision = math.min(precision, other.precision);
+    }
     return result;
   }
 
-  int dig(String c) => int.parse(c);
+  int dig(String c) {
+    assert(c.length == 1);
+    return utf8.encode(c).first - utf8.encode('0').first;
+  }
 
-  String cdig(int i) => i.toString();
+  String cdig(int i) => (i + utf8.encode('0').first).toString();
 
   Decimal doSubtract(Decimal other) {
-    int max = math.max(decimal ?? 0, other.decimal ?? 0);
-    String s1 = '0' * (max - (decimal ?? 0)) + (digits ?? '');
-    String s2 = '0' * (max - (other.decimal ?? 0)) + (other.digits ?? '');
+    int max = math.max(decimal, other.decimal);
+    String s1 = ('0' * (max - decimal + 1)) + digits;
+    String s2 = ('0' * (max - other.decimal + 1)) + other.digits;
 
     if (s1.length < s2.length) {
-      s1 = s1.padRight(s2.length, '0');
+      s1 = s1 + stringMultiply('0', s2.length - s1.length);
     } else if (s2.length < s1.length) {
-      s2 = s2.padRight(s1.length, '0');
+      s2 = s2 + stringMultiply('0', s1.length - s2.length);
     }
 
+    String s3;
     bool neg = s1.compareTo(s2) < 0;
-    String s3 = neg ? stringSubtraction(s2, s1) : stringSubtraction(s1, s2);
+    if (neg) {
+      s3 = s2;
+      s2 = s1;
+      s1 = s3;
+    }
+    s3 = stringSubtraction(s1, s2);
 
     if (s3.isNotEmpty && s3[0] == '1') {
       max++;
     } else {
-      s3 = s3.substring(1);
+      s3 = delete(s3, 1, 0);
+    }
+
+    if (max != s3.length) {
+      if (max < 0) {
+        throw Exception("Unhandled");
+      } else if (max < s3.length) {
+        s3 = insert(".", s3, max);
+      } else {
+        throw Exception("Unhandled");
+      }
     }
 
     Decimal result = Decimal();
-    result.setValueDecimal(s3);
+    try {
+      result.setValueDecimal(s3);
+    } catch (e) {
+      // won't happen
+    }
+
     result.negative = neg;
-    result.scientific = (scientific ?? false) || (other.scientific ?? false);
-    result.precision = math.min(precision ?? 0, other.precision ?? 0);
+    result.scientific = scientific || other.scientific;
+    if (decimal < other.decimal) {
+      result.precision = precision;
+    } else if (other.decimal < decimal) {
+      result.precision = other.precision;
+    } else {
+      result.precision = math.min(precision, other.precision);
+    }
     return result;
   }
 
   String stringAddition(String s1, String s2) {
     assert(s1.length == s2.length);
-    List<int> result = List.filled(s2.length, 0);
+    List<String> result = List.filled(s2.length, '0');
     int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
       int t = c + dig(s1[i]) + dig(s2[i]);
-      result[i] = t % 10;
+      result[i] = cdig(t % 10);
       c = t ~/ 10;
     }
     assert(c == 0);
-    return result.map(cdig).join();
+    return result.join();
   }
 
   String stringSubtraction(String s1, String s2) {
     assert(s1.length == s2.length);
-    List<int> result = List.filled(s2.length, 0);
+    List<String> result = List.filled(s2.length, '0');
     int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
       int t = c + dig(s1[i]) - dig(s2[i]);
       if (t < 0) {
         t += 10;
-        if (i == 0)
+        if (i == 0) {
           throw Exception("Internal logic error");
-        else
+        } else {
           s1 = replaceChar(s1, i - 1, cdig(dig(s1[i - 1]) - 1));
+        }
       }
-      result[i] = t;
+      result[i] = cdig(t);
     }
     assert(c == 0);
-    return result.map(cdig).join();
+    return result.join();
   }
 
-  String replaceChar(String s, int offset, String c) {
-    if (offset == 0)
-      return c + s.substring(1);
-    else
-      return s.substring(0, offset) + c + s.substring(offset + 1);
-  }
+  String replaceChar(String s, int offset, String c) =>
+      s.replaceRange(offset, offset + 1, c);
 
   Decimal multiply(Decimal other) {
     if (isZero() || other.isZero()) {
       return zero();
     }
 
-    int max = math.max(decimal!, other.decimal!);
-    String s1 = stringMultiply('0', max - decimal! + 1) + digits!;
-    String s2 = stringMultiply('0', max - other.decimal! + 1) + other.digits!;
+    int max = math.max(decimal, other.decimal);
+    String s1 = stringMultiply('0', max - decimal + 1) + digits;
+    String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
 
     if (s1.length < s2.length) {
       s1 = s1 + stringMultiply('0', s2.length - s1.length);
@@ -442,14 +501,14 @@ class Decimal {
 
     int precisionResult;
     if (isWholeNumber() && other.isWholeNumber()) {
-      precisionResult = math.max(math.max(digits!.length, other.digits!.length),
-          math.min(precision!, other.precision!));
+      precisionResult = math.max(math.max(digits.length, other.digits.length),
+          math.min(precision, other.precision));
     } else if (isWholeNumber()) {
-      precisionResult = other.precision!;
+      precisionResult = other.precision;
     } else if (other.isWholeNumber()) {
-      precisionResult = precision!;
+      precisionResult = precision;
     } else {
-      precisionResult = math.min(precision!, other.precision!);
+      precisionResult = math.min(precision, other.precision);
     }
 
     while (result.length > precisionResult && result.endsWith('0')) {
@@ -461,8 +520,7 @@ class Decimal {
     newDecimal.precision = precisionResult;
     newDecimal.decimal = decimalPos;
     newDecimal.negative = negative != other.negative;
-    newDecimal.scientific =
-        (scientific ?? false) || (other.scientific ?? false);
+    newDecimal.scientific = scientific || other.scientific;
     return newDecimal;
   }
 
@@ -470,70 +528,176 @@ class Decimal {
     return multiply(other);
   }
 
+  bool operator ==(Object other) {
+    if (other is! Decimal) {
+      return false;
+    } else {
+      return asDecimal() == other.asDecimal();
+    }
+  }
+
   Decimal multiplyInt(int other) {
     return multiply(Decimal.fromInt(other));
   }
 
   Decimal divide(Decimal other) {
-    if (other.isZero()) {
-      throw UcumException("Division by zero");
-    }
+    if (isZero()) {
+      return zero();
+    } else if (other.isZero()) {
+      throw UcumException("Attempt to divide $toString() by zero");
+    } else {
+      String s = "0" + other.digits;
+      int digitsLength = digits.length;
+      int otherDigitsLength = other.digits.length;
+      int m = max(digitsLength, otherDigitsLength) + 40; // max loops we'll do
+      List<String> tens = List<String>.filled(10, "");
+      tens[0] = stringAddition(stringMultiply('0', s.length), s);
+      for (int i = 1; i < 10; i++) tens[i] = stringAddition(tens[i - 1], s);
 
-    String dividend = this.digits!.padRight(this.decimal!, '0');
-    String divisor = other.digits!.padRight(other.decimal!, '0');
-    StringBuffer quotient = StringBuffer();
-    int idx = 0;
-    int tempDividend = int.parse(dividend.substring(0, divisor.length));
-    dividend = dividend.substring(divisor.length);
+      String v = digits;
+      String r = "";
+      int l = 0;
+      int d = (digitsLength - decimal + 1) -
+          (otherDigitsLength - other.decimal + 1);
 
-    while (idx < dividend.length || tempDividend != 0) {
-      if (tempDividend < int.parse(divisor)) {
-        tempDividend = tempDividend * 10 +
-            (idx < dividend.length ? int.parse(dividend[idx]) : 0);
-        if (quotient.isNotEmpty) {
-          quotient.write('0');
+      while (v.length < tens[0].length) {
+        v = v + "0";
+        d++;
+      }
+
+      String w;
+      int vi;
+      if (v.substring(0, otherDigitsLength).compareTo(other.digits) < 0) {
+        if (v.length == tens[0].length) {
+          v = v + '0';
+          d++;
         }
+        w = v.substring(0, otherDigitsLength + 1);
+        vi = w.length;
       } else {
-        int divResult = tempDividend ~/ int.parse(divisor);
-        tempDividend -= divResult * int.parse(divisor);
-        quotient.write(divResult.toString());
-      }
-      idx++;
-    }
-
-    void insertIntoStringBuffer(
-        StringBuffer buffer, int index, String toInsert) {
-      // Convert the StringBuffer to a String for manipulation
-      String original = buffer.toString();
-
-      // Check if the index is within the bounds of the original string
-      if (index < 0 || index > original.length) {
-        throw RangeError('Index out of range');
+        w = "0" + v.substring(0, otherDigitsLength);
+        vi = w.length - 1;
       }
 
-      // Perform the insertion
-      String updated =
-          original.substring(0, index) + toInsert + original.substring(index);
+      bool handled = false;
+      bool proc;
 
-      // Clear the original StringBuffer and set the updated string
-      buffer.clear();
-      buffer.write(updated);
-    }
-
-    // Adjusting the decimal point position in quotient
-    int decimalPosition = this.decimal! - other.decimal! + quotient.length;
-    if (decimalPosition <= 0) {
-      insertIntoStringBuffer(quotient, 0, '0.');
-      while (decimalPosition < 0) {
-        insertIntoStringBuffer(quotient, 1, '0');
-        decimalPosition++;
+      while (!(handled &&
+          ((l > m) || ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+        l++;
+        handled = true;
+        proc = false;
+        for (int i = 8; i >= 0; i--) {
+          if (tens[i].compareTo(w) <= 0) {
+            proc = true;
+            r = r + cdig(i + 1);
+            w = trimLeadingZeros(stringSubtraction(w, tens[i]));
+            if (!(handled &&
+                ((l > m) ||
+                    ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+              if (vi < v.length) {
+                w = w + v[vi];
+                vi++;
+                handled = false;
+              } else {
+                w = w + '0';
+                d++;
+              }
+              while (w.length < tens[0].length) w = '0' + w;
+            }
+            break;
+          }
+        }
+        if (!proc) {
+          assert(w[0] == '0');
+          w = w.substring(1);
+          r = r + "0";
+          if (!(handled &&
+              ((l > m) || ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+            if (vi < v.length) {
+              w = w + v[vi];
+              vi++;
+              handled = false;
+            } else {
+              w = w + '0';
+              d++;
+            }
+            while (w.length < tens[0].length) w = '0' + w;
+          }
+        }
       }
-    } else if (decimalPosition < quotient.length) {
-      insertIntoStringBuffer(quotient, decimalPosition, '.');
-    }
 
-    // Create new Decimal instance with the quotient
-    return Decimal.fromString(quotient.toString());
+      int prec;
+
+      if (isWholeNumber() && other.isWholeNumber() && (l < m)) {
+        for (int i = 0; i < d; i++) {
+          if (r.endsWith('0')) {
+            r = r.substring(0, r.length - 1);
+            d--;
+          }
+        }
+        prec = 100;
+      } else {
+        if (isWholeNumber() && other.isWholeNumber()) {
+          prec = max(digitsLength, otherDigitsLength);
+        } else if (isWholeNumber()) {
+          prec = max(other.precision, r.length - d);
+        } else if (other.isWholeNumber()) {
+          prec = max(precision, r.length - d);
+        } else {
+          prec = max(min(precision, other.precision), r.length - d);
+        }
+
+        if (r.length > prec) {
+          d = d - (r.length - prec);
+          int dig = int.parse(r[prec]);
+          bool up = dig >= 5;
+          if (up) {
+            List<int> rs = r.substring(0, prec).codeUnits.toList();
+            int i = rs.length - 1;
+            bool carry = true;
+            while (carry && i >= 0) {
+              int ls = rs[i];
+              if (ls == '9'.codeUnitAt(0)) {
+                rs[i] = '0'.codeUnitAt(0);
+              } else {
+                ls = ls + 1;
+                rs[i] = ls;
+                carry = false;
+              }
+              i--;
+            }
+            if (carry) {
+              r = "1" + String.fromCharCodes(rs);
+              d++; // because we added one at the start
+            } else {
+              r = String.fromCharCodes(rs);
+            }
+          } else {
+            r = r.substring(0, prec);
+          }
+        }
+      }
+
+      Decimal result = Decimal();
+      try {
+        result.setValueDecimal(r);
+      } catch (e) {
+        // won't happen
+      }
+
+      result.scientific = scientific || other.scientific;
+      // todo: the problem with this is you have to figure out the absolute
+      // precision and take the lower of the two, not the relative one
+      if (decimal < other.decimal) {
+        result.precision = precision;
+      } else if (other.decimal < decimal) {
+        result.precision = other.precision;
+      } else {
+        result.precision = min(precision, other.precision);
+      }
+      return result;
+    }
   }
 
   Decimal operator /(Decimal other) {
@@ -579,37 +743,32 @@ class Decimal {
 
   void limitPrecisionTo(Decimal other) {
     // Precision can't be greater than other
-    if (precision != null &&
-        other.precision != null &&
-        precision! > other.precision!) {
+    if (precision > other.precision) {
       precision = other.precision;
     }
   }
 
   void checkForCouldBeWholeNumber() {
     // Whole numbers have implied infinite precision, but we need to check for digit errors in the last couple of digits
-    if (precision != null &&
-        digits != null &&
-        precision! > 17 &&
-        digits!.length > 3) {
-      int i = digits!.length - 2;
-      String ch = digits![i]; // Second last character
+    if (precision > 17 && digits.length > 3) {
+      int i = digits.length - 2;
+      String ch = digits[i]; // Second last character
       if (ch == '9') {
-        while (i > 0 && digits![i - 1] == '9') {
+        while (i > 0 && digits[i - 1] == '9') {
           i--;
         }
-        if (i > 0 && i < digits!.length - 3) {
-          digits = digits!.substring(0, i - 1) +
-              String.fromCharCode(digits!.codeUnitAt(i - 1) + 1);
-          precision = digits!.length;
+        if (i > 0 && i < digits.length - 3) {
+          digits = digits.substring(0, i - 1) +
+              String.fromCharCode(digits.codeUnitAt(i - 1) + 1);
+          precision = digits.length;
         }
       } else if (ch == '0') {
-        while (i > 0 && digits![i - 1] == '0') {
+        while (i > 0 && digits[i - 1] == '0') {
           i--;
         }
-        if (i > 0 && i < digits!.length - 3) {
-          digits = digits!.substring(0, i);
-          precision = digits!.length;
+        if (i > 0 && i < digits.length - 3) {
+          digits = digits.substring(0, i);
+          precision = digits.length;
         }
       }
     }

@@ -71,7 +71,7 @@ class Lexer {
           isSymbol || !(ch!.compareTo('0') >= 0 && ch.compareTo('9') <= 0);
       inBrackets = checkBrackets(ch, inBrackets);
       ch = peekChar();
-      inBrackets = checkBrackets(ch!, inBrackets);
+      inBrackets = checkBrackets(ch, inBrackets);
       while (isValidSymbolChar(ch, !isSymbol || inBrackets, inBrackets)) {
         token = token! + ch!;
         isSymbol = isSymbol ||
@@ -79,7 +79,7 @@ class Lexer {
                 !(ch.compareTo('0') >= 0 && ch.compareTo('9') <= 0));
         index++;
         ch = peekChar();
-        inBrackets = checkBrackets(ch!, inBrackets);
+        inBrackets = checkBrackets(ch, inBrackets);
       }
       if (isSymbol) {
         type = TokenType.symbol;
@@ -92,15 +92,21 @@ class Lexer {
     }
   }
 
-  bool checkBrackets(String ch, bool inBrackets) {
-    if (ch == '[') if (inBrackets)
-      error("Nested [");
-    else
-      return true;
-    if (ch == ']') if (!inBrackets)
-      error("] without [");
-    else
-      return false;
+  bool checkBrackets(String? ch, bool inBrackets) {
+    if (ch == '[') {
+      if (inBrackets) {
+        error("Nested [");
+      } else {
+        return true;
+      }
+    }
+    if (ch == ']') {
+      if (!inBrackets) {
+        error("] without [");
+      } else {
+        return false;
+      }
+    }
     return inBrackets;
   }
 

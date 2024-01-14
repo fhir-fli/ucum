@@ -52,6 +52,9 @@ class Canonical {
   void divideValueInt(int divisor) {
     value = value / Decimal.fromInt(divisor);
   }
+
+  @override
+  String toString() => 'Canonical(value: $value, units: $units)';
 }
 
 class CanonicalUnit {
@@ -59,4 +62,7 @@ class CanonicalUnit {
   int exponent;
 
   CanonicalUnit(this.base, this.exponent);
+
+  @override
+  String toString() => 'CanonicalUnit(base: $base, exponent: $exponent)';
 }

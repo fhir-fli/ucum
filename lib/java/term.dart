@@ -78,4 +78,7 @@ class Term extends Component {
       setOp(null);
     }
   }
+
+  @override
+  String toString() => 'Term(Component: $comp, Operator: $op, Term: $term)';
 }

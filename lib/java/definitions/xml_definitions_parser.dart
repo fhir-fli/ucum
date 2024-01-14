@@ -71,7 +71,6 @@ class XmlDefinitionsParser implements DefinitionsProvider {
         }
       }
     }
-
     return ucumModel;
   }
 
@@ -84,20 +83,12 @@ class XmlDefinitionsParser implements DefinitionsProvider {
     var unit = DefinedUnit(
       code: element.getAttribute('Code')!,
       codeUC: element.getAttribute('CODE'),
-      property: '', // You may need to provide a default value for property
+      property: '',
       metric: element.getAttribute('isMetric') == 'yes',
       isSpecial: element.getAttribute('isSpecial') == 'yes',
       class_: element.getAttribute('class'),
       value: value,
     );
-
-    print('code: ${element.getAttribute('Code')}');
-    print('CODE: ${element.getAttribute('CODE')}');
-    print('');
-    print(element.getAttribute('isMetric'));
-    print(element.getAttribute('isSpecial'));
-    print(element.getAttribute('class'));
-    print(value);
 
     unit.metric = element.getAttribute('isMetric') == 'yes';
     unit.isSpecial = element.getAttribute('isSpecial') == 'yes';
@@ -109,18 +100,22 @@ class XmlDefinitionsParser implements DefinitionsProvider {
       unit.names.add(name.text);
     }
 
-    // Parse printSymbol and property
-    var printSymbol = element.findElements('printSymbol').first.text;
-    var property = element.findElements('property').first.text;
+    // Parse printSymbol and propert
+    final printSymbolList = element.findElements('printSymbol');
+    final propertyList = element.findElements('property');
+    var printSymbol =
+        printSymbolList.isEmpty ? null : printSymbolList.first.text;
+    var property = propertyList.isEmpty ? null : propertyList.first.text;
+
     unit.printSymbol = printSymbol;
-    unit.property = property;
+    if (property != null) {
+      unit.property = property;
+    }
 
     return unit;
   }
 
   Value parseValue(XmlElement x, String context) {
-    print(x);
-    print(context);
     Decimal? val;
     if (x.getAttribute('value') != null) {
       try {
@@ -134,10 +129,7 @@ class XmlDefinitionsParser implements DefinitionsProvider {
         throw UcumException('Error reading $context: ${e.toString()}');
       }
     }
-    print(x.getAttribute('Unit'));
-    print(x.getAttribute('UNIT'));
-    print('val: $val');
-    print('text: ${x.text}');
+
     final value = Value(
       unit: x.getAttribute('Unit')!,
       unitUC: x.getAttribute('UNIT'),
@@ -146,10 +138,7 @@ class XmlDefinitionsParser implements DefinitionsProvider {
     );
 
     value.text = x.text;
-    print(x.getAttribute('Unit'));
-    print(x.getAttribute('UNIT'));
-    print('val: $val');
-    print('text: ${x.text}');
+
     return value;
   }
 

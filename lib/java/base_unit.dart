@@ -36,10 +36,13 @@ class BaseUnit extends UcumUnit {
   String dim;
 
   /// Constructor for BaseUnit.
-  BaseUnit(
-      {required super.code,
-      required super.codeUC,
-      required super.property,
-      required this.dim})
-      : super(kind: ConceptKind.baseUnit);
+  BaseUnit({
+    required super.code,
+    required super.codeUC,
+    required super.property,
+    required this.dim,
+  }) : super(kind: ConceptKind.baseUnit);
+
+  @override
+  String toString() => 'BaseUnit(dim: $dim, ${super.toString()})';
 }

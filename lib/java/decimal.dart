@@ -319,8 +319,6 @@ class Decimal {
       }
     }
 
-    print('S1: $s1 - S2: $s2 - S3: $s3 - MAX: $max');
-
     Decimal result = Decimal();
     try {
       result.setValueDecimal(s3);
@@ -345,10 +343,12 @@ class Decimal {
 
   String cdig(int i) => (i + utf8.encode('0').first).toString();
 
+  String charDig(List<int> c) => utf8.decode(c);
+
   Decimal doSubtract(Decimal other) {
     int max = math.max(decimal, other.decimal);
-    String s1 = ('0' * (max - decimal + 1)) + digits;
-    String s2 = ('0' * (max - other.decimal + 1)) + other.digits;
+    String s1 = stringMultiply('0', max - decimal + 1) + digits;
+    String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
 
     if (s1.length < s2.length) {
       s1 = s1 + stringMultiply('0', s2.length - s1.length);
@@ -365,17 +365,19 @@ class Decimal {
     }
     s3 = stringSubtraction(s1, s2);
 
+    print('S3 $s3');
+
     if (s3.isNotEmpty && s3[0] == '1') {
       max++;
     } else {
-      s3 = delete(s3, 1, 0);
+      s3 = delete(s3, 0, 1);
     }
 
     if (max != s3.length) {
       if (max < 0) {
         throw Exception("Unhandled");
       } else if (max < s3.length) {
-        s3 = insert(".", s3, max);
+        s3 = insert('.', s3, max);
       } else {
         throw Exception("Unhandled");
       }
@@ -410,15 +412,18 @@ class Decimal {
       c = t ~/ 10;
     }
     assert(c == 0);
-    return result.join();
+    return charDig(result.map((e) => int.parse(e)).toList());
   }
 
   String stringSubtraction(String s1, String s2) {
     assert(s1.length == s2.length);
     List<String> result = List.filled(s2.length, '0');
+
     int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
       int t = c + dig(s1[i]) - dig(s2[i]);
+      print(t);
+
       if (t < 0) {
         t += 10;
         if (i == 0) {
@@ -427,10 +432,13 @@ class Decimal {
           s1 = replaceChar(s1, i - 1, cdig(dig(s1[i - 1]) - 1));
         }
       }
+
       result[i] = cdig(t);
     }
     assert(c == 0);
-    return result.join();
+
+    print(result);
+    return charDig(result.map((e) => int.parse(e)).toList());
   }
 
   String replaceChar(String s, int offset, String c) =>

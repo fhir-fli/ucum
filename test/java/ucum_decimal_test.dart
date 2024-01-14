@@ -357,7 +357,7 @@ void main() {
 
   group('testTruncate', () {
     String message = 'wrong trunc - ';
-    test(message, () {
+    test('trunc', () {
       expect('1', Decimal.fromString('1').trunc().asDecimal(), reason: message);
       expect('1', Decimal.fromString('1.01').trunc().asDecimal(),
           reason: message);
@@ -490,65 +490,67 @@ void main() {
     });
   });
 
-//    void testSubtract() throws UcumException {
-//       Decimal res = Decimal.fromString('2').subtract(Decimal.fromString('1'));
-//       String message = getAddSubMessage('2', '1', '1', '-', res);
-//       expect('1', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('2').subtract(Decimal.fromString('0'));
-//       message = getAddSubMessage('2', '0', '2', '-', res);
-//       expect('2', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('0').subtract(Decimal.fromString('0'));
-//       message = getAddSubMessage('0', '0', '0', '-', res);
-//       expect('0', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('0').subtract(Decimal.fromString('2'));
-//       message = getAddSubMessage('0', '2', '-2', '-', res);
-//       expect('-2', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('2').subtract(Decimal.fromString('2'));
-//       message = getAddSubMessage('2', '2', '0', '-', res);
-//       expect('0', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('1').subtract(Decimal.fromString('2'));
-//       message = getAddSubMessage('1', '2', '-1', '-', res);
-//       expect('-1', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('20').subtract(Decimal.fromString('1'));
-//       message = getAddSubMessage('20', '1', '19', '-', res);
-//       expect('19', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('2').subtract(Decimal.fromString('.1'));
-//       message = getAddSubMessage('2', '.1', '1.9', '-', res);
-//       expect('1.9', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('2').subtract(Decimal.fromString('.000001'));
-//       message = getAddSubMessage('2', '.000001', '1.999999', '-', res);
-//       expect('1.999999', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('2').subtract(Decimal.fromString('2.000001'));
-//       message = getAddSubMessage('2', '2.000001', '-0.000001', '-', res);
-//       expect('-0.000001', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('3.5').subtract(Decimal.fromString('35.5'));
-//       message = getAddSubMessage('3.5', '35.5', '-32.0', '-', res);
-//       expect('-32.0', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('5').subtract(Decimal.fromString('6'));
-//       message = getAddSubMessage('5', '6', '-1', '-', res);
-//       expect('-1', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('6').subtract(Decimal.fromString('5'));
-//       message = getAddSubMessage('6', '5', '1', '-', res);
-//       expect('1', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('5').subtract(Decimal.fromString('-6'));
-//       message = getAddSubMessage('5', '-6', '11', '-', res);
-//       expect('11', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('6').subtract(Decimal.fromString('-5'));
-//       message = getAddSubMessage('6', '-5', '11', '-', res);
-//       expect('11', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('-5').subtract(Decimal.fromString('6'));
-//       message = getAddSubMessage('-5', '6', '-11', '-', res);
-//       expect('-11', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('-6').subtract(Decimal.fromString('5'));
-//       message = getAddSubMessage('-6', '5', '-11', '-', res);
-//       expect('-11', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('-5').subtract(Decimal.fromString('-6'));
-//       message = getAddSubMessage('-5', '-6', '1', '-', res);
-//       expect('1', res.asDecimal(), reason: message);
-//       res = Decimal.fromString('-6').subtract(Decimal.fromString('-5'));
-//       message = getAddSubMessage('-6', '-5', '-1', '-', res);
-//       expect('-1', res.asDecimal(), reason: message);
-//   }
+  group('testSubtract', () {
+    test('testSubtract', () {
+      Decimal res = Decimal.fromString('2').subtract(Decimal.fromString('1'));
+      String message = getAddSubMessage('2', '1', '1', '-', res);
+      expect('1', res.asDecimal(), reason: message);
+      res = Decimal.fromString('2').subtract(Decimal.fromString('0'));
+      message = getAddSubMessage('2', '0', '2', '-', res);
+      expect('2', res.asDecimal(), reason: message);
+      res = Decimal.fromString('0').subtract(Decimal.fromString('0'));
+      message = getAddSubMessage('0', '0', '0', '-', res);
+      expect('0', res.asDecimal(), reason: message);
+      res = Decimal.fromString('0').subtract(Decimal.fromString('2'));
+      message = getAddSubMessage('0', '2', '-2', '-', res);
+      expect('-2', res.asDecimal(), reason: message);
+      res = Decimal.fromString('2').subtract(Decimal.fromString('2'));
+      message = getAddSubMessage('2', '2', '0', '-', res);
+      expect('0', res.asDecimal(), reason: message);
+      res = Decimal.fromString('1').subtract(Decimal.fromString('2'));
+      message = getAddSubMessage('1', '2', '-1', '-', res);
+      expect('-1', res.asDecimal(), reason: message);
+      res = Decimal.fromString('20').subtract(Decimal.fromString('1'));
+      message = getAddSubMessage('20', '1', '19', '-', res);
+      expect('19', res.asDecimal(), reason: message);
+      res = Decimal.fromString('2').subtract(Decimal.fromString('.1'));
+      message = getAddSubMessage('2', '.1', '1.9', '-', res);
+      expect('1.9', res.asDecimal(), reason: message);
+      res = Decimal.fromString('2').subtract(Decimal.fromString('.000001'));
+      message = getAddSubMessage('2', '.000001', '1.999999', '-', res);
+      expect('1.999999', res.asDecimal(), reason: message);
+      res = Decimal.fromString('2').subtract(Decimal.fromString('2.000001'));
+      message = getAddSubMessage('2', '2.000001', '-0.000001', '-', res);
+      expect('-0.000001', res.asDecimal(), reason: message);
+      res = Decimal.fromString('3.5').subtract(Decimal.fromString('35.5'));
+      message = getAddSubMessage('3.5', '35.5', '-32.0', '-', res);
+      expect('-32.0', res.asDecimal(), reason: message);
+      res = Decimal.fromString('5').subtract(Decimal.fromString('6'));
+      message = getAddSubMessage('5', '6', '-1', '-', res);
+      expect('-1', res.asDecimal(), reason: message);
+      res = Decimal.fromString('6').subtract(Decimal.fromString('5'));
+      message = getAddSubMessage('6', '5', '1', '-', res);
+      expect('1', res.asDecimal(), reason: message);
+      res = Decimal.fromString('5').subtract(Decimal.fromString('-6'));
+      message = getAddSubMessage('5', '-6', '11', '-', res);
+      expect('11', res.asDecimal(), reason: message);
+      res = Decimal.fromString('6').subtract(Decimal.fromString('-5'));
+      message = getAddSubMessage('6', '-5', '11', '-', res);
+      expect('11', res.asDecimal(), reason: message);
+      res = Decimal.fromString('-5').subtract(Decimal.fromString('6'));
+      message = getAddSubMessage('-5', '6', '-11', '-', res);
+      expect('-11', res.asDecimal(), reason: message);
+      res = Decimal.fromString('-6').subtract(Decimal.fromString('5'));
+      message = getAddSubMessage('-6', '5', '-11', '-', res);
+      expect('-11', res.asDecimal(), reason: message);
+      res = Decimal.fromString('-5').subtract(Decimal.fromString('-6'));
+      message = getAddSubMessage('-5', '-6', '1', '-', res);
+      expect('1', res.asDecimal(), reason: message);
+      res = Decimal.fromString('-6').subtract(Decimal.fromString('-5'));
+      message = getAddSubMessage('-6', '-5', '-1', '-', res);
+      expect('-1', res.asDecimal(), reason: message);
+    });
+  });
 
 //    void testMultiply() throws UcumException {
 //       Decimal res = Decimal.fromString('2').multiply(Decimal.fromString('2'));

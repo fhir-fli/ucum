@@ -1,7 +1,7 @@
 library org.fhir.ucum;
 
 import 'package:test/test.dart';
-import 'package:ucum/java.dart';
+import 'package:ucum/ucum.dart';
 
 void main() {
   group('testAsInteger', () {

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:ucum/java.dart';
+import 'package:ucum/ucum.dart';
 
 void main() {
   group('UcumIssue6_7Tests', () {

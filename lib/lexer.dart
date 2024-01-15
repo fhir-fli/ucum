@@ -30,7 +30,7 @@ import 'ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class Lexer {
-  static const int noChar = -1;
+  static const String noChar = '';
   late String source;
   int index = 0;
 
@@ -47,7 +47,8 @@ class Lexer {
     type = TokenType.none;
     start = index;
     if (index < source.length) {
-      var ch = nextChar();
+      String? ch = nextChar();
+      print(ch);
       if (ch != null &&
           (!(checkSingle(ch, '/', TokenType.solidus) ||
               checkSingle(ch, '.', TokenType.period) ||
@@ -75,7 +76,7 @@ class Lexer {
       while (isValidSymbolChar(ch, !isSymbol || inBrackets, inBrackets)) {
         token = token! + ch!;
         isSymbol = isSymbol ||
-            (ch != String.fromCharCode(noChar) &&
+            (ch != noChar &&
                 !(ch.compareTo('0') >= 0 && ch.compareTo('9') <= 0));
         index++;
         ch = peekChar();
@@ -162,9 +163,9 @@ class Lexer {
   }
 
   bool checkAnnotation(String? ch) {
-    if (ch == '{'.codeUnitAt(0)) {
-      var buffer = StringBuffer();
-      while (ch != '}'.codeUnitAt(0)) {
+    if (ch == '{') {
+      StringBuffer buffer = StringBuffer();
+      while (ch != '}') {
         ch = nextChar();
         if (ch != null) {
           if (!Utilities.isAsciiChar(ch)) {

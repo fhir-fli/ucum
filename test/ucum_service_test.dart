@@ -15,7 +15,7 @@ void main() {
 }
 
 Future<UcumService> getUcumEssenceService() async {
-  final fileName = 'lib/java/resources/ucum-essence.xml';
+  final fileName = 'lib/resources/ucum-essence.xml';
   final ucumService = await UcumEssenceService.fromFile(fileName);
   return ucumService;
 }

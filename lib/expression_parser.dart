@@ -39,7 +39,7 @@ class ExpressionParser {
     Term res = parseTerm(lexer, true);
     if (!lexer.finished()) {
       throw UcumException(
-          "Expression was not parsed completely. Syntax Error?");
+          "Expression was not parsed completely. Syntax Error? - Code: $code");
     }
     return res;
   }

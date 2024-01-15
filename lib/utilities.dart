@@ -56,8 +56,11 @@ abstract class Utilities {
   }
 
   static bool isAsciiChar(String ch) {
-    if (ch.length != 1) return false;
-    int codeUnit = ch.codeUnitAt(0);
-    return codeUnit >= 32 && codeUnit <= 126;
+    if (ch.length != 1) {
+      return false;
+    } else {
+      int codeUnit = ch.codeUnitAt(0);
+      return codeUnit >= 32 && codeUnit <= 126;
+    }
   }
 }

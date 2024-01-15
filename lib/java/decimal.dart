@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:math' as math;
-import 'dart:math';
 
 import 'ucum_exception.dart';
 import 'utilities.dart';
@@ -336,14 +334,9 @@ class Decimal {
     return result;
   }
 
-  int dig(String c) {
-    assert(c.length == 1);
-    return utf8.encode(c).first - utf8.encode('0').first;
-  }
+  int dig(String c) => c.codeUnitAt(0) - '0'.codeUnitAt(0);
 
-  String cdig(int i) => (i + utf8.encode('0').first).toString();
-
-  String charDig(List<int> c) => utf8.decode(c);
+  String cdig(int i) => String.fromCharCode(i + '0'.codeUnitAt(0));
 
   Decimal doSubtract(Decimal other) {
     int max = math.max(decimal, other.decimal);
@@ -363,9 +356,8 @@ class Decimal {
       s2 = s1;
       s1 = s3;
     }
-    s3 = stringSubtraction(s1, s2);
 
-    print('S3 $s3');
+    s3 = stringSubtraction(s1, s2);
 
     if (s3.isNotEmpty && s3[0] == '1') {
       max++;
@@ -412,7 +404,7 @@ class Decimal {
       c = t ~/ 10;
     }
     assert(c == 0);
-    return charDig(result.map((e) => int.parse(e)).toList());
+    return result.join();
   }
 
   String stringSubtraction(String s1, String s2) {
@@ -421,9 +413,7 @@ class Decimal {
 
     int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
-      int t = c + dig(s1[i]) - dig(s2[i]);
-      print(t);
-
+      int t = c + (dig(s1[i]) - dig(s2[i]));
       if (t < 0) {
         t += 10;
         if (i == 0) {
@@ -432,17 +422,19 @@ class Decimal {
           s1 = replaceChar(s1, i - 1, cdig(dig(s1[i - 1]) - 1));
         }
       }
-
       result[i] = cdig(t);
     }
     assert(c == 0);
-
-    print(result);
-    return charDig(result.map((e) => int.parse(e)).toList());
+    return result.join();
   }
 
-  String replaceChar(String s, int offset, String c) =>
-      s.replaceRange(offset, offset + 1, c);
+  String replaceChar(String s, int offset, String c) {
+    if (offset == 0) {
+      return '$c${s.substring(1)}';
+    } else {
+      return '${s.substring(0, offset)}$c${s.substring(offset + 1)}';
+    }
+  }
 
   Decimal multiply(Decimal other) {
     if (isZero() || other.isZero()) {
@@ -555,18 +547,18 @@ class Decimal {
       throw UcumException("Attempt to divide $toString() by zero");
     } else {
       String s = "0" + other.digits;
-      int digitsLength = digits.length;
-      int otherDigitsLength = other.digits.length;
-      int m = max(digitsLength, otherDigitsLength) + 40; // max loops we'll do
+      int m = math.max(digits.length, other.digits.length) +
+          40; // max loops we'll do
       List<String> tens = List<String>.filled(10, "");
       tens[0] = stringAddition(stringMultiply('0', s.length), s);
-      for (int i = 1; i < 10; i++) tens[i] = stringAddition(tens[i - 1], s);
-
+      for (int i = 1; i < 10; i++) {
+        tens[i] = stringAddition(tens[i - 1], s);
+      }
       String v = digits;
       String r = "";
       int l = 0;
-      int d = (digitsLength - decimal + 1) -
-          (otherDigitsLength - other.decimal + 1);
+      int d = (digits.length - decimal + 1) -
+          (other.digits.length - other.decimal + 1);
 
       while (v.length < tens[0].length) {
         v = v + "0";
@@ -575,15 +567,15 @@ class Decimal {
 
       String w;
       int vi;
-      if (v.substring(0, otherDigitsLength).compareTo(other.digits) < 0) {
+      if (v.substring(0, other.digits.length).compareTo(other.digits) < 0) {
         if (v.length == tens[0].length) {
           v = v + '0';
           d++;
         }
-        w = v.substring(0, otherDigitsLength + 1);
+        w = v.substring(0, other.digits.length + 1);
         vi = w.length;
       } else {
-        w = "0" + v.substring(0, otherDigitsLength);
+        w = "0" + v.substring(0, other.digits.length);
         vi = w.length - 1;
       }
 
@@ -591,7 +583,8 @@ class Decimal {
       bool proc;
 
       while (!(handled &&
-          ((l > m) || ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+          ((l > m) ||
+              ((vi >= v.length) && (Utilities.noString(w) || allZeros(w)))))) {
         l++;
         handled = true;
         proc = false;
@@ -602,8 +595,10 @@ class Decimal {
             w = trimLeadingZeros(stringSubtraction(w, tens[i]));
             if (!(handled &&
                 ((l > m) ||
-                    ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+                    ((vi >= v.length) &&
+                        (Utilities.noString(w) || allZeros(w)))))) {
               if (vi < v.length) {
+                // todo
                 w = w + v[vi];
                 vi++;
                 handled = false;
@@ -611,17 +606,21 @@ class Decimal {
                 w = w + '0';
                 d++;
               }
-              while (w.length < tens[0].length) w = '0' + w;
+              while (w.length < tens[0].length) {
+                w = '0' + w;
+              }
             }
             break;
           }
         }
         if (!proc) {
           assert(w[0] == '0');
-          w = w.substring(1);
-          r = r + "0";
+          w = delete(w, 0, 1);
+          r = r + '0';
           if (!(handled &&
-              ((l > m) || ((vi >= v.length) && (w.isEmpty || allZeros(w)))))) {
+              ((l > m) ||
+                  ((vi >= v.length) &&
+                      (Utilities.noString(w) || allZeros(w)))))) {
             if (vi < v.length) {
               w = w + v[vi];
               vi++;
@@ -630,7 +629,9 @@ class Decimal {
               w = w + '0';
               d++;
             }
-            while (w.length < tens[0].length) w = '0' + w;
+            while (w.length < tens[0].length) {
+              w = '0' + w;
+            }
           }
         }
       }
@@ -639,27 +640,27 @@ class Decimal {
 
       if (isWholeNumber() && other.isWholeNumber() && (l < m)) {
         for (int i = 0; i < d; i++) {
-          if (r.endsWith('0')) {
-            r = r.substring(0, r.length - 1);
+          if (r[r.length - 1] == '0') {
+            r = delete(r, r.length - 1, 1);
             d--;
           }
         }
         prec = 100;
       } else {
         if (isWholeNumber() && other.isWholeNumber()) {
-          prec = max(digitsLength, otherDigitsLength);
+          prec = math.max(digits.length, other.digits.length);
         } else if (isWholeNumber()) {
-          prec = max(other.precision, r.length - d);
+          prec = math.max(other.precision, r.length - d);
         } else if (other.isWholeNumber()) {
-          prec = max(precision, r.length - d);
+          prec = math.max(precision, r.length - d);
         } else {
-          prec = max(min(precision, other.precision), r.length - d);
+          prec = math.max(math.min(precision, other.precision), r.length - d);
         }
 
         if (r.length > prec) {
           d = d - (r.length - prec);
-          int dig = int.parse(r[prec]);
-          bool up = dig >= 5;
+          int digit = r[prec].codeUnitAt(0);
+          bool up = digit >= '5'.codeUnitAt(0);
           if (up) {
             List<int> rs = r.substring(0, prec).codeUnits.toList();
             int i = rs.length - 1;
@@ -688,22 +689,11 @@ class Decimal {
       }
 
       Decimal result = Decimal();
-      try {
-        result.setValueDecimal(r);
-      } catch (e) {
-        // won't happen
-      }
-
+      result.setValueDecimal(r);
+      result.decimal = r.length - d;
+      result.negative = negative != other.negative;
+      result.precision = prec;
       result.scientific = scientific || other.scientific;
-      // todo: the problem with this is you have to figure out the absolute
-      // precision and take the lower of the two, not the relative one
-      if (decimal < other.decimal) {
-        result.precision = precision;
-      } else if (other.decimal < decimal) {
-        result.precision = other.precision;
-      } else {
-        result.precision = min(precision, other.precision);
-      }
       return result;
     }
   }

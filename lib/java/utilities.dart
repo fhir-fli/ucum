@@ -27,7 +27,7 @@
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Utilities {
+abstract class Utilities {
   static bool isWhitespace(String s) {
     return s.runes
         .every((int rune) => String.fromCharCode(rune).trim().isEmpty);

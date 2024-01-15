@@ -206,9 +206,6 @@ class UcumEssenceService implements UcumService {
       return value;
     }
 
-    print(ExpressionParser(model).parse(sourceUnit));
-    print(ExpressionParser(model).parse(destUnit));
-
     Canonical src = Converter(model, handlers)
         .convert(ExpressionParser(model).parse(sourceUnit));
     Canonical dst = Converter(model, handlers)

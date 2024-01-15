@@ -48,7 +48,6 @@ class Converter {
     Term? t = term;
     while (t != null) {
       if (t.comp is Term) {
-        print('tcomp is term');
         Canonical temp = normaliseTerm(indent + "  ", t.comp as Term);
         if (div) {
           result.value = result.value.divide(temp.value);
@@ -60,17 +59,14 @@ class Converter {
         }
         result.units.addAll(temp.units);
       } else if (t.comp is Factor) {
-        print('tcomp is factor');
         if (div) {
           result.value = result.value.divideInt((t.comp as Factor).value);
         } else {
           result.value = result.value.multiplyInt((t.comp as Factor).value);
         }
       } else if (t.comp is Symbol) {
-        print('tcomp is symbol');
         Symbol o = t.comp as Symbol;
         Canonical temp = normaliseSymbol(indent, o);
-        print('TEMP: $temp');
         if (div) {
           result.value = result.value.divide(temp.value);
           for (var c in temp.units) {
@@ -118,11 +114,9 @@ class Converter {
         Canonical(Decimal.fromString("1.000000000000000000000000000000"));
 
     if (sym.exponent != null) {
-      print('exponent does not equal null');
       if (sym.unit is BaseUnit) {
         result.units.add(CanonicalUnit(sym.unit as BaseUnit, sym.exponent!));
       } else {
-        print('not a base unit');
         Canonical can = expandDefinedUnit(indent, sym.unit as DefinedUnit);
         for (var c in can.units) {
           c.exponent = c.exponent * sym.exponent!;

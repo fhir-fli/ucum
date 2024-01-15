@@ -425,7 +425,6 @@ void main() {
   group('testAddition', () {
     test('testAddition', () {
       Decimal res = Decimal.fromString('1').add(Decimal.fromString('1'));
-      print(res);
       String message = getAddSubMessage('1', '1', '2', '+', res);
       expect('2', res.asDecimal(), reason: message);
       res = Decimal.fromString('0').add(Decimal.fromString('1'));

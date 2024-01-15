@@ -4,120 +4,101 @@ import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 
 void main() {
-  group('ucumCommonUnitTests', () {
+  group('UCUM Common Unit Tests: ', () {
+    // TODO: In the Java tests, the print statements below also print out, so
+    //it's unclear to me if they are errors or just making notations
+
     late UcumService ucumService;
 
     setUpAll(() async {
       ucumService = await getUcumEssenceService();
     });
 
-    test('analyze', () {
+    test('Analyze', () {
       for (CommonUnit cu in units) {
-        print(cu);
-        ucumService.analyse(cu.unit);
+        try {
+          ucumService.analyse(cu.unit);
+          expect(true, true);
+        } catch (e) {
+          expect(true, false);
+        }
+      }
+    });
+
+    test('Canonical', () {
+      Set<String> set = <String>{};
+      for (CommonUnit cu in units) {
+        // BUG?
+        if ('db' == cu.unit) continue;
+        String can = ucumService.getCanonicalUnits(cu.unit);
+        if (null != cu.can) {
+          expect(cu.can, can, reason: cu.unit);
+        } else if (set.add('${cu.dim ?? ""} -> $can') && cu.dim != null) {
+          print('${cu.dim ?? ""} -> $can\t\t${cu.unit}');
+        }
+      }
+    });
+
+    test('Convert', () {
+      Decimal ONE = Decimal.fromString('1', 15);
+      for (CommonUnit cu in units) {
+        // BUG: avoid NPE
+        if ('Cel' == cu.unit || '[degF]' == cu.unit || '[pH]' == cu.unit)
+          continue;
+        // maybe bug? avoid UnumException
+        if ('dB' == cu.unit) continue;
+        try {
+          String can = ucumService.getCanonicalUnits(cu.unit);
+          if ('' != can) ucumService.convert(ONE, cu.unit, can);
+        } catch (x) {
+          expect(true, false, reason: '${cu.unit}: $x');
+        }
+      }
+    });
+
+    test('Convert2', () {
+      void convertAll(List<CommonUnit> list) {
+        Decimal K = Decimal.fromString('2.3', 15);
+        for (CommonUnit a in list) {
+          for (CommonUnit b in list) {
+            try {
+              // BUG?
+              if ('[pH]' == a.unit) continue;
+              if ('Cel' == a.unit || '[degF]' == a.unit) continue;
+              ucumService.convert(K, a.unit, b.unit);
+            } catch (x) {
+              print('${a.unit}->${b.unit} : $x');
+            }
+          }
+        }
+      }
+
+      Map<String, List<CommonUnit>> map = <String, List<CommonUnit>>{};
+      for (CommonUnit cu in units) {
+        // BUG?
+        if ('dB' == cu.unit) continue;
+        String can = ucumService.getCanonicalUnits(cu.unit);
+        if ('' == can) continue;
+        if (!map.containsKey(can)) {
+          map[can] = <CommonUnit>[];
+        }
+        map[can]!.add(cu);
+      }
+      for (String can in map.keys) {
+        List<CommonUnit> list = map[can]!;
+        convertAll(list);
+      }
+    });
+
+    test('Duplicates', () {
+      Set<String> set = <String>{};
+      for (CommonUnit cu in units) {
+        if (!set.add(cu.unit)) {
+          print('DUPLICATE: ${cu.unit}');
+        }
       }
     });
   });
-
-  // @Test
-  // public void canonical() throws UcumException
-  // {
-  //     Set<String> set =  HashSet<>();
-  //     for (CommonUnit cu : units)
-  //     {
-  //         // BUG?
-  //         if ("dB".equals(cu.unit))
-  //             continue;
-  //         String can = ucumService.getCanonicalUnits(cu.unit);
-  //         if (null != cu.can)
-  //             assertEquals(cu.can, can,cu.unit);
-  //         else if (set.add(cu.dim+" -> "+can) && cu.dim != null)
-  //             System.out.println(cu.dim+" -> "+can + "\t\t" + cu.unit);
-  //     }
-  // }
-
-  // @Test
-  // public void convert() throws UcumException
-  // {
-  //     Decimal ONE =  Decimal("1",15);
-  //     for (CommonUnit cu : units)
-  //     {
-  //         // BUG: avoid NPE
-  //         if ("Cel".equals(cu.unit) || "[degF]".equals(cu.unit) || "[pH]".equals(cu.unit))
-  //             continue;
-  //         // maybe bug? avoid UnumException
-  //         if ("dB".equals(cu.unit))
-  //             continue;
-  //         try
-  //         {
-  //             String can = ucumService.getCanonicalUnits(cu.unit);
-  //             if (null != can && !"".equals(can))
-  //                 ucumService.convert(ONE, cu.unit, can);
-  //         }
-  //         catch (Exception x)
-  //         {
-  //             fail(cu.unit + ": " + x.getMessage());
-  //         }
-  //     }
-  // }
-
-  // @Test
-  // public void convert2() throws UcumException
-  // {
-  //     Map<String, List<CommonUnit>> map =  HashMap<>();
-  //     for (CommonUnit cu : units)
-  //     {
-  //         // BUG?
-  //         if ("dB".equals(cu.unit))
-  //             continue;
-  //         String can = ucumService.getCanonicalUnits(cu.unit);
-  //         if (null == can || "".equals(can))
-  //             continue;
-  //         if (!map.containsKey(can))
-  //             map.put(can,  ArrayList<>());
-  //         map.get(can).add(cu);
-  //     }
-  //     for (String can : map.keySet())
-  //     {
-  //         List<CommonUnit> list = map.get(can);
-  //         convertAll(list);
-  //     }
-  // }
-
-  // private void convertAll(List<CommonUnit> list) throws UcumException
-  // {
-  //     Decimal K =  Decimal("2.3", 15);
-  //     for (CommonUnit a : list)
-  //     {
-  //         for (CommonUnit b : list)
-  //         {
-  //             try
-  //             {
-  //                 // BUG?
-  //                 if ("[pH]".equals(a.unit))
-  //                     continue;
-  //                 if ("Cel".equals(a.unit) || "[degF]".equals(a.unit))
-  //                     continue;
-  //                 ucumService.convert(K, a.unit, b.unit);
-  //             }
-  //             catch (Exception x)
-  //             {
-  //                 System.out.println(a.unit + "->" + b.unit + " : " + (x.getMessage()==null ? x.toString() : x.getMessage()));
-  //             }
-  //         }
-  //     }
-  // }
-
-  // //@Test
-  // public void duplicates()
-  // {
-  //     HashSet<String> set =  HashSet<>();
-  //     for (CommonUnit cu : units)
-  //     {
-  //         if (!set.add(cu.unit))
-  //             System.out.println("DUPLICATE: " + cu.unit);
-  //     }
-  // }
 }
 
 class CommonUnit {

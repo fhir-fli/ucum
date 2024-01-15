@@ -34,7 +34,14 @@ class Lexer {
   late String source;
   int index = 0;
 
-  String? token;
+  String? _token;
+
+  String? get token => _token;
+
+  set token(String? token) {
+    _token = token;
+  }
+
   TokenType? type;
   late int start;
 
@@ -48,7 +55,6 @@ class Lexer {
     start = index;
     if (index < source.length) {
       String? ch = nextChar();
-      print(ch);
       if (ch != null &&
           (!(checkSingle(ch, '/', TokenType.solidus) ||
               checkSingle(ch, '.', TokenType.period) ||

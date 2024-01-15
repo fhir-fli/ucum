@@ -179,10 +179,10 @@ class Converter {
   }
 
   void debugTerm(String indent, String state, Term unit) {
-    print(indent + state + ": " + ExpressionComposer().compose(unit));
+    // print(indent + state + ": " + ExpressionComposer().compose(unit));
   }
 
   void debugCanonical(String indent, String state, Canonical can) {
-    print(indent + state + ": " + ExpressionComposer().composeCanonical(can));
+    // print(indent + state + ": " + ExpressionComposer().composeCanonical(can));
   }
 }

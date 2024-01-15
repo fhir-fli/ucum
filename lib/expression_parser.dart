@@ -53,28 +53,30 @@ class ExpressionParser {
       lexer.consume();
       res.setTerm(parseTerm(lexer, false));
     } else {
+      /// TODO(this does not exactly mirror Java, but passes tests)
       if (lexer.type == TokenType.annotation) {
         // Handle annotation - assuming it's skipped or processed elsewhere
         res.setComp(Factor(1)); // Example handling, might need to be adjusted
         lexer.consume();
       } else {
         res.setComp(parseComp(lexer));
-
-        if (lexer.type != TokenType.none && lexer.type != TokenType.close) {
-          if (lexer.type == TokenType.solidus) {
-            res.setOp(Operator.division);
-            lexer.consume();
-          } else if (lexer.type == TokenType.period) {
-            res.setOp(Operator.multiplication);
-            lexer.consume();
-          } else if (lexer.type == TokenType.annotation) {
-            res.setOp(Operator.multiplication); // Implicit multiplication
-          } else {
-            lexer.error("Expected '/' or '.'");
-          }
-          res.setTerm(parseTerm(lexer, false));
-        }
       }
+
+      if (lexer.type != TokenType.none && lexer.type != TokenType.close) {
+        if (lexer.type == TokenType.solidus) {
+          res.setOp(Operator.division);
+          lexer.consume();
+        } else if (lexer.type == TokenType.period) {
+          res.setOp(Operator.multiplication);
+          lexer.consume();
+        } else if (lexer.type == TokenType.annotation) {
+          res.setOp(Operator.multiplication); // Implicit multiplication
+        } else {
+          lexer.error("Expected '/' or '.'");
+        }
+        res.setTerm(parseTerm(lexer, false));
+      }
+      // }
     }
     return res;
   }

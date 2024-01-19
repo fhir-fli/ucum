@@ -29,7 +29,7 @@
 
 library org.fhir.ucum;
 
-import 'ucum.dart';
+import '../ucum.dart';
 
 class BaseUnit extends UcumUnit {
   /// Abbreviation for property.

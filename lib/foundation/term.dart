@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
@@ -29,27 +29,32 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Prefix extends UcumConcept {
-  Decimal value; // 1^-24 through to 1^24
+class Term extends Component {
+  Component? comp;
+  Operator? op;
+  Term? term;
 
-  Prefix({
-    required super.code,
-    required super.codeUC,
-    required this.value,
-    String? name,
-    super.printSymbol,
-  }) : super(kind: ConceptKind.prefix, names: name == null ? null : [name]);
+  Term();
 
-  @override
-  String getDescription() {
-    return super.getDescription() + " = " + value.toString();
+  bool hasComp() {
+    return comp != null;
   }
 
-  Map<String, dynamic> toJson() => {
-        'code': code,
-        'CODE': codeUC,
-        'value': value.toString(),
-        'name': names.isEmpty ? null : names.first,
-        'printSymbol': printSymbol,
-      };
+  bool hasOp() {
+    return op != null;
+  }
+
+  bool hasTerm() {
+    return term != null;
+  }
+
+  void setTermCheckOp(Term? term) {
+    this.term = term;
+    if (term == null) {
+      this.op = null;
+    }
+  }
+
+  @override
+  String toString() => 'Term(Component: $comp, Operator: $op, Term: $term)';
 }

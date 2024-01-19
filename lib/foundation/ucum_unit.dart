@@ -1,5 +1,3 @@
-import 'ucum.dart';
-
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -29,46 +27,26 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class DefinedUnit extends UcumUnit {
-  bool? metric;
-  bool? isSpecial;
-  String? class_;
-  Value value;
+library org.fhir.ucum;
 
-  DefinedUnit({
+import '../ucum.dart';
+
+abstract class UcumUnit extends UcumConcept {
+  /// Kind of thing this base unit represents.
+  String property;
+  bool? metric;
+
+  UcumUnit({
+    required super.kind,
     required super.code,
     required super.codeUC,
-    required super.property,
-    required this.metric,
-    required this.isSpecial,
-    this.class_,
-    required this.value,
-    String? name,
-    List<String>? synonyms,
+    required this.property,
+    this.metric,
+    super.names,
     super.printSymbol,
-  }) : super(
-            kind: ConceptKind.unit,
-            names: name != null || (synonyms != null && synonyms.isNotEmpty)
-                ? [
-                    if (name != null) name,
-                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
-                  ]
-                : null);
+  });
 
+  /// Method to get the description.
   @override
-  String getDescription() {
-    return super.getDescription() + " = " + value.getDescription();
-  }
-
-  Map<String, dynamic> toJson() => {
-        'code': code,
-        'CODE': codeUC,
-        'value': value.toJson(),
-        'property': property,
-        'isMetric': metric,
-        'isSpecial': isSpecial,
-        'class': class_,
-        'name': names,
-        'printSymbol': printSymbol,
-      };
+  String getDescription() => super.getDescription() + " ($property)";
 }

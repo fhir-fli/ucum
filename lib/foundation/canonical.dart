@@ -1,5 +1,3 @@
-import 'ucum.dart';
-
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -29,26 +27,42 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Value {
-  String? unit;
-  String? unitUC;
-  Decimal? value;
-  String? text;
+library org.fhir.ucum;
 
-  Value({this.unit, this.unitUC, this.value, this.text});
+import '../ucum.dart';
 
-  String getDescription() {
-    return '${value.toString()}$unit';
+class Canonical {
+  Decimal value;
+  List<CanonicalUnit> units = [];
+
+  Canonical(this.value);
+
+  void multiplyValueDecimal(Decimal multiplicand) {
+    value = value * multiplicand;
+  }
+
+  void multiplyValueInt(int multiplicand) {
+    value = value * Decimal.fromInt(multiplicand);
+  }
+
+  void divideValueDecimal(Decimal divisor) {
+    value = value / divisor;
+  }
+
+  void divideValueInt(int divisor) {
+    value = value / Decimal.fromInt(divisor);
   }
 
   @override
-  String toString() =>
-      'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
+  String toString() => 'Canonical(value: $value, units: $units)';
+}
 
-  Map<String, dynamic> toJson() => {
-        'unit': unit,
-        'UNIT': unitUC,
-        'value': value?.asDecimal(),
-        'text': text,
-      };
+class CanonicalUnit {
+  BaseUnit base;
+  int exponent;
+
+  CanonicalUnit(this.base, this.exponent);
+
+  @override
+  String toString() => 'CanonicalUnit(base: $base, exponent: $exponent)';
 }

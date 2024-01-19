@@ -1,3 +1,5 @@
+import '../ucum.dart';
+
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -27,42 +29,46 @@
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-library org.fhir.ucum;
+class DefinedUnit extends UcumUnit {
+  bool? metric;
+  bool? isSpecial;
+  String? class_;
+  Value value;
 
-import 'ucum.dart';
-
-class Canonical {
-  Decimal value;
-  List<CanonicalUnit> units = [];
-
-  Canonical(this.value);
-
-  void multiplyValueDecimal(Decimal multiplicand) {
-    value = value * multiplicand;
-  }
-
-  void multiplyValueInt(int multiplicand) {
-    value = value * Decimal.fromInt(multiplicand);
-  }
-
-  void divideValueDecimal(Decimal divisor) {
-    value = value / divisor;
-  }
-
-  void divideValueInt(int divisor) {
-    value = value / Decimal.fromInt(divisor);
-  }
-
-  @override
-  String toString() => 'Canonical(value: $value, units: $units)';
-}
-
-class CanonicalUnit {
-  BaseUnit base;
-  int exponent;
-
-  CanonicalUnit(this.base, this.exponent);
+  DefinedUnit({
+    required super.code,
+    required super.codeUC,
+    required super.property,
+    required this.metric,
+    required this.isSpecial,
+    this.class_,
+    required this.value,
+    String? name,
+    List<String>? synonyms,
+    super.printSymbol,
+  }) : super(
+            kind: ConceptKind.unit,
+            names: name != null || (synonyms != null && synonyms.isNotEmpty)
+                ? [
+                    if (name != null) name,
+                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
+                  ]
+                : null);
 
   @override
-  String toString() => 'CanonicalUnit(base: $base, exponent: $exponent)';
+  String getDescription() {
+    return super.getDescription() + " = " + value.getDescription();
+  }
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'CODE': codeUC,
+        'value': value.toJson(),
+        'property': property,
+        'isMetric': metric,
+        'isSpecial': isSpecial,
+        'class': class_,
+        'name': names,
+        'printSymbol': printSymbol,
+      };
 }

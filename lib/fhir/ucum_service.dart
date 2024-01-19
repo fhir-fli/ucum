@@ -1,18 +1,31 @@
 import 'dart:io';
 
-import 'resources/ucum_json_defs.dart';
-
-import 'ucum.dart'; // Import for File operations
+import '../ucum.dart'; // Import for File operations
 
 // UcumService implements the UcumService interface
 class UcumService {
+  // Private constructor
+  UcumService._();
+
+  factory UcumService() => _ucumService;
+
+  static final UcumService _ucumService = UcumService._();
+
   static const String ucumOid = '2.16.840.1.113883.6.8';
 
   late UcumModel model;
   Registry handlers = Registry();
 
-  // Private constructor
-  UcumService._();
+  factory UcumService.fromJson() {
+    try {
+      var parser = JsonDefinitionsParser();
+      var model = parser.parse(ucumJsonDefs);
+      model = model;
+      return UcumService();
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 
   static Future<UcumService> fromFile(String filepath) async {
     var file = File(filepath);
@@ -22,16 +35,6 @@ class UcumService {
     try {
       var parser = XmlDefinitionsParser();
       var model = await parser.parse(filepath);
-      return UcumService._()..model = model;
-    } catch (e) {
-      throw UcumException(e.toString());
-    }
-  }
-
-  static UcumService fromJson() {
-    try {
-      var parser = JsonDefinitionsParser();
-      var model = parser.parse(ucumJsonDefs);
       return UcumService._()..model = model;
     } catch (e) {
       throw UcumException(e.toString());
@@ -175,8 +178,9 @@ class UcumService {
     Term term = ExpressionParser(model).parse(value.code);
     Canonical c = Converter(model, handlers).convert(term);
     Pair p;
-    p = Pair(value.value.multiply(c.value),
-        ExpressionComposer().composeCanonical(c, false));
+    p = Pair(
+        value: value.value.multiply(c.value),
+        code: ExpressionComposer().composeCanonical(c, false));
     if (value.value.isWholeNumber()) {
       p.value.checkForCouldBeWholeNumber();
     }
@@ -223,7 +227,7 @@ class UcumService {
         (divisor.code.contains("/") || divisor.code.contains("*")
             ? "(${divisor.code})"
             : divisor.code);
-    Pair res = Pair(dividend.value.divide(divisor.value), code);
+    Pair res = Pair(value: dividend.value.divide(divisor.value), code: code);
     return getCanonicalForm(res);
   }
 
@@ -243,7 +247,7 @@ class UcumService {
     try {
       var resultValue = o1.value.multiply(o2.value);
       var resultCode = '${o1.code}.${o2.code}';
-      Pair result = Pair(resultValue, resultCode);
+      Pair result = Pair(value: resultValue, code: resultCode);
       return getCanonicalForm(result);
     } catch (e) {
       throw UcumException(e.toString());
@@ -257,7 +261,7 @@ class UcumService {
     if (isComparable(value1.code, value2.code)) {
       final Decimal value2Decimal =
           convert(value2.value, value2.code, value1.code);
-      value2 = ValidatedQuantity(value2Decimal, value1.code);
+      value2 = ValidatedQuantity(value: value2Decimal, code: value1.code);
       return value1.value.equalsValue(value2.value);
     } else {
       return false;

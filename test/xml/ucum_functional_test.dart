@@ -42,10 +42,12 @@ Future<void> main() async {
     String? vRes = x.getAttribute("vRes");
     String? uRes = x.getAttribute("uRes");
 
-    Pair? o1 =
-        v1 != null && u1 != null ? Pair(Decimal.fromString(v1), u1) : null;
-    Pair? o2 =
-        v2 != null && u2 != null ? Pair(new Decimal.fromString(v2), u2) : null;
+    Pair? o1 = v1 != null && u1 != null
+        ? Pair(value: Decimal.fromString(v1), code: u1)
+        : null;
+    Pair? o2 = v2 != null && u2 != null
+        ? Pair(value: Decimal.fromString(v2), code: u2)
+        : null;
     if (o1 != null && o2 != null) {
       Pair o3 = ucumServiceTest.ucumService.multiply(o1, o2);
 
@@ -70,10 +72,12 @@ Future<void> main() async {
     String? vRes = x.getAttribute("vRes");
     String? uRes = x.getAttribute("uRes");
 
-    Pair? o1 =
-        v1 != null && u1 != null ? Pair(Decimal.fromString(v1), u1) : null;
-    Pair? o2 =
-        v2 != null && u2 != null ? Pair(new Decimal.fromString(v2), u2) : null;
+    Pair? o1 = v1 != null && u1 != null
+        ? Pair(value: Decimal.fromString(v1), code: u1)
+        : null;
+    Pair? o2 = v2 != null && u2 != null
+        ? Pair(value: Decimal.fromString(v2), code: u2)
+        : null;
     if (o1 != null && o2 != null) {
       Pair o3 = ucumServiceTest.ucumService.divideBy(o1, o2);
 

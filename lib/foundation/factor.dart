@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 library org.fhir.ucum;
 
-import 'ucum.dart';
+import '../ucum.dart';
 
 class Factor extends Component {
   int value;

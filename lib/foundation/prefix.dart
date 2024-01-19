@@ -1,3 +1,5 @@
+import '../ucum.dart';
+
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -27,39 +29,27 @@
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-library org.fhir.ucum;
+class Prefix extends UcumConcept {
+  Decimal value; // 1^-24 through to 1^24
 
-import 'ucum.dart';
-
-class UcumConcept {
-  ConceptKind kind;
-
-  /// Case sensitive code for this concept.
-  String code;
-
-  /// Case insensitive code for this concept.
-  String? codeUC;
-
-  /// Print symbol for this code.
-  String? printSymbol;
-
-  /// Names for the concept.
-  List<String> names;
-
-  UcumConcept(
-      {required this.kind,
-      required this.code,
-      this.codeUC,
-      this.printSymbol,
-      List<String>? names})
-      : names = names ?? [];
-
-  String getDescription() {
-    return '${kind.toString().toLowerCase()} $code (\'${names.isNotEmpty ? names.first : ""}\')';
-  }
+  Prefix({
+    required super.code,
+    required super.codeUC,
+    required this.value,
+    String? name,
+    super.printSymbol,
+  }) : super(kind: ConceptKind.prefix, names: name == null ? null : [name]);
 
   @override
-  String toString() {
-    return '$code = ${getDescription()}';
+  String getDescription() {
+    return super.getDescription() + " = " + value.toString();
   }
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'CODE': codeUC,
+        'value': value.toString(),
+        'name': names.isEmpty ? null : names.first,
+        'printSymbol': printSymbol,
+      };
 }

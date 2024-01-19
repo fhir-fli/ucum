@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
@@ -29,32 +29,26 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Term extends Component {
-  Component? comp;
-  Operator? op;
-  Term? term;
+class Value {
+  String? unit;
+  String? unitUC;
+  Decimal? value;
+  String? text;
 
-  Term();
+  Value({this.unit, this.unitUC, this.value, this.text});
 
-  bool hasComp() {
-    return comp != null;
-  }
-
-  bool hasOp() {
-    return op != null;
-  }
-
-  bool hasTerm() {
-    return term != null;
-  }
-
-  void setTermCheckOp(Term? term) {
-    this.term = term;
-    if (term == null) {
-      this.op = null;
-    }
+  String getDescription() {
+    return '${value.toString()}$unit';
   }
 
   @override
-  String toString() => 'Term(Component: $comp, Operator: $op, Term: $term)';
+  String toString() =>
+      'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
+
+  Map<String, dynamic> toJson() => {
+        'unit': unit,
+        'UNIT': unitUC,
+        'value': value?.asDecimal(),
+        'text': text,
+      };
 }

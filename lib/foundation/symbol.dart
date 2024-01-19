@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
@@ -29,36 +29,24 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class UcumModel {
-  String? version;
-  String? revision;
-  DateTime? revisionDate;
-  List<Prefix> prefixes = <Prefix>[];
-  List<BaseUnit> baseUnits = <BaseUnit>[];
-  List<DefinedUnit> definedUnits = <DefinedUnit>[];
+class Symbol extends Component {
+  UcumUnit? unit; // may be Base UcumUnit or DefinedUcumUnit
+  Prefix? prefix; // only if UcumUnit is metric
+  int? exponent;
 
-  UcumModel(this.version, this.revision, this.revisionDate);
+  Symbol({this.unit, this.prefix, this.exponent});
 
-  UcumUnit? getUnit(String code) {
-    for (var unit in baseUnits) {
-      if (unit.code == code) return unit;
-    }
-    for (var unit in definedUnits) {
-      if (unit.code == code) return unit;
-    }
-    for (final unit in baseUnits) {
-      if (unit.names.contains(code)) return unit;
-    }
-    for (final unit in definedUnits) {
-      if (unit.names.contains(code)) return unit;
-    }
-    return null;
+  bool hasPrefix() {
+    return prefix != null;
   }
 
-  BaseUnit? getBaseUnit(String code) {
-    for (var unit in baseUnits) {
-      if (unit.code == code) return unit;
+  void invertExponent() {
+    if (exponent != null) {
+      exponent = -exponent!;
     }
-    return null;
   }
+
+  @override
+  String toString() =>
+      'Symbol(Unit: $unit, Prefix: $prefix, Exponent: $exponent)';
 }

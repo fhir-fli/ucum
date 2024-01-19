@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 class Search {
   List<UcumConcept> doSearch(

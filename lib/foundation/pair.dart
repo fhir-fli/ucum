@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
@@ -33,7 +33,7 @@ class Pair {
   Decimal value;
   String code;
 
-  Pair(this.value, this.code);
+  Pair({required this.value, required this.code});
 
   @override
   bool operator ==(Object other) {

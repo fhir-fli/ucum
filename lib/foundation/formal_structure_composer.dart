@@ -1,4 +1,4 @@
-import 'ucum.dart';
+import '../ucum.dart';
 
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
@@ -29,24 +29,61 @@ import 'ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Symbol extends Component {
-  UcumUnit? unit; // may be Base UcumUnit or DefinedUcumUnit
-  Prefix? prefix; // only if UcumUnit is metric
-  int? exponent;
-
-  Symbol({this.unit, this.prefix, this.exponent});
-
-  bool hasPrefix() {
-    return prefix != null;
+class FormalStructureComposer {
+  String compose(Term term) {
+    var buffer = StringBuffer();
+    composeTerm(buffer, term);
+    return buffer.toString();
   }
 
-  void invertExponent() {
-    if (exponent != null) {
-      exponent = -exponent!;
+  void composeTerm(StringBuffer buffer, Term term) {
+    if (term.comp != null) {
+      composeComp(buffer, term.comp!);
+    }
+    if (term.op != null) {
+      composeOp(buffer, term.op!);
+    }
+    if (term.term != null) {
+      // buffer.write('(');
+      composeTerm(buffer, term.term!);
+      // buffer.write(')');
     }
   }
 
-  @override
-  String toString() =>
-      'Symbol(Unit: $unit, Prefix: $prefix, Exponent: $exponent)';
+  void composeComp(StringBuffer buffer, Component comp) {
+    if (comp is Factor) {
+      composeFactor(buffer, comp);
+    } else if (comp is Symbol) {
+      composeSymbol(buffer, comp);
+    } else if (comp is Term) {
+      composeTerm(buffer, comp);
+    } else {
+      buffer.write('?');
+    }
+  }
+
+  void composeSymbol(StringBuffer buffer, Symbol symbol) {
+    buffer.write('(');
+    if (symbol.prefix != null) {
+      buffer.write(symbol.prefix?.names.first);
+    }
+    buffer.write(symbol.unit?.names.first);
+    if (symbol.exponent != 1) {
+      buffer.write(' ^ ');
+      buffer.write(symbol.exponent);
+    }
+    buffer.write(')');
+  }
+
+  void composeFactor(StringBuffer buffer, Factor comp) {
+    buffer.write(comp.value);
+  }
+
+  void composeOp(StringBuffer buffer, Operator op) {
+    if (op == Operator.division) {
+      buffer.write(' / ');
+    } else {
+      buffer.write(' * ');
+    }
+  }
 }

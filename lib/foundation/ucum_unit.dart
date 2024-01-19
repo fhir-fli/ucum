@@ -34,14 +34,14 @@ import '../ucum.dart';
 abstract class UcumUnit extends UcumConcept {
   /// Kind of thing this base unit represents.
   String property;
-  bool? metric;
+  bool? isMetric;
 
   UcumUnit({
     required super.kind,
     required super.code,
     required super.codeUC,
     required this.property,
-    this.metric,
+    this.isMetric,
     super.names,
     super.printSymbol,
   });

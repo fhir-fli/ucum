@@ -116,7 +116,7 @@ class ExpressionParser {
     for (Prefix prefix in model.prefixes) {
       if (sym.startsWith(prefix.code)) {
         unit = model.getUnit(sym.substring(prefix.code.length));
-        if (unit != null && (unit is BaseUnit || (unit.metric ?? false))) {
+        if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {
           selected = prefix;
           break;
         }

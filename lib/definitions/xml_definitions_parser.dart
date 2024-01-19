@@ -84,13 +84,13 @@ class XmlDefinitionsParser {
       code: element.getAttribute('Code')!,
       codeUC: element.getAttribute('CODE'),
       property: '',
-      metric: element.getAttribute('isMetric') == 'yes',
+      isMetric: element.getAttribute('isMetric') == 'yes',
       isSpecial: element.getAttribute('isSpecial') == 'yes',
       class_: element.getAttribute('class'),
       value: value,
     );
 
-    unit.metric = element.getAttribute('isMetric') == 'yes';
+    unit.isMetric = element.getAttribute('isMetric') == 'yes';
     unit.isSpecial = element.getAttribute('isSpecial') == 'yes';
     unit.class_ = element.getAttribute('class');
 

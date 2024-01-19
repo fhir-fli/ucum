@@ -41,7 +41,7 @@ class BaseUnit extends UcumUnit {
     required super.codeUC,
     required super.property,
     required this.dim,
-    super.metric,
+    super.isMetric,
     String? name,
     List<String>? synonyms,
     super.printSymbol,

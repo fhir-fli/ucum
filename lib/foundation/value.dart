@@ -51,4 +51,12 @@ class Value {
         'value': value?.asDecimal(),
         'text': text,
       };
+  factory Value.fromJson(Map<String, dynamic> json) => Value(
+        unit: json['unit'],
+        unitUC: json['UNIT'],
+        value: json['value'] == null
+            ? null
+            : Decimal.fromString(json['value'].toString()),
+        text: json['text'],
+      );
 }

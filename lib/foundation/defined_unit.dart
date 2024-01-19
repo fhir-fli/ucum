@@ -30,7 +30,7 @@ import '../ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class DefinedUnit extends UcumUnit {
-  bool? metric;
+  bool? isMetric;
   bool? isSpecial;
   String? class_;
   Value value;
@@ -39,21 +39,13 @@ class DefinedUnit extends UcumUnit {
     required super.code,
     required super.codeUC,
     required super.property,
-    required this.metric,
+    required this.isMetric,
     required this.isSpecial,
     this.class_,
     required this.value,
-    String? name,
-    List<String>? synonyms,
+    super.names,
     super.printSymbol,
-  }) : super(
-            kind: ConceptKind.unit,
-            names: name != null || (synonyms != null && synonyms.isNotEmpty)
-                ? [
-                    if (name != null) name,
-                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
-                  ]
-                : null);
+  }) : super(kind: ConceptKind.unit);
 
   @override
   String getDescription() {
@@ -65,10 +57,26 @@ class DefinedUnit extends UcumUnit {
         'CODE': codeUC,
         'value': value.toJson(),
         'property': property,
-        'isMetric': metric,
+        'isMetric': isMetric,
         'isSpecial': isSpecial,
         'class': class_,
-        'name': names,
+        'names': names,
         'printSymbol': printSymbol,
       };
+
+  factory DefinedUnit.fromJson(Map<String, dynamic> json) {
+    return DefinedUnit(
+      code: json['code'],
+      codeUC: json['CODE'],
+      property: json['property'],
+      isMetric: json['isMetric'],
+      isSpecial: json['isSpecial'],
+      value: json['value'] == null ? Value() : Value.fromJson(json['value']!),
+      class_: json['class'],
+      names: json['name'] is List<dynamic>
+          ? (json['name'] as List<dynamic>).map((e) => e.toString()).toList()
+          : null,
+      printSymbol: json['printSymbol'],
+    );
+  }
 }

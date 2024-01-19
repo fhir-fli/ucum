@@ -58,13 +58,13 @@ class JsonDefinitionsParser {
       ucumModel.definedUnits.add(DefinedUnit(
         code: definedUnit['code'],
         codeUC: definedUnit['CODE'],
-        name: definedUnit['name'],
+        // name: definedUnit['name'],
         printSymbol: definedUnit['printSymbol'],
         property: definedUnit['property'],
-        metric: definedUnit['isMetric'],
+        isMetric: definedUnit['isMetric'],
         isSpecial: definedUnit['isSpecial'],
         class_: definedUnit['class'],
-        synonyms: definedUnit['synonyms'],
+        names: definedUnit['synonyms'],
         value: Value(
           unit: definedUnit['value']['unit'],
           unitUC: definedUnit['value']['UNIT'],

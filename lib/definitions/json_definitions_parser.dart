@@ -1,7 +1,7 @@
 import '../ucum.dart';
 
-class JsonDefinitionsParser implements DefinitionsProvider {
-  Future<UcumModel> parse(Map<String, dynamic> json) async {
+class JsonDefinitionsParser {
+  UcumModel parse(Map<String, dynamic> json) {
     try {
       return parseFromJson(json);
     } catch (e) {

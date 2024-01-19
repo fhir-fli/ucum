@@ -64,13 +64,13 @@ class FormalStructureComposer {
 
   void composeSymbol(StringBuffer buffer, Symbol symbol) {
     buffer.write('(');
-    if (symbol.getPrefix() != null) {
-      buffer.write(symbol.getPrefix()?.names.first);
+    if (symbol.prefix != null) {
+      buffer.write(symbol.prefix?.names.first);
     }
     buffer.write(symbol.unit?.names.first);
-    if (symbol.getExponent() != 1) {
+    if (symbol.exponent != 1) {
       buffer.write(' ^ ');
-      buffer.write(symbol.getExponent());
+      buffer.write(symbol.exponent);
     }
     buffer.write(')');
   }

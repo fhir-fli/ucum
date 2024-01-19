@@ -36,30 +36,6 @@ class Symbol extends Component {
 
   Symbol({this.unit, this.prefix, this.exponent});
 
-  UcumUnit? getUcumUnit() {
-    return unit;
-  }
-
-  void setUcumUnit(UcumUnit? UcumUnit) {
-    this.unit = UcumUnit;
-  }
-
-  Prefix? getPrefix() {
-    return prefix;
-  }
-
-  void setPrefix(Prefix? prefix) {
-    this.prefix = prefix;
-  }
-
-  int? getExponent() {
-    return exponent;
-  }
-
-  void setExponent(int exponent) {
-    this.exponent = exponent;
-  }
-
   bool hasPrefix() {
     return prefix != null;
   }

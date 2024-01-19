@@ -35,14 +35,6 @@ class Pair {
 
   Pair(this.value, this.code);
 
-  Decimal getValue() {
-    return value;
-  }
-
-  String getCode() {
-    return code;
-  }
-
   @override
   bool operator ==(Object other) {
     if (other is Pair) {

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:xml/xml.dart';
 import '../ucum.dart';
 
-class XmlDefinitionsParser implements DefinitionsProvider {
+class XmlDefinitionsParser {
   Future<UcumModel> parse(String filename) async {
     try {
       File file = File(filename);

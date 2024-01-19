@@ -36,30 +36,6 @@ class Term extends Component {
 
   Term();
 
-  Component? getComp() {
-    return comp;
-  }
-
-  void setComp(Component? comp) {
-    this.comp = comp;
-  }
-
-  Operator? getOp() {
-    return op;
-  }
-
-  void setOp(Operator? op) {
-    this.op = op;
-  }
-
-  Term? getTerm() {
-    return term;
-  }
-
-  void setTerm(Term? term) {
-    this.term = term;
-  }
-
   bool hasComp() {
     return comp != null;
   }
@@ -73,9 +49,9 @@ class Term extends Component {
   }
 
   void setTermCheckOp(Term? term) {
-    setTerm(term);
+    this.term = term;
     if (term == null) {
-      setOp(null);
+      this.op = null;
     }
   }
 

@@ -28,10 +28,10 @@ class UcumEssenceService implements UcumService {
     }
   }
 
-  static Future<UcumEssenceService> fromJson() async {
+  static UcumEssenceService fromJson() {
     try {
       var parser = JsonDefinitionsParser();
-      var model = await parser.parse(ucumJsonDefs);
+      var model = parser.parse(ucumJsonDefs);
       return UcumEssenceService._()..model = model;
     } catch (e) {
       throw UcumException(e.toString());

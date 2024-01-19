@@ -43,14 +43,14 @@ class ExpressionComposer {
   }
 
   void composeTerm(StringBuffer buffer, Term term) {
-    if (term.getComp() != null) {
-      composeComp(buffer, term.getComp()!);
+    if (term.comp != null) {
+      composeComp(buffer, term.comp!);
     }
-    if (term.getOp() != null) {
-      composeOp(buffer, term.getOp()!);
+    if (term.op != null) {
+      composeOp(buffer, term.op!);
     }
-    if (term.getTerm() != null) {
-      composeTerm(buffer, term.getTerm()!);
+    if (term.term != null) {
+      composeTerm(buffer, term.term!);
     }
   }
 
@@ -69,12 +69,12 @@ class ExpressionComposer {
   }
 
   void composeSymbol(StringBuffer buffer, Symbol symbol) {
-    if (symbol.getPrefix() != null) {
-      buffer.write(symbol.getPrefix()!.code);
+    if (symbol.prefix != null) {
+      buffer.write(symbol.prefix!.code);
     }
     buffer.write(symbol.unit?.code);
-    if (symbol.getExponent() != 1) {
-      buffer.write(symbol.getExponent());
+    if (symbol.exponent != 1) {
+      buffer.write(symbol.exponent);
     }
   }
 

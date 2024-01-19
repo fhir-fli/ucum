@@ -47,34 +47,34 @@ class ExpressionParser {
   Term parseTerm(Lexer lexer, bool first) {
     Term res = Term();
     if (first && lexer.type == TokenType.none) {
-      res.setComp(Factor(1));
+      res.comp = Factor(1);
     } else if (lexer.type == TokenType.solidus) {
-      res.setOp(Operator.division);
+      res.op = Operator.division;
       lexer.consume();
-      res.setTerm(parseTerm(lexer, false));
+      res.term = parseTerm(lexer, false);
     } else {
       /// TODO(this does not exactly mirror Java, but passes tests)
       if (lexer.type == TokenType.annotation) {
         // Handle annotation - assuming it's skipped or processed elsewhere
-        res.setComp(Factor(1)); // Example handling, might need to be adjusted
+        res.comp = Factor(1); // Example handling, might need to be adjusted
         lexer.consume();
       } else {
-        res.setComp(parseComp(lexer));
+        res.comp = parseComp(lexer);
       }
 
       if (lexer.type != TokenType.none && lexer.type != TokenType.close) {
         if (lexer.type == TokenType.solidus) {
-          res.setOp(Operator.division);
+          res.op = Operator.division;
           lexer.consume();
         } else if (lexer.type == TokenType.period) {
-          res.setOp(Operator.multiplication);
+          res.op = Operator.multiplication;
           lexer.consume();
         } else if (lexer.type == TokenType.annotation) {
-          res.setOp(Operator.multiplication); // Implicit multiplication
+          res.op = Operator.multiplication; // Implicit multiplication
         } else {
           lexer.error("Expected '/' or '.'");
         }
-        res.setTerm(parseTerm(lexer, false));
+        res.term = parseTerm(lexer, false);
       }
       // }
     }
@@ -125,7 +125,7 @@ class ExpressionParser {
     }
 
     if (selected != null) {
-      symbol.setPrefix(selected);
+      symbol.prefix = selected;
       symbol.unit = unit!;
     } else {
       unit = model.getUnit(sym);
@@ -138,10 +138,10 @@ class ExpressionParser {
 
     lexer.consume();
     if (lexer.type == TokenType.number) {
-      symbol.setExponent(lexer.getTokenAsInt());
+      symbol.exponent = lexer.getTokenAsInt();
       lexer.consume();
     } else {
-      symbol.setExponent(1);
+      symbol.exponent = 1;
     }
 
     return symbol;

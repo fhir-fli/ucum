@@ -40,7 +40,14 @@ abstract class UcumService {
 
   Set<String> getProperties();
 
-  String validate(String unit);
+  /**
+	 * validate whether a unit code are valid UCUM units
+	 *  
+	 * @param unit - the unit code to check
+	 * @return nil if valid, or an error message describing the problem
+	 */
+
+  String? validate(String unit);
 
   String analyse(String unit);
 

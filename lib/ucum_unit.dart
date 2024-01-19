@@ -42,6 +42,8 @@ abstract class UcumUnit extends UcumConcept {
     required super.codeUC,
     required this.property,
     this.metric,
+    super.names,
+    super.printSymbol,
   });
 
   /// Method to get the description.

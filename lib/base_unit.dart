@@ -41,8 +41,28 @@ class BaseUnit extends UcumUnit {
     required super.codeUC,
     required super.property,
     required this.dim,
-  }) : super(kind: ConceptKind.baseUnit);
+    super.metric,
+    String? name,
+    List<String>? synonyms,
+    super.printSymbol,
+  }) : super(
+            kind: ConceptKind.baseUnit,
+            names: name != null || (synonyms != null && synonyms.isNotEmpty)
+                ? [
+                    if (name != null) name,
+                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
+                  ]
+                : null);
 
   @override
   String toString() => 'BaseUnit(dim: $dim, ${super.toString()})';
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'CODE': codeUC,
+        'property': property,
+        'dim': dim,
+        'name': names.isEmpty ? null : names.first,
+        'printSymbol': printSymbol,
+      };
 }

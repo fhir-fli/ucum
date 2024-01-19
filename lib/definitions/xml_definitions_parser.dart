@@ -5,8 +5,8 @@ import '../ucum.dart';
 class XmlDefinitionsParser implements DefinitionsProvider {
   Future<UcumModel> parse(String filename) async {
     try {
-      var file = File(filename);
-      var contents = await file.readAsString();
+      File file = File(filename);
+      String contents = await file.readAsString();
       return parseFromString(contents);
     } catch (e) {
       throw UcumException(e.toString());
@@ -191,11 +191,5 @@ class XmlDefinitionsParser implements DefinitionsProvider {
     prefix.value = value;
 
     return prefix;
-  }
-
-  @override
-  Future<UcumModel> parseFromStream(Stream<List<int>> stream) {
-    // TODO: implement parseFromStream
-    throw UnimplementedError();
   }
 }

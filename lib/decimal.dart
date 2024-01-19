@@ -158,6 +158,20 @@ class Decimal {
     return false;
   }
 
+  bool equalsValue(Object other) {
+    if (other is Decimal) {
+      final thisValue = num.tryParse(asDecimal());
+      final otherValue = num.tryParse(other.asDecimal());
+      if (thisValue == null) {
+        return false;
+      } else {
+        return thisValue == otherValue;
+      }
+    } else {
+      return false;
+    }
+  }
+
   int comparesTo(Decimal? other) {
     if (other == null) {
       return 0;

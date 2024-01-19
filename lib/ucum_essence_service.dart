@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'resources/ucum_json_defs.dart';
+
 import 'ucum.dart'; // Import for File operations
 
 // UcumEssenceService implements the UcumService interface
@@ -12,16 +14,6 @@ class UcumEssenceService implements UcumService {
   // Private constructor
   UcumEssenceService._();
 
-  // Constructor with Stream
-  UcumEssenceService.fromStream(Stream<List<int>> stream) {
-    try {
-      // Dart doesn't have direct support for parsing Streams synchronously,
-      // so this may need to be handled asynchronously in your actual implementation.
-    } catch (e) {
-      throw UcumException(e.toString());
-    }
-  }
-
   static Future<UcumEssenceService> fromFile(String filepath) async {
     var file = File(filepath);
     if (!file.existsSync()) {
@@ -30,6 +22,16 @@ class UcumEssenceService implements UcumService {
     try {
       var parser = XmlDefinitionsParser();
       var model = await parser.parse(filepath);
+      return UcumEssenceService._()..model = model;
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
+
+  static Future<UcumEssenceService> fromJson() async {
+    try {
+      var parser = JsonDefinitionsParser();
+      var model = await parser.parse(ucumJsonDefs);
       return UcumEssenceService._()..model = model;
     } catch (e) {
       throw UcumException(e.toString());
@@ -72,12 +74,12 @@ class UcumEssenceService implements UcumService {
   }
 
   @override
-  String validate(String unit) {
+  String? validate(String unit) {
     assert(unit.isNotEmpty,
         paramError('validate', 'unit', 'must not be null or empty'));
     try {
       new ExpressionParser(model).parse(unit);
-      return '';
+      return null;
     } catch (e) {
       return e.toString();
     }
@@ -264,6 +266,20 @@ class UcumEssenceService implements UcumService {
       return getCanonicalForm(result);
     } catch (e) {
       throw UcumException(e.toString());
+    }
+  }
+
+  bool isValid(ValidatedQuantity validatedQuantity) =>
+      validate(validatedQuantity.code) == null;
+
+  bool isEqual(ValidatedQuantity value1, ValidatedQuantity value2) {
+    if (isComparable(value1.code, value2.code)) {
+      final Decimal value2Decimal =
+          convert(value2.value, value2.code, value1.code);
+      value2 = ValidatedQuantity(value2Decimal, value1.code);
+      return value1.value.equalsValue(value2.value);
+    } else {
+      return false;
     }
   }
 }

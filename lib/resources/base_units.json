@@ -1,0 +1,58 @@
+[
+    {
+        "code": "m",
+        "CODE": "M",
+        "property": "length",
+        "dim": "L",
+        "name": "meter",
+        "printSymbol": "m"
+    },
+    {
+        "code": "s",
+        "CODE": "S",
+        "property": "time",
+        "dim": "T",
+        "name": "second",
+        "printSymbol": "s"
+    },
+    {
+        "code": "g",
+        "CODE": "G",
+        "property": "mass",
+        "dim": "M",
+        "name": "gram",
+        "printSymbol": "g"
+    },
+    {
+        "code": "rad",
+        "CODE": "RAD",
+        "property": "plane angle",
+        "dim": "A",
+        "name": "radian",
+        "printSymbol": "rad"
+    },
+    {
+        "code": "K",
+        "CODE": "K",
+        "property": "temperature",
+        "dim": "C",
+        "name": "Kelvin",
+        "printSymbol": "K"
+    },
+    {
+        "code": "C",
+        "CODE": "C",
+        "property": "electric charge",
+        "dim": "Q",
+        "name": "Coulomb",
+        "printSymbol": "C"
+    },
+    {
+        "code": "cd",
+        "CODE": "CD",
+        "property": "luminous intensity",
+        "dim": "F",
+        "name": "candela",
+        "printSymbol": "cd"
+    }
+]

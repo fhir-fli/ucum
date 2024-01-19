@@ -1,0 +1,170 @@
+[
+    {
+        "code": "Y",
+        "CODE": "YA",
+        "value": "1000000000000000000000000",
+        "name": "yotta",
+        "printSymbol": "Y"
+    },
+    {
+        "code": "Z",
+        "CODE": "ZA",
+        "value": "1000000000000000000000",
+        "name": "zetta",
+        "printSymbol": "Z"
+    },
+    {
+        "code": "E",
+        "CODE": "EX",
+        "value": "1000000000000000000",
+        "name": "exa",
+        "printSymbol": "E"
+    },
+    {
+        "code": "P",
+        "CODE": "PT",
+        "value": "1000000000000000",
+        "name": "peta",
+        "printSymbol": "P"
+    },
+    {
+        "code": "T",
+        "CODE": "TR",
+        "value": "1000000000000",
+        "name": "tera",
+        "printSymbol": "T"
+    },
+    {
+        "code": "G",
+        "CODE": "GA",
+        "value": "1000000000",
+        "name": "giga",
+        "printSymbol": "G"
+    },
+    {
+        "code": "M",
+        "CODE": "MA",
+        "value": "1000000",
+        "name": "mega",
+        "printSymbol": "M"
+    },
+    {
+        "code": "k",
+        "CODE": "K",
+        "value": "1000",
+        "name": "kilo",
+        "printSymbol": "k"
+    },
+    {
+        "code": "h",
+        "CODE": "H",
+        "value": "100",
+        "name": "hecto",
+        "printSymbol": "h"
+    },
+    {
+        "code": "da",
+        "CODE": "DA",
+        "value": "10",
+        "name": "deka",
+        "printSymbol": "da"
+    },
+    {
+        "code": "d",
+        "CODE": "D",
+        "value": "0.1",
+        "name": "deci",
+        "printSymbol": "d"
+    },
+    {
+        "code": "c",
+        "CODE": "C",
+        "value": "0.01",
+        "name": "centi",
+        "printSymbol": "c"
+    },
+    {
+        "code": "m",
+        "CODE": "M",
+        "value": "0.001",
+        "name": "milli",
+        "printSymbol": "m"
+    },
+    {
+        "code": "u",
+        "CODE": "U",
+        "value": "0.000001",
+        "name": "micro",
+        "printSymbol": "μ"
+    },
+    {
+        "code": "n",
+        "CODE": "N",
+        "value": "0.000000001",
+        "name": "nano",
+        "printSymbol": "n"
+    },
+    {
+        "code": "p",
+        "CODE": "P",
+        "value": "0.000000000001",
+        "name": "pico",
+        "printSymbol": "p"
+    },
+    {
+        "code": "f",
+        "CODE": "F",
+        "value": "0.000000000000001",
+        "name": "femto",
+        "printSymbol": "f"
+    },
+    {
+        "code": "a",
+        "CODE": "A",
+        "value": "0.000000000000000001",
+        "name": "atto",
+        "printSymbol": "a"
+    },
+    {
+        "code": "z",
+        "CODE": "ZO",
+        "value": "0.000000000000000000001",
+        "name": "zepto",
+        "printSymbol": "z"
+    },
+    {
+        "code": "y",
+        "CODE": "YO",
+        "value": "0.000000000000000000000001",
+        "name": "yocto",
+        "printSymbol": "y"
+    },
+    {
+        "code": "Ki",
+        "CODE": "KIB",
+        "value": "1024",
+        "name": "kibi",
+        "printSymbol": "Ki"
+    },
+    {
+        "code": "Mi",
+        "CODE": "MIB",
+        "value": "1048576",
+        "name": "mebi",
+        "printSymbol": "Mi"
+    },
+    {
+        "code": "Gi",
+        "CODE": "GIB",
+        "value": "1073741824",
+        "name": "gibi",
+        "printSymbol": "Gi"
+    },
+    {
+        "code": "Ti",
+        "CODE": "TIB",
+        "value": "1099511627776",
+        "name": "tebi",
+        "printSymbol": "Ti"
+    }
+]

@@ -35,18 +35,40 @@ class DefinedUnit extends UcumUnit {
   String? class_;
   Value value;
 
-  DefinedUnit(
-      {required super.code,
-      required super.codeUC,
-      required super.property,
-      required this.metric,
-      required this.isSpecial,
-      this.class_,
-      required this.value})
-      : super(kind: ConceptKind.unit);
+  DefinedUnit({
+    required super.code,
+    required super.codeUC,
+    required super.property,
+    required this.metric,
+    required this.isSpecial,
+    this.class_,
+    required this.value,
+    String? name,
+    List<String>? synonyms,
+    super.printSymbol,
+  }) : super(
+            kind: ConceptKind.unit,
+            names: name != null || (synonyms != null && synonyms.isNotEmpty)
+                ? [
+                    if (name != null) name,
+                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
+                  ]
+                : null);
 
   @override
   String getDescription() {
     return super.getDescription() + " = " + value.getDescription();
   }
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'CODE': codeUC,
+        'value': value.toJson(),
+        'property': property,
+        'isMetric': metric,
+        'isSpecial': isSpecial,
+        'class': class_,
+        'name': names,
+        'printSymbol': printSymbol,
+      };
 }

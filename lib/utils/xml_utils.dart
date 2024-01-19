@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:xml/xml.dart';
 
-class XmlUtils {
+abstract class XmlUtils {
   static Future<XmlDocument> parseDOM(File file) async {
     final contents = await file.readAsString();
     final xmlDoc = XmlDocument.parse(contents);
@@ -28,7 +28,19 @@ class XmlUtils {
   }
 
   static XmlElement? getNextSibling(XmlElement? e) {
-    return e?.findElements('*').firstOrNull;
+    if (e == null) {
+      return null;
+    } else {
+      XmlNode? parentNode = e.parent;
+      final index = parentNode?.childElements.toList().indexOf(e);
+      if (index == null ||
+          index == -1 ||
+          index == ((parentNode?.childElements.length ?? 0) - 1)) {
+        return null;
+      } else {
+        return parentNode!.childElements.toList()[index + 1];
+      }
+    }
   }
 
   static List<XmlElement> getNamedChildren(XmlElement e, String name) {

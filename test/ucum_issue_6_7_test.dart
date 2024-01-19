@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 
 void main() {
-  group('UcumIssue6_7Tests', () {
+  group('Ucum Issues #6 & # 7 Tests', () {
     late UcumService ucumService;
 
     setUpAll(() async {

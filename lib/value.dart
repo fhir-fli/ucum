@@ -30,12 +30,12 @@ import 'ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class Value {
-  String unit;
+  String? unit;
   String? unitUC;
   Decimal? value;
   String? text;
 
-  Value({required this.unit, required this.unitUC, this.value, this.text});
+  Value({this.unit, this.unitUC, this.value, this.text});
 
   String getDescription() {
     return '${value.toString()}$unit';
@@ -44,4 +44,11 @@ class Value {
   @override
   String toString() =>
       'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
+
+  Map<String, dynamic> toJson() => {
+        'unit': unit,
+        'UNIT': unitUC,
+        'value': value?.asDecimal(),
+        'text': text,
+      };
 }

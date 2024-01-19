@@ -32,11 +32,24 @@ import 'ucum.dart';
 class Prefix extends UcumConcept {
   Decimal value; // 1^-24 through to 1^24
 
-  Prefix({required super.code, required super.codeUC, required this.value})
-      : super(kind: ConceptKind.prefix);
+  Prefix({
+    required super.code,
+    required super.codeUC,
+    required this.value,
+    String? name,
+    super.printSymbol,
+  }) : super(kind: ConceptKind.prefix, names: name == null ? null : [name]);
 
   @override
   String getDescription() {
     return super.getDescription() + " = " + value.toString();
   }
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'CODE': codeUC,
+        'value': value.toString(),
+        'name': names.isEmpty ? null : names.first,
+        'printSymbol': printSymbol,
+      };
 }

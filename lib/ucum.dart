@@ -1,5 +1,6 @@
 export 'definitions/definitions.dart';
 export 'special/special.dart';
+export 'utils/utils.dart';
 export 'base_unit.dart';
 export 'canonical.dart';
 export 'component.dart';
@@ -28,4 +29,5 @@ export 'ucum_service.dart';
 export 'ucum_unit.dart';
 export 'ucum_validator.dart';
 export 'utilities.dart';
+export 'validated_quantity.dart';
 export 'value.dart';

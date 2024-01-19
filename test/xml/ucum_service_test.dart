@@ -4,12 +4,12 @@ class UcumServiceTest {
   late UcumService ucumService;
 
   void beforeAll() {
-    getUcumEssenceService().then((value) => ucumService = value);
+    getUcumService().then((value) => ucumService = value);
   }
 
-  Future<UcumService> getUcumEssenceService() async {
+  Future<UcumService> getUcumService() async {
     final fileName = 'lib/resources/ucum-essence.xml';
-    final ucumService = await UcumEssenceService.fromFile(fileName);
+    final ucumService = await UcumService.fromFile(fileName);
     return ucumService;
   }
 }

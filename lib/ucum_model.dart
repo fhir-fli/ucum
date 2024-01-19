@@ -46,6 +46,12 @@ class UcumModel {
     for (var unit in definedUnits) {
       if (unit.code == code) return unit;
     }
+    for (final unit in baseUnits) {
+      if (unit.names.contains(code)) return unit;
+    }
+    for (final unit in definedUnits) {
+      if (unit.names.contains(code)) return unit;
+    }
     return null;
   }
 

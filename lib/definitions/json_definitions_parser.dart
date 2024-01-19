@@ -54,7 +54,7 @@ class JsonDefinitionsParser {
       ));
     }
 
-    for (final definedUnit in json['definedUnit']) {
+    for (final definedUnit in json['definedUnits']) {
       ucumModel.definedUnits.add(DefinedUnit(
         code: definedUnit['code'],
         codeUC: definedUnit['CODE'],
@@ -64,6 +64,7 @@ class JsonDefinitionsParser {
         metric: definedUnit['isMetric'],
         isSpecial: definedUnit['isSpecial'],
         class_: definedUnit['class'],
+        synonyms: definedUnit['synonyms'],
         value: Value(
           unit: definedUnit['value']['unit'],
           unitUC: definedUnit['value']['UNIT'],
@@ -72,7 +73,6 @@ class JsonDefinitionsParser {
         ),
       ));
     }
-
     return ucumModel;
   }
 }

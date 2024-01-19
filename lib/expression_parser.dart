@@ -72,7 +72,7 @@ class ExpressionParser {
         } else if (lexer.type == TokenType.annotation) {
           res.op = Operator.multiplication; // Implicit multiplication
         } else {
-          lexer.error("Expected '/' or '.'");
+          throw UcumException("Expected '/' or '.'");
         }
         res.term = parseTerm(lexer, false);
       }
@@ -89,7 +89,7 @@ class ExpressionParser {
     } else if (lexer.type == TokenType.symbol) {
       return parseSymbol(lexer);
     } else if (lexer.type == TokenType.none) {
-      lexer.error(
+      throw UcumException(
           "Unexpected end of expression looking for a symbol or a number");
     } else if (lexer.type == TokenType.open) {
       lexer.consume();
@@ -97,14 +97,13 @@ class ExpressionParser {
       if (lexer.type == TokenType.close) {
         lexer.consume();
       } else {
-        lexer.error(
+        throw UcumException(
             "Unexpected Token Type '${lexer.type}' looking for a close bracket");
       }
       return res;
     } else {
-      lexer.error("Unexpected token looking for a symbol or a number");
+      throw UcumException("Unexpected token looking for a symbol or a number");
     }
-    throw UcumException("Parser error"); // This line should never be reached
   }
 
   Component parseSymbol(Lexer lexer) {
@@ -132,7 +131,8 @@ class ExpressionParser {
       if (unit != null) {
         symbol.unit = unit;
       } else if (sym != "1") {
-        lexer.error("The unit '$sym' is unknown");
+        throw UcumException("Error processing unit: '${lexer.source}' The unit "
+            "'$sym' is unknown at position ${lexer.start}");
       }
     }
 

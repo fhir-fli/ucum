@@ -1,80 +1,266 @@
-import 'ucum.dart';
+import 'dart:io';
 
-/// BSD 3-Clause License
-/// Copyright (c) 2006+, Health Intersections Pty Ltd
-/// All rights reserved.
-///
-/// Redistribution and use in source and binary forms, with or without
-/// modification, are permitted provided that the following conditions are met:
-///
-/// * Redistributions of source code must retain the above copyright notice, this
-///   list of conditions and the following disclaimer.
-///
-/// * Redistributions in binary form must reproduce the above copyright notice,
-///   this list of conditions and the following disclaimer in the documentation
-///   and/or other materials provided with the distribution.
-///
-/// * Neither the name of the copyright holder nor the names of its
-///   contributors may be used to endorse or promote products derived from
-///   this software without specific prior written permission.
-///
-/// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-/// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-/// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-/// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-/// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-/// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-/// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-/// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-/// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-/// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+import 'resources/ucum_json_defs.dart';
 
-abstract class UcumService {
-  UcumModel getModel();
+import 'ucum.dart'; // Import for File operations
 
-  UcumVersionDetails ucumIdentification();
+// UcumService implements the UcumService interface
+class UcumService {
+  static const String ucumOid = '2.16.840.1.113883.6.8';
 
-  List<String> validateUCUM();
+  late UcumModel model;
+  Registry handlers = Registry();
 
-  List<UcumConcept> search(ConceptKind kind, String text, bool isRegex);
+  // Private constructor
+  UcumService._();
 
-  Set<String> getProperties();
+  static Future<UcumService> fromFile(String filepath) async {
+    var file = File(filepath);
+    if (!file.existsSync()) {
+      throw UcumException('File does not exist');
+    }
+    try {
+      var parser = XmlDefinitionsParser();
+      var model = await parser.parse(filepath);
+      return UcumService._()..model = model;
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 
-  /**
-	 * validate whether a unit code are valid UCUM units
-	 *  
-	 * @param unit - the unit code to check
-	 * @return nil if valid, or an error message describing the problem
-	 */
+  static UcumService fromJson() {
+    try {
+      var parser = JsonDefinitionsParser();
+      var model = parser.parse(ucumJsonDefs);
+      return UcumService._()..model = model;
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
 
-  String? validate(String unit);
+  String paramError(String method, String param, String msg) {
+    return '${this.runtimeType}.$method.$param is not acceptable: $msg';
+  }
 
-  String analyse(String unit);
+  List<UcumConcept> search(ConceptKind kind, String text, bool isRegex) {
+    assert(text.isNotEmpty,
+        paramError('search', 'text', 'must not be null or empty'));
+    return Search().doSearch(model, kind, text, isRegex);
+  }
 
-  String validateInProperty(String unit, String property);
+  List<String> validateUCUM() {
+    return UcumValidator(model: model, handlers: handlers).validate();
+  }
 
-  String validateCanonicalUnits(String unit, String canonical);
+  Set<String> getProperties() {
+    Set<String> result = <String>{};
+    for (var unit in model.definedUnits) {
+      result.add(unit.property);
+    }
+    return result;
+  }
 
-  String getCanonicalUnits(String unit);
+  String? validate(String unit) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    try {
+      new ExpressionParser(model).parse(unit);
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
-  bool isComparable(String units1, String units2);
+// Dart translation of validateInProperty method
+  String validateInProperty(String unit, String property) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    assert(
+        property.isNotEmpty,
+        paramError(
+            'validateInProperty', 'property', 'must not be null or empty'));
 
-  List<DefinedUnit> getDefinedForms(String code);
+    try {
+      // Assuming Term, ExpressionParser, Converter, Canonical, ExpressionComposer are implemented in Dart
+      Term term = ExpressionParser(model).parse(unit);
+      Canonical can = Converter(model, handlers).convert(term);
+      String cu = ExpressionComposer().composeCanonical(can, false);
+      if (can.units.length == 1) {
+        if (property == can.units[0].base.property) {
+          return '';
+        } else {
+          return 'unit $unit is of the property type ${can.units[0].base.property} ($cu), not $property as required.';
+        }
+      }
+      // Defined special case
+      if (property == 'concentration' && (cu == 'g/L' || cu == 'mol/L')) {
+        return '';
+      }
+      return 'unit $unit has the base units $cu, and are not from the property $property as required.';
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
-  Pair getCanonicalForm(Pair value);
+// Dart translation of validateCanonicalUnits method
+  String validateCanonicalUnits(String unit, String canonical) {
+    assert(unit.isNotEmpty,
+        paramError('validate', 'unit', 'must not be null or empty'));
+    assert(
+        canonical.isNotEmpty,
+        paramError('validateCanonicalUnits', 'canonical',
+            'must not be null or empty'));
 
-  Decimal convert(Decimal value, String sourceUnit, String destUnit);
+    try {
+      Term term = ExpressionParser(model).parse(unit);
+      Canonical can = Converter(model, handlers).convert(term);
+      String cu = ExpressionComposer().composeCanonical(can, false);
+      if (canonical != cu) {
+        return 'unit $unit has the base units $cu, not $canonical as required.';
+      }
+      return '';
+    } catch (e) {
+      return e.toString();
+    }
+  }
 
-  Pair multiply(Pair o1, Pair o2);
+  // Dart translation of the `analyse` method
+  String analyse(String unit) {
+    if (Utilities.noString(unit)) {
+      return "(unity)";
+    }
+    assert(checkStringParam(unit),
+        paramError('analyse', 'unit', 'must not be null or empty'));
+    Term term = ExpressionParser(model).parse(unit);
+    return FormalStructureComposer().compose(term);
+  }
 
-  Pair divideBy(Pair dividend, Pair divisor);
+// Dart translation of the `getCanonicalUnits` method
+  String getCanonicalUnits(String unit) {
+    assert(checkStringParam(unit),
+        paramError('getCanonicalUnits', 'unit', 'must not be null or empty'));
+    try {
+      Term term = ExpressionParser(model).parse(unit);
+      return ExpressionComposer()
+          .composeCanonical(Converter(model, handlers).convert(term), false);
+    } catch (e) {
+      throw UcumException('Error processing $unit: ${e.toString()}');
+    }
+  }
 
-  String getCommonDisplay(String code);
-}
+// Dart translation of the `getDefinedForms` method
+  List<DefinedUnit> getDefinedForms(String code) {
+    assert(checkStringParam(code),
+        paramError('getDefinedForms', 'code', 'must not be null or empty'));
+    List<DefinedUnit> result = [];
+    for (DefinedUnit unit in model.definedUnits) {
+      if (!(unit.isSpecial ?? false) && code == getCanonicalUnits(unit.code)) {
+        result.add(unit);
+      }
+    }
+    return result;
+  }
 
-class UcumVersionDetails {
-  DateTime? releaseDate;
-  String? version;
+  bool checkStringParam(String s) {
+    return s.isNotEmpty;
+  }
 
-  UcumVersionDetails(this.releaseDate, this.version);
+// Dart translation of the `getCanonicalForm` method
+  Pair getCanonicalForm(Pair value) {
+    assert(
+        checkStringParam(value.code),
+        paramError(
+            'getCanonicalForm', 'value.code', 'must not be null or empty'));
+
+    Term term = ExpressionParser(model).parse(value.code);
+    Canonical c = Converter(model, handlers).convert(term);
+    Pair p;
+    p = Pair(value.value.multiply(c.value),
+        ExpressionComposer().composeCanonical(c, false));
+    if (value.value.isWholeNumber()) {
+      p.value.checkForCouldBeWholeNumber();
+    }
+    return p;
+  }
+
+  Decimal convert(Decimal value, String sourceUnit, String destUnit) {
+    assert(checkStringParam(sourceUnit),
+        paramError("convert", "sourceUnit", "must not be null or empty"));
+    assert(checkStringParam(destUnit),
+        paramError("convert", "destUnit", "must not be null or empty"));
+
+    if (sourceUnit == destUnit) {
+      return value;
+    }
+
+    Canonical src = Converter(model, handlers)
+        .convert(ExpressionParser(model).parse(sourceUnit));
+    Canonical dst = Converter(model, handlers)
+        .convert(ExpressionParser(model).parse(destUnit));
+    String s = ExpressionComposer().composeCanonical(src, false);
+    String d = ExpressionComposer().composeCanonical(dst, false);
+
+    if (s != d) {
+      throw UcumException(
+          "Unable to convert between units $sourceUnit and $destUnit as they do not have matching canonical forms ($s and $d respectively)");
+    }
+
+    Decimal canValue = value.multiply(src.value);
+    Decimal res = canValue.divide(dst.value);
+
+    if (value.isWholeNumber()) {
+      res.checkForCouldBeWholeNumber();
+    }
+
+    return res;
+  }
+
+  Pair divideBy(Pair dividend, Pair divisor) {
+    String code = (dividend.code.contains("/") || dividend.code.contains("*")
+            ? "(${dividend.code})"
+            : dividend.code) +
+        "/" +
+        (divisor.code.contains("/") || divisor.code.contains("*")
+            ? "(${divisor.code})"
+            : divisor.code);
+    Pair res = Pair(dividend.value.divide(divisor.value), code);
+    return getCanonicalForm(res);
+  }
+
+  String getCommonDisplay(String code) {
+    return code.replaceAll("[", "").replaceAll("]", "");
+  }
+
+  bool isComparable(String units1, String units2) {
+    String u1 = getCanonicalUnits(units1);
+    String u2 = getCanonicalUnits(units2);
+    return u1 == u2;
+  }
+
+  Pair multiply(Pair o1, Pair o2) {
+    // Assuming the Pair class has a constructor that takes a Decimal and a String
+    // and that Decimal has a multiply method.
+    try {
+      var resultValue = o1.value.multiply(o2.value);
+      var resultCode = '${o1.code}.${o2.code}';
+      Pair result = Pair(resultValue, resultCode);
+      return getCanonicalForm(result);
+    } catch (e) {
+      throw UcumException(e.toString());
+    }
+  }
+
+  bool isValid(ValidatedQuantity validatedQuantity) =>
+      validate(validatedQuantity.code) == null;
+
+  bool isEqual(ValidatedQuantity value1, ValidatedQuantity value2) {
+    if (isComparable(value1.code, value2.code)) {
+      final Decimal value2Decimal =
+          convert(value2.value, value2.code, value1.code);
+      value2 = ValidatedQuantity(value2Decimal, value1.code);
+      return value1.value.equalsValue(value2.value);
+    } else {
+      return false;
+    }
+  }
 }

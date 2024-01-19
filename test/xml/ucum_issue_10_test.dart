@@ -8,7 +8,7 @@ void main() {
     late UcumService ucumService;
 
     setUpAll(() async {
-      ucumService = await getUcumEssenceService();
+      ucumService = await getUcumService();
     });
 
     String describeDuration(int ms) {
@@ -41,8 +41,8 @@ void main() {
   });
 }
 
-Future<UcumService> getUcumEssenceService() async {
+Future<UcumService> getUcumService() async {
   final fileName = 'lib/resources/ucum-essence.xml';
-  final ucumService = await UcumEssenceService.fromFile(fileName);
+  final ucumService = await UcumService.fromFile(fileName);
   return ucumService;
 }

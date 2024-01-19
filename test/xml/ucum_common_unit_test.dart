@@ -11,7 +11,7 @@ void main() {
     late UcumService ucumService;
 
     setUpAll(() async {
-      ucumService = await getUcumEssenceService();
+      ucumService = await getUcumService();
     });
 
     test('Analyze', () {
@@ -112,9 +112,9 @@ class CommonUnit {
   String toString() => 'CU(unit: $unit, dim: $dim, can: $can)';
 }
 
-Future<UcumService> getUcumEssenceService() async {
+Future<UcumService> getUcumService() async {
   final fileName = 'lib/resources/ucum-essence.xml';
-  final ucumService = await UcumEssenceService.fromFile(fileName);
+  final ucumService = await UcumService.fromFile(fileName);
   return ucumService;
 }
 

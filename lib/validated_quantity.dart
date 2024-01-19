@@ -1,29 +1,20 @@
 import 'ucum.dart';
 
 class ValidatedQuantity extends Pair {
-  late String? unit;
-  late String? time;
-  ValidatedQuantity(super.value, super.code, [this.unit, this.time]);
+  ValidatedQuantity(super.value, super.code);
 
-  factory ValidatedQuantity.fromString(String string) {
-    print(string);
-    final matches = validatedQuantityRegex.firstMatch(string);
-    String? unit;
-    String? time;
-    print(matches?.groupNames);
+  factory ValidatedQuantity.fromString(UcumService service, String string) {
+    final matches = valueRegex.firstMatch(string);
     if (matches?.namedGroup('value') == null) {
       throw 'Quantity must have a number';
-    } else {
-      if (matches?.namedGroup('unit') != null) {
-        unit = matches!.namedGroup('unit');
-      } else if (matches?.namedGroup('time') != null) {
-        time = matches!.namedGroup('time');
-      }
-      return ValidatedQuantity(Decimal.fromString(matches!.namedGroup('value')),
-          unit ?? time ?? '', unit, time);
     }
+    string = string.replaceAll(matches!.namedGroup('value')!, '').trim();
+    if (service.validate(string) != null) {
+      throw 'There was a problem with the unit: $string - ${service.validate(string)}';
+    }
+    return ValidatedQuantity(
+        Decimal.fromString(matches.namedGroup('value')), string);
   }
 
-  static RegExp validatedQuantityRegex = RegExp(
-      r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*('(?<unit>[^']+)'|(?<time>[a-zA-Z]+))?$");
+  static RegExp valueRegex = RegExp(r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*");
 }

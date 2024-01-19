@@ -5,17 +5,17 @@ void main() {
   group('Ucum Issues #6 & # 7 Tests', () {
     late UcumService ucumService;
 
-    setUpAll(() async {
-      ucumService = await getUcumEssenceService();
+    setUpAll(() {
+      ucumService = getUcumService();
     });
 
-    test('testDecimalPrecision', () async {
+    test('testDecimalPrecision', () {
       final result =
-          await ucumService.convert(Decimal.fromString('15'), '/min', '/h');
+          ucumService.convert(Decimal.fromString('15'), '/min', '/h');
       expect(result.asDecimal(), '900');
     });
 
-    test('testDecimalEquals', () async {
+    test('testDecimalEquals', () {
       final dec1 = Decimal.fromInt(42);
       final dec2 = Decimal.fromInt(42);
       expect(dec1, equals(dec2));
@@ -31,8 +31,4 @@ void main() {
   });
 }
 
-Future<UcumService> getUcumEssenceService() async {
-  final fileName = 'lib/resources/ucum-essence.xml';
-  final ucumService = await UcumEssenceService.fromFile(fileName);
-  return ucumService;
-}
+UcumService getUcumService() => UcumService.fromJson();

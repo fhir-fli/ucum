@@ -102,14 +102,16 @@ class Lexer {
   bool checkBrackets(String? ch, bool inBrackets) {
     if (ch == '[') {
       if (inBrackets) {
-        error("Nested [");
+        throw UcumException(
+            "Error processing unit '$source': Nested [ at position $start");
       } else {
         return true;
       }
     }
     if (ch == ']') {
       if (!inBrackets) {
-        error("] without [");
+        throw UcumException(
+            "Error processing unit '$source': ] without [ at position $start");
       } else {
         return false;
       }
@@ -199,11 +201,6 @@ class Lexer {
       return true;
     }
     return false;
-  }
-
-  void error(String errMsg) {
-    throw UcumException(
-        "Error processing unit '$source': $errMsg at position $start");
   }
 
   int getTokenAsInt() {

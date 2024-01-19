@@ -50,13 +50,13 @@ Future<void> main() async {
       Pair o3 = ucumServiceTest.ucumService.multiply(o1, o2);
 
       debug("Multiplication Test $id: the value '$v1$u1' * '$v2$u2 ==> "
-          '${o3.getValue().toString()} ${o3.getCode()}');
+          '${o3.value.toString()} ${o3.code}');
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we can get the precision right, which we can't
-      if (o3.getValue().comparesTo(Decimal.fromString(vRes)) != 0 ||
-          o3.getCode() != uRes) {
+      if (o3.value.comparesTo(Decimal.fromString(vRes)) != 0 ||
+          o3.code != uRes) {
         fail("Test $id : The value '$vRes $uRes' was expected, but the result "
-            "was '${o3.getValue().toString()} ${o3.getCode()}'");
+            "was '${o3.value.toString()} ${o3.code}'");
       }
     }
   }
@@ -78,13 +78,13 @@ Future<void> main() async {
       Pair o3 = ucumServiceTest.ucumService.divideBy(o1, o2);
 
       debug(
-          "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> '${o3.getValue().toString()} ${o3.getCode()}'");
+          "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> '${o3.value.toString()} ${o3.code}'");
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we can get the precision right, which we can't
-      if (o3.getValue().comparesTo(Decimal.fromString(vRes)) != 0 ||
-          o3.getCode() != uRes) {
+      if (o3.value.comparesTo(Decimal.fromString(vRes)) != 0 ||
+          o3.code != uRes) {
         fail("Test $id : The value '$vRes $uRes' was expected, but the result "
-            "was '${o3.getValue().toString()} ${o3.getCode()}'");
+            "was '${o3.value.toString()} ${o3.code}'");
       }
     }
   }

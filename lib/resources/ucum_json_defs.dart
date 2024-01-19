@@ -236,7 +236,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "the number ten for arbitrary powers",
         "10^",
         "10 to the arbitrary powers"
@@ -251,7 +251,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "the number ten for arbitrary powers",
         "10*",
         "10 to the arbitrary power"
@@ -273,7 +273,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["the number pi", "π"],
+      "synonyms": ["the number pi", "π"],
       "printSymbol": "π"
     },
     {
@@ -284,7 +284,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["", "percents"],
+      "synonyms": ["", "percents"],
       "printSymbol": "%"
     },
     {
@@ -295,7 +295,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["parts per thousand", "ppth", "10^-3"],
+      "synonyms": ["parts per thousand", "ppth", "10^-3"],
       "printSymbol": "ppth"
     },
     {
@@ -306,7 +306,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["parts per million", "ppm", "10^-6"],
+      "synonyms": ["parts per million", "ppm", "10^-6"],
       "printSymbol": "ppm"
     },
     {
@@ -317,7 +317,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["parts per billion", "ppb", "10^-9"],
+      "synonyms": ["parts per billion", "ppb", "10^-9"],
       "printSymbol": "ppb"
     },
     {
@@ -328,7 +328,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["parts per trillion", "pptr", "10^-12"],
+      "synonyms": ["parts per trillion", "pptr", "10^-12"],
       "printSymbol": "pptr"
     },
     {
@@ -344,7 +344,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mole", "moles"],
+      "synonyms": ["mole", "moles"],
       "printSymbol": "mol"
     },
     {
@@ -355,7 +355,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["steradian - solid angle", "square radian", "rad2", "rad^2"],
+      "synonyms": ["steradian - solid angle", "square radian", "rad2", "rad^2"],
       "printSymbol": "sr"
     },
     {
@@ -366,7 +366,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["hertz", "Herz", "frequency", "frequencies"],
+      "synonyms": ["hertz", "Herz", "frequency", "frequencies"],
       "printSymbol": "Hz"
     },
     {
@@ -382,7 +382,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["newton", "Newtons"],
+      "synonyms": ["newton", "Newtons"],
       "printSymbol": "N"
     },
     {
@@ -393,7 +393,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["pascal", "pascals"],
+      "synonyms": ["pascal", "pascals"],
       "printSymbol": "Pa"
     },
     {
@@ -404,7 +404,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["joule", "joules"],
+      "synonyms": ["joule", "joules"],
       "printSymbol": "J"
     },
     {
@@ -415,7 +415,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["watt", "watts"],
+      "synonyms": ["watt", "watts"],
       "printSymbol": "W"
     },
     {
@@ -426,7 +426,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Ampere", "Amperes"],
+      "synonyms": ["Ampere", "Amperes"],
       "printSymbol": "A"
     },
     {
@@ -437,7 +437,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["volt", "volts"],
+      "synonyms": ["volt", "volts"],
       "printSymbol": "V"
     },
     {
@@ -448,7 +448,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["farad", "farads", "electric capacitance"],
+      "synonyms": ["farad", "farads", "electric capacitance"],
       "printSymbol": "F"
     },
     {
@@ -459,7 +459,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["ohm", "Ω", "resistance", "ohms"],
+      "synonyms": ["ohm", "Ω", "resistance", "ohms"],
       "printSymbol": "Ω"
     },
     {
@@ -470,7 +470,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["siemens", "Reciprocal ohm", "mho", "Ω−1", "conductance"],
+      "synonyms": ["siemens", "Reciprocal ohm", "mho", "Ω−1", "conductance"],
       "printSymbol": "S"
     },
     {
@@ -481,7 +481,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["weber", "magnetic flux", "webers"],
+      "synonyms": ["weber", "magnetic flux", "webers"],
       "printSymbol": "Wb"
     },
     {
@@ -492,7 +492,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["degree Celsius", "°C", "degrees"],
+      "synonyms": ["degree Celsius", "°C", "degrees"],
       "printSymbol": "°C"
     },
     {
@@ -503,7 +503,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["tesla", "Teslas", "magnetic field"],
+      "synonyms": ["tesla", "Teslas", "magnetic field"],
       "printSymbol": "T"
     },
     {
@@ -514,7 +514,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["henry", "henries", "inductance"],
+      "synonyms": ["henry", "henries", "inductance"],
       "printSymbol": "H"
     },
     {
@@ -525,7 +525,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["lumen", "luminous flux", "lumens"],
+      "synonyms": ["lumen", "luminous flux", "lumens"],
       "printSymbol": "lm"
     },
     {
@@ -536,7 +536,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["lux", "illuminance", "luxes"],
+      "synonyms": ["lux", "illuminance", "luxes"],
       "printSymbol": "lx"
     },
     {
@@ -547,7 +547,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["becquerel", "activity", "radiation", "becquerels"],
+      "synonyms": ["becquerel", "activity", "radiation", "becquerels"],
       "printSymbol": "Bq"
     },
     {
@@ -558,7 +558,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gray",
         "absorbed doses",
         "ionizing radiation doses",
@@ -575,7 +575,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "sievert",
         "sieverts",
         "radiation dose quantities",
@@ -599,7 +599,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "degree - plane angle",
         "°",
         "degree of arc",
@@ -617,7 +617,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gon", "gon (grade)", "gons"],
+      "synonyms": ["gon", "gon (grade)", "gons"],
       "printSymbol": "□<sup>g</sup>"
     },
     {
@@ -628,7 +628,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["arc minute", "arcminutes", "arcmin", "arc minutes", "arc mins"],
+      "synonyms": [
+        "arc minute",
+        "arcminutes",
+        "arcmin",
+        "arc minutes",
+        "arc mins"
+      ],
       "printSymbol": ""
     },
     {
@@ -639,7 +645,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["arc second", "arcseconds", "arcsecs"],
+      "synonyms": ["arc second", "arcseconds", "arcsecs"],
       "printSymbol": "'"
     },
     {
@@ -650,7 +656,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters",
         "cubic decimeters",
         "decimeters cubed",
@@ -670,7 +676,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters",
         "cubic decimeters",
         "decimeters cubed",
@@ -690,7 +696,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "are",
         "100 m2",
         "100 m^2",
@@ -708,7 +714,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["minute", "minutes"],
+      "synonyms": ["minute", "minutes"],
       "printSymbol": "min"
     },
     {
@@ -719,7 +725,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["hour", "hours", "hrs", "age"],
+      "synonyms": ["hour", "hours", "hrs", "age"],
       "printSymbol": "h"
     },
     {
@@ -730,7 +736,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["day", "days", "age", "dy", "24 hours", "24 hrs"],
+      "synonyms": ["day", "days", "age", "dy", "24 hours", "24 hrs"],
       "printSymbol": "d"
     },
     {
@@ -746,7 +752,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["tropical year", "solar years", "a tropical", "years"],
+      "synonyms": ["tropical year", "solar years", "a tropical", "years"],
       "printSymbol": "a<sub>t</sub>"
     },
     {
@@ -757,7 +763,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mean Julian year", "mean Julian yr", "a julian", "years"],
+      "synonyms": ["mean Julian year", "mean Julian yr", "a julian", "years"],
       "printSymbol": "a<sub>j</sub>"
     },
     {
@@ -773,7 +779,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mean Gregorian year",
         "mean Gregorian yr",
         "a gregorian",
@@ -789,7 +795,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["year", "years", "a", "yr, yrs", "annum"],
+      "synonyms": ["year", "years", "a", "yr, yrs", "annum"],
       "printSymbol": "a"
     },
     {
@@ -800,7 +806,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["week", "weeks", "wks"],
+      "synonyms": ["week", "weeks", "wks"],
       "printSymbol": "wk"
     },
     {
@@ -816,7 +822,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "synodal month",
         "Moon",
         "synodic month",
@@ -841,7 +847,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mean Julian month", "mo-julian", "mo Julian", "months"],
+      "synonyms": ["mean Julian month", "mo-julian", "mo Julian", "months"],
       "printSymbol": "mo<sub>j</sub>"
     },
     {
@@ -857,7 +863,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mean Gregorian month",
         "months",
         "month-gregorian",
@@ -873,7 +879,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["month", "months", "duration"],
+      "synonyms": ["month", "months", "duration"],
       "printSymbol": "mo"
     },
     {
@@ -889,7 +895,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["metric ton", "tonnes", "megagrams", "tons"],
+      "synonyms": ["metric ton", "tonnes", "megagrams", "tons"],
       "printSymbol": "t"
     },
     {
@@ -905,7 +911,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["bar", "bars"],
+      "synonyms": ["bar", "bars"],
       "printSymbol": "bar"
     },
     {
@@ -921,7 +927,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "unified atomic mass unit",
         "unified atomic mass units",
         "amu",
@@ -943,7 +949,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["astronomic unit", "AU", "units"],
+      "synonyms": ["astronomic unit", "AU", "units"],
       "printSymbol": "AU"
     },
     {
@@ -959,7 +965,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["parsec", "parsecs"],
+      "synonyms": ["parsec", "parsecs"],
       "printSymbol": "pc"
     },
     {
@@ -975,7 +981,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["velocity of light in a vacuum", "speed of light"],
+      "synonyms": ["velocity of light in a vacuum", "speed of light"],
       "printSymbol": "<i>c</i>"
     },
     {
@@ -991,7 +997,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Planck constant", "Planck's constant"],
+      "synonyms": ["Planck constant", "Planck's constant"],
       "printSymbol": "<i>h</i>"
     },
     {
@@ -1007,7 +1013,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Boltzmann constant", "k", "kB"],
+      "synonyms": ["Boltzmann constant", "k", "kB"],
       "printSymbol": "<i>k</i>"
     },
     {
@@ -1023,7 +1029,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "permittivity of vacuum - electric",
         "ε0",
         "Electric Constant",
@@ -1045,7 +1051,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "permeability of vacuum - magnetic",
         "μ0",
         "vacuum permeability",
@@ -1067,7 +1073,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["elementary charge", "e", "q", "electric charges"],
+      "synonyms": ["elementary charge", "e", "q", "electric charges"],
       "printSymbol": "<i>e</i>"
     },
     {
@@ -1078,7 +1084,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["electronvolt", "Electron Volts", "electronvolts"],
+      "synonyms": ["electronvolt", "Electron Volts", "electronvolts"],
       "printSymbol": "eV"
     },
     {
@@ -1094,7 +1100,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["electron mass", "electron rest mass", "me"],
+      "synonyms": ["electron mass", "electron rest mass", "me"],
       "printSymbol": "<i>m<sub><r>e</r></sub></i>"
     },
     {
@@ -1110,7 +1116,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["proton mass", "mp", "masses"],
+      "synonyms": ["proton mass", "mp", "masses"],
       "printSymbol": "<i>m<sub><r>p</r></sub></i>"
     },
     {
@@ -1126,7 +1132,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Newtonian constant of gravitation",
         "G",
         "gravitational constant",
@@ -1147,7 +1153,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "standard acceleration of free fall",
         "standard gravity",
         "g",
@@ -1169,7 +1175,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Torr", "torrs"],
+      "synonyms": ["Torr", "torrs"],
       "printSymbol": "Torr"
     },
     {
@@ -1185,7 +1191,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "standard atmosphere",
         "reference pressure",
         "atmos",
@@ -1206,7 +1212,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["light-year", "light years", "ly"],
+      "synonyms": ["light-year", "light years", "ly"],
       "printSymbol": "l.y."
     },
     {
@@ -1217,7 +1223,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["gram-force", "Newtons", "gram forces"],
+      "synonyms": ["gram-force", "Newtons", "gram forces"],
       "printSymbol": "gf"
     },
     {
@@ -1228,7 +1234,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Kayser", "wavenumbers", "kaysers"],
+      "synonyms": ["Kayser", "wavenumbers", "kaysers"],
       "printSymbol": "K"
     },
     {
@@ -1239,7 +1245,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Gal", "galileos", "Gals"],
+      "synonyms": ["Gal", "galileos", "Gals"],
       "printSymbol": "Gal"
     },
     {
@@ -1255,7 +1261,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["dyne", "dynes"],
+      "synonyms": ["dyne", "dynes"],
       "printSymbol": "dyn"
     },
     {
@@ -1266,7 +1272,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "erg",
         "10^-7 Joules, 10-7 Joules",
         "100 nJ",
@@ -1289,7 +1295,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Poise", "dynamic viscosity", "poises"],
+      "synonyms": ["Poise", "dynamic viscosity", "poises"],
       "printSymbol": "P"
     },
     {
@@ -1300,7 +1306,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Biot", "Bi", "abamperes", "abA"],
+      "synonyms": ["Biot", "Bi", "abamperes", "abA"],
       "printSymbol": "Bi"
     },
     {
@@ -1311,7 +1317,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Stokes", "kinematic viscosity"],
+      "synonyms": ["Stokes", "kinematic viscosity"],
       "printSymbol": "St"
     },
     {
@@ -1327,7 +1333,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Maxwell", "magnetix flux", "Maxwells"],
+      "synonyms": ["Maxwell", "magnetix flux", "Maxwells"],
       "printSymbol": "Mx"
     },
     {
@@ -1338,7 +1344,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Gauss",
         "magnetic fields",
         "magnetic flux density",
@@ -1360,7 +1366,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Oersted", "H magnetic B field", "Oersteds"],
+      "synonyms": ["Oersted", "H magnetic B field", "Oersteds"],
       "printSymbol": "Oe"
     },
     {
@@ -1371,7 +1377,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Gilbert", "Gi", "magnetomotive force", "Gilberts"],
+      "synonyms": ["Gilbert", "Gi", "magnetomotive force", "Gilberts"],
       "printSymbol": "Gb"
     },
     {
@@ -1382,7 +1388,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["stilb", "stilbs"],
+      "synonyms": ["stilb", "stilbs"],
       "printSymbol": "sb"
     },
     {
@@ -1398,7 +1404,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Lambert", "luminance", "lamberts"],
+      "synonyms": ["Lambert", "luminance", "lamberts"],
       "printSymbol": "L"
     },
     {
@@ -1414,7 +1420,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["phot", "phots"],
+      "synonyms": ["phot", "phots"],
       "printSymbol": "ph"
     },
     {
@@ -1430,7 +1436,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Curie", "curies"],
+      "synonyms": ["Curie", "curies"],
       "printSymbol": "Ci"
     },
     {
@@ -1446,7 +1452,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Roentgen", "röntgen", "Roentgens"],
+      "synonyms": ["Roentgen", "röntgen", "Roentgens"],
       "printSymbol": "R"
     },
     {
@@ -1462,7 +1468,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["radiation absorbed dose", "doses"],
+      "synonyms": ["radiation absorbed dose", "doses"],
       "printSymbol": "RAD"
     },
     {
@@ -1473,7 +1479,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "radiation equivalent man",
         "Roentgen Equivalent in Man",
         "rems",
@@ -1489,7 +1495,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["inch", "inches", "in", "international inch", "body height"],
+      "synonyms": ["inch", "inches", "in", "international inch", "body height"],
       "printSymbol": "in"
     },
     {
@@ -1505,7 +1511,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "foot",
         "ft",
         "fts",
@@ -1525,7 +1531,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["yard", "international yards", "yds", "distance"],
+      "synonyms": ["yard", "international yards", "yds", "distance"],
       "printSymbol": "yd"
     },
     {
@@ -1541,7 +1547,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mile", "international miles", "mi I", "statute mile"],
+      "synonyms": ["mile", "international miles", "mi I", "statute mile"],
       "printSymbol": "mi"
     },
     {
@@ -1552,7 +1558,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["fathom", "international fathoms"],
+      "synonyms": ["fathom", "international fathoms"],
       "printSymbol": "fth"
     },
     {
@@ -1563,7 +1569,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nautical mile",
         "nautical mile",
         "nautical miles",
@@ -1588,7 +1594,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["knot", "kn", "kt", "international knots"],
+      "synonyms": ["knot", "kn", "kt", "international knots"],
       "printSymbol": "knot"
     },
     {
@@ -1604,7 +1610,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square inch",
         "in2",
         "in^2",
@@ -1628,7 +1634,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square foot",
         "ft2",
         "ft^2",
@@ -1652,7 +1658,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square yard",
         "yd2",
         "yd^2",
@@ -1675,7 +1681,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "cubic inch",
         "in3",
         "in^3",
@@ -1703,7 +1709,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "cubic foot",
         "ft3",
         "ft^3",
@@ -1729,7 +1735,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "cubic yard",
         "cubic yards",
         "cubic yds",
@@ -1756,7 +1762,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "board foot",
         "BDFT",
         "FBM",
@@ -1779,7 +1785,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["cord", "crd I", "international cords"],
+      "synonyms": ["cord", "crd I", "international cords"],
       "printSymbol": null
     },
     {
@@ -1795,7 +1801,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mil", "thou, thousandth", "mils", "international"],
+      "synonyms": ["mil", "thou, thousandth", "mils", "international"],
       "printSymbol": "mil"
     },
     {
@@ -1811,7 +1817,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["circular mil", "circular mils", "cml I", "international"],
+      "synonyms": ["circular mil", "circular mils", "cml I", "international"],
       "printSymbol": "circ.mil"
     },
     {
@@ -1822,7 +1828,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["hand", "hands", "international"],
+      "synonyms": ["hand", "hands", "international"],
       "printSymbol": "hd"
     },
     {
@@ -1838,7 +1844,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "foot - US",
         "US foot",
         "foot US",
@@ -1863,7 +1869,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["yard - US", "US yards", "us yds", "distance"],
+      "synonyms": ["yard - US", "US yards", "us yds", "distance"],
       "printSymbol": null
     },
     {
@@ -1879,7 +1885,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["inch - US", "US inches", "in us", "us in", "inch US"],
+      "synonyms": ["inch - US", "US inches", "in us", "us in", "inch US"],
       "printSymbol": null
     },
     {
@@ -1895,7 +1901,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["rod - US", "US rod", "US rods", "rd US", "US rd"],
+      "synonyms": ["rod - US", "US rod", "US rods", "rd US", "US rd"],
       "printSymbol": null
     },
     {
@@ -1911,7 +1917,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Gunter's chain - US",
         "surveyor's chain",
         "Surveyor's chain USA",
@@ -1934,7 +1940,10 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["link for Gunter's chain - US", "Links for Gunter's Chain USA"],
+      "synonyms": [
+        "link for Gunter's chain - US",
+        "Links for Gunter's Chain USA"
+      ],
       "printSymbol": null
     },
     {
@@ -1950,7 +1959,11 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Ramden's chain - US", "Ramsden's chain", "engineer's chains"],
+      "synonyms": [
+        "Ramden's chain - US",
+        "Ramsden's chain",
+        "engineer's chains"
+      ],
       "printSymbol": null
     },
     {
@@ -1966,7 +1979,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["link for Ramden's chain - US", "links for Ramsden's chain"],
+      "synonyms": ["link for Ramden's chain - US", "links for Ramsden's chain"],
       "printSymbol": null
     },
     {
@@ -1982,7 +1995,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["fathom - US", "US fathoms", "fathom USA", "fth us"],
+      "synonyms": ["fathom - US", "US fathoms", "fathom USA", "fth us"],
       "printSymbol": null
     },
     {
@@ -1998,7 +2011,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["furlong - US", "US furlongs", "fur us"],
+      "synonyms": ["furlong - US", "US furlongs", "fur us"],
       "printSymbol": null
     },
     {
@@ -2014,7 +2027,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mile - US",
         "U.S. Survey Miles",
         "US statute miles",
@@ -2037,7 +2050,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["acre - US", "Acre USA Survey", "Acre USA", "survey acres"],
+      "synonyms": ["acre - US", "Acre USA Survey", "Acre USA", "survey acres"],
       "printSymbol": null
     },
     {
@@ -2053,7 +2066,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["square rod - US", "rod2", "rod^2", "sq. rod", "rods squared"],
+      "synonyms": [
+        "square rod - US",
+        "rod2",
+        "rod^2",
+        "sq. rod",
+        "rods squared"
+      ],
       "printSymbol": null
     },
     {
@@ -2069,7 +2088,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["square mile - US", "mi2", "mi^2", "sq mi", "miles squared"],
+      "synonyms": ["square mile - US", "mi2", "mi^2", "sq mi", "miles squared"],
       "printSymbol": null
     },
     {
@@ -2085,7 +2104,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["section", "sct", "sections"],
+      "synonyms": ["section", "sct", "sections"],
       "printSymbol": null
     },
     {
@@ -2096,7 +2115,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["township", "twp", "townships"],
+      "synonyms": ["township", "twp", "townships"],
       "printSymbol": null
     },
     {
@@ -2112,7 +2131,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mil - US", "thou, thousandth", "mils"],
+      "synonyms": ["mil - US", "thou, thousandth", "mils"],
       "printSymbol": null
     },
     {
@@ -2128,7 +2147,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "inch - British",
         "imperial inches",
         "imp in",
@@ -2150,7 +2169,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "foot - British",
         "British Foot",
         "Imperial Foot",
@@ -2173,7 +2192,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["rod - British", "British rods", "br rd"],
+      "synonyms": ["rod - British", "British rods", "br rd"],
       "printSymbol": null
     },
     {
@@ -2189,7 +2208,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Gunter's chain - British",
         "Gunter's Chain British",
         "Gunters Chain British",
@@ -2210,7 +2229,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "link for Gunter's chain - British",
         "Links for Gunter's Chain British"
       ],
@@ -2229,7 +2248,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "fathom - British",
         "British fathoms",
         "imperial fathoms",
@@ -2251,7 +2270,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pace - British", "British paces", "br pc"],
+      "synonyms": ["pace - British", "British paces", "br pc"],
       "printSymbol": null
     },
     {
@@ -2267,7 +2286,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["yard - British", "British yards", "Br yds", "distance"],
+      "synonyms": ["yard - British", "British yards", "Br yds", "distance"],
       "printSymbol": null
     },
     {
@@ -2283,7 +2302,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mile - British",
         "imperial miles",
         "British miles",
@@ -2305,7 +2324,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nautical mile - British",
         "British nautical miles",
         "Imperial nautical miles",
@@ -2328,7 +2347,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["knot - British", "British knots", "kn br", "kt"],
+      "synonyms": ["knot - British", "British knots", "kn br", "kt"],
       "printSymbol": null
     },
     {
@@ -2344,7 +2363,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["acre", "Imperial acres", "British", "a", "ac", "ar", "acr"],
+      "synonyms": ["acre", "Imperial acres", "British", "a", "ac", "ar", "acr"],
       "printSymbol": null
     },
     {
@@ -2360,7 +2379,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gallon - US",
         "US gallons",
         "US liquid gallon",
@@ -2382,7 +2401,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["barrel - US", "bbl"],
+      "synonyms": ["barrel - US", "bbl"],
       "printSymbol": null
     },
     {
@@ -2398,7 +2417,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["quart - US", "US quarts", "us qts"],
+      "synonyms": ["quart - US", "US quarts", "us qts"],
       "printSymbol": null
     },
     {
@@ -2414,7 +2433,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "pint - US",
         "US pints",
         "pint US",
@@ -2437,7 +2456,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gill - US", "US gills", "gil us"],
+      "synonyms": ["gill - US", "US gills", "gil us"],
       "printSymbol": null
     },
     {
@@ -2453,7 +2472,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "fluid ounce - US",
         "US fluid ounces",
         "fl ozs",
@@ -2476,7 +2495,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["fluid dram - US", "US fluid drams", "fdr us"],
+      "synonyms": ["fluid dram - US", "US fluid drams", "fdr us"],
       "printSymbol": null
     },
     {
@@ -2492,7 +2511,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["minim - US", "min US", "US min", "♏ US"],
+      "synonyms": ["minim - US", "min US", "US min", "♏ US"],
       "printSymbol": null
     },
     {
@@ -2508,7 +2527,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["cord - US", "US cord", "US cords", "crd us", "us crd"],
+      "synonyms": ["cord - US", "US cord", "US cords", "crd us", "us crd"],
       "printSymbol": null
     },
     {
@@ -2524,7 +2543,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["bushel - US", "US bushels", "US bsh", "US bu"],
+      "synonyms": ["bushel - US", "US bushels", "US bsh", "US bu"],
       "printSymbol": null
     },
     {
@@ -2540,7 +2559,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gallon - historical",
         "Corn Gallon British",
         "Dry Gallon US",
@@ -2565,7 +2584,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["peck - US", "US pecks", "US pk"],
+      "synonyms": ["peck - US", "US pecks", "US pk"],
       "printSymbol": null
     },
     {
@@ -2581,7 +2600,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dry quart - US",
         "dry quarts",
         "dry quart US",
@@ -2606,7 +2625,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dry pint - US",
         "dry pints",
         "dry pint US",
@@ -2630,7 +2649,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["tablespoon - US", "Tbs", "tbsp", "tbs us", "US tablespoons"],
+      "synonyms": [
+        "tablespoon - US",
+        "Tbs",
+        "tbsp",
+        "tbs us",
+        "US tablespoons"
+      ],
       "printSymbol": null
     },
     {
@@ -2646,7 +2671,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["teaspoon - US", "tsp", "t", "US teaspoons"],
+      "synonyms": ["teaspoon - US", "tsp", "t", "US teaspoons"],
       "printSymbol": null
     },
     {
@@ -2662,7 +2687,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["cup - US customary", "cup us", "us cups"],
+      "synonyms": ["cup - US customary", "cup us", "us cups"],
       "printSymbol": null
     },
     {
@@ -2673,7 +2698,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "fluid ounce - metric",
         "metric fluid ounces",
         "fozs m",
@@ -2689,7 +2714,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["cup - US legal", "cup m", "metric cups"],
+      "synonyms": ["cup - US legal", "cup m", "metric cups"],
       "printSymbol": null
     },
     {
@@ -2700,7 +2725,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["teaspoon - metric", "tsp", "t", "metric teaspoons"],
+      "synonyms": ["teaspoon - metric", "tsp", "t", "metric teaspoons"],
       "printSymbol": null
     },
     {
@@ -2711,7 +2736,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "tablespoon - metric",
         "metric tablespoons",
         "Tbs",
@@ -2734,7 +2759,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gallon- British",
         "imperial gallons, UK gallons",
         "British gallons",
@@ -2756,7 +2781,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "peck - British",
         "imperial pecks",
         "British pecks",
@@ -2778,7 +2803,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "bushel - British",
         "British bushels",
         "imperial",
@@ -2801,7 +2826,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "quart - British",
         "British quarts",
         "imperial quarts",
@@ -2822,7 +2847,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "pint - British",
         "British pints",
         "imperial pints",
@@ -2846,7 +2871,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gill - British",
         "imperial gills",
         "British gills",
@@ -2867,7 +2892,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "fluid ounce - British",
         "British fluid ounces",
         "Imperial fluid ounces",
@@ -2890,7 +2915,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["fluid dram - British", "British fluid drams", "fdr br"],
+      "synonyms": ["fluid dram - British", "British fluid drams", "fdr br"],
       "printSymbol": null
     },
     {
@@ -2906,7 +2931,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["minim - British", "min br", "br min", "♏ br"],
+      "synonyms": ["minim - British", "min br", "br min", "♏ br"],
       "printSymbol": null
     },
     {
@@ -2922,7 +2947,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["grain", "gr", "grains"],
+      "synonyms": ["grain", "gr", "grains"],
       "printSymbol": null
     },
     {
@@ -2938,7 +2963,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "pound",
         "avoirdupois pounds, international pounds",
         "av lbs",
@@ -2959,7 +2984,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pound force - US", "lbfs", "US lbf", "US pound forces"],
+      "synonyms": ["pound force - US", "lbfs", "US lbf", "US pound forces"],
       "printSymbol": "lbf"
     },
     {
@@ -2975,7 +3000,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "ounce",
         "ounces",
         "international ounces",
@@ -2997,7 +3022,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Dram mass unit",
         "Dram",
         "drams avoirdupois",
@@ -3019,7 +3044,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "short hundredweight",
         "hundredweights",
         "s cwt",
@@ -3041,7 +3066,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "long hundredweight",
         "imperial hundredweights",
         "imp cwt",
@@ -3063,7 +3088,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["short ton - US", "ton", "US tons", "avoirdupois tons"],
+      "synonyms": ["short ton - US", "ton", "US tons", "avoirdupois tons"],
       "printSymbol": null
     },
     {
@@ -3079,7 +3104,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "long ton - British",
         "imperial tons",
         "weight tons",
@@ -3101,7 +3126,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["stone - British", "British stones", "avoirdupois"],
+      "synonyms": ["stone - British", "British stones", "avoirdupois"],
       "printSymbol": null
     },
     {
@@ -3112,7 +3137,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pennyweight - troy", "dwt", "denarius weights"],
+      "synonyms": ["pennyweight - troy", "dwt", "denarius weights"],
       "printSymbol": null
     },
     {
@@ -3128,7 +3153,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["ounce - troy", "troy ounces", "tr ozs"],
+      "synonyms": ["ounce - troy", "troy ounces", "tr ozs"],
       "printSymbol": null
     },
     {
@@ -3144,7 +3169,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pound - troy", "troy pounds", "tr lbs"],
+      "synonyms": ["pound - troy", "troy pounds", "tr lbs"],
       "printSymbol": null
     },
     {
@@ -3155,7 +3180,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["scruple", "scruples", "sc ap"],
+      "synonyms": ["scruple", "scruples", "sc ap"],
       "printSymbol": null
     },
     {
@@ -3171,7 +3196,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dram - apothecary",
         "ʒ",
         "drachm",
@@ -3194,7 +3219,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "ounce - apothecary",
         "apothecary ounces",
         "oz ap",
@@ -3216,7 +3241,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "pound - apothecary",
         "apothecary pounds",
         "apothecaries pounds",
@@ -3235,7 +3260,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["ounce - metric", "metric ounces", "m ozs"],
+      "synonyms": ["ounce - metric", "metric ounces", "m ozs"],
       "printSymbol": null
     },
     {
@@ -3251,7 +3276,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["line", "British lines", "br L", "L", "l"],
+      "synonyms": ["line", "British lines", "br L", "L", "l"],
       "printSymbol": null
     },
     {
@@ -3267,7 +3292,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "point (typography)",
         "DTP points",
         "desktop publishing point",
@@ -3284,7 +3309,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pica (typography)", "picas"],
+      "synonyms": ["pica (typography)", "picas"],
       "printSymbol": null
     },
     {
@@ -3300,7 +3325,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Printer's point (typography)", "pnt pr"],
+      "synonyms": ["Printer's point (typography)", "pnt pr"],
       "printSymbol": null
     },
     {
@@ -3316,7 +3341,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Printer's pica  (typography)", "pca pr", "Printer's picas"],
+      "synonyms": ["Printer's pica  (typography)", "pca pr", "Printer's picas"],
       "printSymbol": null
     },
     {
@@ -3327,7 +3352,14 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pied", "pieds du roi", "Paris foot", "royal", "French", "feet"],
+      "synonyms": [
+        "pied",
+        "pieds du roi",
+        "Paris foot",
+        "royal",
+        "French",
+        "feet"
+      ],
       "printSymbol": null
     },
     {
@@ -3343,7 +3375,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pouce", "historical French inches", "French royal inches"],
+      "synonyms": ["pouce", "historical French inches", "French royal inches"],
       "printSymbol": null
     },
     {
@@ -3359,7 +3391,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["ligne", "Paris lines", "lignes"],
+      "synonyms": ["ligne", "Paris lines", "lignes"],
       "printSymbol": null
     },
     {
@@ -3375,7 +3407,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "didot",
         "Didot point",
         "dd",
@@ -3398,7 +3430,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["cicero", "Didot's pica", "ciceros", "picas"],
+      "synonyms": ["cicero", "Didot's pica", "ciceros", "picas"],
       "printSymbol": null
     },
     {
@@ -3409,7 +3441,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["degrees Fahrenheit", "°F", "deg F"],
+      "synonyms": ["degrees Fahrenheit", "°F", "deg F"],
       "printSymbol": "°F"
     },
     {
@@ -3420,7 +3452,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["degrees Rankine", "°R", "°Ra", "Rankine"],
+      "synonyms": ["degrees Rankine", "°R", "°Ra", "Rankine"],
       "printSymbol": "°R"
     },
     {
@@ -3431,7 +3463,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "degrees Réaumur",
         "°Ré, °Re, °r",
         "Réaumur",
@@ -3448,7 +3480,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "calorie at 15°C",
         "calorie 15 C",
         "cals 15 C",
@@ -3464,7 +3496,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "calorie at 20°C",
         "calorie 20 C",
         "cal 20 C",
@@ -3485,7 +3517,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mean calorie", "mean cals", "mean calories"],
+      "synonyms": ["mean calorie", "mean cals", "mean calories"],
       "printSymbol": "cal<sub>m</sub>"
     },
     {
@@ -3496,7 +3528,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international table calorie",
         "calories IT",
         "IT cals",
@@ -3512,7 +3544,11 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["thermochemical calorie", "thermochemical calories", "th cals"],
+      "synonyms": [
+        "thermochemical calorie",
+        "thermochemical calories",
+        "th cals"
+      ],
       "printSymbol": "cal<sub>th</sub>"
     },
     {
@@ -3523,7 +3559,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["calorie", "gram calories", "small calories"],
+      "synonyms": ["calorie", "gram calories", "small calories"],
       "printSymbol": "cal"
     },
     {
@@ -3539,7 +3575,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nutrition label Calories", "food calories", "Cal", "kcal"],
+      "synonyms": ["nutrition label Calories", "food calories", "Cal", "kcal"],
       "printSymbol": "Cal"
     },
     {
@@ -3555,7 +3591,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "British thermal unit at 39°F",
         "BTU 39F",
         "BTU 39 F",
@@ -3579,7 +3615,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "British thermal unit at 59°F",
         "BTU 59 F",
         "BTU 59F",
@@ -3603,7 +3639,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "British thermal unit at 60°F",
         "BTU 60 F",
         "BTU 60F",
@@ -3627,7 +3663,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mean British thermal unit",
         "BTU mean",
         "B.T.U. mean",
@@ -3651,7 +3687,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international table British thermal unit",
         "BTU IT",
         "B.T.U. IT",
@@ -3674,7 +3710,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "thermochemical British thermal unit",
         "BTU Th",
         "B.T.U. Th",
@@ -3697,7 +3733,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "British thermal unit",
         "BTU",
         "B.T.U.",
@@ -3720,7 +3756,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["horsepower - mechanical", "imperial horsepowers"],
+      "synonyms": ["horsepower - mechanical", "imperial horsepowers"],
       "printSymbol": null
     },
     {
@@ -3731,7 +3767,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["tex", "linear mass density", "texes"],
+      "synonyms": ["tex", "linear mass density", "texes"],
       "printSymbol": "tex"
     },
     {
@@ -3742,7 +3778,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Denier (linear mass density)", "den", "deniers"],
+      "synonyms": ["Denier (linear mass density)", "den", "deniers"],
       "printSymbol": "den"
     },
     {
@@ -3758,7 +3794,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "meter of water column",
         "mH2O",
         "m H2O",
@@ -3781,7 +3817,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "meter of mercury column",
         "mHg",
         "m Hg",
@@ -3804,7 +3840,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "inch of water column",
         "inches WC",
         "inAq",
@@ -3828,7 +3864,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["inch of mercury column", "inHg", "in Hg", "pressure", "inches"],
+      "synonyms": [
+        "inch of mercury column",
+        "inHg",
+        "in Hg",
+        "pressure",
+        "inches"
+      ],
       "printSymbol": "in Hg"
     },
     {
@@ -3844,7 +3886,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "peripheral vascular resistance unit",
         "peripheral vascular resistance units",
         "peripheral resistance unit",
@@ -3866,7 +3908,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Wood unit",
         "hybrid reference units",
         "HRU",
@@ -3883,7 +3925,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "diopter (lens)",
         "diopters",
         "diop",
@@ -3901,7 +3943,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "prism diopter (magnifying power)",
         "diopters",
         "dioptres",
@@ -3925,7 +3967,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["percent of slope", "% slope", "%slope", "percents slopes"],
+      "synonyms": ["percent of slope", "% slope", "%slope", "percents slopes"],
       "printSymbol": "%"
     },
     {
@@ -3936,7 +3978,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["mesh", "meshes"],
+      "synonyms": ["mesh", "meshes"],
       "printSymbol": null
     },
     {
@@ -3947,7 +3989,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "French (catheter gauge) ",
         "Charrières, French scales",
         "French gauges",
@@ -3963,7 +4005,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "drop - metric (1/20 mL)",
         "drop dosing units",
         "metric drops",
@@ -3979,7 +4021,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Hounsfield unit", "HU", "units"],
+      "synonyms": ["Hounsfield unit", "HU", "units"],
       "printSymbol": "HF"
     },
     {
@@ -3995,7 +4037,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Metabolic Equivalent of Task ", "metabolic equivalents"],
+      "synonyms": ["Metabolic Equivalent of Task ", "metabolic equivalents"],
       "printSymbol": "MET"
     },
     {
@@ -4006,7 +4048,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["homeopathic potency of decimal series (retired)"],
+      "synonyms": ["homeopathic potency of decimal series (retired)"],
       "printSymbol": "X"
     },
     {
@@ -4017,7 +4059,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["homeopathic potency of centesimal series (retired)"],
+      "synonyms": ["homeopathic potency of centesimal series (retired)"],
       "printSymbol": "C"
     },
     {
@@ -4028,7 +4070,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["homeopathic potency of millesimal series (retired)"],
+      "synonyms": ["homeopathic potency of millesimal series (retired)"],
       "printSymbol": "M"
     },
     {
@@ -4039,7 +4081,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["homeopathic potency of quintamillesimal series (retired)"],
+      "synonyms": ["homeopathic potency of quintamillesimal series (retired)"],
       "printSymbol": "Q"
     },
     {
@@ -4050,7 +4092,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of decimal hahnemannian series"],
+      "synonyms": ["homeopathic potency of decimal hahnemannian series"],
       "printSymbol": "X"
     },
     {
@@ -4061,7 +4103,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of centesimal hahnemannian series"],
+      "synonyms": ["homeopathic potency of centesimal hahnemannian series"],
       "printSymbol": "C"
     },
     {
@@ -4072,7 +4114,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of millesimal hahnemannian series"],
+      "synonyms": ["homeopathic potency of millesimal hahnemannian series"],
       "printSymbol": "M"
     },
     {
@@ -4083,7 +4125,9 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of quintamillesimal hahnemannian series"],
+      "synonyms": [
+        "homeopathic potency of quintamillesimal hahnemannian series"
+      ],
       "printSymbol": "Q"
     },
     {
@@ -4094,7 +4138,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of decimal korsakovian series"],
+      "synonyms": ["homeopathic potency of decimal korsakovian series"],
       "printSymbol": "X"
     },
     {
@@ -4105,7 +4149,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of centesimal korsakovian series"],
+      "synonyms": ["homeopathic potency of centesimal korsakovian series"],
       "printSymbol": "C"
     },
     {
@@ -4116,7 +4160,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of millesimal korsakovian series"],
+      "synonyms": ["homeopathic potency of millesimal korsakovian series"],
       "printSymbol": "M"
     },
     {
@@ -4127,7 +4171,9 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["homeopathic potency of quintamillesimal korsakovian series"],
+      "synonyms": [
+        "homeopathic potency of quintamillesimal korsakovian series"
+      ],
       "printSymbol": "Q"
     },
     {
@@ -4138,7 +4184,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["equivalent", "equivalents"],
+      "synonyms": ["equivalent", "equivalents"],
       "printSymbol": "eq"
     },
     {
@@ -4149,7 +4195,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["osmole", "osmoles", "osmols"],
+      "synonyms": ["osmole", "osmoles", "osmols"],
       "printSymbol": "osm"
     },
     {
@@ -4160,7 +4206,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["pH", "pH scale"],
+      "synonyms": ["pH", "pH scale"],
       "printSymbol": "pH"
     },
     {
@@ -4171,7 +4217,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram percent",
         "gram %",
         "gram%",
@@ -4190,7 +4236,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Svedberg unit",
         "Sv",
         "10^-13 seconds",
@@ -4207,7 +4253,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["high power field (microscope)", "HPF"],
+      "synonyms": ["high power field (microscope)", "HPF"],
       "printSymbol": "HPF"
     },
     {
@@ -4218,7 +4264,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["low power field (microscope)", "LPF", "fields"],
+      "synonyms": ["low power field (microscope)", "LPF", "fields"],
       "printSymbol": "LPF"
     },
     {
@@ -4229,7 +4275,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "katal",
         "mol/secs",
         "moles per second",
@@ -4257,7 +4303,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit",
         "micromoles per minute",
         "umol/min",
@@ -4276,7 +4322,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit - arbitrary",
         "international units",
         "IE",
@@ -4292,7 +4338,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit - arbitrary",
         "international units",
         "IE",
@@ -4308,7 +4354,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["arbitary unit", "arbitary units", "arb units", "arbU"],
+      "synonyms": ["arbitary unit", "arbitary units", "arb units", "arbU"],
       "printSymbol": "arb. U"
     },
     {
@@ -4319,7 +4365,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["United States Pharmacopeia unit", "USP U", "USP'U"],
+      "synonyms": ["United States Pharmacopeia unit", "USP U", "USP'U"],
       "printSymbol": "U.S.P."
     },
     {
@@ -4330,7 +4376,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "GPL unit",
         "GPL Units",
         "GPL U",
@@ -4347,7 +4393,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "MPL unit",
         "MPL units",
         "MPL U",
@@ -4365,7 +4411,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "APL unit",
         "APL units",
         "APL U",
@@ -4383,7 +4429,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Bethesda unit", "BU"],
+      "synonyms": ["Bethesda unit", "BU"],
       "printSymbol": null
     },
     {
@@ -4394,7 +4440,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["anti factor Xa unit", "units"],
+      "synonyms": ["anti factor Xa unit", "units"],
       "printSymbol": null
     },
     {
@@ -4405,7 +4451,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Todd unit", "units"],
+      "synonyms": ["Todd unit", "units"],
       "printSymbol": null
     },
     {
@@ -4416,7 +4462,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Dye unit", "units"],
+      "synonyms": ["Dye unit", "units"],
       "printSymbol": null
     },
     {
@@ -4427,7 +4473,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Somogyi unit", "Somogyi units", "smgy U"],
+      "synonyms": ["Somogyi unit", "Somogyi units", "smgy U"],
       "printSymbol": null
     },
     {
@@ -4438,7 +4484,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Bodansky unit", ""],
+      "synonyms": ["Bodansky unit", ""],
       "printSymbol": null
     },
     {
@@ -4449,7 +4495,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["King-Armstrong unit", "King-Armstrong Units", "King units"],
+      "synonyms": ["King-Armstrong unit", "King-Armstrong Units", "King units"],
       "printSymbol": null
     },
     {
@@ -4460,7 +4506,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Kunkel unit"],
+      "synonyms": ["Kunkel unit"],
       "printSymbol": null
     },
     {
@@ -4471,7 +4517,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Mac Lagan unit",
         "galactose index",
         "galactose tolerance test",
@@ -4490,7 +4536,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["tuberculin unit", "TU", "units"],
+      "synonyms": ["tuberculin unit", "TU", "units"],
       "printSymbol": null
     },
     {
@@ -4502,7 +4548,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "50% cell culture infectious dose",
         "CCID50",
         "50% cell culture infective doses"
@@ -4518,7 +4564,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "50% tissue culture infectious dose",
         "TCID50",
         "50% tissue culture infective dose"
@@ -4534,7 +4580,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "50% embryo infectious dose",
         "EID50",
         "50% embryo infective doses",
@@ -4550,7 +4596,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["plaque forming units", "PFU"],
+      "synonyms": ["plaque forming units", "PFU"],
       "printSymbol": "PFU"
     },
     {
@@ -4561,7 +4607,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["focus forming units (cells)", "FFU"],
+      "synonyms": ["focus forming units (cells)", "FFU"],
       "printSymbol": "FFU"
     },
     {
@@ -4572,7 +4618,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["colony forming units", "CFU"],
+      "synonyms": ["colony forming units", "CFU"],
       "printSymbol": "CFU"
     },
     {
@@ -4584,7 +4630,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["index of reactivity (allergen)", "IR", "indexes"],
+      "synonyms": ["index of reactivity (allergen)", "IR", "indexes"],
       "printSymbol": "IR"
     },
     {
@@ -4596,7 +4642,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "bioequivalent allergen unit",
         "BAU",
         "Bioequivalent Allergy Units",
@@ -4613,7 +4659,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["allergy unit", "allergy units", "allergen units", "AU"],
+      "synonyms": ["allergy unit", "allergy units", "allergen units", "AU"],
       "printSymbol": "AU"
     },
     {
@@ -4624,7 +4670,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "allergen unit for Ambrosia artemisiifolia",
         "Amb a 1 unit",
         "Antigen E",
@@ -4641,7 +4687,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "protein nitrogen unit (allergen testing)",
         "protein nitrogen units",
         "PNU"
@@ -4656,7 +4702,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Limit of flocculation", "Lf doses"],
+      "synonyms": ["Limit of flocculation", "Lf doses"],
       "printSymbol": "Lf"
     },
     {
@@ -4668,7 +4714,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["D-antigen unit (polio)", "DAgU", "units"],
+      "synonyms": ["D-antigen unit (polio)", "DAgU", "units"],
       "printSymbol": null
     },
     {
@@ -4679,7 +4725,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["fibrinogen equivalent units", "FEU"],
+      "synonyms": ["fibrinogen equivalent units", "FEU"],
       "printSymbol": null
     },
     {
@@ -4690,7 +4736,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "ELISA unit",
         "Enzyme-Linked Immunosorbent Assay Units",
         "ELU",
@@ -4706,7 +4752,11 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Ehrlich units (urobilinogen)", "EU/dL", "mg{urobilinogen}/dL"],
+      "synonyms": [
+        "Ehrlich units (urobilinogen)",
+        "EU/dL",
+        "mg{urobilinogen}/dL"
+      ],
       "printSymbol": null
     },
     {
@@ -4717,7 +4767,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["neper", "nepers"],
+      "synonyms": ["neper", "nepers"],
       "printSymbol": "Np"
     },
     {
@@ -4728,7 +4778,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["bel", "bels"],
+      "synonyms": ["bel", "bels"],
       "printSymbol": "B"
     },
     {
@@ -4739,7 +4789,12 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["bel sound pressure", "bel SPL", "B SPL", "sound pressure bels"],
+      "synonyms": [
+        "bel sound pressure",
+        "bel SPL",
+        "B SPL",
+        "sound pressure bels"
+      ],
       "printSymbol": "B(SPL)"
     },
     {
@@ -4750,7 +4805,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["bel volt", "bel V", "B V", "volts bels"],
+      "synonyms": ["bel volt", "bel V", "B V", "volts bels"],
       "printSymbol": "B(V)"
     },
     {
@@ -4761,7 +4816,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "bel millivolt",
         "bel mV",
         "B mV",
@@ -4779,7 +4834,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "bel microvolt",
         "bel uV",
         "B uV",
@@ -4797,7 +4852,12 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["bel 10 nanovolt", "bel 10 nV", "B 10 nV", "10 nanovolts bels"],
+      "synonyms": [
+        "bel 10 nanovolt",
+        "bel 10 nV",
+        "B 10 nV",
+        "10 nanovolts bels"
+      ],
       "printSymbol": "B(10 nV)"
     },
     {
@@ -4808,7 +4868,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["bel watt", "bel W", "b W", "b Watt", "Watts bels"],
+      "synonyms": ["bel watt", "bel W", "b W", "b Watt", "Watts bels"],
       "printSymbol": "B(W)"
     },
     {
@@ -4819,7 +4879,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "bel kilowatt",
         "bel kW",
         "B kW",
@@ -4837,7 +4897,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "stere",
         "stère",
         "m3",
@@ -4856,7 +4916,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Ångström", "Å", "Angstroms", "Ao", "Ångströms"],
+      "synonyms": ["Ångström", "Å", "Angstroms", "Ao", "Ångströms"],
       "printSymbol": "Å"
     },
     {
@@ -4867,7 +4927,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["barn", "barns"],
+      "synonyms": ["barn", "barns"],
       "printSymbol": "b"
     },
     {
@@ -4883,7 +4943,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "technical atmosphere",
         "at",
         "tech atm",
@@ -4902,7 +4962,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mho", "siemens", "ohm reciprocals", "Ω^−1", "Ω-1"],
+      "synonyms": ["mho", "siemens", "ohm reciprocals", "Ω^−1", "Ω-1"],
       "printSymbol": "mho"
     },
     {
@@ -4918,7 +4978,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["pound per square inch", "psi", "lb/in2", "lb per in2"],
+      "synonyms": ["pound per square inch", "psi", "lb/in2", "lb per in2"],
       "printSymbol": "psi"
     },
     {
@@ -4934,7 +4994,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["circle - plane angle", "angles", "circles"],
+      "synonyms": ["circle - plane angle", "angles", "circles"],
       "printSymbol": "circ"
     },
     {
@@ -4950,7 +5010,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["spere - solid angle", "speres"],
+      "synonyms": ["spere - solid angle", "speres"],
       "printSymbol": "sph"
     },
     {
@@ -4961,7 +5021,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["metric carat", "carats", "ct", "car m"],
+      "synonyms": ["metric carat", "carats", "ct", "car m"],
       "printSymbol": "ct<sub>m</sub>"
     },
     {
@@ -4972,7 +5032,14 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["carat of gold alloys", "karats", "k", "kt", "car au", "carats"],
+      "synonyms": [
+        "carat of gold alloys",
+        "karats",
+        "k",
+        "kt",
+        "car au",
+        "carats"
+      ],
       "printSymbol": "ct<sub><r>Au</r></sub>"
     },
     {
@@ -4988,7 +5055,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["Smoot", ""],
+      "synonyms": ["Smoot", ""],
       "printSymbol": null
     },
     {
@@ -5004,7 +5071,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": [
+      "synonyms": [
         "meter per square seconds per square root of hertz",
         "m/s2/(Hz^.5)",
         "m/s2/(Hz^(1/2))",
@@ -5020,7 +5087,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": true,
       "class": null,
-      "name": ["bit - logarithmic", "bit-s", "bit s", "bit logarithmic"],
+      "synonyms": ["bit - logarithmic", "bit-s", "bit s", "bit logarithmic"],
       "printSymbol": "bit<sub>s</sub>"
     },
     {
@@ -5031,7 +5098,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["bit", "bits"],
+      "synonyms": ["bit", "bits"],
       "printSymbol": "bit"
     },
     {
@@ -5042,7 +5109,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["byte", "bytes"],
+      "synonyms": ["byte", "bytes"],
       "printSymbol": "B"
     },
     {
@@ -5053,7 +5120,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["baud", "Bd", "bauds"],
+      "synonyms": ["baud", "Bd", "bauds"],
       "printSymbol": "Bd"
     },
     {
@@ -5064,7 +5131,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per twelve hour", "per 12 hours", "12hrs", "12 hrs", "/12hrs"],
+      "synonyms": [
+        "per twelve hour",
+        "per 12 hours",
+        "12hrs",
+        "12 hrs",
+        "/12hrs"
+      ],
       "printSymbol": "/h"
     },
     {
@@ -5075,7 +5148,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per arbitrary unit", "/arbU"],
+      "synonyms": ["per arbitrary unit", "/arbU"],
       "printSymbol": "/arb/ U"
     },
     {
@@ -5086,7 +5159,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per high power field", "/HPF", "per HPF"],
+      "synonyms": ["per high power field", "/HPF", "per HPF"],
       "printSymbol": "/HPF"
     },
     {
@@ -5097,7 +5170,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per international unit",
         "international units",
         "/IU",
@@ -5113,7 +5186,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per low power field", "/LPF", "per LPF"],
+      "synonyms": ["per low power field", "/LPF", "per LPF"],
       "printSymbol": "/LPF"
     },
     {
@@ -5124,7 +5197,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per 10 billion  ", "/10^10", "per 10*10"],
+      "synonyms": ["per 10 billion  ", "/10^10", "per 10*10"],
       "printSymbol": "/10<sup>10<.sup>"
     },
     {
@@ -5135,7 +5208,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per trillion ", "/10^12", "per 10*12"],
+      "synonyms": ["per trillion ", "/10^12", "per 10*12"],
       "printSymbol": "/10<sup>12<.sup>"
     },
     {
@@ -5146,7 +5219,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per thousand", "/10^3", "per 10*3"],
+      "synonyms": ["per thousand", "/10^3", "per 10*3"],
       "printSymbol": "/10<sup>3<.sup>"
     },
     {
@@ -5157,7 +5230,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per million", "/10^6", "per 10*6", ""],
+      "synonyms": ["per million", "/10^6", "per 10*6", ""],
       "printSymbol": "/10<sup>6<.sup>"
     },
     {
@@ -5168,7 +5241,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per billion", "/10^9", "per 10*9"],
+      "synonyms": ["per billion", "/10^9", "per 10*9"],
       "printSymbol": "/10<sup>9<.sup>"
     },
     {
@@ -5179,7 +5252,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per 100", "per hundred", "10^2", "10*2"],
+      "synonyms": ["per 100", "per hundred", "10^2", "10*2"],
       "printSymbol": null
     },
     {
@@ -5190,7 +5263,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per 100 cells", "/100 cells", "/100cells", "per hundred"],
+      "synonyms": ["per 100 cells", "/100 cells", "/100cells", "per hundred"],
       "printSymbol": null
     },
     {
@@ -5201,7 +5274,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per 100 neutrophils",
         "/100 neutrophils",
         "/100neutrophils",
@@ -5217,7 +5290,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per 100 spermatozoa",
         "/100 spermatozoa",
         "/100spermatozoa",
@@ -5233,7 +5306,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per 100 white blood cells",
         "/100 WBCs",
         "/100WBCs",
@@ -5249,7 +5322,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per year", "/Years", "/yrs", "yearly"],
+      "synonyms": ["per year", "/Years", "/yrs", "yearly"],
       "printSymbol": "/a"
     },
     {
@@ -5260,7 +5333,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per centimeter of water",
         "/cmH2O",
         "/cm H2O",
@@ -5277,7 +5350,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per day", "/dy", "per day"],
+      "synonyms": ["per day", "/dy", "per day"],
       "printSymbol": "/d"
     },
     {
@@ -5288,7 +5361,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per deciliter", "per dL", "/deciliter", "decilitre"],
+      "synonyms": ["per deciliter", "per dL", "/deciliter", "decilitre"],
       "printSymbol": "/dL"
     },
     {
@@ -5299,7 +5372,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per gram", "/gm", "/gram", "per g"],
+      "synonyms": ["per gram", "/gm", "/gram", "per g"],
       "printSymbol": "/g"
     },
     {
@@ -5310,7 +5383,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per hour", "/hr", "/hour", "per hr"],
+      "synonyms": ["per hour", "/hr", "/hour", "per hr"],
       "printSymbol": "/h"
     },
     {
@@ -5321,7 +5394,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per kilogram", "per kg", "per kilogram"],
+      "synonyms": ["per kilogram", "per kg", "per kilogram"],
       "printSymbol": "/kg"
     },
     {
@@ -5332,7 +5405,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per liter", "/liter", "litre"],
+      "synonyms": ["per liter", "/liter", "litre"],
       "printSymbol": "/L"
     },
     {
@@ -5343,7 +5416,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per square meter",
         "/m^2",
         "/m*2",
@@ -5362,7 +5435,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per cubic meter",
         "/m^3",
         "/m*3",
@@ -5382,7 +5455,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per milligram", "/milligram", "per mg"],
+      "synonyms": ["per milligram", "/milligram", "per mg"],
       "printSymbol": "/mg"
     },
     {
@@ -5393,7 +5466,12 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per minute", "/minute", "per mins", "breaths beats per minute"],
+      "synonyms": [
+        "per minute",
+        "/minute",
+        "per mins",
+        "breaths beats per minute"
+      ],
       "printSymbol": "/min"
     },
     {
@@ -5404,7 +5482,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per milliliter", "/milliliter", "per mL", "millilitre"],
+      "synonyms": ["per milliliter", "/milliliter", "per mL", "millilitre"],
       "printSymbol": "/mL"
     },
     {
@@ -5415,7 +5493,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per millimeter", "/millimeter", "per mm", "millimetre"],
+      "synonyms": ["per millimeter", "/millimeter", "per mm", "millimetre"],
       "printSymbol": "/mm"
     },
     {
@@ -5426,7 +5504,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per month", "/month", "per mo", "monthly", "month"],
+      "synonyms": ["per month", "/month", "per mo", "monthly", "month"],
       "printSymbol": "/mo"
     },
     {
@@ -5437,7 +5515,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "per second",
         "/second",
         "/sec",
@@ -5461,7 +5539,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per enzyme unit", "/enzyme units", "per U"],
+      "synonyms": ["per enzyme unit", "/enzyme units", "per U"],
       "printSymbol": "/U"
     },
     {
@@ -5472,7 +5550,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per microliter", "/microliter", "microlitre", "/mcl", "per uL"],
+      "synonyms": [
+        "per microliter",
+        "/microliter",
+        "microlitre",
+        "/mcl",
+        "per uL"
+      ],
       "printSymbol": "/μL"
     },
     {
@@ -5483,7 +5567,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["per week", "/week", "per wk", "weekly, weeks"],
+      "synonyms": ["per week", "/week", "per wk", "weekly, weeks"],
       "printSymbol": "/wk"
     },
     {
@@ -5494,7 +5578,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "APL unit per milliliter",
         "APL/mL",
         "APL'U/mL",
@@ -5515,7 +5599,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "arbitrary unit per milliliter",
         "arb'U/mL",
         "arbU/mL",
@@ -5533,7 +5617,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["colony forming units per liter", "CFU per Liter", "CFU/L"],
+      "synonyms": ["colony forming units per liter", "CFU per Liter", "CFU/L"],
       "printSymbol": "CFU/L"
     },
     {
@@ -5544,7 +5628,11 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["colony forming units per milliliter", "CFU per mL", "CFU/mL"],
+      "synonyms": [
+        "colony forming units per milliliter",
+        "CFU per mL",
+        "CFU/mL"
+      ],
       "printSymbol": "CFU/mL"
     },
     {
@@ -5560,7 +5648,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "foot per foot - US",
         "ft/ft",
         "ft per ft",
@@ -5577,7 +5665,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "GPL unit per milliliter",
         "GPL U/mL",
         "GPL'U/mL",
@@ -5597,7 +5685,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per 2 hour",
         "IU/2hrs",
         "IU/2 hours",
@@ -5614,7 +5702,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per 24 hour",
         "IU/24hr",
         "IU/24 hours",
@@ -5631,7 +5719,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per day",
         "IU/dy",
         "IU/days",
@@ -5648,7 +5736,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per deciliter",
         "IU/dL",
         "IU per dL",
@@ -5665,7 +5753,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per gram",
         "IU/gm",
         "IU/gram",
@@ -5683,7 +5771,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per hour",
         "IU/hrs",
         "IU per hours",
@@ -5699,7 +5787,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per kilogram",
         "IU/kg",
         "IU/kilogram",
@@ -5716,7 +5804,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per kilogram per day",
         "IU/kg/dy",
         "IU/kg/day",
@@ -5734,7 +5822,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per liter",
         "IU/L",
         "IU/liter",
@@ -5752,7 +5840,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per minute",
         "IU/min",
         "IU/minute",
@@ -5769,7 +5857,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "international unit per milliliter",
         "IU/mL",
         "IU per mL",
@@ -5786,7 +5874,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "MPL unit per milliliter",
         "MPL/mL",
         "MPL U/mL",
@@ -5805,7 +5893,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "number per high power field",
         "#/HPF",
         "# per HPF",
@@ -5822,7 +5910,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "number per low power field",
         "#/LPF",
         "# per LPF",
@@ -5839,7 +5927,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "IgA antiphosphatidylserine unit ",
         "APS Unit",
         "Phosphatidylserine Antibody IgA Units"
@@ -5854,7 +5942,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["EIA index", "enzyme immunoassay index"],
+      "synonyms": ["EIA index", "enzyme immunoassay index"],
       "printSymbol": null
     },
     {
@@ -5865,7 +5953,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kaolin clotting time", "KCT"],
+      "synonyms": ["kaolin clotting time", "KCT"],
       "printSymbol": null
     },
     {
@@ -5876,7 +5964,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "IgM antiphosphatidylserine unit",
         "Phosphatidylserine Antibody IgM Measurement"
       ],
@@ -5890,7 +5978,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "trillion per liter",
         "10^12/L",
         "10*12 per Liter",
@@ -5907,7 +5995,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["10^3 (used for cell count)", "10^3", "thousand"],
+      "synonyms": ["10^3 (used for cell count)", "10^3", "thousand"],
       "printSymbol": "10<sup>3</sup>"
     },
     {
@@ -5918,7 +6006,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["thousand per liter", "10^3/L", "10*3 per liter", "litre"],
+      "synonyms": ["thousand per liter", "10^3/L", "10*3 per liter", "litre"],
       "printSymbol": "(10<sup>3</sup>)/L"
     },
     {
@@ -5929,7 +6017,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "thousand per milliliter",
         "10^3/mL",
         "10*3 per mL",
@@ -5946,7 +6034,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "thousand per microliter",
         "10^3/uL",
         "10*3 per uL",
@@ -5963,7 +6051,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "10 thousand per microliter",
         "10^4/uL",
         "10*4 per uL",
@@ -5979,7 +6067,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["10^5 ", "one hundred thousand"],
+      "synonyms": ["10^5 ", "one hundred thousand"],
       "printSymbol": "10<sup>5</sup>"
     },
     {
@@ -5990,7 +6078,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["10^6", ""],
+      "synonyms": ["10^6", ""],
       "printSymbol": "10<sup>6</sup>"
     },
     {
@@ -6001,7 +6089,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million colony forming unit per liter",
         "10*6 CFU/L",
         "10^6 CFU/L",
@@ -6020,7 +6108,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million international unit",
         "10*6 IU",
         "10^6 IU",
@@ -6036,7 +6124,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million per 24 hour",
         "10*6/24hrs",
         "10^6/24 hrs",
@@ -6053,7 +6141,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million per kilogram",
         "10^6/kg",
         "10*6 per kg",
@@ -6070,7 +6158,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million per liter",
         "10^6/L",
         "10*6 per Liter",
@@ -6087,7 +6175,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million per milliliter",
         "10^6/mL",
         "10*6 per mL",
@@ -6104,7 +6192,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "million per microliter",
         "10^6/uL",
         "10^6 per uL",
@@ -6123,7 +6211,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["10^8", "100 million", "one hundred million", "10^8"],
+      "synonyms": ["10^8", "100 million", "one hundred million", "10^8"],
       "printSymbol": "10<sup>8</sup>"
     },
     {
@@ -6134,7 +6222,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["billion per liter", "10^9/L", "10*9 per Liter", "litre"],
+      "synonyms": ["billion per liter", "10^9/L", "10*9 per Liter", "litre"],
       "printSymbol": "(10<sup>9</sup>)/L"
     },
     {
@@ -6145,7 +6233,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "billion per milliliter",
         "10^9/mL",
         "10*9 per mL",
@@ -6163,7 +6251,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "billion per microliter",
         "10^9/uL",
         "10^9 per uL",
@@ -6185,7 +6273,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "10 liter per minute per square meter",
         "10 liters per minutes per square meter",
         "10 L per min per m2",
@@ -6207,7 +6295,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "10 liter per minute",
         "10 liters per minute",
         "10 L per min",
@@ -6225,7 +6313,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "10 micronewton second per centimeter to the fifth power per square meter",
         "dyne seconds per centimeter5 and square meter",
         "dyn.s/(cm5.m2)",
@@ -6243,7 +6331,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["24 hour", "24hrs", "24 hrs", "24 hours", "days", "dy"],
+      "synonyms": ["24 hour", "24hrs", "24 hrs", "24 hours", "days", "dy"],
       "printSymbol": "h"
     },
     {
@@ -6254,7 +6342,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "ampere per meter",
         "A/m",
         "amp/meter",
@@ -6274,7 +6362,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["centigram", "centigrams", "cg", "cgm"],
+      "synonyms": ["centigram", "centigrams", "cg", "cgm"],
       "printSymbol": "cg"
     },
     {
@@ -6285,7 +6373,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["centiliter", "centiliters", "centilitres"],
+      "synonyms": ["centiliter", "centiliters", "centilitres"],
       "printSymbol": "cL"
     },
     {
@@ -6296,7 +6384,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["centimeter", "centimeters", "centimetres"],
+      "synonyms": ["centimeter", "centimeters", "centimetres"],
       "printSymbol": "cm"
     },
     {
@@ -6312,7 +6400,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "centimeter of water",
         "cm H2O",
         "cmH2O",
@@ -6334,7 +6422,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "centimeter of water per liter per second",
         "cm[H2O]/(L/s)",
         "cm[H2O].s/L",
@@ -6362,7 +6450,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "centimeter of water per second per meter",
         "cm[H2O]/(s.m)",
         "cm H2O/s/m",
@@ -6388,7 +6476,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "centimeter of mercury",
         "centimeters of mercury",
         "centimetres",
@@ -6405,7 +6493,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square centimeter",
         "cm^2",
         "sq cm",
@@ -6424,7 +6512,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square centimeter per second",
         "cm^2/sec",
         "square centimeters per second",
@@ -6448,7 +6536,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["centipoise", "cps", "centiposes"],
+      "synonyms": ["centipoise", "cps", "centiposes"],
       "printSymbol": "cP"
     },
     {
@@ -6459,7 +6547,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["centistoke", "centistokes"],
+      "synonyms": ["centistoke", "centistokes"],
       "printSymbol": "cSt"
     },
     {
@@ -6470,7 +6558,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dekaliter per minute",
         "dekalitres",
         "dekaliters per minute",
@@ -6486,7 +6574,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dekaliter per minute per square meter",
         "daL/min/m^2",
         "daL/minute/m2",
@@ -6506,7 +6594,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": true,
       "class": null,
-      "name": ["decibel", "decibels"],
+      "synonyms": ["decibel", "decibels"],
       "printSymbol": "dB"
     },
     {
@@ -6522,7 +6610,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "degree per second",
         "deg/sec",
         "deg per sec",
@@ -6541,7 +6629,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["decigram", "decigrams", "dgm", "0.1 grams", "1/10 gm"],
+      "synonyms": ["decigram", "decigrams", "dgm", "0.1 grams", "1/10 gm"],
       "printSymbol": "dg"
     },
     {
@@ -6552,7 +6640,13 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["deciliter", "deciliters", "decilitres", "0.1 liters", "1/10 L"],
+      "synonyms": [
+        "deciliter",
+        "deciliters",
+        "decilitres",
+        "0.1 liters",
+        "1/10 L"
+      ],
       "printSymbol": "dL"
     },
     {
@@ -6563,7 +6657,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "decimeter",
         "decimeters",
         "decimetres",
@@ -6582,7 +6676,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square decimeter per square second",
         "dm2 per s2",
         "dm^2/s^2",
@@ -6605,7 +6699,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dyne second per centimeter per square meter",
         "(dyn*s)/(cm*m2)",
         "(dyn*s)/(cm*m^2)",
@@ -6631,7 +6725,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "dyne second per centimeter",
         "(dyn*s)/cm",
         "dyn sec per cm",
@@ -6649,7 +6743,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "equivalent per liter",
         "eq/liter",
         "eq/litre",
@@ -6667,7 +6761,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "equivalent per milliliter",
         "equivalent/milliliter",
         "equivalents per milliliter",
@@ -6684,7 +6778,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "equivalent per millimole",
         "equivalent/millimole",
         "equivalents per millimole",
@@ -6700,7 +6794,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "equivalent per micromole",
         "equivalent/micromole",
         "equivalents per micromole",
@@ -6716,7 +6810,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["femtogram", "fg", "fgm", "femtograms", "weight"],
+      "synonyms": ["femtogram", "fg", "fgm", "femtograms", "weight"],
       "printSymbol": "fg"
     },
     {
@@ -6727,7 +6821,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["femtoliter", "femtolitres", "femtoliters"],
+      "synonyms": ["femtoliter", "femtolitres", "femtoliters"],
       "printSymbol": "fL"
     },
     {
@@ -6738,7 +6832,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["femtometer", "femtometres", "femtometers"],
+      "synonyms": ["femtometer", "femtometres", "femtometers"],
       "printSymbol": "fm"
     },
     {
@@ -6754,7 +6848,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["femtomole", "femtomoles"],
+      "synonyms": ["femtomole", "femtomoles"],
       "printSymbol": "fmol"
     },
     {
@@ -6770,7 +6864,12 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["femtomole per gram", "femtomoles", "fmol/gm", "fmol per gm"],
+      "synonyms": [
+        "femtomole per gram",
+        "femtomoles",
+        "fmol/gm",
+        "fmol per gm"
+      ],
       "printSymbol": "fmol/g"
     },
     {
@@ -6786,7 +6885,12 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["femtomole per liter", "femtomoles", "fmol per liter", "litre"],
+      "synonyms": [
+        "femtomole per liter",
+        "femtomoles",
+        "fmol per liter",
+        "litre"
+      ],
       "printSymbol": "fmol/L"
     },
     {
@@ -6802,7 +6906,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["femtomole per milligram", "fmol per mg", "femtomoles"],
+      "synonyms": ["femtomole per milligram", "fmol per mg", "femtomoles"],
       "printSymbol": "fmol/mg"
     },
     {
@@ -6818,7 +6922,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "femtomole per milliliter",
         "femtomoles",
         "millilitre",
@@ -6835,7 +6939,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gram meter", "g*m", "gxm", "meters", "metres"],
+      "synonyms": ["gram meter", "g*m", "gxm", "meters", "metres"],
       "printSymbol": "g.m"
     },
     {
@@ -6846,7 +6950,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 100 gram",
         "g/100 gm",
         "100gm",
@@ -6863,7 +6967,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 12 hour",
         "gm/12hrs",
         "12 hrs",
@@ -6881,7 +6985,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 24 hour",
         "gm/24hrs",
         "gm/24 hrs",
@@ -6902,7 +7006,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 3 days",
         "gm/3dy",
         "gm/3 dy",
@@ -6919,7 +7023,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 4 hour",
         "gm/4hrs",
         "gm/4 hrs",
@@ -6937,7 +7041,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 48 hour",
         "gm/48hrs",
         "gm/48 hrs",
@@ -6955,7 +7059,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 5 hour",
         "gm/5hrs",
         "gm/5 hrs",
@@ -6973,7 +7077,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 6 hour",
         "gm/6hrs",
         "gm/6 hrs",
@@ -6991,7 +7095,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per 72 hour",
         "gm/72hrs",
         "gm/72 hrs",
@@ -7009,7 +7113,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per cubic centimeter",
         "g/cm^3",
         "gm per cm3",
@@ -7031,7 +7135,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per day",
         "gm/dy",
         "gm per dy",
@@ -7053,7 +7157,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per deciliter",
         "gm/dL",
         "gm per dL",
@@ -7070,7 +7174,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gram per gram", "gm", "grams"],
+      "synonyms": ["gram per gram", "gm", "grams"],
       "printSymbol": "g/g"
     },
     {
@@ -7081,7 +7185,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per hour",
         "gm/hr",
         "gm per hr",
@@ -7099,7 +7203,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per hour per square meter",
         "gm/hr/m2",
         "gm/h/m2",
@@ -7120,7 +7224,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gram per kilogram", "g per kg", "gram per kilograms"],
+      "synonyms": ["gram per kilogram", "g per kg", "gram per kilograms"],
       "printSymbol": "g/kg"
     },
     {
@@ -7131,7 +7235,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per kilogram per 8 hour ",
         "g/(8.kg.h)",
         "gm/kg/8hrs",
@@ -7151,7 +7255,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per kilogram per day",
         "g/(kg.d)",
         "gm/kg/dy",
@@ -7168,7 +7272,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per kilogram per hour",
         "g/(kg.h)",
         "g/kg/hr",
@@ -7185,7 +7289,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per kilogram per minute",
         "g/(kg.min)",
         "g/kg/min",
@@ -7202,7 +7306,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per liter",
         "gm per liter",
         "g/liter",
@@ -7219,7 +7323,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per square meter",
         "g/m^2",
         "gram/square meter",
@@ -7240,7 +7344,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gram per milligram", "g per mg", "grams per milligram"],
+      "synonyms": ["gram per milligram", "g per mg", "grams per milligram"],
       "printSymbol": "g/mg"
     },
     {
@@ -7251,7 +7355,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per minute",
         "g per min",
         "grams per minute",
@@ -7267,7 +7371,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "gram per milliliter",
         "g per mL",
         "grams per milliliter",
@@ -7283,7 +7387,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["gram per millimole", "grams per millimole", "g per mmol"],
+      "synonyms": ["gram per millimole", "grams per millimole", "g per mmol"],
       "printSymbol": "g/mmol"
     },
     {
@@ -7294,7 +7398,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["joule per liter", "joules per liter", "litre", "J per L"],
+      "synonyms": ["joule per liter", "joules per liter", "litre", "J per L"],
       "printSymbol": "J/L"
     },
     {
@@ -7305,7 +7409,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "degree Kelvin per Watt",
         "degree Kelvin/Watt",
         "K per W",
@@ -7323,7 +7427,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilo international unit per liter",
         "kIU/L",
         "kIU per L",
@@ -7343,7 +7447,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilo international unit per milliliter",
         "kIU/mL",
         "kIU per mL",
@@ -7363,7 +7467,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "katal per kilogram",
         "kat per kg",
         "katals per kilogram",
@@ -7380,7 +7484,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "katal per liter",
         "kat per L",
         "katals per liter",
@@ -7398,7 +7502,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie",
         "kilogram calories",
         "large calories",
@@ -7415,7 +7519,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie per 24 hour",
         "kcal/24hrs",
         "kcal/24 hrs",
@@ -7441,7 +7545,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie per ounce",
         "kcal/oz",
         "kcal per ozs",
@@ -7460,7 +7564,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie per day",
         "kcal/dy",
         "kcal per day",
@@ -7483,7 +7587,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie per hour",
         "kcal/hrs",
         "kcals per hr",
@@ -7501,7 +7605,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilocalorie per kilogram per 24 hour",
         "kcal/kg/24hrs",
         "24 hrs",
@@ -7519,7 +7623,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kilogram", "kilograms", "kgs"],
+      "synonyms": ["kilogram", "kilograms", "kgs"],
       "printSymbol": "kg"
     },
     {
@@ -7530,7 +7634,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram meter per second",
         "kg*m/s",
         "kg.m per sec",
@@ -7548,7 +7652,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per second per square meter",
         "kg/(s*m2)",
         "kg/(s*m^2)",
@@ -7569,7 +7673,12 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kilogram per hour", "kg/hr", "kg per hr", "kilograms per hour"],
+      "synonyms": [
+        "kilogram per hour",
+        "kg/hr",
+        "kg per hr",
+        "kilograms per hour"
+      ],
       "printSymbol": "kg/h"
     },
     {
@@ -7580,7 +7689,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kilogram per liter", "kg per liter", "litre", "kilograms"],
+      "synonyms": ["kilogram per liter", "kg per liter", "litre", "kilograms"],
       "printSymbol": "kg/L"
     },
     {
@@ -7591,7 +7700,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per square meter",
         "kg/m^2",
         "kg/sq. m",
@@ -7613,7 +7722,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per cubic meter",
         "kg/m^3",
         "kg/cu. m",
@@ -7634,7 +7743,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per minute",
         "kilogram/minute",
         "kg per min",
@@ -7650,7 +7759,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per mole",
         "kilogram/mole",
         "kg per mol",
@@ -7666,7 +7775,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilogram per second",
         "kg/sec",
         "kilogram/second",
@@ -7684,7 +7793,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kiloliter",
         "kiloliters",
         "kilolitres",
@@ -7703,7 +7812,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kilometer", "kilometers", "kilometres", "distance"],
+      "synonyms": ["kilometer", "kilometers", "kilometres", "distance"],
       "printSymbol": "km"
     },
     {
@@ -7714,7 +7823,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["kilopascal", "kilopascals", "pressure"],
+      "synonyms": ["kilopascal", "kilopascals", "pressure"],
       "printSymbol": "kPa"
     },
     {
@@ -7725,7 +7834,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["kilosecond", "kiloseconds", "ksec"],
+      "synonyms": ["kilosecond", "kiloseconds", "ksec"],
       "printSymbol": "ks"
     },
     {
@@ -7741,7 +7850,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilo enzyme unit",
         "units",
         "mmol/min",
@@ -7762,7 +7871,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["kilo enzyme unit per gram", "units per grams", "kU per gm"],
+      "synonyms": ["kilo enzyme unit per gram", "units per grams", "kU per gm"],
       "printSymbol": "kU/g"
     },
     {
@@ -7778,7 +7887,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilo enzyme unit per liter",
         "units per liter",
         "litre",
@@ -7801,7 +7910,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "kilo enzyme unit per milliliter",
         "kU per mL",
         "units per milliliter",
@@ -7819,7 +7928,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per 24 hour",
         "L/24hrs",
         "L/24 hrs",
@@ -7840,7 +7949,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per 8 hour",
         "L/8hrs",
         "L/8 hrs",
@@ -7860,7 +7969,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per minute per square meter",
         "L/(min.m2)",
         "L/min/m^2",
@@ -7882,7 +7991,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per day",
         "L/dy",
         "L per day",
@@ -7902,7 +8011,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Liters per hour", "L/hr", "L per hr", "litres"],
+      "synonyms": ["Liters per hour", "L/hr", "L per hr", "litres"],
       "printSymbol": "L/h"
     },
     {
@@ -7913,7 +8022,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Liters per kilogram", "L per kg", "litre"],
+      "synonyms": ["Liters per kilogram", "L per kg", "litre"],
       "printSymbol": "L/kg"
     },
     {
@@ -7924,7 +8033,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Liters per liter", "L per L", "liter/liter", "litre"],
+      "synonyms": ["Liters per liter", "L per L", "liter/liter", "litre"],
       "printSymbol": "L/L"
     },
     {
@@ -7935,7 +8044,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Liters per minute", "liters per minute", "litre"],
+      "synonyms": ["Liters per minute", "liters per minute", "litre"],
       "printSymbol": "L/min"
     },
     {
@@ -7946,7 +8055,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per minute per square meter",
         "L/(min.m2)",
         "L/min/m^2",
@@ -7968,7 +8077,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Liters per second", "L per sec", "litres"],
+      "synonyms": ["Liters per second", "L per sec", "litres"],
       "printSymbol": "L/s"
     },
     {
@@ -7979,7 +8088,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Liters per second per square second",
         "L/s/s^2",
         "L/sec/sec2",
@@ -8003,7 +8112,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "lumen square meter",
         "lm*m2",
         "lm*m^2",
@@ -8021,7 +8130,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "meter per second",
         "meter/second",
         "m per sec",
@@ -8040,7 +8149,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "meter per square second",
         "m/s^2",
         "m/sq. sec",
@@ -8062,7 +8171,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli international unit per liter",
         "mIU/L",
         "m IU/L",
@@ -8080,7 +8189,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli  international unit per milliliter",
         "mIU/mL",
         "m IU/mL",
@@ -8098,7 +8207,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square meter",
         "m^2",
         "sq m",
@@ -8116,7 +8225,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square meter per second",
         "m^2/sec",
         "m2 per sec",
@@ -8137,7 +8246,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "cubic meter per second",
         "m^3/sec",
         "m3 per sec",
@@ -8157,7 +8266,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["milliampere", "mamp", "milliamperes"],
+      "synonyms": ["milliampere", "mamp", "milliamperes"],
       "printSymbol": "mA"
     },
     {
@@ -8173,7 +8282,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millibar", "millibars"],
+      "synonyms": ["millibar", "millibars"],
       "printSymbol": "mbar"
     },
     {
@@ -8189,7 +8298,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millibar second per liter",
         "mbar*s/L",
         "mbar.s per L",
@@ -8212,7 +8321,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millibar per liter per second",
         "mbar/(L.s)",
         "mbar/L/sec",
@@ -8232,7 +8341,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["milliequivalent", "milliequivalents", "meqs"],
+      "synonyms": ["milliequivalent", "milliequivalents", "meqs"],
       "printSymbol": "meq"
     },
     {
@@ -8243,7 +8352,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per 2 hour",
         "meq/2hrs",
         "meq/2 hrs",
@@ -8260,7 +8369,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per 24 hour",
         "meq/24hrs",
         "meq/24 hrs",
@@ -8277,7 +8386,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per 8 hour",
         "meq/8hrs",
         "meq/8 hrs",
@@ -8295,7 +8404,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per day",
         "meq/dy",
         "meq per day",
@@ -8315,7 +8424,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per deciliter",
         "meq per dL",
         "milliequivalents per deciliter",
@@ -8331,7 +8440,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per gram",
         "mgq/gm",
         "meq per gm",
@@ -8347,7 +8456,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per hour",
         "meq/hrs",
         "meq per hrs",
@@ -8363,7 +8472,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per kilogram",
         "meq per kg",
         "milliequivalents per kilogram"
@@ -8378,7 +8487,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per kilogram per hour",
         "meq/(kg.h)",
         "meq/kg/hr",
@@ -8395,7 +8504,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per liter",
         "milliequivalents per liter",
         "litre",
@@ -8412,7 +8521,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per square meter",
         "meq/m^2",
         "meq/sq. m",
@@ -8430,7 +8539,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per minute",
         "meq per min",
         "milliequivalents per minute"
@@ -8445,7 +8554,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliequivalent per milliliter",
         "meq per mL",
         "milliequivalents per milliliter",
@@ -8461,7 +8570,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["milligram", "milligrams"],
+      "synonyms": ["milligram", "milligrams"],
       "printSymbol": "mg"
     },
     {
@@ -8472,7 +8581,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 10 hour",
         "mg/10hrs",
         "mg/10 hrs",
@@ -8489,7 +8598,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 12 hour",
         "mg/12hrs",
         "mg/12 hrs",
@@ -8507,7 +8616,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 2 hour",
         "mg/2hrs",
         "mg/2 hrs",
@@ -8525,7 +8634,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 24 hour",
         "mg/24hrs",
         "mg/24 hrs",
@@ -8544,7 +8653,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 6 hour",
         "mg/6hrs",
         "mg/6 hrs",
@@ -8562,7 +8671,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 72 hour",
         "mg/72hrs",
         "mg/72 hrs",
@@ -8580,7 +8689,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per 8 hour",
         "mg/8hrs",
         "mg/8 hrs",
@@ -8597,7 +8706,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per day",
         "mg/24hrs",
         "mg/24 hrs",
@@ -8616,7 +8725,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per deciliter",
         "mg per dL",
         "milligrams per deciliter",
@@ -8632,7 +8741,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["milligram per gram", "mg per gm", "milligrams per gram"],
+      "synonyms": ["milligram per gram", "mg per gm", "milligrams per gram"],
       "printSymbol": "mg/g"
     },
     {
@@ -8643,7 +8752,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["milligram per hour", "mg/hr", "mg per hr", "milligrams"],
+      "synonyms": ["milligram per hour", "mg/hr", "mg per hr", "milligrams"],
       "printSymbol": "mg/h"
     },
     {
@@ -8654,7 +8763,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per kilogram",
         "mg per kg",
         "milligrams per kilograms"
@@ -8669,7 +8778,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per kilogram per 8 hour",
         "mg/(8.h.kg)",
         "mg/kg/8hrs",
@@ -8689,7 +8798,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per kilogram per day",
         "mg/(kg.d)",
         "mg/(kg.24.h)mg/kg/dy",
@@ -8710,7 +8819,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per kilogram per hour",
         "mg/(kg.h)",
         "mg/kg/hr",
@@ -8727,7 +8836,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per kilogram per minute",
         "mg/(kg.min)",
         "mg per kg per min",
@@ -8743,7 +8852,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per liter",
         "mg per l",
         "milligrams per liter",
@@ -8759,7 +8868,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per square meter",
         "mg/m^2",
         "mg/sq. m",
@@ -8779,7 +8888,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per cubic meter",
         "mg/m^3",
         "mg/cu. m",
@@ -8798,7 +8907,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per milligram",
         "mg per mg",
         "milligrams",
@@ -8814,7 +8923,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per minute",
         "mg per min",
         "milligrams per minutes",
@@ -8830,7 +8939,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per milliliter",
         "mg per mL",
         "milligrams per milliliters",
@@ -8846,7 +8955,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per millimole",
         "mg per mmol",
         "milligrams per millimole",
@@ -8862,7 +8971,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milligram per week",
         "mg/week",
         "mg per wk",
@@ -8879,7 +8988,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["milliliter", "milliliters", "millilitres"],
+      "synonyms": ["milliliter", "milliliters", "millilitres"],
       "printSymbol": "mL"
     },
     {
@@ -8890,7 +8999,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 10 hour",
         "ml/10hrs",
         "ml/10 hrs",
@@ -8909,7 +9018,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 12 hour",
         "ml/12hrs",
         "ml/12 hrs",
@@ -8928,7 +9037,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 2 hour",
         "ml/2hrs",
         "ml/2 hrs",
@@ -8947,7 +9056,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 24 hour",
         "ml/24hrs",
         "ml/24 hrs",
@@ -8973,7 +9082,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 4 hour",
         "ml/4hrs",
         "ml/4 hrs",
@@ -8992,7 +9101,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 5 hour",
         "ml/5hrs",
         "ml/5 hrs",
@@ -9011,7 +9120,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 6 hour",
         "ml/6hrs",
         "ml/6 hrs",
@@ -9030,7 +9139,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 72 hour",
         "ml/72hrs",
         "ml/72 hrs",
@@ -9049,7 +9158,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 8 hour",
         "ml/8hrs",
         "ml/8 hrs",
@@ -9069,7 +9178,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per 8 hour per kilogram",
         "mL/kg/(8.h)",
         "ml/8h/kg",
@@ -9094,7 +9203,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per square inch (international)",
         "mL/sin",
         "mL/in2",
@@ -9116,7 +9225,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per centimeter of water",
         "milliliters per centimeter of water",
         "millilitre per centimetre of water",
@@ -9136,7 +9245,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per day",
         "ml/day",
         "ml per day",
@@ -9156,7 +9265,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per deciliter",
         "mL per dL",
         "millilitres",
@@ -9173,7 +9282,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per hour",
         "mL/hr",
         "mL per hr",
@@ -9192,7 +9301,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per kilogram",
         "mL per kg",
         "milliliters per kilogram",
@@ -9208,7 +9317,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per kilogram per 8 hour",
         "mL/(8.h.kg)",
         "mL/kg/8hrs",
@@ -9229,7 +9338,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per kilogram per day",
         "mL/(kg.d)",
         "mL/kg/dy",
@@ -9249,7 +9358,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per kilogram per hour",
         "mL/(kg.h)",
         "mL/kg/hr",
@@ -9267,7 +9376,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per kilogram per minute",
         "mL/(kg.min)",
         "mL/kg/dy",
@@ -9285,7 +9394,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per square meter",
         "mL/m^2",
         "mL/sq. meter",
@@ -9306,7 +9415,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per millibar",
         "mL per mbar",
         "milliliters per millibar",
@@ -9322,7 +9431,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per minute",
         "mL per min",
         "milliliters",
@@ -9338,7 +9447,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per minute per square meter",
         "ml/min/m^2",
         "ml/min/sq. meter",
@@ -9360,7 +9469,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per millimeter",
         "mL per mm",
         "milliliters per millimeter",
@@ -9377,7 +9486,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliliter per second",
         "ml/sec",
         "mL per sec",
@@ -9394,7 +9503,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimeter",
         "millimeters",
         "millimetres",
@@ -9416,7 +9525,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimeter per hour",
         "mm/hr",
         "mm per hr",
@@ -9433,7 +9542,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimeter per minute",
         "mm per min",
         "millimeters per minute",
@@ -9454,7 +9563,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimeter of water",
         "mmH2O",
         "mm H2O",
@@ -9476,7 +9585,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimeter of mercury",
         "mmHg",
         "mm Hg",
@@ -9493,7 +9602,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "square millimeter",
         "mm^2",
         "sq. mm.",
@@ -9516,7 +9625,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millimole", "millimoles"],
+      "synonyms": ["millimole", "millimoles"],
       "printSymbol": "mmol"
     },
     {
@@ -9532,7 +9641,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 12 hour",
         "mmol/12hrs",
         "mmol/12 hrs",
@@ -9555,7 +9664,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 2 hour",
         "mmol/2hrs",
         "mmol/2 hrs",
@@ -9578,7 +9687,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 24 hour",
         "mmol/24hrs",
         "mmol/24 hrs",
@@ -9601,7 +9710,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 5 hour",
         "mmol/5hrs",
         "mmol/5 hrs",
@@ -9624,7 +9733,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 6 hour",
         "mmol/6hrs",
         "mmol/6 hrs",
@@ -9647,7 +9756,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per 8 hour",
         "mmol/8hrs",
         "mmol/8 hrs",
@@ -9671,7 +9780,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per day",
         "mmol/24hrs",
         "mmol/24 hrs",
@@ -9694,7 +9803,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per deciliter",
         "mmol per dL",
         "millimoles",
@@ -9715,7 +9824,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millimole per gram", "mmol per gram", "millimoles"],
+      "synonyms": ["millimole per gram", "mmol per gram", "millimoles"],
       "printSymbol": "mmol/g"
     },
     {
@@ -9731,7 +9840,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per hour",
         "mmol/hr",
         "mmol per hr",
@@ -9752,7 +9861,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per kilogram",
         "mmol per kg",
         "millimoles per kilogram"
@@ -9772,7 +9881,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per kilogram per 8 hour",
         "mmol/(8.h.kg)",
         "mmol/kg/8hrs",
@@ -9797,7 +9906,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per kilogram per day",
         "mmol/kg/dy",
         "mmol/kg/day",
@@ -9819,7 +9928,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per kilogram per hour",
         "mmol/kg/hr",
         "mmol per kg per hr",
@@ -9840,7 +9949,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per kilogram per minute",
         "mmol/(kg.min)",
         "mmol/kg/min",
@@ -9862,7 +9971,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per liter",
         "mmol per L",
         "millimoles per liter",
@@ -9883,7 +9992,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per square meter",
         "mmol/m^2",
         "mmol/sq. meter",
@@ -9909,7 +10018,11 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millimole per minute", "mmol per min", "millimoles per minute"],
+      "synonyms": [
+        "millimole per minute",
+        "mmol per min",
+        "millimoles per minute"
+      ],
       "printSymbol": "mmol/min"
     },
     {
@@ -9925,7 +10038,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per millimole",
         "mmol per mmol",
         "millimoles per millimole"
@@ -9945,7 +10058,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millimole per mole", "mmol per mol", "millimoles per mole"],
+      "synonyms": ["millimole per mole", "mmol per mol", "millimoles per mole"],
       "printSymbol": "mmol/mol"
     },
     {
@@ -9961,7 +10074,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millimole per second per liter",
         "mmol/sec/L",
         "mmol per s per L",
@@ -9984,7 +10097,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mole per kilogram", "mol per kg", "moles", "mols"],
+      "synonyms": ["mole per kilogram", "mol per kg", "moles", "mols"],
       "printSymbol": "mol/kg"
     },
     {
@@ -10000,7 +10113,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mole per kilogram per second",
         "mol/kg/sec",
         "mol per kg per sec",
@@ -10022,7 +10135,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mole per liter",
         "mol per L",
         "moles per liter",
@@ -10045,7 +10158,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mole per cubic meter",
         "mol/m^3",
         "mol/cu. m",
@@ -10075,7 +10188,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "mole per milliliter",
         "mol per mL",
         "moles",
@@ -10097,7 +10210,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mole per mole", "mol per mol", "moles per mol", "mols"],
+      "synonyms": ["mole per mole", "mol per mol", "moles per mol", "mols"],
       "printSymbol": "mol/mol"
     },
     {
@@ -10113,7 +10226,12 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["mole per second", "mol per sec", "moles per second", "mols"],
+      "synonyms": [
+        "mole per second",
+        "mol per sec",
+        "moles per second",
+        "mols"
+      ],
       "printSymbol": "mol/s"
     },
     {
@@ -10124,7 +10242,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["milliosmole", "milliosmoles"],
+      "synonyms": ["milliosmole", "milliosmoles"],
       "printSymbol": "mosm"
     },
     {
@@ -10135,7 +10253,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliosmole per kilogram",
         "mosm per kg",
         "milliosmoles per kilogram"
@@ -10150,7 +10268,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milliosmole per liter",
         "mosm per liter",
         "litre",
@@ -10166,7 +10284,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millipascal", "millipascals"],
+      "synonyms": ["millipascal", "millipascals"],
       "printSymbol": "mPa"
     },
     {
@@ -10177,7 +10295,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "millipascal second",
         "mPa*s",
         "millipoise",
@@ -10194,7 +10312,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["megasecond", "megaseconds"],
+      "synonyms": ["megasecond", "megaseconds"],
       "printSymbol": "Ms"
     },
     {
@@ -10205,7 +10323,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["millisecond", "milliseconds", "duration"],
+      "synonyms": ["millisecond", "milliseconds", "duration"],
       "printSymbol": "ms"
     },
     {
@@ -10221,7 +10339,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli enzyme unit per gram",
         "mU per gm",
         "milli enzyme units per gram",
@@ -10243,7 +10361,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli enzyme unit per liter",
         "mU per liter",
         "litre",
@@ -10265,7 +10383,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli enzyme unit per milligram",
         "mU per mg",
         "milli enzyme units per milligram"
@@ -10285,7 +10403,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli enzyme unit per milliliter",
         "mU per mL",
         "milli enzyme units per milliliter",
@@ -10308,7 +10426,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "milli enzyme unit per milliliter per minute",
         "mU per mL per min",
         "mU per milliliters per minute",
@@ -10327,7 +10445,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["millivolt", "millivolts"],
+      "synonyms": ["millivolt", "millivolts"],
       "printSymbol": "mV"
     },
     {
@@ -10343,7 +10461,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Newton centimeter",
         "N*cm",
         "Ncm",
@@ -10368,7 +10486,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "Newton second",
         "Newton*seconds",
         "N*s",
@@ -10387,7 +10505,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram", "nanograms"],
+      "synonyms": ["nanogram", "nanograms"],
       "printSymbol": "ng"
     },
     {
@@ -10398,7 +10516,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per 24 hour",
         "ng/24hrs",
         "ng/24 hrs",
@@ -10414,7 +10532,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per 8 hour",
         "ng/8hrs",
         "ng/8 hrs",
@@ -10430,7 +10548,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per million",
         "ng/10^6",
         "ng per 10*6",
@@ -10447,7 +10565,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per day", "ng/dy", "ng per day", "nanograms"],
+      "synonyms": ["nanogram per day", "ng/dy", "ng per day", "nanograms"],
       "printSymbol": "ng/d"
     },
     {
@@ -10458,7 +10576,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per deciliter",
         "ng per dL",
         "nanograms per deciliter",
@@ -10474,7 +10592,12 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per gram", "ng/gm", "ng per gm", "nanograms per gram"],
+      "synonyms": [
+        "nanogram per gram",
+        "ng/gm",
+        "ng per gm",
+        "nanograms per gram"
+      ],
       "printSymbol": "ng/g"
     },
     {
@@ -10485,7 +10608,12 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per hour", "ng/hr", "ng per hr", "nanograms per hour"],
+      "synonyms": [
+        "nanogram per hour",
+        "ng/hr",
+        "ng per hr",
+        "nanograms per hour"
+      ],
       "printSymbol": "ng/h"
     },
     {
@@ -10496,7 +10624,11 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per kilogram", "ng per kg", "nanograms per kilogram"],
+      "synonyms": [
+        "nanogram per kilogram",
+        "ng per kg",
+        "nanograms per kilogram"
+      ],
       "printSymbol": "ng/kg"
     },
     {
@@ -10507,7 +10639,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per kilogram per 8 hour",
         "ng/(8.h.kg)",
         "ng/kg/8hrs",
@@ -10527,7 +10659,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per kilogram per hour",
         "ng/(kg.h)",
         "ng/kg/hr",
@@ -10544,7 +10676,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per kilogram per minute",
         "ng/(kg.min)",
         "ng per kg per min",
@@ -10560,7 +10692,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per liter",
         "ng per L",
         "nanograms per liter",
@@ -10576,7 +10708,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per square meter",
         "ng/m^2",
         "ng/sq. m",
@@ -10597,7 +10729,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per milligram", "ng per mg", "nanograms"],
+      "synonyms": ["nanogram per milligram", "ng per mg", "nanograms"],
       "printSymbol": "ng/mg"
     },
     {
@@ -10608,7 +10740,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per milligram per hour",
         "ng/mg/hr",
         "ng per mg per hr",
@@ -10624,7 +10756,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanogram per minute", "ng per min", "nanograms"],
+      "synonyms": ["nanogram per minute", "ng per min", "nanograms"],
       "printSymbol": "ng/min"
     },
     {
@@ -10635,7 +10767,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per millliiter",
         "ng per mL",
         "nanograms",
@@ -10651,7 +10783,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per milliliter per hour",
         "ng/mL/hr",
         "ng per mL per mL",
@@ -10671,7 +10803,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per second",
         "ng/sec",
         "ng per sec",
@@ -10687,7 +10819,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanogram per enzyme unit",
         "ng per U",
         "nanograms per enzyme unit"
@@ -10702,7 +10834,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanokatal", "nanokatals"],
+      "synonyms": ["nanokatal", "nanokatals"],
       "printSymbol": "nkat"
     },
     {
@@ -10713,7 +10845,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanoliter", "nanoliters", "nanolitres"],
+      "synonyms": ["nanoliter", "nanoliters", "nanolitres"],
       "printSymbol": "nL"
     },
     {
@@ -10724,7 +10856,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanometer", "nanometers", "nanometres"],
+      "synonyms": ["nanometer", "nanometers", "nanometres"],
       "printSymbol": "nm"
     },
     {
@@ -10735,7 +10867,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanometer per second per liter",
         "nm/sec/liter",
         "nm/sec/litre",
@@ -10760,7 +10892,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanomole", "nanomoles"],
+      "synonyms": ["nanomole", "nanomoles"],
       "printSymbol": "nmol"
     },
     {
@@ -10776,7 +10908,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per 24 hour",
         "nmol/24hr",
         "nmol/24 hr",
@@ -10802,7 +10934,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per day",
         "nmol/day",
         "nanomoles per day",
@@ -10829,7 +10961,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per deciliter",
         "nmol per dL",
         "nanomoles per deciliter",
@@ -10855,7 +10987,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per gram",
         "nmol per gram",
         "nanomoles per gram",
@@ -10876,7 +11008,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per hour per liter",
         "nmol/hrs/L",
         "nmol per hrs per L",
@@ -10900,7 +11032,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per liter",
         "nmol per L",
         "nanomoles per liter",
@@ -10921,7 +11053,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milligram",
         "nmol per mg",
         "nanomoles per milligram"
@@ -10941,7 +11073,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milligram per hour",
         "nmol/mg/hr",
         "nmol per mg per hr",
@@ -10962,7 +11094,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milligram of protein",
         "nanomoles",
         "nmol/mg prot",
@@ -10983,7 +11115,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per minute",
         "nmol per min",
         "nanomoles per minute",
@@ -11006,7 +11138,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per minute per milliliter",
         "nmol per min per mL",
         "nanomoles per minutes per milliliter",
@@ -11030,7 +11162,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milliliter",
         "nmol per mL",
         "nanomoles per milliliter",
@@ -11051,7 +11183,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milliliter per hour",
         "nmol/mL/hr",
         "nmol per mL per hr",
@@ -11076,7 +11208,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per milliliter per minute",
         "nmol per mL per min",
         "nanomoles per milliliters per min",
@@ -11100,7 +11232,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per millimole",
         "nmol per mmol",
         "nanomoles per millimole"
@@ -11120,7 +11252,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanomole per millimole of creatinine", "nanomoles"],
+      "synonyms": ["nanomole per millimole of creatinine", "nanomoles"],
       "printSymbol": "nmol/mmol"
     },
     {
@@ -11136,7 +11268,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanomole per mole", "nmol per mole", "nanomoles"],
+      "synonyms": ["nanomole per mole", "nmol per mole", "nanomoles"],
       "printSymbol": "nmol/mol"
     },
     {
@@ -11152,7 +11284,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["nanomole per nanomole", "nmol per nmol", "nanomoles"],
+      "synonyms": ["nanomole per nanomole", "nmol per nmol", "nanomoles"],
       "printSymbol": "nmol/nmol"
     },
     {
@@ -11168,7 +11300,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per second",
         "nmol/sec",
         "nmol per sec",
@@ -11192,7 +11324,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanomole per second per liter",
         "nmol/sec/L",
         "nmol per s per L",
@@ -11213,7 +11345,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["nanosecond", "nanoseconds"],
+      "synonyms": ["nanosecond", "nanoseconds"],
       "printSymbol": "ns"
     },
     {
@@ -11229,7 +11361,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "nanoenzyme unit per milliliter",
         "nU per mL",
         "nanoenzyme units per milliliter",
@@ -11247,7 +11379,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["Ohm meter", "electric resistivity", "meters", "metres"],
+      "synonyms": ["Ohm meter", "electric resistivity", "meters", "metres"],
       "printSymbol": "Ω.m"
     },
     {
@@ -11258,7 +11390,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "osmole per kilogram",
         "osm per kg",
         "osmoles per kilogram",
@@ -11274,7 +11406,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "osmole per liter",
         "osm per L",
         "osmoles per liter",
@@ -11291,7 +11423,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["picoampere", "picoamperes"],
+      "synonyms": ["picoampere", "picoamperes"],
       "printSymbol": "pA"
     },
     {
@@ -11302,7 +11434,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picogram", "picograms"],
+      "synonyms": ["picogram", "picograms"],
       "printSymbol": "pg"
     },
     {
@@ -11313,7 +11445,12 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picogram per deciliter", "pg per dL", "picograms", "decilitre"],
+      "synonyms": [
+        "picogram per deciliter",
+        "pg per dL",
+        "picograms",
+        "decilitre"
+      ],
       "printSymbol": "pg/dL"
     },
     {
@@ -11324,7 +11461,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picogram per liter", "pg per L", "picograms", "litre"],
+      "synonyms": ["picogram per liter", "pg per L", "picograms", "litre"],
       "printSymbol": "pg/L"
     },
     {
@@ -11335,7 +11472,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picogram per milligram", "pg per mg", "picograms"],
+      "synonyms": ["picogram per milligram", "pg per mg", "picograms"],
       "printSymbol": "pg/mg"
     },
     {
@@ -11346,7 +11483,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picogram per milliliter",
         "pg per mL",
         "picograms per milliliter",
@@ -11362,7 +11499,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picogram per millimeter",
         "pg per mm",
         "picogram/millimeter",
@@ -11380,7 +11517,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["picokatal", "pkats", "picokatals"],
+      "synonyms": ["picokatal", "pkats", "picokatals"],
       "printSymbol": "pkat"
     },
     {
@@ -11391,7 +11528,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["picoliter", "picoliters", "picolitres"],
+      "synonyms": ["picoliter", "picoliters", "picolitres"],
       "printSymbol": "pL"
     },
     {
@@ -11402,7 +11539,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picometer", "picometers", "picometres"],
+      "synonyms": ["picometer", "picometers", "picometres"],
       "printSymbol": "pm"
     },
     {
@@ -11418,7 +11555,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["picomole", "picomoles", "pmols"],
+      "synonyms": ["picomole", "picomoles", "pmols"],
       "printSymbol": "pmol"
     },
     {
@@ -11434,7 +11571,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per 24 hour",
         "pmol/24hrs",
         "pmol/24 hrs",
@@ -11459,7 +11596,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per day",
         "pmol/dy",
         "pmol per day",
@@ -11483,7 +11620,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per deciliter",
         "pmol per dL",
         "picomoles per deciliter",
@@ -11504,7 +11641,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per gram",
         "pmol per gm",
         "picomoles per gram",
@@ -11525,7 +11662,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per hour per milliliter ",
         "pmol/hrs/mL",
         "pmol per hrs per mL",
@@ -11550,7 +11687,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per liter",
         "picomole/liter",
         "pmol per L",
@@ -11572,7 +11709,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per minute",
         "picomole/minute",
         "pmol per min",
@@ -11596,7 +11733,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per milliliter",
         "picomole/milliliter",
         "picomole/millilitre",
@@ -11621,7 +11758,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "picomole per micromole",
         "pmol/mcgmol",
         "picomole/micromole",
@@ -11639,7 +11776,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["picosecond", "picoseconds", "psec"],
+      "synonyms": ["picosecond", "picoseconds", "psec"],
       "printSymbol": "ps"
     },
     {
@@ -11650,7 +11787,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["picotesla", "picoteslas"],
+      "synonyms": ["picotesla", "picoteslas"],
       "printSymbol": "pT"
     },
     {
@@ -11666,7 +11803,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per 12 hour",
         "U/12hrs",
         "U/ 12hrs",
@@ -11694,7 +11831,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per 2 hour",
         "U/2hrs",
         "U/ 2hrs",
@@ -11723,7 +11860,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per 24 hour",
         "U/24hrs",
         "U/ 24hrs",
@@ -11751,7 +11888,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per 10",
         "enzyme unit/10",
         "U per 10",
@@ -11776,7 +11913,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per 10 billion",
         "U per 10*10",
         "enzyme units per 10*10",
@@ -11801,7 +11938,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per trillion",
         "enzyme unit/10*12",
         "U per 10*12",
@@ -11827,7 +11964,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per million",
         "enzyme unit/10*6",
         "U per 10*6",
@@ -11853,7 +11990,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per billion",
         "enzyme unit/10*9",
         "U per 10*9",
@@ -11878,7 +12015,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per day",
         "U/dy",
         "enzyme units per day",
@@ -11904,7 +12041,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per deciliter",
         "U per dL",
         "enzyme units per deciliter",
@@ -11928,7 +12065,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per gram",
         "U/gm",
         "U per gm",
@@ -11952,7 +12089,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per hour",
         "U/hr",
         "U per hr",
@@ -11976,7 +12113,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per liter",
         "enzyme unit/liter",
         "enzyme unit/litre",
@@ -12002,7 +12139,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per minute",
         "enzyme unit/minute",
         "U per min",
@@ -12027,7 +12164,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per milliliter",
         "U per mL",
         "enzyme units per milliliter",
@@ -12051,7 +12188,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "enzyme unit per second",
         "U/sec",
         "U per second",
@@ -12070,7 +12207,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro international unit",
         "uIU",
         "u IU",
@@ -12086,7 +12223,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro international unit per liter",
         "uIU/L",
         "u IU/L",
@@ -12105,7 +12242,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro international unit per milliliter",
         "uIU/mL",
         "u IU/mL",
@@ -12123,7 +12260,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microequivalent",
         "microequivalents",
         "10^-6 equivalents",
@@ -12139,7 +12276,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microequivalent per liter",
         "ueq per liter",
         "litre",
@@ -12155,7 +12292,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microequivalent per milliliter",
         "ueq per milliliter",
         "millilitre",
@@ -12171,7 +12308,13 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["microgram", "mcg", "micrograms", "10^-6 grams", "10-6 grams"],
+      "synonyms": [
+        "microgram",
+        "mcg",
+        "micrograms",
+        "10^-6 grams",
+        "10-6 grams"
+      ],
       "printSymbol": "μg"
     },
     {
@@ -12182,7 +12325,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per 100 gram",
         "ug/100gm",
         "ug/100 gm",
@@ -12202,7 +12345,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per 24 hour",
         "ug/24hrs",
         "ug/24 hrs",
@@ -12222,7 +12365,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per 8 hour",
         "ug/8hrs",
         "ug/8 hrs",
@@ -12243,7 +12386,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per square foot (international)",
         "ug/sft",
         "ug/ft2",
@@ -12263,7 +12406,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per day",
         "ug/dy",
         "mcg/dy",
@@ -12281,7 +12424,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per deciliter",
         "ug per dL",
         "mcg/dl",
@@ -12299,7 +12442,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per gram",
         "ug per gm",
         "mcg/gm",
@@ -12316,7 +12459,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per hour",
         "ug/hr",
         "mcg/hr",
@@ -12335,7 +12478,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per kilogram",
         "ug per kg",
         "mcg/kg",
@@ -12352,7 +12495,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per kilogram per 8 hour",
         "ug/kg/8hrs",
         "mcg/kg/8hrs",
@@ -12374,7 +12517,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per kilogram per day",
         "ug/(kg.d)",
         "ug/kg/dy",
@@ -12396,7 +12539,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per kilogram per hour",
         "ug/(kg.h)",
         "ug/kg/hr",
@@ -12415,7 +12558,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per kilogram per minute",
         "ug/kg/min",
         "ug/kg/min",
@@ -12434,7 +12577,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per liter",
         "mcg/L",
         "ug per L",
@@ -12452,7 +12595,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per liter per 24 hour",
         "ug/L/24hrs",
         "ug/L/24 hrs",
@@ -12474,7 +12617,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per square meter",
         "ug/m^2",
         "ug/sq. m",
@@ -12499,7 +12642,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per cubic meter",
         "ug/m^3",
         "ug/cu. m",
@@ -12524,7 +12667,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per milligram",
         "ug per mg",
         "mcg/mg",
@@ -12541,7 +12684,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per minute",
         "ug per min",
         "mcg/min",
@@ -12558,7 +12701,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per milliliter",
         "ug per mL",
         "mcg/mL",
@@ -12576,7 +12719,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per millimole",
         "ug per mmol",
         "mcg/mmol",
@@ -12593,7 +12736,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microgram per nanogram",
         "ug per ng",
         "mcg/ng",
@@ -12610,7 +12753,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["microkatal", "microkatals", "ukats"],
+      "synonyms": ["microkatal", "microkatals", "ukats"],
       "printSymbol": "μkat"
     },
     {
@@ -12621,7 +12764,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["microliter", "microliters", "microlitres", "mcl"],
+      "synonyms": ["microliter", "microliters", "microlitres", "mcl"],
       "printSymbol": "μL"
     },
     {
@@ -12632,7 +12775,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microliter per 2 hour",
         "uL/2hrs",
         "uL/2 hrs",
@@ -12653,7 +12796,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microliter per hour",
         "uL/hr",
         "mcg/hr",
@@ -12672,7 +12815,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["micrometer", "micrometers", "micrometres", "μm", "microns"],
+      "synonyms": ["micrometer", "micrometers", "micrometres", "μm", "microns"],
       "printSymbol": "μm"
     },
     {
@@ -12683,7 +12826,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "microns per second",
         "um/sec",
         "micron/second",
@@ -12707,7 +12850,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["micromole", "micromoles", "umols"],
+      "synonyms": ["micromole", "micromoles", "umols"],
       "printSymbol": "μmol"
     },
     {
@@ -12723,7 +12866,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per 2 hour",
         "umol/2hrs",
         "umol/2 hrs",
@@ -12746,7 +12889,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per 24 hour",
         "umol/24hrs",
         "umol/24 hrs",
@@ -12769,7 +12912,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per 8 hour",
         "umol/8hr",
         "umol/8 hr",
@@ -12795,7 +12938,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per day",
         "umol/day",
         "umol per day",
@@ -12825,7 +12968,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per deciliter",
         "micromole/deciliter",
         "micromole/decilitre",
@@ -12848,7 +12991,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per gram",
         "micromole/gram",
         "umol per g",
@@ -12869,7 +13012,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per hour",
         "umol/hr",
         "umol per hr",
@@ -12891,7 +13034,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per kilogram",
         "umol per kg",
         "micromoles per kilogram"
@@ -12911,7 +13054,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per liter",
         "micromole/liter",
         "micromole/litre",
@@ -12934,7 +13077,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per liter per hour",
         "umol/liter/hr",
         "umol/litre/hr",
@@ -12958,7 +13101,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per milligram",
         "micromole/milligram",
         "umol per mg",
@@ -12979,7 +13122,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per minute",
         "micromole/minute",
         "umol per min",
@@ -13001,7 +13144,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per minute per gram",
         "umol/min/gm",
         "umol per min per gm",
@@ -13024,7 +13167,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per minute per liter",
         "umol/min/liter",
         "umol/minute/liter",
@@ -13048,7 +13191,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per milliliter",
         "umol per mL",
         "micromoles per milliliter",
@@ -13069,7 +13212,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per milliliter per minute",
         "umol per mL per min",
         "micromoles per milliliters per minute",
@@ -13090,7 +13233,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per millimole",
         "umol per mmol",
         "micromoles per millimole"
@@ -13110,7 +13253,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["micromole per mole", "umol per mol", "micromoles per mole"],
+      "synonyms": ["micromole per mole", "umol per mol", "micromoles per mole"],
       "printSymbol": "μmol/mol"
     },
     {
@@ -13126,7 +13269,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micromole per micromole",
         "umol per umol",
         "micromoles per micromole"
@@ -13141,7 +13284,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["microOhm", "microOhms", "µΩ"],
+      "synonyms": ["microOhm", "microOhms", "µΩ"],
       "printSymbol": "μΩ"
     },
     {
@@ -13152,7 +13295,7 @@ const ucumJsonDefs = {
       "isMetric": false,
       "isSpecial": false,
       "class": null,
-      "name": ["microsecond", "microseconds"],
+      "synonyms": ["microsecond", "microseconds"],
       "printSymbol": "μs"
     },
     {
@@ -13168,7 +13311,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro enzyme unit per gram",
         "uU per gm",
         "micro enzyme units per gram",
@@ -13190,7 +13333,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro enzyme unit per liter",
         "uU per L",
         "micro enzyme units per liter",
@@ -13213,7 +13356,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": [
+      "synonyms": [
         "micro enzyme unit per milliliter",
         "uU per mL",
         "micro enzyme units per milliliter",
@@ -13231,7 +13374,7 @@ const ucumJsonDefs = {
       "isMetric": true,
       "isSpecial": false,
       "class": null,
-      "name": ["microvolt", "microvolts"],
+      "synonyms": ["microvolt", "microvolts"],
       "printSymbol": "μV"
     }
   ],

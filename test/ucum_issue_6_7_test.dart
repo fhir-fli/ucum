@@ -31,4 +31,4 @@ void main() {
   });
 }
 
-UcumService getUcumService() => UcumService.fromJson();
+UcumService getUcumService() => UcumService();

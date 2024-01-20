@@ -28,20 +28,13 @@ class Decimal {
         setValueDecimal(value);
       }
     }
+    if (precision != null) {
+      this.precision = precision;
+    }
   }
 
   Decimal.fromInt(int i) {
     setValueDecimal(i.toString());
-  }
-
-  Decimal.fromValue(String value, int precision) {
-    value = value.toLowerCase();
-    if (value.contains("e")) {
-      setValueScientific(value);
-    } else {
-      setValueDecimal(value);
-    }
-    this.precision = precision;
   }
 
   void setValueDecimal(String value) {
@@ -612,7 +605,6 @@ class Decimal {
                     ((vi >= v.length) &&
                         (Utilities.noString(w) || allZeros(w)))))) {
               if (vi < v.length) {
-                // todo
                 w = w + v[vi];
                 vi++;
                 handled = false;
@@ -649,7 +641,6 @@ class Decimal {
           }
         }
       }
-
       int prec;
 
       if (isWholeNumber() && other.isWholeNumber() && (l < m)) {

@@ -4,6 +4,6 @@ class UcumServiceTest {
   late UcumService ucumService;
 
   void beforeAll() {
-    ucumService = UcumService.fromJson();
+    ucumService = UcumService();
   }
 }

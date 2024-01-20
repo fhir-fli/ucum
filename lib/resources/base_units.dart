@@ -1,6 +1,6 @@
 import '../ucum.dart';
 
-final baseUnits = [
+final baseUnitsList = [
   BaseUnit(
       code: "m",
       codeUC: "M",

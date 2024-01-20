@@ -30,14 +30,14 @@ import '../ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class UcumModel {
-  String? version;
-  String? revision;
-  DateTime? revisionDate;
-  List<Prefix> prefixes = <Prefix>[];
-  List<BaseUnit> baseUnits = <BaseUnit>[];
-  List<DefinedUnit> definedUnits = <DefinedUnit>[];
+  final String? version;
+  final String? revision;
+  final DateTime? revisionDate;
+  final List<Prefix> prefixes = prefixesList;
+  final List<BaseUnit> baseUnits = baseUnitsList;
+  final List<DefinedUnit> definedUnits = definedUnitsList;
 
-  UcumModel(this.version, this.revision, this.revisionDate);
+  UcumModel({this.version, this.revision, this.revisionDate});
 
   UcumUnit? getUnit(String code) {
     for (var unit in baseUnits) {

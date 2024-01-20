@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import '../ucum.dart'; // Import for File operations
 
 // UcumService implements the UcumService interface
@@ -13,33 +11,8 @@ class UcumService {
 
   static const String ucumOid = '2.16.840.1.113883.6.8';
 
-  late UcumModel model;
+  final UcumModel model = UcumModel();
   Registry handlers = Registry();
-
-  factory UcumService.fromJson() {
-    try {
-      var parser = JsonDefinitionsParser();
-      var model = parser.parse(ucumJsonDefs);
-      model = model;
-      return UcumService();
-    } catch (e) {
-      throw UcumException(e.toString());
-    }
-  }
-
-  static Future<UcumService> fromFile(String filepath) async {
-    var file = File(filepath);
-    if (!file.existsSync()) {
-      throw UcumException('File does not exist');
-    }
-    try {
-      var parser = XmlDefinitionsParser();
-      var model = await parser.parse(filepath);
-      return UcumService._()..model = model;
-    } catch (e) {
-      throw UcumException(e.toString());
-    }
-  }
 
   String paramError(String method, String param, String msg) {
     return '${this.runtimeType}.$method.$param is not acceptable: $msg';
@@ -70,7 +43,11 @@ class UcumService {
       new ExpressionParser(model).parse(unit);
       return null;
     } catch (e) {
-      return e.toString();
+      if (e is UcumException) {
+        return '${e.message}';
+      } else {
+        return e.toString();
+      }
     }
   }
 

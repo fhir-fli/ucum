@@ -28,10 +28,10 @@ void main() {
           ValidatedQuantity.fromString('2.54 cm');
       final ValidatedQuantity quantity6 =
           ValidatedQuantity.fromString('1 inch');
-      expect(ucumService.isEqual(quantity5, quantity6), false);
+      expect(ucumService.isEqual(quantity5, quantity6), true);
       expect(ucumService.isEqual(quantity6, quantity5), true);
     });
   });
 }
 
-UcumService getUcumService() => UcumService.fromJson();
+UcumService getUcumService() => UcumService();

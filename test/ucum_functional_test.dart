@@ -99,12 +99,12 @@ Future<void> main() async {
     String? srcUnit = x.getAttribute("srcUnit");
     String? dstUnit = x.getAttribute("dstUnit");
     String? outcome = x.getAttribute("outcome");
-    print('case $id: $value $srcUnit -> $outcome $dstUnit');
     if (value != null && srcUnit != null && dstUnit != null) {
-      Decimal res = ucumServiceTest.ucumService
-          .convert(Decimal.fromString(value), srcUnit, dstUnit);
-      debug(
-          "Convert Test $id: the value '$value $srcUnit' => '${res.toString()} $dstUnit'");
+      final decimal = Decimal.fromString(value);
+      Decimal res =
+          ucumServiceTest.ucumService.convert(decimal, srcUnit, dstUnit);
+      // debug(
+      //     "Convert Test $id: the value '$value $srcUnit' => '${res.toString()} $dstUnit'");
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we can get the precision right, which we can't
       if (res.comparesTo(Decimal.fromString(outcome)) != 0) {
@@ -146,11 +146,11 @@ Future<void> main() async {
       String? res = ucumServiceTest.ucumService.validate(unit);
       bool result = res == null;
       if (result) {
-        debug(
-            "Validation Test $id: the unit '$unit' is valid (reason: $reason)");
+        // debug(
+        //     "Validation Test $id: the unit '$unit' is valid (reason: $reason)");
       } else {
         debug(
-            "Validation Test $id: the unit is not valid because it is '$res' (reason: $reason)");
+            "Validation Test $id: the unit is not valid because: '$res' (reason: $reason)");
       }
       if (valid != result) {
         if (valid) {
@@ -197,7 +197,6 @@ Future<void> main() async {
 
   XmlElement? focus = XmlUtils.getFirstChild(element);
   while (focus != null) {
-    print(focus.name);
     String testTypeString = focus.name.toString();
     FunctionalTestType testType = getFunctionalTestType(testTypeString);
     for (XmlElement testCase in XmlUtils.getNamedChildren(focus, "case")) {

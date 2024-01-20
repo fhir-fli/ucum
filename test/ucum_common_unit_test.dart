@@ -6,12 +6,12 @@ import 'package:ucum/ucum.dart';
 void main() {
   group('UCUM Common Unit Tests: ', () {
     // TODO: In the Java tests, the print statements below also print out, so
-    //it's unclear to me if they are errors or just making notations
+    // it's unclear to me if they are errors or just making notations
 
     late UcumService ucumService;
 
-    setUpAll(() async {
-      ucumService = await getUcumService();
+    setUpAll(() {
+      ucumService = getUcumService();
     });
 
     test('Analyze', () {
@@ -112,11 +112,7 @@ class CommonUnit {
   String toString() => 'CU(unit: $unit, dim: $dim, can: $can)';
 }
 
-Future<UcumService> getUcumService() async {
-  final fileName = 'lib/resources/ucum-essence.xml';
-  final ucumService = await UcumService.fromFile(fileName);
-  return ucumService;
-}
+UcumService getUcumService() => UcumService();
 
 // Commonly Used UCM Codes (sorted to remove duplicates, not for readability)
 final List<CommonUnit> units = <CommonUnit>[

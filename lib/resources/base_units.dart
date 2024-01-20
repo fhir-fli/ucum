@@ -7,6 +7,7 @@ final baseUnitsList = [
       property: "length",
       dim: "L",
       name: "meter",
+      synonyms: ['meters'],
       printSymbol: "m"),
   BaseUnit(
       code: "s",
@@ -14,6 +15,7 @@ final baseUnitsList = [
       property: "time",
       dim: "T",
       name: "second",
+      synonyms: ['seconds'],
       printSymbol: "s"),
   BaseUnit(
       code: "g",
@@ -21,6 +23,7 @@ final baseUnitsList = [
       property: "mass",
       dim: "M",
       name: "gram",
+      synonyms: ['grams'],
       printSymbol: "g"),
   BaseUnit(
       code: "rad",
@@ -28,6 +31,7 @@ final baseUnitsList = [
       property: "plane angle",
       dim: "A",
       name: "radian",
+      synonyms: ['radians'],
       printSymbol: "rad"),
   BaseUnit(
       code: "K",

@@ -162,9 +162,10 @@ class Converter {
         u = handlers.get(unit.code)?.getUnits();
         v = handlers.get(unit.code)?.getValue();
         if (handlers.get(unit.code)?.hasOffset() ?? false) {
+          v = v?.add(handlers.get(unit.code)!.getOffset());
           // Handling for special case with offset
-          throw UcumException(
-              "Not handled yet (special unit with offset from 0 at intersect)");
+          // throw UcumException(
+          //     "Not handled yet (special unit with offset from 0 at intersect)");
         }
       }
     }

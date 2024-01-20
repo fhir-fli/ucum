@@ -6424,8 +6424,6 @@ final definedUnitsList = [
       names: [
         "(dyn*s)/cm",
         "dyn sec per cm",
-        "seconds",
-        "centimetre",
         "dyne seconds",
         "dyne second per centimeter"
       ],
@@ -7549,11 +7547,7 @@ final definedUnitsList = [
         "kg/(s*m2)",
         "kg/(s*m^2)",
         "kg per s per m2",
-        "per sec",
-        "per m^2",
         "kilograms per seconds per square meter",
-        "meter squared",
-        "metre",
         "kilogram per second per square meter"
       ],
       printSymbol: "kg/(s.(m<sup>2</sup>))"),

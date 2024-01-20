@@ -543,6 +543,10 @@ class Decimal {
     }
   }
 
+  bool equivalent(Object other) {
+    return this == other;
+  }
+
   Decimal multiplyInt(int other) {
     return multiply(Decimal.fromInt(other));
   }

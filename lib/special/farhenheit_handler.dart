@@ -3,14 +3,10 @@ import '../ucum.dart';
 /// A class for handling Fahrenheit units.
 class FahrenheitHandler extends SpecialUnitHandler {
   @override
-  String getCode() {
-    return '[degF]';
-  }
+  String getCode() => '[degF]';
 
   @override
-  String getUnits() {
-    return 'K'; // Kelvin
-  }
+  String getUnits() => 'K'; // Kelvin
 
   @override
   Decimal getValue() {
@@ -23,13 +19,9 @@ class FahrenheitHandler extends SpecialUnitHandler {
   }
 
   @override
-  Decimal getOffset() {
-    // Assuming a constructor that takes a string and precision
-    return Decimal.fromString('32', 24);
-  }
+  // Assuming a constructor that takes a string and precision
+  Decimal getOffset() => Decimal.fromString('32', 24);
 
   @override
-  bool hasOffset() {
-    return true;
-  }
+  bool hasOffset() => true;
 }

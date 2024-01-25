@@ -7,9 +7,15 @@ class ValidatedQuantity extends Pair {
   factory ValidatedQuantity.fromString(String string) {
     final matches = valueRegex.firstMatch(string);
     if (matches?.namedGroup('value') == null) {
-      throw 'Quantity must have a number';
+      throw 'Quantity must have a number, but was passed $string';
     }
     string = string.replaceAll(matches!.namedGroup('value')!, '').trim();
+    if (string.startsWith("'")) {
+      string = string.substring(1);
+    }
+    if (string.endsWith("'")) {
+      string = string.substring(0, string.length - 1);
+    }
     return ValidatedQuantity(
         value: Decimal.fromString(matches.namedGroup('value')), code: string);
   }
@@ -17,12 +23,56 @@ class ValidatedQuantity extends Pair {
   ValidatedQuantity copyWith({Decimal? value, String? code}) =>
       ValidatedQuantity(value: value ?? this.value, code: code ?? this.code);
 
+  ValidatedQuantity abs() =>
+      ValidatedQuantity(value: value.absolute(), code: code);
+
   bool isValid() => UcumService().validate(code) == null;
 
   static RegExp valueRegex = RegExp(r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*");
 
   @override
   operator ==(Object other) {
+    if (other is ValidatedQuantity) {
+      final shouldBeEqual = UcumService().isEqual(this, other);
+      if (shouldBeEqual) {
+        if (definiteDurationUnits.contains(code) &&
+            !definiteDurationUnits.contains(other.code)) {
+          return false;
+        } else if (!definiteDurationUnits.contains(code) &&
+            definiteDurationUnits.contains(other.code)) {
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        final shouldBeEqual = UcumService().isEqual(this, newQuantity);
+        if (shouldBeEqual) {
+          if (definiteDurationUnits.contains(code) &&
+              !definiteDurationUnits.contains(newQuantity.code)) {
+            return false;
+          } else if (!definiteDurationUnits.contains(code) &&
+              definiteDurationUnits.contains(newQuantity.code)) {
+            return false;
+          } else {
+            return true;
+          }
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  bool equivalent(Object other) {
     if (other is ValidatedQuantity) {
       return UcumService().isEqual(this, other);
     } else if (other is String) {
@@ -157,8 +207,98 @@ class ValidatedQuantity extends Pair {
         '(reason: there was an unknown error)');
   }
 
-  bool equivalent(Object other) {
-    return this == other;
+  bool operator >(Object other) {
+    if (other is Decimal) {
+      return this.value.comparesTo(other) > 0;
+    } else if (other is ValidatedQuantity) {
+      final Decimal compareValue =
+          UcumService().convert(other.value, other.code, code);
+      return this.value.comparesTo(compareValue) > 0;
+    } else if (other is num || other is BigInt) {
+      return this.value.comparesTo(Decimal.fromString(other.toString())) > 0;
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        return this.value.comparesTo(newQuantity.value) > 0;
+      } else {
+        throw UcumException('> could not be performed on $this and $other '
+            '(reason: it is not an accepted type)');
+      }
+    } else {
+      throw UcumException('> could not be performed on $this and $other '
+          '(reason: it is not an accepted type)');
+    }
+  }
+
+  bool operator <(Object other) {
+    if (other is Decimal) {
+      return this.value.comparesTo(other) < 0;
+    } else if (other is ValidatedQuantity) {
+      final Decimal compareValue =
+          UcumService().convert(other.value, other.code, code);
+      return this.value.comparesTo(compareValue) < 0;
+    } else if (other is num || other is BigInt) {
+      return this.value.comparesTo(Decimal.fromString(other.toString())) < 0;
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        return this.value.comparesTo(newQuantity.value) < 0;
+      } else {
+        throw UcumException('> could not be performed on $this and $other '
+            '(reason: it is not an accepted type)');
+      }
+    } else {
+      throw UcumException('> could not be performed on $this and $other '
+          '(reason: it is not an accepted type)');
+    }
+  }
+
+  bool operator >=(Object other) {
+    if (other is Decimal) {
+      return this == other || this.value.comparesTo(other) > 0;
+    } else if (other is ValidatedQuantity) {
+      final Decimal compareValue =
+          UcumService().convert(other.value, other.code, code);
+      return this == other || this.value.comparesTo(compareValue) > 0;
+    } else if (other is num || other is BigInt) {
+      return this.value.comparesTo(Decimal.fromString(other.toString())) > 0;
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        return this == newQuantity ||
+            this.value.comparesTo(newQuantity.value) > 0;
+      } else {
+        throw UcumException('> could not be performed on $this and $other '
+            '(reason: it is not an accepted type)');
+      }
+    } else {
+      throw UcumException('> could not be performed on $this and $other '
+          '(reason: it is not an accepted type)');
+    }
+  }
+
+  bool operator <=(Object other) {
+    if (other is Decimal) {
+      return this == other || this.value.comparesTo(other) < 0;
+    } else if (other is ValidatedQuantity) {
+      final Decimal compareValue =
+          UcumService().convert(other.value, other.code, code);
+      return this == other || this.value.comparesTo(compareValue) < 0;
+    } else if (other is num || other is BigInt) {
+      return this.value.comparesTo(Decimal.fromString(other.toString())) < 0;
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        return this == newQuantity ||
+            this.value.comparesTo(newQuantity.value) < 0;
+      } else {
+        throw UcumException('> could not be performed on $this and $other '
+            '(reason: it is not an accepted type)');
+      }
+    } else {
+      throw UcumException('> could not be performed on $this and $other '
+          '(reason: it is not an accepted type)');
+    }
   }
 
   @override

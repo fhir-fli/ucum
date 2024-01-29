@@ -17,7 +17,8 @@ class ValidatedQuantity extends Pair {
       string = string.substring(0, string.length - 1);
     }
     return ValidatedQuantity(
-        value: Decimal.fromString(matches.namedGroup('value')), code: string);
+        value: Decimal.fromString(matches.namedGroup('value')),
+        code: string.isEmpty ? '1' : string);
   }
 
   ValidatedQuantity copyWith({Decimal? value, String? code}) =>
@@ -26,7 +27,9 @@ class ValidatedQuantity extends Pair {
   ValidatedQuantity abs() =>
       ValidatedQuantity(value: value.absolute(), code: code);
 
-  bool isValid() => UcumService().validate(code) == null;
+  bool isValid() =>
+      num.tryParse(value.asDecimal()) != null &&
+      UcumService().validate(code) == null;
 
   static RegExp valueRegex = RegExp(r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*");
 
@@ -67,6 +70,26 @@ class ValidatedQuantity extends Pair {
       } else {
         return false;
       }
+    } else if (other is num || other is BigInt) {
+      final newQuantity = ValidatedQuantity.fromString(other.toString());
+      if (newQuantity.isValid()) {
+        final shouldBeEqual = UcumService().isEqual(this, newQuantity);
+        if (shouldBeEqual) {
+          if (definiteDurationUnits.contains(code) &&
+              !definiteDurationUnits.contains(newQuantity.code)) {
+            return false;
+          } else if (!definiteDurationUnits.contains(code) &&
+              definiteDurationUnits.contains(newQuantity.code)) {
+            return false;
+          } else {
+            return true;
+          }
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
@@ -82,6 +105,13 @@ class ValidatedQuantity extends Pair {
       } else {
         return false;
       }
+    } else if (other is num || other is BigInt) {
+      final newQuantity = ValidatedQuantity.fromString(other.toString());
+      if (newQuantity.isValid()) {
+        return UcumService().isEqual(this, newQuantity);
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
@@ -92,63 +122,60 @@ class ValidatedQuantity extends Pair {
 
   ValidatedQuantity operator +(Object other) {
     if (other is Decimal) {
-      copyWith(value: this.value.add(other));
+      return copyWith(value: this.value.add(other));
     } else if (other is ValidatedQuantity) {
-      copyWith(value: this.value.add(other.value));
+      return copyWith(value: this.value.add(other.value));
     } else if (other is num || other is BigInt) {
-      copyWith(value: this.value.add(Decimal.fromString(other.toString())));
+      return copyWith(
+          value: this.value.add(Decimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        copyWith(value: this.value.add(newQuantity.value));
+        return copyWith(value: this.value.add(newQuantity.value));
       } else {
-        throw UcumException('$this could not be mulitplied with $other '
+        throw UcumException('$this could not be added to $other '
             '(reason: it is not an accepted type)');
       }
     } else {
-      throw UcumException('$this could not be mulitplied with $other '
+      throw UcumException('$this could not be added to $other '
           '(reason: it is not an accepted type)');
     }
-    throw UcumException('$this could not be mulitplied with $other '
-        '(reason: there was an unknown error)');
   }
 
   ValidatedQuantity operator -(Object other) {
     if (other is Decimal) {
-      copyWith(value: this.value.subtract(other));
+      return copyWith(value: this.value.subtract(other));
     } else if (other is ValidatedQuantity) {
-      copyWith(value: this.value.subtract(other.value));
+      return copyWith(value: this.value.subtract(other.value));
     } else if (other is num || other is BigInt) {
-      copyWith(
+      return copyWith(
           value: this.value.subtract(Decimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        copyWith(value: this.value.subtract(newQuantity.value));
+        return copyWith(value: this.value.subtract(newQuantity.value));
       } else {
-        throw UcumException('$this could not be mulitplied with $other '
+        throw UcumException('$other could not be subtracted from $this '
             '(reason: it is not an accepted type)');
       }
     } else {
-      throw UcumException('$this could not be mulitplied with $other '
+      throw UcumException('$other could not be subtracted from $this '
           '(reason: it is not an accepted type)');
     }
-    throw UcumException('$this could not be mulitplied with $other '
-        '(reason: there was an unknown error)');
   }
 
   ValidatedQuantity operator *(Object other) {
     if (other is Decimal) {
-      copyWith(value: this.value.multiply(other));
+      return copyWith(value: this.value.multiply(other));
     } else if (other is ValidatedQuantity) {
-      copyWith(value: this.value.multiply(other.value));
+      return copyWith(value: this.value.multiply(other.value));
     } else if (other is num || other is BigInt) {
-      copyWith(
+      return copyWith(
           value: this.value.multiply(Decimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        copyWith(value: this.value.multiply(newQuantity.value));
+        return copyWith(value: this.value.multiply(newQuantity.value));
       } else {
         throw UcumException('$this could not be mulitplied with $other '
             '(reason: it is not an accepted type)');
@@ -157,44 +184,42 @@ class ValidatedQuantity extends Pair {
       throw UcumException('$this could not be mulitplied with $other '
           '(reason: it is not an accepted type)');
     }
-    throw UcumException('$this could not be mulitplied with $other '
-        '(reason: there was an unknown error)');
   }
 
   ValidatedQuantity operator /(Object other) {
     if (other is Decimal) {
-      copyWith(value: this.value.divide(other));
+      return copyWith(value: this.value.divide(other));
     } else if (other is ValidatedQuantity) {
-      copyWith(value: this.value.divide(other.value));
+      return copyWith(value: this.value.divide(other.value));
     } else if (other is num || other is BigInt) {
-      copyWith(value: this.value.divide(Decimal.fromString(other.toString())));
+      return copyWith(
+          value: this.value.divide(Decimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        copyWith(value: this.value.divide(newQuantity.value));
+        return copyWith(value: this.value.divide(newQuantity.value));
       } else {
-        throw UcumException('$this could not be divided with $other '
+        throw UcumException('$this could not be divided by $other '
             '(reason: it is not an accepted type)');
       }
     } else {
-      throw UcumException('$this could not be divided with $other '
+      throw UcumException('$this could not be divided by $other '
           '(reason: it is not an accepted type)');
     }
-    throw UcumException('$this could not be divided with $other '
-        '(reason: there was an unknown error)');
   }
 
   ValidatedQuantity operator %(Object other) {
     if (other is Decimal) {
-      copyWith(value: this.value.modulo(other));
+      return copyWith(value: this.value.modulo(other));
     } else if (other is ValidatedQuantity) {
-      copyWith(value: this.value.modulo(other.value));
+      return copyWith(value: this.value.modulo(other.value));
     } else if (other is num || other is BigInt) {
-      copyWith(value: this.value.modulo(Decimal.fromString(other.toString())));
+      return copyWith(
+          value: this.value.modulo(Decimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        copyWith(value: this.value.modulo(newQuantity.value));
+        return copyWith(value: this.value.modulo(newQuantity.value));
       } else {
         throw UcumException('$this could not be moduloed with $other '
             '(reason: it is not an accepted type)');
@@ -203,8 +228,6 @@ class ValidatedQuantity extends Pair {
       throw UcumException('$this could not be moduloed with $other '
           '(reason: it is not an accepted type)');
     }
-    throw UcumException('$this could not be moduloed with $other '
-        '(reason: there was an unknown error)');
   }
 
   bool operator >(Object other) {
@@ -301,42 +324,54 @@ class ValidatedQuantity extends Pair {
     }
   }
 
+  bool get isDuration => isTimeQuantity || isDefiniteDuration;
+
+  bool get isTimeQuantity => timeValuedQuantities.contains(code);
+
+  bool get isDefiniteDuration => definiteDurationUnits.contains(code);
+
+  num? get years =>
+      isDuration && isYears(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get months =>
+      isDuration && isMonths(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get days =>
+      isDuration && isDays(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get hours =>
+      isDuration && isHours(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get minutes =>
+      isDuration && isMinutes(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get seconds =>
+      isDuration && isSeconds(code) ? num.parse(value.asDecimal()) : null;
+
+  num? get milliseconds =>
+      isDuration && isMilliseconds(code) ? num.parse(value.asDecimal()) : null;
+
   @override
-  String toString() => _timeQuantitiesUnits.contains(code)
+  String toString() => isTimeQuantity
       ? '${value.toString()} $code'
       : "${value.toString()} '$code'";
 
-// http://hl7.org/fhirpath/#time-valued-quantities
-  static const _timeQuantitiesUnits = {
-    'milliseconds',
-    'millisecond',
-    'seconds',
-    'second',
-    'minutes',
-    'minute',
-    'hours',
-    'hour',
-    'days',
-    'day',
-    'weeks',
-    'week',
-    'months',
-    'month',
-    'years',
-    'year',
-  };
-}
-
-bool isValidatedQuantity(Object other) {
-  if (other is ValidatedQuantity) {
-    return other.isValid();
-  } else if (other is Decimal) {
-    return ValidatedQuantity(value: other).isValid();
-  } else if (other is num || other is BigInt) {
-    return ValidatedQuantity.fromString(other.toString()).isValid();
-  } else if (other is String) {
-    return ValidatedQuantity.fromString(other).isValid();
-  } else {
-    return false;
+  static bool isValidatedQuantity(Object other) {
+    if (other is ValidatedQuantity) {
+      return other.isValid();
+    } else if (other is Decimal) {
+      return ValidatedQuantity(value: other).isValid();
+    } else if (other is num || other is BigInt) {
+      return ValidatedQuantity.fromString(other.toString()).isValid();
+    } else if (other is String) {
+      return ValidatedQuantity.fromString(other).isValid();
+    } else if (other is Map<String, dynamic>) {
+      return ValidatedQuantity(
+              value: Decimal.fromString(other['value']?.toString()),
+              code: other['code']?.toString())
+          .isValid();
+    } else {
+      return false;
+    }
   }
 }

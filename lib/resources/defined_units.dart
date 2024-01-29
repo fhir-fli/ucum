@@ -821,7 +821,8 @@ final definedUnitsList = [
   DefinedUnit(
       code: "24.h",
       codeUC: "HR",
-      value: Value(unit: null, unitUC: null, value: null, text: null),
+      value: Value(
+          unit: "h", unitUC: "HR", value: Decimal.fromString('24'), text: "24"),
       property: "",
       isMetric: false,
       isSpecial: false,

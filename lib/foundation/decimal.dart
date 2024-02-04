@@ -84,6 +84,14 @@ class Decimal {
     }
   }
 
+  int significantFigures() {
+    if (scientific) {
+      return countSignificants(digits);
+    } else {
+      return precision;
+    }
+  }
+
   int countSignificants(String value) {
     int i = value.indexOf(".");
     if (i > -1) {

@@ -2,7 +2,7 @@ import '../ucum.dart';
 
 class ValidatedQuantity extends Pair {
   ValidatedQuantity({required super.value, String? code})
-      : super(code: code ?? '1');
+      : super(code: (code?.isNotEmpty ?? false) ? code! : '1');
 
   factory ValidatedQuantity.fromString(String string) {
     final matches = valueRegex.firstMatch(string);
@@ -20,6 +20,9 @@ class ValidatedQuantity extends Pair {
         value: Decimal.fromString(matches.namedGroup('value')),
         code: string.isEmpty ? '1' : string);
   }
+
+  ValidatedQuantity.fromPair(Pair pair)
+      : super(value: pair.value, code: pair.code.isNotEmpty ? pair.code : '1');
 
   ValidatedQuantity copyWith({Decimal? value, String? code}) =>
       ValidatedQuantity(value: value ?? this.value, code: code ?? this.code);
@@ -166,16 +169,18 @@ class ValidatedQuantity extends Pair {
 
   ValidatedQuantity operator *(Object other) {
     if (other is Decimal) {
-      return copyWith(value: this.value.multiply(other));
+      return ValidatedQuantity.fromPair(
+          UcumService().multiply(this, ValidatedQuantity(value: other)));
     } else if (other is ValidatedQuantity) {
-      return copyWith(value: this.value.multiply(other.value));
+      return ValidatedQuantity.fromPair(UcumService().multiply(this, other));
     } else if (other is num || other is BigInt) {
-      return copyWith(
-          value: this.value.multiply(Decimal.fromString(other.toString())));
+      return ValidatedQuantity.fromPair(UcumService().multiply(this,
+          ValidatedQuantity(value: Decimal.fromString(other.toString()))));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        return copyWith(value: this.value.multiply(newQuantity.value));
+        return ValidatedQuantity.fromPair(
+            UcumService().multiply(this, newQuantity));
       } else {
         throw UcumException('$this could not be mulitplied with $other '
             '(reason: it is not an accepted type)');
@@ -188,18 +193,20 @@ class ValidatedQuantity extends Pair {
 
   ValidatedQuantity operator /(Object other) {
     if (other is Decimal) {
-      return copyWith(value: this.value.divide(other));
+      return ValidatedQuantity.fromPair(
+          UcumService().divideBy(this, ValidatedQuantity(value: other)));
     } else if (other is ValidatedQuantity) {
-      return copyWith(value: this.value.divide(other.value));
+      return ValidatedQuantity.fromPair(UcumService().divideBy(this, other));
     } else if (other is num || other is BigInt) {
-      return copyWith(
-          value: this.value.divide(Decimal.fromString(other.toString())));
+      return ValidatedQuantity.fromPair(UcumService().divideBy(this,
+          ValidatedQuantity(value: Decimal.fromString(other.toString()))));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        return copyWith(value: this.value.divide(newQuantity.value));
+        return ValidatedQuantity.fromPair(
+            UcumService().divideBy(this, newQuantity));
       } else {
-        throw UcumException('$this could not be divided by $other '
+        throw UcumException('$this could not be dvided by $other '
             '(reason: it is not an accepted type)');
       }
     } else {

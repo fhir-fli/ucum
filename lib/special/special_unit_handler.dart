@@ -9,11 +9,11 @@ abstract class SpecialUnitHandler {
   String getUnits();
 
   /// Get the conversion value.
-  Decimal getValue();
+  UcumDecimal getValue();
 
   /// Return true if the conversion offset value is not equal to 0.
   bool hasOffset();
 
   /// Get the conversion offset value.
-  Decimal getOffset();
+  UcumDecimal getOffset();
 }

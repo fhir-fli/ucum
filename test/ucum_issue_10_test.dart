@@ -28,10 +28,11 @@ void main() {
       int start = DateTime.now().millisecondsSinceEpoch;
       for (double i = 90.5; i < 100; i += 0.001) {
         //    float i = 90.7183f;
-        Decimal decimal = new Decimal.fromString(i.toString());
+        UcumDecimal decimal = new UcumDecimal.fromString(i.toString());
         double expectPound = i * 2.2046226218487758072297380134503;
-        Decimal actual = ucumService.convert(decimal, "kg", "[lb_av]");
-        if ((double.parse(actual.asDecimal()) - expectPound).abs() > 0.001) {
+        UcumDecimal actual = ucumService.convert(decimal, "kg", "[lb_av]");
+        if ((double.parse(actual.asUcumDecimal()) - expectPound).abs() >
+            0.001) {
           throw '$i actual:$actual expected:$expectPound';
         }
         print(

@@ -13,14 +13,14 @@ class CelsiusHandler extends SpecialUnitHandler {
   }
 
   @override
-  Decimal getValue() {
-    return Decimal.one();
+  UcumDecimal getValue() {
+    return UcumDecimal.one();
   }
 
   @override
-  Decimal getOffset() {
+  UcumDecimal getOffset() {
     // Assuming a constructor that takes a string and precision
-    return Decimal.fromString('-273.15', 24);
+    return UcumDecimal.fromString('-273.15', 24);
   }
 
   @override

@@ -164,7 +164,7 @@ class UcumService {
     return p;
   }
 
-  Decimal convert(Decimal value, String sourceUnit, String destUnit) {
+  UcumDecimal convert(UcumDecimal value, String sourceUnit, String destUnit) {
     assert(checkStringParam(sourceUnit),
         paramError("convert", "sourceUnit", "must not be null or empty"));
     assert(checkStringParam(destUnit),
@@ -186,8 +186,8 @@ class UcumService {
           "Unable to convert between units $sourceUnit and $destUnit as they do not have matching canonical forms ($s and $d respectively)");
     }
 
-    Decimal canValue = value.multiply(src.value);
-    Decimal res = canValue.divide(dst.value);
+    UcumDecimal canValue = value.multiply(src.value);
+    UcumDecimal res = canValue.divide(dst.value);
 
     if (value.isWholeNumber()) {
       res.checkForCouldBeWholeNumber();
@@ -219,8 +219,8 @@ class UcumService {
   }
 
   Pair multiply(Pair o1, Pair o2) {
-    // Assuming the Pair class has a constructor that takes a Decimal and a String
-    // and that Decimal has a multiply method.
+    // Assuming the Pair class has a constructor that takes a UcumDecimal and a String
+    // and that UcumDecimal has a multiply method.
     try {
       var resultValue = o1.value.multiply(o2.value);
       var resultCode = '${o1.code}.${o2.code}';
@@ -236,9 +236,9 @@ class UcumService {
 
   bool isEqual(ValidatedQuantity value1, ValidatedQuantity value2) {
     if (isComparable(value1.code, value2.code)) {
-      final Decimal value2Decimal =
+      final UcumDecimal value2UcumDecimal =
           convert(value2.value, value2.code, value1.code);
-      value2 = ValidatedQuantity(value: value2Decimal, code: value1.code);
+      value2 = ValidatedQuantity(value: value2UcumDecimal, code: value1.code);
       return value1.value.equalsValue(value2.value);
     } else {
       return false;

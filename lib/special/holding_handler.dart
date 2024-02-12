@@ -7,16 +7,16 @@ import '../ucum.dart';
 class HoldingHandler extends SpecialUnitHandler {
   String _code;
   String _units;
-  Decimal _value;
+  UcumDecimal _value;
 
   /// Constructor for the handler with a specified code and unit.
   HoldingHandler(String code, String units)
       : _code = code,
         _units = units,
-        _value = Decimal.one();
+        _value = UcumDecimal.one();
 
   /// Constructor with a specified value.
-  HoldingHandler.withValue(String code, String units, Decimal value)
+  HoldingHandler.withValue(String code, String units, UcumDecimal value)
       : _code = code,
         _units = units,
         _value = value;
@@ -32,13 +32,14 @@ class HoldingHandler extends SpecialUnitHandler {
   }
 
   @override
-  Decimal getValue() {
+  UcumDecimal getValue() {
     return _value;
   }
 
   @override
-  Decimal getOffset() {
-    return Decimal.fromString('0', 24); // Assuming Decimal.fromString exists
+  UcumDecimal getOffset() {
+    return UcumDecimal.fromString(
+        '0', 24); // Assuming UcumDecimal.fromString exists
   }
 
   @override

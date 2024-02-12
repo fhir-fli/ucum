@@ -89,7 +89,7 @@ class ExpressionComposer {
   String composeCanonical(Canonical can, [bool value = true]) {
     var buffer = StringBuffer();
     if (value) {
-      buffer.write(can.value.asDecimal());
+      buffer.write(can.value.asUcumDecimal());
     }
     bool first = true;
     for (var c in can.units) {

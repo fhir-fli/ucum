@@ -41,7 +41,7 @@ class Converter {
 
   Canonical normaliseTerm(String indent, Term term) {
     Canonical result =
-        Canonical(Decimal.fromString("1.000000000000000000000000000000"));
+        Canonical(UcumDecimal.fromString("1.000000000000000000000000000000"));
 
     debugTerm(indent, "canonicalise", term);
     bool div = false;
@@ -111,7 +111,7 @@ class Converter {
 
   Canonical normaliseSymbol(String indent, Symbol sym) {
     Canonical result =
-        Canonical(Decimal.fromString("1.000000000000000000000000000000"));
+        Canonical(UcumDecimal.fromString("1.000000000000000000000000000000"));
 
     if (sym.exponent != null) {
       if (sym.unit is BaseUnit) {
@@ -153,7 +153,7 @@ class Converter {
 
   Canonical expandDefinedUnit(String indent, DefinedUnit unit) {
     String? u = unit.value.unit;
-    Decimal? v = unit.value.value;
+    UcumDecimal? v = unit.value.value;
 
     if (unit.isSpecial ?? false) {
       if (!handlers.exists(unit.code)) {

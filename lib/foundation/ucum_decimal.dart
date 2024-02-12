@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'ucum_exception.dart';
 import 'utilities.dart';
 
-class Decimal {
+class UcumDecimal {
   late int precision;
   late bool scientific;
   late bool negative;
@@ -12,20 +12,20 @@ class Decimal {
   static const _int32MinValue = -2147483647;
   static const _int32MaxValue = 2147483647;
 
-  Decimal()
+  UcumDecimal()
       : precision = 0,
         scientific = false,
         negative = false,
         digits = '',
         decimal = 0;
 
-  Decimal.fromString(String? value, [int? precision]) {
+  UcumDecimal.fromString(String? value, [int? precision]) {
     if (value != null) {
       value = value.toLowerCase();
       if (value.contains("e")) {
         setValueScientific(value);
       } else {
-        setValueDecimal(value);
+        setValueUcumDecimal(value);
       }
     }
     if (precision != null) {
@@ -33,11 +33,11 @@ class Decimal {
     }
   }
 
-  Decimal.fromInt(int i) {
-    setValueDecimal(i.toString());
+  UcumDecimal.fromInt(int i) {
+    setValueUcumDecimal(i.toString());
   }
 
-  void setValueDecimal(String value) {
+  void setValueUcumDecimal(String value) {
     scientific = false;
     negative = value.startsWith("-");
     if (negative) {
@@ -121,7 +121,7 @@ class Decimal {
       throw UcumException("'$value' is not a valid decimal");
     }
 
-    setValueDecimal(s);
+    setValueUcumDecimal(s);
     scientific = true;
 
     // Adjust for exponent
@@ -137,32 +137,32 @@ class Decimal {
       : value.substring(0, offset) + ins + value.substring(offset);
 
   @override
-  String toString() => asDecimal();
+  String toString() => asUcumDecimal();
 
-  Decimal copy() => Decimal.fromString(this.asDecimal());
+  UcumDecimal copy() => UcumDecimal.fromString(this.asUcumDecimal());
 
-  static Decimal zero() => Decimal.fromString("0");
+  static UcumDecimal zero() => UcumDecimal.fromString("0");
 
   bool isZero() => allZeros(digits, 0);
 
-  static Decimal one() => Decimal.fromString("1");
+  static UcumDecimal one() => UcumDecimal.fromString("1");
 
   bool isOne() {
-    Decimal one = Decimal.one();
+    UcumDecimal one = UcumDecimal.one();
     return this.comparesTo(one) == 0;
   }
 
   bool equals(Object other) {
-    if (other is Decimal) {
-      return this.asDecimal() == other.asDecimal();
+    if (other is UcumDecimal) {
+      return this.asUcumDecimal() == other.asUcumDecimal();
     }
     return false;
   }
 
   bool equalsValue(Object other) {
-    if (other is Decimal) {
-      final thisValue = num.tryParse(asDecimal());
-      final otherValue = num.tryParse(other.asDecimal());
+    if (other is UcumDecimal) {
+      final thisValue = num.tryParse(asUcumDecimal());
+      final otherValue = num.tryParse(other.asUcumDecimal());
       if (thisValue == null) {
         return false;
       } else {
@@ -173,7 +173,7 @@ class Decimal {
     }
   }
 
-  int comparesTo(Decimal? other) {
+  int comparesTo(UcumDecimal? other) {
     if (other == null) {
       return 0;
     } else {
@@ -182,9 +182,9 @@ class Decimal {
       } else if (!negative && other.negative) {
         return 1;
       } else {
-        int maxDecimal = math.max(decimal, other.decimal);
-        String s1 = ('0' * (maxDecimal - decimal + 1)) + digits;
-        String s2 = ('0' * (maxDecimal - other.decimal + 1)) + other.digits;
+        int maxUcumDecimal = math.max(decimal, other.decimal);
+        String s1 = ('0' * (maxUcumDecimal - decimal + 1)) + digits;
+        String s2 = ('0' * (maxUcumDecimal - other.decimal + 1)) + other.digits;
         if (s1.length < s2.length) {
           s1 = s1 + stringMultiply('0', s2.length - s1.length);
         } else if (s2.length < s1.length) {
@@ -200,10 +200,10 @@ class Decimal {
   }
 
   bool isWholeNumber() {
-    return !this.asDecimal().contains(".");
+    return !this.asUcumDecimal().contains(".");
   }
 
-  String asDecimal() {
+  String asUcumDecimal() {
     String result = digits;
     if (decimal != digits.length) {
       if (decimal < 0) {
@@ -229,15 +229,15 @@ class Decimal {
     if (!isWholeNumber()) {
       throw UcumException("Unable to represent $this as an integer");
     }
-    if (comparesTo(Decimal.fromString(_int32MinValue.toString())) < 0) {
+    if (comparesTo(UcumDecimal.fromString(_int32MinValue.toString())) < 0) {
       throw UcumException(
           "Unable to represent $this as a signed 32-bit integer");
     }
-    if (comparesTo(Decimal.fromString(_int32MaxValue.toString())) > 0) {
+    if (comparesTo(UcumDecimal.fromString(_int32MaxValue.toString())) > 0) {
       throw UcumException(
           "Unable to represent $this as a signed 32-bit integer");
     }
-    return int.parse(asDecimal());
+    return int.parse(asUcumDecimal());
   }
 
   String asScientific() {
@@ -257,12 +257,12 @@ class Decimal {
     return result;
   }
 
-  Decimal trunc() {
+  UcumDecimal trunc() {
     if (isZero() || decimal <= 0) {
       return zero();
     }
 
-    Decimal result = copy();
+    UcumDecimal result = copy();
 
     if (result.digits.length >= result.decimal)
       result.digits = result.digits.substring(0, result.decimal);
@@ -274,9 +274,9 @@ class Decimal {
     return result;
   }
 
-  Decimal add(Decimal other) {
+  UcumDecimal add(UcumDecimal other) {
     if (negative == other.negative) {
-      Decimal result = doAdd(other);
+      UcumDecimal result = doAdd(other);
       result.negative = negative;
       return result;
     } else if (negative) {
@@ -286,8 +286,8 @@ class Decimal {
     }
   }
 
-  Decimal subtract(Decimal other) {
-    Decimal result;
+  UcumDecimal subtract(UcumDecimal other) {
+    UcumDecimal result;
     if (negative && !other.negative) {
       result = doAdd(other);
       result.negative = true;
@@ -303,7 +303,7 @@ class Decimal {
     return result;
   }
 
-  Decimal doAdd(Decimal other) {
+  UcumDecimal doAdd(UcumDecimal other) {
     int max = math.max(decimal, other.decimal);
     String s1 = stringMultiply('0', max - decimal + 1) + digits;
     String s2 = stringMultiply('0', (max - other.decimal + 1)) + other.digits;
@@ -332,9 +332,9 @@ class Decimal {
       }
     }
 
-    Decimal result = Decimal();
+    UcumDecimal result = UcumDecimal();
     try {
-      result.setValueDecimal(s3);
+      result.setValueUcumDecimal(s3);
     } catch (e) {
       // won't happen
     }
@@ -353,7 +353,7 @@ class Decimal {
 
   String cdig(int i) => String.fromCharCode(i + '0'.codeUnitAt(0));
 
-  Decimal doSubtract(Decimal other) {
+  UcumDecimal doSubtract(UcumDecimal other) {
     int max = math.max(decimal, other.decimal);
     String s1 = stringMultiply('0', max - decimal + 1) + digits;
     String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
@@ -390,9 +390,9 @@ class Decimal {
       }
     }
 
-    Decimal result = Decimal();
+    UcumDecimal result = UcumDecimal();
     try {
-      result.setValueDecimal(s3);
+      result.setValueUcumDecimal(s3);
     } catch (e) {
       // won't happen
     }
@@ -451,7 +451,7 @@ class Decimal {
     }
   }
 
-  Decimal multiply(Decimal other) {
+  UcumDecimal multiply(UcumDecimal other) {
     if (isZero() || other.isZero()) {
       return zero();
     }
@@ -530,24 +530,24 @@ class Decimal {
       result = result.substring(0, result.length - 1);
     }
 
-    Decimal newDecimal = Decimal();
-    newDecimal.setValueDecimal(result);
-    newDecimal.precision = precisionResult;
-    newDecimal.decimal = decimalPos;
-    newDecimal.negative = negative != other.negative;
-    newDecimal.scientific = scientific || other.scientific;
-    return newDecimal;
+    UcumDecimal newUcumDecimal = UcumDecimal();
+    newUcumDecimal.setValueUcumDecimal(result);
+    newUcumDecimal.precision = precisionResult;
+    newUcumDecimal.decimal = decimalPos;
+    newUcumDecimal.negative = negative != other.negative;
+    newUcumDecimal.scientific = scientific || other.scientific;
+    return newUcumDecimal;
   }
 
-  Decimal operator *(Decimal other) {
+  UcumDecimal operator *(UcumDecimal other) {
     return multiply(other);
   }
 
   bool operator ==(Object other) {
-    if (other is! Decimal) {
+    if (other is! UcumDecimal) {
       return false;
     } else {
-      return asDecimal() == other.asDecimal();
+      return asUcumDecimal() == other.asUcumDecimal();
     }
   }
 
@@ -555,11 +555,11 @@ class Decimal {
     return this == other;
   }
 
-  Decimal multiplyInt(int other) {
-    return multiply(Decimal.fromInt(other));
+  UcumDecimal multiplyInt(int other) {
+    return multiply(UcumDecimal.fromInt(other));
   }
 
-  Decimal divide(Decimal other) {
+  UcumDecimal divide(UcumDecimal other) {
     if (isZero()) {
       return zero();
     } else if (other.isZero()) {
@@ -705,8 +705,8 @@ class Decimal {
         }
       }
 
-      Decimal result = Decimal();
-      result.setValueDecimal(r);
+      UcumDecimal result = UcumDecimal();
+      result.setValueUcumDecimal(r);
       result.decimal = r.length - d;
       result.negative = negative != other.negative;
       result.precision = prec;
@@ -715,12 +715,12 @@ class Decimal {
     }
   }
 
-  Decimal operator /(Decimal other) {
+  UcumDecimal operator /(UcumDecimal other) {
     return divide(other);
   }
 
-  Decimal divideInt(int other) {
-    return divide(Decimal.fromInt(other));
+  UcumDecimal divideInt(int other) {
+    return divide(UcumDecimal.fromInt(other));
   }
 
   String trimLeadingZeros(String s) {
@@ -732,31 +732,31 @@ class Decimal {
       return s.substring(i);
   }
 
-  Decimal divInt(Decimal other) {
-    Decimal t = divide(other);
+  UcumDecimal divInt(UcumDecimal other) {
+    UcumDecimal t = divide(other);
     return t.trunc();
   }
 
-  Decimal modulo(Decimal other) {
+  UcumDecimal modulo(UcumDecimal other) {
     if (other.isZero()) {
       throw UcumException("Modulo by zero");
     }
 
-    Decimal divisionResult = this.divide(other);
-    Decimal truncatedResult = divisionResult.trunc();
+    UcumDecimal divisionResult = this.divide(other);
+    UcumDecimal truncatedResult = divisionResult.trunc();
     return this.subtract(truncatedResult.multiply(other));
   }
 
-  Decimal absolute() {
-    Decimal result = this.copy();
+  UcumDecimal absolute() {
+    UcumDecimal result = this.copy();
     result.negative = false;
     return result;
   }
 
   @override
-  int get hashCode => asDecimal().hashCode;
+  int get hashCode => asUcumDecimal().hashCode;
 
-  void limitPrecisionTo(Decimal other) {
+  void limitPrecisionTo(UcumDecimal other) {
     // Precision can't be greater than other
     if (precision > other.precision) {
       precision = other.precision;

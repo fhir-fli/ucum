@@ -30,7 +30,7 @@ import '../ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class Pair {
-  Decimal value;
+  UcumDecimal value;
   String code;
 
   Pair({required this.value, required this.code});

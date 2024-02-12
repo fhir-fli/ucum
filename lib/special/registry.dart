@@ -24,7 +24,7 @@ class Registry {
     _register(HoldingHandler('Np', '1'));
     _register(HoldingHandler('B', '1'));
     _register(HoldingHandler.withValue(
-        'B[SPL]', '10*-5.Pa', Decimal.fromString('2', 1)));
+        'B[SPL]', '10*-5.Pa', UcumDecimal.fromString('2', 1)));
     _register(HoldingHandler('B[V]', 'V'));
     _register(HoldingHandler('B[mV]', 'mV'));
     _register(HoldingHandler('B[uV]', 'uV'));

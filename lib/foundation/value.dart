@@ -32,7 +32,7 @@ import '../ucum.dart';
 class Value {
   String? unit;
   String? unitUC;
-  Decimal? value;
+  UcumDecimal? value;
   String? text;
 
   Value({this.unit, this.unitUC, this.value, this.text});
@@ -48,7 +48,7 @@ class Value {
   Map<String, dynamic> toJson() => {
         'unit': unit,
         'UNIT': unitUC,
-        'value': value?.asDecimal(),
+        'value': value?.asUcumDecimal(),
         'text': text,
       };
   factory Value.fromJson(Map<String, dynamic> json) => Value(
@@ -56,7 +56,7 @@ class Value {
         unitUC: json['UNIT'],
         value: json['value'] == null
             ? null
-            : Decimal.fromString(json['value'].toString()),
+            : UcumDecimal.fromString(json['value'].toString()),
         text: json['text'],
       );
 }

@@ -17,21 +17,21 @@ class ValidatedQuantity extends Pair {
       string = string.substring(0, string.length - 1);
     }
     return ValidatedQuantity(
-        value: Decimal.fromString(matches.namedGroup('value')),
+        value: UcumDecimal.fromString(matches.namedGroup('value')),
         code: string.isEmpty ? '1' : string);
   }
 
   ValidatedQuantity.fromPair(Pair pair)
       : super(value: pair.value, code: pair.code.isNotEmpty ? pair.code : '1');
 
-  ValidatedQuantity copyWith({Decimal? value, String? code}) =>
+  ValidatedQuantity copyWith({UcumDecimal? value, String? code}) =>
       ValidatedQuantity(value: value ?? this.value, code: code ?? this.code);
 
   ValidatedQuantity abs() =>
       ValidatedQuantity(value: value.absolute(), code: code);
 
   bool isValid() =>
-      num.tryParse(value.asDecimal()) != null &&
+      num.tryParse(value.asUcumDecimal()) != null &&
       UcumService().validate(code) == null;
 
   static RegExp valueRegex = RegExp(r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*");
@@ -124,13 +124,13 @@ class ValidatedQuantity extends Pair {
   int get hashCode => super.hashCode;
 
   ValidatedQuantity operator +(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return copyWith(value: this.value.add(other));
     } else if (other is ValidatedQuantity) {
       return copyWith(value: this.value.add(other.value));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: this.value.add(Decimal.fromString(other.toString())));
+          value: this.value.add(UcumDecimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -146,13 +146,13 @@ class ValidatedQuantity extends Pair {
   }
 
   ValidatedQuantity operator -(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return copyWith(value: this.value.subtract(other));
     } else if (other is ValidatedQuantity) {
       return copyWith(value: this.value.subtract(other.value));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: this.value.subtract(Decimal.fromString(other.toString())));
+          value: this.value.subtract(UcumDecimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -168,14 +168,14 @@ class ValidatedQuantity extends Pair {
   }
 
   ValidatedQuantity operator *(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return ValidatedQuantity.fromPair(
           UcumService().multiply(this, ValidatedQuantity(value: other)));
     } else if (other is ValidatedQuantity) {
       return ValidatedQuantity.fromPair(UcumService().multiply(this, other));
     } else if (other is num || other is BigInt) {
       return ValidatedQuantity.fromPair(UcumService().multiply(this,
-          ValidatedQuantity(value: Decimal.fromString(other.toString()))));
+          ValidatedQuantity(value: UcumDecimal.fromString(other.toString()))));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -192,14 +192,14 @@ class ValidatedQuantity extends Pair {
   }
 
   ValidatedQuantity operator /(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return ValidatedQuantity.fromPair(
           UcumService().divideBy(this, ValidatedQuantity(value: other)));
     } else if (other is ValidatedQuantity) {
       return ValidatedQuantity.fromPair(UcumService().divideBy(this, other));
     } else if (other is num || other is BigInt) {
       return ValidatedQuantity.fromPair(UcumService().divideBy(this,
-          ValidatedQuantity(value: Decimal.fromString(other.toString()))));
+          ValidatedQuantity(value: UcumDecimal.fromString(other.toString()))));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -216,13 +216,13 @@ class ValidatedQuantity extends Pair {
   }
 
   ValidatedQuantity operator %(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return copyWith(value: this.value.modulo(other));
     } else if (other is ValidatedQuantity) {
       return copyWith(value: this.value.modulo(other.value));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: this.value.modulo(Decimal.fromString(other.toString())));
+          value: this.value.modulo(UcumDecimal.fromString(other.toString())));
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -238,14 +238,15 @@ class ValidatedQuantity extends Pair {
   }
 
   bool operator >(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return this.value.comparesTo(other) > 0;
     } else if (other is ValidatedQuantity) {
-      final Decimal compareValue =
+      final UcumDecimal compareValue =
           UcumService().convert(other.value, other.code, code);
       return this.value.comparesTo(compareValue) > 0;
     } else if (other is num || other is BigInt) {
-      return this.value.comparesTo(Decimal.fromString(other.toString())) > 0;
+      return this.value.comparesTo(UcumDecimal.fromString(other.toString())) >
+          0;
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -261,14 +262,15 @@ class ValidatedQuantity extends Pair {
   }
 
   bool operator <(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return this.value.comparesTo(other) < 0;
     } else if (other is ValidatedQuantity) {
-      final Decimal compareValue =
+      final UcumDecimal compareValue =
           UcumService().convert(other.value, other.code, code);
       return this.value.comparesTo(compareValue) < 0;
     } else if (other is num || other is BigInt) {
-      return this.value.comparesTo(Decimal.fromString(other.toString())) < 0;
+      return this.value.comparesTo(UcumDecimal.fromString(other.toString())) <
+          0;
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -284,14 +286,15 @@ class ValidatedQuantity extends Pair {
   }
 
   bool operator >=(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return this == other || this.value.comparesTo(other) > 0;
     } else if (other is ValidatedQuantity) {
-      final Decimal compareValue =
+      final UcumDecimal compareValue =
           UcumService().convert(other.value, other.code, code);
       return this == other || this.value.comparesTo(compareValue) > 0;
     } else if (other is num || other is BigInt) {
-      return this.value.comparesTo(Decimal.fromString(other.toString())) > 0;
+      return this.value.comparesTo(UcumDecimal.fromString(other.toString())) >
+          0;
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -308,14 +311,15 @@ class ValidatedQuantity extends Pair {
   }
 
   bool operator <=(Object other) {
-    if (other is Decimal) {
+    if (other is UcumDecimal) {
       return this == other || this.value.comparesTo(other) < 0;
     } else if (other is ValidatedQuantity) {
-      final Decimal compareValue =
+      final UcumDecimal compareValue =
           UcumService().convert(other.value, other.code, code);
       return this == other || this.value.comparesTo(compareValue) < 0;
     } else if (other is num || other is BigInt) {
-      return this.value.comparesTo(Decimal.fromString(other.toString())) < 0;
+      return this.value.comparesTo(UcumDecimal.fromString(other.toString())) <
+          0;
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -338,25 +342,26 @@ class ValidatedQuantity extends Pair {
   bool get isDefiniteDuration => definiteDurationUnits.contains(code);
 
   num? get years =>
-      isDuration && isYears(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isYears(code) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get months =>
-      isDuration && isMonths(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isMonths(code) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get days =>
-      isDuration && isDays(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isDays(code) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get hours =>
-      isDuration && isHours(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isHours(code) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get minutes =>
-      isDuration && isMinutes(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isMinutes(code) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get seconds =>
-      isDuration && isSeconds(code) ? num.parse(value.asDecimal()) : null;
+      isDuration && isSeconds(code) ? num.parse(value.asUcumDecimal()) : null;
 
-  num? get milliseconds =>
-      isDuration && isMilliseconds(code) ? num.parse(value.asDecimal()) : null;
+  num? get milliseconds => isDuration && isMilliseconds(code)
+      ? num.parse(value.asUcumDecimal())
+      : null;
 
   @override
   String toString() => isTimeQuantity
@@ -366,7 +371,7 @@ class ValidatedQuantity extends Pair {
   static bool isValidatedQuantity(Object other) {
     if (other is ValidatedQuantity) {
       return other.isValid();
-    } else if (other is Decimal) {
+    } else if (other is UcumDecimal) {
       return ValidatedQuantity(value: other).isValid();
     } else if (other is num || other is BigInt) {
       return ValidatedQuantity.fromString(other.toString()).isValid();
@@ -374,7 +379,7 @@ class ValidatedQuantity extends Pair {
       return ValidatedQuantity.fromString(other).isValid();
     } else if (other is Map<String, dynamic>) {
       return ValidatedQuantity(
-              value: Decimal.fromString(other['value']?.toString()),
+              value: UcumDecimal.fromString(other['value']?.toString()),
               code: other['code']?.toString())
           .isValid();
     } else {

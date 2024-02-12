@@ -7,7 +7,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*-2",
           unitUC: "10*-2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fraction",
       isMetric: false,
@@ -21,7 +21,7 @@ final definedUnitsList = [
       value: Value(
           unit: "deg",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "slope",
       isMetric: false,
@@ -35,7 +35,7 @@ final definedUnitsList = [
       value: Value(
           unit: "deg/60",
           unitUC: "DEG/60",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "plane angle",
       isMetric: false,
@@ -49,7 +49,7 @@ final definedUnitsList = [
       value: Value(
           unit: "'/60",
           unitUC: "'/60",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "plane angle",
       isMetric: false,
@@ -450,7 +450,10 @@ final definedUnitsList = [
       code: "10*",
       codeUC: "10*",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -465,7 +468,10 @@ final definedUnitsList = [
       code: "10*12/L",
       codeUC: "(10*12)/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -476,7 +482,10 @@ final definedUnitsList = [
       code: "10*3",
       codeUC: "10*3",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -487,7 +496,10 @@ final definedUnitsList = [
       code: "10*3/L",
       codeUC: "(10*3)/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -498,7 +510,10 @@ final definedUnitsList = [
       code: "10*3/mL",
       codeUC: "(10*3)/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -514,7 +529,10 @@ final definedUnitsList = [
       code: "10*3/uL",
       codeUC: "(10*3)/UL",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -530,7 +548,10 @@ final definedUnitsList = [
       code: "10*4/uL",
       codeUC: "(10*4)/UL",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -546,7 +567,10 @@ final definedUnitsList = [
       code: "10*5",
       codeUC: "10*5",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -557,7 +581,10 @@ final definedUnitsList = [
       code: "10*6",
       codeUC: "10*6",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -568,7 +595,10 @@ final definedUnitsList = [
       code: "10*6.[CFU]/L",
       codeUC: "(10*6).[CFU]/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -587,7 +617,10 @@ final definedUnitsList = [
       code: "10*6.[IU]",
       codeUC: "(10*6).[IU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -603,7 +636,10 @@ final definedUnitsList = [
       code: "10*6/(24.h)",
       codeUC: "(10*6)/HR",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -620,7 +656,10 @@ final definedUnitsList = [
       code: "10*6/L",
       codeUC: "(10*6)/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -637,7 +676,10 @@ final definedUnitsList = [
       code: "10*6/kg",
       codeUC: "(10*6)/KG",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -654,7 +696,10 @@ final definedUnitsList = [
       code: "10*6/mL",
       codeUC: "(10*6)/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -671,7 +716,10 @@ final definedUnitsList = [
       code: "10*6/uL",
       codeUC: "(10*6)/UL",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -690,7 +738,10 @@ final definedUnitsList = [
       code: "10*8",
       codeUC: "10*8",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -701,7 +752,10 @@ final definedUnitsList = [
       code: "10*9/L",
       codeUC: "(10*9)/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -712,7 +766,10 @@ final definedUnitsList = [
       code: "10*9/mL",
       codeUC: "(10*9)/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -730,7 +787,10 @@ final definedUnitsList = [
       code: "10*9/uL",
       codeUC: "(10*9)/UL",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -807,7 +867,10 @@ final definedUnitsList = [
       code: "10^",
       codeUC: "10^",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('10'), text: "10"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "number",
       isMetric: false,
       isSpecial: false,
@@ -822,7 +885,10 @@ final definedUnitsList = [
       code: "24.h",
       codeUC: "HR",
       value: Value(
-          unit: "h", unitUC: "HR", value: Decimal.fromString('24'), text: "24"),
+          unit: "h",
+          unitUC: "HR",
+          value: UcumDecimal.fromString('24'),
+          text: "24"),
       property: "",
       isMetric: false,
       isSpecial: false,
@@ -835,7 +901,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/s",
           unitUC: "C/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric current",
       isMetric: true,
@@ -849,7 +915,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/s",
           unitUC: "C/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric current",
       isMetric: true,
@@ -872,7 +938,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Mm",
           unitUC: "MAM",
-          value: Decimal.fromString('149597.870691'),
+          value: UcumDecimal.fromString('149597.870691'),
           text: "149597.870691"),
       property: "length",
       isMetric: false,
@@ -886,7 +952,7 @@ final definedUnitsList = [
       value: Value(
           unit: "nm",
           unitUC: "NM",
-          value: Decimal.fromString('0.1'),
+          value: UcumDecimal.fromString('0.1'),
           text: "0.1"),
       property: "length",
       isMetric: false,
@@ -900,7 +966,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "level",
       isMetric: true,
@@ -914,7 +980,7 @@ final definedUnitsList = [
       value: Value(
           unit: "nV",
           unitUC: null,
-          value: Decimal.fromString('10.0'),
+          value: UcumDecimal.fromString('10.0'),
           text: "10.0"),
       property: "electric potential level",
       isMetric: true,
@@ -928,7 +994,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: null,
-          value: Decimal.fromString('0.00002'),
+          value: UcumDecimal.fromString('0.00002'),
           text: "0.00002"),
       property: "pressure level",
       isMetric: true,
@@ -942,7 +1008,7 @@ final definedUnitsList = [
       value: Value(
           unit: "V",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "electric potential level",
       isMetric: true,
@@ -956,7 +1022,7 @@ final definedUnitsList = [
       value: Value(
           unit: "W",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "power level",
       isMetric: true,
@@ -970,7 +1036,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kW",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "power level",
       isMetric: true,
@@ -991,7 +1057,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mV",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "electric potential level",
       isMetric: true,
@@ -1012,7 +1078,7 @@ final definedUnitsList = [
       value: Value(
           unit: "uV",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "electric potential level",
       isMetric: true,
@@ -1031,7 +1097,10 @@ final definedUnitsList = [
       code: "Bd",
       codeUC: "BD",
       value: Value(
-          unit: "s", unitUC: "/s", value: Decimal.fromString('1'), text: "1"),
+          unit: "s",
+          unitUC: "/s",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "signal transmission rate",
       isMetric: true,
       isSpecial: false,
@@ -1042,7 +1111,10 @@ final definedUnitsList = [
       code: "Bi",
       codeUC: "BI",
       value: Value(
-          unit: "A", unitUC: "A", value: Decimal.fromString('10'), text: "10"),
+          unit: "A",
+          unitUC: "A",
+          value: UcumDecimal.fromString('10'),
+          text: "10"),
       property: "electric current",
       isMetric: true,
       isSpecial: false,
@@ -1055,7 +1127,7 @@ final definedUnitsList = [
       value: Value(
           unit: "s-1",
           unitUC: "S-1",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "radioactivity",
       isMetric: true,
@@ -1069,7 +1141,7 @@ final definedUnitsList = [
       value: Value(
           unit: "bit",
           unitUC: "bit",
-          value: Decimal.fromString('8'),
+          value: UcumDecimal.fromString('8'),
           text: "8"),
       property: "amount of information",
       isMetric: true,
@@ -1083,7 +1155,7 @@ final definedUnitsList = [
       value: Value(
           unit: "K",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "temperature",
       isMetric: true,
@@ -1097,7 +1169,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Bq",
           unitUC: "BQ",
-          value: Decimal.fromString('37000000000'),
+          value: UcumDecimal.fromString('37000000000'),
           text: "37e9"),
       property: "radioactivity",
       isMetric: true,
@@ -1111,7 +1183,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/V",
           unitUC: "C/V",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric capacitance",
       isMetric: true,
@@ -1125,7 +1197,7 @@ final definedUnitsList = [
       value: Value(
           unit: "T",
           unitUC: "T",
-          value: Decimal.fromString('0.0001'),
+          value: UcumDecimal.fromString('0.0001'),
           text: "1e-4"),
       property: "magnetic flux density",
       isMetric: true,
@@ -1145,7 +1217,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm/s2",
           unitUC: "CM/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "acceleration",
       isMetric: true,
@@ -1159,7 +1231,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Oe.cm",
           unitUC: "OE.CM",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "magnetic tension",
       isMetric: true,
@@ -1173,7 +1245,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/kg",
           unitUC: "J/KG",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy dose",
       isMetric: true,
@@ -1193,7 +1265,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Wb/A",
           unitUC: "WB/A",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "inductance",
       isMetric: true,
@@ -1207,7 +1279,7 @@ final definedUnitsList = [
       value: Value(
           unit: "s-1",
           unitUC: "S-1",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "frequency",
       isMetric: true,
@@ -1221,7 +1293,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N.m",
           unitUC: "N.M",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -1235,7 +1307,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N.m",
           unitUC: "N.M",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -1266,7 +1338,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm-1",
           unitUC: "CM-1",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "lineic number",
       isMetric: true,
@@ -1278,7 +1350,10 @@ final definedUnitsList = [
       code: "L",
       codeUC: "L",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1298,7 +1373,10 @@ final definedUnitsList = [
       code: "L/(24.h)",
       codeUC: "L/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1319,7 +1397,10 @@ final definedUnitsList = [
       code: "L/(8.h)",
       codeUC: "L/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1339,7 +1420,10 @@ final definedUnitsList = [
       code: "L/(min.m2) ",
       codeUC: "L/(MIN.M2)",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1361,7 +1445,10 @@ final definedUnitsList = [
       code: "L/L",
       codeUC: "L/L",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1372,7 +1459,10 @@ final definedUnitsList = [
       code: "L/d",
       codeUC: "L/D",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1392,7 +1482,10 @@ final definedUnitsList = [
       code: "L/h",
       codeUC: "L/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1403,7 +1496,10 @@ final definedUnitsList = [
       code: "L/kg",
       codeUC: "L/KG",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1414,7 +1510,10 @@ final definedUnitsList = [
       code: "L/min",
       codeUC: "L/MIN",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1425,7 +1524,10 @@ final definedUnitsList = [
       code: "L/min/m2",
       codeUC: "(L/MIN)/M2",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1447,7 +1549,10 @@ final definedUnitsList = [
       code: "L/s",
       codeUC: "L/S",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1458,7 +1563,10 @@ final definedUnitsList = [
       code: "L/s/s2",
       codeUC: "(L/S)/S2",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -1484,7 +1592,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cd/cm2/[pi]",
           unitUC: "CD/CM2/[PI]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "brightness",
       isMetric: true,
@@ -1508,7 +1616,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Wb",
           unitUC: "WB",
-          value: Decimal.fromString('0.00000001'),
+          value: UcumDecimal.fromString('0.00000001'),
           text: "1e-8"),
       property: "flux of magnetic induction",
       isMetric: true,
@@ -1522,7 +1630,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kg.m/s2",
           unitUC: "KG.M/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -1536,7 +1644,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kg.m/s2",
           unitUC: "KG.M/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -1559,7 +1667,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kg.m/s2",
           unitUC: "KG.M/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -1581,7 +1689,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "level",
       isMetric: true,
@@ -1595,7 +1703,7 @@ final definedUnitsList = [
       value: Value(
           unit: "A/m",
           unitUC: "/[PI].A/M",
-          value: Decimal.fromString('250'),
+          value: UcumDecimal.fromString('250'),
           text: "250"),
       property: "magnetic field intensity",
       isMetric: true,
@@ -1609,7 +1717,7 @@ final definedUnitsList = [
       value: Value(
           unit: "V/A",
           unitUC: "V/A",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric resistance",
       isMetric: true,
@@ -1623,7 +1731,7 @@ final definedUnitsList = [
       value: Value(
           unit: "V/A",
           unitUC: "V/A",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric resistance",
       isMetric: true,
@@ -1637,7 +1745,7 @@ final definedUnitsList = [
       value: Value(
           unit: "dyn.s/cm2",
           unitUC: "DYN.S/CM2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dynamic viscosity",
       isMetric: true,
@@ -1651,7 +1759,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N/m2",
           unitUC: "N/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: true,
@@ -1665,7 +1773,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/kg",
           unitUC: "C/KG",
-          value: Decimal.fromString('0.000258'),
+          value: UcumDecimal.fromString('0.000258'),
           text: "2.58e-4"),
       property: "ion dose",
       isMetric: true,
@@ -1679,7 +1787,7 @@ final definedUnitsList = [
       value: Value(
           unit: "erg/g",
           unitUC: "ERG/G",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "energy dose",
       isMetric: true,
@@ -1693,7 +1801,7 @@ final definedUnitsList = [
       value: Value(
           unit: "RAD",
           unitUC: "[RAD]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dose equivalent",
       isMetric: true,
@@ -1712,7 +1820,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Ohm-1",
           unitUC: "OHM-1",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric conductance",
       isMetric: true,
@@ -1726,7 +1834,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm2/s",
           unitUC: "CM2/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "kinematic viscosity",
       isMetric: true,
@@ -1740,7 +1848,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/kg",
           unitUC: "J/KG",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dose equivalent",
       isMetric: true,
@@ -1762,7 +1870,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Wb/m2",
           unitUC: "WB/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "magnetic flux density",
       isMetric: true,
@@ -1776,7 +1884,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('133.322'),
+          value: UcumDecimal.fromString('133.322'),
           text: "133.322"),
       property: "pressure",
       isMetric: false,
@@ -1790,7 +1898,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1812,7 +1920,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1838,7 +1946,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1865,7 +1973,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1891,7 +1999,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1914,7 +2022,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1937,7 +2045,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1961,7 +2069,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -1985,7 +2093,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2008,7 +2116,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2032,7 +2140,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2056,7 +2164,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2078,7 +2186,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2100,7 +2208,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2122,7 +2230,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2144,7 +2252,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2167,7 +2275,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -2189,7 +2297,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/C",
           unitUC: "J/C",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric potential",
       isMetric: true,
@@ -2203,7 +2311,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/s",
           unitUC: "J/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "power",
       isMetric: true,
@@ -2217,7 +2325,7 @@ final definedUnitsList = [
       value: Value(
           unit: "V.s",
           unitUC: "V.S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "magnetic flux",
       isMetric: true,
@@ -2229,7 +2337,10 @@ final definedUnitsList = [
       code: "[APL'U]",
       codeUC: "[APL'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgA",
       isMetric: false,
       isSpecial: false,
@@ -2247,7 +2358,10 @@ final definedUnitsList = [
       code: "[APL'U]/mL",
       codeUC: "[APL'U]/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgA",
       isMetric: false,
       isSpecial: false,
@@ -2268,7 +2382,10 @@ final definedUnitsList = [
       code: "[AU]",
       codeUC: "[AU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "procedure defined amount of an allergen using some reference standard",
       isMetric: false,
@@ -2280,7 +2397,10 @@ final definedUnitsList = [
       code: "[Amb'a'1'U]",
       codeUC: "[AMB'A'1'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "procedure defined amount of the major allergen of ragweed.",
       isMetric: false,
       isSpecial: false,
@@ -2297,7 +2417,10 @@ final definedUnitsList = [
       code: "[BAU]",
       codeUC: "[BAU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "amount of an allergen callibrated through in-vivo testing based on the ID50EAL method of (intradermal dilution for 50mm sum of erythema diameters",
       isMetric: false,
@@ -2316,7 +2439,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[Btu_th]",
           unitUC: "[BTU_TH]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: false,
@@ -2337,7 +2460,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.05967'),
+          value: UcumDecimal.fromString('1.05967'),
           text: "1.05967"),
       property: "energy",
       isMetric: false,
@@ -2359,7 +2482,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.05480'),
+          value: UcumDecimal.fromString('1.05480'),
           text: "1.05480"),
       property: "energy",
       isMetric: false,
@@ -2381,7 +2504,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.05468'),
+          value: UcumDecimal.fromString('1.05468'),
           text: "1.05468"),
       property: "energy",
       isMetric: false,
@@ -2403,7 +2526,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.05505585262'),
+          value: UcumDecimal.fromString('1.05505585262'),
           text: "1.05505585262"),
       property: "energy",
       isMetric: false,
@@ -2424,7 +2547,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.05587'),
+          value: UcumDecimal.fromString('1.05587'),
           text: "1.05587"),
       property: "energy",
       isMetric: false,
@@ -2446,7 +2569,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kJ",
           unitUC: "kJ",
-          value: Decimal.fromString('1.054350'),
+          value: UcumDecimal.fromString('1.054350'),
           text: "1.054350"),
       property: "energy",
       isMetric: false,
@@ -2465,7 +2588,10 @@ final definedUnitsList = [
       code: "[CCID_50]",
       codeUC: "[CCID_50]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "biologic activity (infectivity) of an infectious agent preparation",
       isMetric: false,
@@ -2481,7 +2607,10 @@ final definedUnitsList = [
       code: "[CFU]",
       codeUC: "[CFU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of a proliferating organism",
       isMetric: false,
       isSpecial: false,
@@ -2492,7 +2621,10 @@ final definedUnitsList = [
       code: "[CFU]/L",
       codeUC: "[CFU]/L",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of a proliferating organism",
       isMetric: false,
       isSpecial: false,
@@ -2503,7 +2635,10 @@ final definedUnitsList = [
       code: "[CFU]/mL",
       codeUC: "[CFU]/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of a proliferating organism",
       isMetric: false,
       isSpecial: false,
@@ -2516,7 +2651,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kcal_th",
           unitUC: "KCAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: false,
@@ -2530,7 +2665,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mm/3",
           unitUC: "MM/3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "gauge of catheters",
       isMetric: false,
@@ -2547,7 +2682,10 @@ final definedUnitsList = [
       code: "[D'ag'U]",
       codeUC: "[D'AG'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "procedure defined amount of a poliomyelitis d-antigen substance",
       isMetric: false,
@@ -2559,7 +2697,10 @@ final definedUnitsList = [
       code: "[EID_50]",
       codeUC: "[EID_50]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "biologic activity (infectivity) of an infectious agent preparation",
       isMetric: false,
@@ -2576,7 +2717,10 @@ final definedUnitsList = [
       code: "[ELU]",
       codeUC: "[ELU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary ELISA unit",
       isMetric: false,
       isSpecial: false,
@@ -2592,7 +2736,10 @@ final definedUnitsList = [
       code: "[EU]",
       codeUC: "[EU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "Ehrlich unit",
       isMetric: false,
       isSpecial: false,
@@ -2607,7 +2754,10 @@ final definedUnitsList = [
       code: "[FEU]",
       codeUC: "[FEU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of fibrinogen broken down into the measured d-dimers",
       isMetric: false,
       isSpecial: false,
@@ -2618,7 +2768,10 @@ final definedUnitsList = [
       code: "[FFU]",
       codeUC: "[FFU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of an infectious agent",
       isMetric: false,
       isSpecial: false,
@@ -2629,7 +2782,10 @@ final definedUnitsList = [
       code: "[GPL'U]",
       codeUC: "[GPL'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgG",
       isMetric: false,
       isSpecial: false,
@@ -2646,7 +2802,10 @@ final definedUnitsList = [
       code: "[GPL'U]/mL",
       codeUC: "[GPL'U]/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgG",
       isMetric: false,
       isSpecial: false,
@@ -2668,7 +2827,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m3.kg-1.s-2",
           unitUC: "M3.KG-1.S-2",
-          value: Decimal.fromString('0.0000000000667259'),
+          value: UcumDecimal.fromString('0.0000000000667259'),
           text: "6.67259e-11"),
       property: "(unclassified)",
       isMetric: true,
@@ -2685,7 +2844,10 @@ final definedUnitsList = [
       code: "[HPF]",
       codeUC: "[HPF]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "view area in microscope",
       isMetric: false,
       isSpecial: false,
@@ -2698,7 +2860,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i].[lbf_av]/s",
           unitUC: "[FT_I].[LBF_AV]/S",
-          value: Decimal.fromString('550'),
+          value: UcumDecimal.fromString('550'),
           text: "550"),
       property: "power",
       isMetric: false,
@@ -2710,7 +2872,10 @@ final definedUnitsList = [
       code: "[IR]",
       codeUC: "[IR]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "amount of an allergen callibrated through in-vivo testing using the Stallergenes® method.",
       isMetric: false,
@@ -2724,7 +2889,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2743,7 +2908,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2763,7 +2928,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2783,7 +2948,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2804,7 +2969,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2824,7 +2989,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2844,7 +3009,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2865,7 +3030,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2884,7 +3049,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2904,7 +3069,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2925,7 +3090,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2945,7 +3110,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -2965,7 +3130,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: "1",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "view area in microscope",
       isMetric: false,
@@ -2977,7 +3142,10 @@ final definedUnitsList = [
       code: "[Lf]",
       codeUC: "[LF]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "procedure defined amount of an antigen substance",
       isMetric: false,
       isSpecial: false,
@@ -2990,7 +3158,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mL/min/kg",
           unitUC: "ML/MIN/KG",
-          value: Decimal.fromString('3.5'),
+          value: UcumDecimal.fromString('3.5'),
           text: "3.5"),
       property: "metabolic cost of physical activity",
       isMetric: false,
@@ -3002,7 +3170,10 @@ final definedUnitsList = [
       code: "[MPL'U]",
       codeUC: "[MPL'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgM",
       isMetric: false,
       isSpecial: false,
@@ -3020,7 +3191,10 @@ final definedUnitsList = [
       code: "[MPL'U]/mL",
       codeUC: "[MPL'U]/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of anticardiolipin IgM",
       isMetric: false,
       isSpecial: false,
@@ -3039,7 +3213,10 @@ final definedUnitsList = [
       code: "[PFU]",
       codeUC: "[PFU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of an infectious agent",
       isMetric: false,
       isSpecial: false,
@@ -3050,7 +3227,10 @@ final definedUnitsList = [
       code: "[PNU]",
       codeUC: "[PNU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "procedure defined amount of a protein substance",
       isMetric: false,
       isSpecial: false,
@@ -3067,7 +3247,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mm[Hg].s/ml",
           unitUC: "MM[HG].S/ML",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid resistance",
       isMetric: false,
@@ -3087,7 +3267,7 @@ final definedUnitsList = [
       value: Value(
           unit: "s",
           unitUC: "10*-13.S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "sedimentation coefficient",
       isMetric: false,
@@ -3105,7 +3285,10 @@ final definedUnitsList = [
       code: "[TCID_50]",
       codeUC: "[TCID_50]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property:
           "biologic activity (infectivity) of an infectious agent preparation",
       isMetric: false,
@@ -3121,7 +3304,10 @@ final definedUnitsList = [
       code: "[USP'U]",
       codeUC: "[USP'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary",
       isMetric: false,
       isSpecial: false,
@@ -3134,7 +3320,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[yd_br]2",
           unitUC: "[YD_BR]2",
-          value: Decimal.fromString('4840'),
+          value: UcumDecimal.fromString('4840'),
           text: "4840"),
       property: "area",
       isMetric: false,
@@ -3148,7 +3334,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rd_us]2",
           unitUC: "[RD_US]2",
-          value: Decimal.fromString('160'),
+          value: UcumDecimal.fromString('160'),
           text: "160"),
       property: "area",
       isMetric: false,
@@ -3160,7 +3346,10 @@ final definedUnitsList = [
       code: "[anti'Xa'U]",
       codeUC: "[ANTI'XA'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of factor Xa inhibitor (heparin)",
       isMetric: false,
       isSpecial: false,
@@ -3171,7 +3360,10 @@ final definedUnitsList = [
       code: "[arb'U]",
       codeUC: "[ARB'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary",
       isMetric: false,
       isSpecial: false,
@@ -3182,7 +3374,10 @@ final definedUnitsList = [
       code: "[arb'U]/mL",
       codeUC: "[ARB'U]/ML",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary",
       isMetric: false,
       isSpecial: false,
@@ -3202,7 +3397,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gal_us]",
           unitUC: "[GAL_US]",
-          value: Decimal.fromString('42'),
+          value: UcumDecimal.fromString('42'),
           text: "42"),
       property: "fluid volume",
       isMetric: false,
@@ -3214,7 +3409,10 @@ final definedUnitsList = [
       code: "[bdsk'U]",
       codeUC: "[BDSK'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of phosphatase",
       isMetric: false,
       isSpecial: false,
@@ -3225,7 +3423,10 @@ final definedUnitsList = [
       code: "[beth'U]",
       codeUC: "[BETH'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of factor VIII inhibitor",
       isMetric: false,
       isSpecial: false,
@@ -3238,7 +3439,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]3",
           unitUC: "[IN_I]3",
-          value: Decimal.fromString('144'),
+          value: UcumDecimal.fromString('144'),
           text: "144"),
       property: "volume",
       isMetric: false,
@@ -3252,7 +3453,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pk_br]",
           unitUC: "[PK_BR]",
-          value: Decimal.fromString('4'),
+          value: UcumDecimal.fromString('4'),
           text: "4"),
       property: "volume",
       isMetric: false,
@@ -3273,7 +3474,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]3",
           unitUC: "[IN_I]3",
-          value: Decimal.fromString('2150.42'),
+          value: UcumDecimal.fromString('2150.42'),
           text: "2150.42"),
       property: "dry volume",
       isMetric: false,
@@ -3287,7 +3488,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m/s",
           unitUC: "M/S",
-          value: Decimal.fromString('299792458'),
+          value: UcumDecimal.fromString('299792458'),
           text: "299792458"),
       property: "velocity",
       isMetric: true,
@@ -3301,7 +3502,7 @@ final definedUnitsList = [
       value: Value(
           unit: "/24",
           unitUC: "/24",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "mass fraction",
       isMetric: false,
@@ -3315,7 +3516,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g",
           unitUC: "G",
-          value: Decimal.fromString('0.2'),
+          value: UcumDecimal.fromString('0.2'),
           text: "2e-1"),
       property: "mass",
       isMetric: false,
@@ -3329,7 +3530,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]3",
           unitUC: "[FT_I]3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3353,7 +3554,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rd_br]",
           unitUC: "[RD_BR]",
-          value: Decimal.fromString('4'),
+          value: UcumDecimal.fromString('4'),
           text: "4"),
       property: "length",
       isMetric: false,
@@ -3372,7 +3573,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rd_us]",
           unitUC: "[RD_US]",
-          value: Decimal.fromString('4'),
+          value: UcumDecimal.fromString('4'),
           text: "4"),
       property: "length",
       isMetric: false,
@@ -3393,7 +3594,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[didot]",
           unitUC: "[DIDOT]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "length",
       isMetric: false,
@@ -3407,7 +3608,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]3",
           unitUC: "[IN_I]3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3433,7 +3634,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pi]/4.[mil_i]2",
           unitUC: "[PI]/4.[MIL_I]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -3447,7 +3648,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]3",
           unitUC: "[FT_I]3",
-          value: Decimal.fromString('128'),
+          value: UcumDecimal.fromString('128'),
           text: "128"),
       property: "volume",
       isMetric: false,
@@ -3461,7 +3662,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]3",
           unitUC: "[FT_I]3",
-          value: Decimal.fromString('128'),
+          value: UcumDecimal.fromString('128'),
           text: "128"),
       property: "fluid volume",
       isMetric: false,
@@ -3475,7 +3676,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mL",
           unitUC: "ML",
-          value: Decimal.fromString('240'),
+          value: UcumDecimal.fromString('240'),
           text: "240"),
       property: "volume",
       isMetric: false,
@@ -3489,7 +3690,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[tbs_us]",
           unitUC: "[TBS_US]",
-          value: Decimal.fromString('16'),
+          value: UcumDecimal.fromString('16'),
           text: "16"),
       property: "volume",
       isMetric: false,
@@ -3503,7 +3704,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[yd_i]3",
           unitUC: "[YD_I]3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3528,7 +3729,7 @@ final definedUnitsList = [
       value: Value(
           unit: "K",
           unitUC: null,
-          value: Decimal.fromString('0.5555555555555556'),
+          value: UcumDecimal.fromString('0.5555555555555556'),
           text: "0.5555555555555556"),
       property: "temperature",
       isMetric: false,
@@ -3542,7 +3743,7 @@ final definedUnitsList = [
       value: Value(
           unit: "K/9",
           unitUC: "K/9",
-          value: Decimal.fromString('5'),
+          value: UcumDecimal.fromString('5'),
           text: "5"),
       property: "temperature",
       isMetric: false,
@@ -3556,7 +3757,7 @@ final definedUnitsList = [
       value: Value(
           unit: "K",
           unitUC: null,
-          value: Decimal.fromString('1.25'),
+          value: UcumDecimal.fromString('1.25'),
           text: "1.25"),
       property: "temperature",
       isMetric: false,
@@ -3576,7 +3777,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g/9/km",
           unitUC: "G/9/KM",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "linear mass density (of textile thread)",
       isMetric: false,
@@ -3590,7 +3791,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ligne]/6",
           unitUC: "[LIGNE]/6",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -3602,7 +3803,10 @@ final definedUnitsList = [
       code: "[diop]",
       codeUC: "[DIOP]",
       value: Value(
-          unit: "m", unitUC: "/M", value: Decimal.fromString('1'), text: "1"),
+          unit: "m",
+          unitUC: "/M",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "refraction of a lens",
       isMetric: false,
       isSpecial: false,
@@ -3622,7 +3826,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[dqt_us]/2",
           unitUC: "[DQT_US]/2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dry volume",
       isMetric: false,
@@ -3644,7 +3848,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pk_us]/8",
           unitUC: "[PK_US]/8",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dry volume",
       isMetric: false,
@@ -3667,7 +3871,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[sc_ap]",
           unitUC: "[SC_AP]",
-          value: Decimal.fromString('3'),
+          value: UcumDecimal.fromString('3'),
           text: "3"),
       property: "mass",
       isMetric: false,
@@ -3688,7 +3892,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[oz_av]/16",
           unitUC: "[OZ_AV]/16",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "mass",
       isMetric: false,
@@ -3708,7 +3912,7 @@ final definedUnitsList = [
       value: Value(
           unit: "ml/20",
           unitUC: "ML/20",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3725,7 +3929,10 @@ final definedUnitsList = [
       code: "[dye'U]",
       codeUC: "[DYE'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of amylase",
       isMetric: false,
       isSpecial: false,
@@ -3738,7 +3945,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C",
           unitUC: "C",
-          value: Decimal.fromString('0.000000000000000000160217733'),
+          value: UcumDecimal.fromString('0.000000000000000000160217733'),
           text: "1.60217733e-19"),
       property: "electric charge",
       isMetric: true,
@@ -3752,7 +3959,7 @@ final definedUnitsList = [
       value: Value(
           unit: "F/m",
           unitUC: "F/M",
-          value: Decimal.fromString('0.000000000008854187817'),
+          value: UcumDecimal.fromString('0.000000000008854187817'),
           text: "8.854187817e-12"),
       property: "electric permittivity",
       isMetric: true,
@@ -3772,7 +3979,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[foz_br]/8",
           unitUC: "[FOZ_BR]/8",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3786,7 +3993,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[foz_us]/8",
           unitUC: "[FOZ_US]/8",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -3800,7 +4007,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gil_br]/5",
           unitUC: "[GIL_BR]/5",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -3821,7 +4028,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mL",
           unitUC: "ML",
-          value: Decimal.fromString('30'),
+          value: UcumDecimal.fromString('30'),
           text: "30"),
       property: "fluid volume",
       isMetric: false,
@@ -3840,7 +4047,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gil_us]/4",
           unitUC: "[GIL_US]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -3861,7 +4068,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_br]",
           unitUC: "[IN_BR]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "length",
       isMetric: false,
@@ -3882,7 +4089,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "[IN_I]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "length",
       isMetric: false,
@@ -3904,7 +4111,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m/3937",
           unitUC: "M/3937",
-          value: Decimal.fromString('1200'),
+          value: UcumDecimal.fromString('1200'),
           text: "1200"),
       property: "length",
       isMetric: false,
@@ -3927,7 +4134,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m/3937",
           unitUC: "M/3937",
-          value: Decimal.fromString('1200'),
+          value: UcumDecimal.fromString('1200'),
           text: "1200"),
       property: "length",
       isMetric: false,
@@ -3947,7 +4154,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('6'),
+          value: UcumDecimal.fromString('6'),
           text: "6"),
       property: "length",
       isMetric: false,
@@ -3967,7 +4174,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]",
           unitUC: "[FT_I]",
-          value: Decimal.fromString('6'),
+          value: UcumDecimal.fromString('6'),
           text: "6"),
       property: "depth of water",
       isMetric: false,
@@ -3981,7 +4188,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_us]",
           unitUC: "[FT_US]",
-          value: Decimal.fromString('6'),
+          value: UcumDecimal.fromString('6'),
           text: "6"),
       property: "length",
       isMetric: false,
@@ -3995,7 +4202,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rd_us]",
           unitUC: "[RD_US]",
-          value: Decimal.fromString('40'),
+          value: UcumDecimal.fromString('40'),
           text: "40"),
       property: "length",
       isMetric: false,
@@ -4009,7 +4216,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m/s2",
           unitUC: "M/S2",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "acceleration",
       isMetric: true,
@@ -4029,7 +4236,7 @@ final definedUnitsList = [
       value: Value(
           unit: "l",
           unitUC: "L",
-          value: Decimal.fromString('4.54609'),
+          value: UcumDecimal.fromString('4.54609'),
           text: "4.54609"),
       property: "volume",
       isMetric: false,
@@ -4049,7 +4256,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]3",
           unitUC: "[IN_I]3",
-          value: Decimal.fromString('231'),
+          value: UcumDecimal.fromString('231'),
           text: "231"),
       property: "fluid volume",
       isMetric: false,
@@ -4069,7 +4276,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[bu_us]/8",
           unitUC: "[BU_US]/8",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dry volume",
       isMetric: false,
@@ -4092,7 +4299,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pt_br]/4",
           unitUC: "[PT_BR]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -4111,7 +4318,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pt_us]/4",
           unitUC: "[PT_US]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -4125,7 +4332,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mg",
           unitUC: "MG",
-          value: Decimal.fromString('64.79891'),
+          value: UcumDecimal.fromString('64.79891'),
           text: "64.79891"),
       property: "mass",
       isMetric: false,
@@ -4139,8 +4346,8 @@ final definedUnitsList = [
       value: Value(
           unit: "J.s",
           unitUC: "J.S",
-          value:
-              Decimal.fromString('0.00000000000000000000000000000000066260755'),
+          value: UcumDecimal.fromString(
+              '0.00000000000000000000000000000000066260755'),
           text: "6.6260755e-34"),
       property: "action",
       isMetric: true,
@@ -4154,7 +4361,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "[IN_I]",
-          value: Decimal.fromString('4'),
+          value: UcumDecimal.fromString('4'),
           text: "4"),
       property: "height of horses",
       isMetric: false,
@@ -4166,7 +4373,10 @@ final definedUnitsList = [
       code: "[hnsf'U]",
       codeUC: "[HNSF'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "x-ray attenuation",
       isMetric: false,
       isSpecial: false,
@@ -4179,7 +4389,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "homeopathic potency (retired)",
       isMetric: false,
@@ -4193,7 +4403,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "homeopathic potency (retired)",
       isMetric: false,
@@ -4207,7 +4417,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "homeopathic potency (retired)",
       isMetric: false,
@@ -4221,7 +4431,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "homeopathic potency (retired)",
       isMetric: false,
@@ -4233,7 +4443,10 @@ final definedUnitsList = [
       code: "[hp_C]",
       codeUC: "[HP_C]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Hahnemann)",
       isMetric: false,
       isSpecial: false,
@@ -4244,7 +4457,10 @@ final definedUnitsList = [
       code: "[hp_M]",
       codeUC: "[HP_M]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Hahnemann)",
       isMetric: false,
       isSpecial: false,
@@ -4255,7 +4471,10 @@ final definedUnitsList = [
       code: "[hp_Q]",
       codeUC: "[HP_Q]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Hahnemann)",
       isMetric: false,
       isSpecial: false,
@@ -4266,7 +4485,10 @@ final definedUnitsList = [
       code: "[hp_X]",
       codeUC: "[HP_X]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Hahnemann)",
       isMetric: false,
       isSpecial: false,
@@ -4277,7 +4499,10 @@ final definedUnitsList = [
       code: "[iU]",
       codeUC: "[IU]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary",
       isMetric: true,
       isSpecial: false,
@@ -4295,7 +4520,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm",
           unitUC: "CM",
-          value: Decimal.fromString('2.539998'),
+          value: UcumDecimal.fromString('2.539998'),
           text: "2.539998"),
       property: "length",
       isMetric: false,
@@ -4315,7 +4540,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m[H2O].[in_i]/m",
           unitUC: "M[H2O].[IN_I]/M",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: false,
@@ -4337,7 +4562,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m[Hg].[in_i]/m",
           unitUC: "M[HG].[IN_I]/M",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: false,
@@ -4351,7 +4576,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm",
           unitUC: "CM",
-          value: Decimal.fromString('2.54'),
+          value: UcumDecimal.fromString('2.54'),
           text: "254e-2"),
       property: "length",
       isMetric: false,
@@ -4365,7 +4590,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_us]/12",
           unitUC: "[FT_US]/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -4379,7 +4604,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/K",
           unitUC: "J/K",
-          value: Decimal.fromString('0.00000000000000000000001380658'),
+          value: UcumDecimal.fromString('0.00000000000000000000001380658'),
           text: "1.380658e-23"),
       property: "(unclassified)",
       isMetric: true,
@@ -4391,7 +4616,10 @@ final definedUnitsList = [
       code: "[ka'U]",
       codeUC: "[KA'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of phosphatase",
       isMetric: false,
       isSpecial: false,
@@ -4404,7 +4632,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[nmi_br]/h",
           unitUC: "[NMI_BR]/H",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "velocity",
       isMetric: false,
@@ -4418,7 +4646,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[nmi_i]/h",
           unitUC: "[NMI_I]/H",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "velocity",
       isMetric: false,
@@ -4430,7 +4658,10 @@ final definedUnitsList = [
       code: "[knk'U]",
       codeUC: "[KNK'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary biologic activity",
       isMetric: false,
       isSpecial: false,
@@ -4441,7 +4672,10 @@ final definedUnitsList = [
       code: "[kp_C]",
       codeUC: "[KP_C]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Korsakov)",
       isMetric: false,
       isSpecial: false,
@@ -4452,7 +4686,10 @@ final definedUnitsList = [
       code: "[kp_M]",
       codeUC: "[KP_M]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Korsakov)",
       isMetric: false,
       isSpecial: false,
@@ -4463,7 +4700,10 @@ final definedUnitsList = [
       code: "[kp_Q]",
       codeUC: "[KP_Q]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Korsakov)",
       isMetric: false,
       isSpecial: false,
@@ -4474,7 +4714,10 @@ final definedUnitsList = [
       code: "[kp_X]",
       codeUC: "[KP_X]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "homeopathic potency (Korsakov)",
       isMetric: false,
       isSpecial: false,
@@ -4487,7 +4730,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[oz_ap]",
           unitUC: "[OZ_AP]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "mass",
       isMetric: false,
@@ -4509,7 +4752,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gr]",
           unitUC: "[GR]",
-          value: Decimal.fromString('7000'),
+          value: UcumDecimal.fromString('7000'),
           text: "7000"),
       property: "mass",
       isMetric: false,
@@ -4528,7 +4771,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[oz_tr]",
           unitUC: "[OZ_TR]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "mass",
       isMetric: false,
@@ -4542,7 +4785,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lb_av].[g]",
           unitUC: "[LB_AV].[G]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: false,
@@ -4556,7 +4799,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lb_av]",
           unitUC: "[LB_AV]",
-          value: Decimal.fromString('112'),
+          value: UcumDecimal.fromString('112'),
           text: "112"),
       property: "mass",
       isMetric: false,
@@ -4576,7 +4819,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pouce]/12",
           unitUC: "[POUCE]/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -4590,7 +4833,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ch_br]/100",
           unitUC: "[CH_BR]/100",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -4607,7 +4850,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ch_us]/100",
           unitUC: "[CH_US]/100",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -4621,7 +4864,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]/12",
           unitUC: "[IN_I]/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -4635,7 +4878,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lcwt_av]",
           unitUC: "[LCWT_AV]",
-          value: Decimal.fromString('20'),
+          value: UcumDecimal.fromString('20'),
           text: "20"),
       property: "mass",
       isMetric: false,
@@ -4655,7 +4898,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[c].a_j",
           unitUC: "[C].ANN_J",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: true,
@@ -4669,7 +4912,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m2/s4/Hz",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "amplitude spectral density",
       isMetric: false,
@@ -4688,7 +4931,8 @@ final definedUnitsList = [
       value: Value(
           unit: "g",
           unitUC: "g",
-          value: Decimal.fromString('0.00000000000000000000000000091093897'),
+          value:
+              UcumDecimal.fromString('0.00000000000000000000000000091093897'),
           text: "9.1093897e-28"),
       property: "mass",
       isMetric: true,
@@ -4702,7 +4946,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g",
           unitUC: "g",
-          value: Decimal.fromString('0.0000000000000000000000016726231'),
+          value: UcumDecimal.fromString('0.0000000000000000000000016726231'),
           text: "1.6726231e-24"),
       property: "mass",
       isMetric: true,
@@ -4714,7 +4958,10 @@ final definedUnitsList = [
       code: "[mclg'U]",
       codeUC: "[MCLG'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "arbitrary biologic activity",
       isMetric: false,
       isSpecial: false,
@@ -4735,7 +4982,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "/[IN_I]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "lineic number",
       isMetric: false,
@@ -4749,7 +4996,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('5280'),
+          value: UcumDecimal.fromString('5280'),
           text: "5280"),
       property: "length",
       isMetric: false,
@@ -4769,7 +5016,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]",
           unitUC: "[FT_I]",
-          value: Decimal.fromString('5280'),
+          value: UcumDecimal.fromString('5280'),
           text: "5280"),
       property: "length",
       isMetric: false,
@@ -4783,7 +5030,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[fur_us]",
           unitUC: "[FUR_US]",
-          value: Decimal.fromString('8'),
+          value: UcumDecimal.fromString('8'),
           text: "8"),
       property: "length",
       isMetric: false,
@@ -4804,7 +5051,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "[IN_I]",
-          value: Decimal.fromString('0.001'),
+          value: UcumDecimal.fromString('0.001'),
           text: "1e-3"),
       property: "length",
       isMetric: false,
@@ -4818,7 +5065,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_us]",
           unitUC: "[IN_US]",
-          value: Decimal.fromString('0.001'),
+          value: UcumDecimal.fromString('0.001'),
           text: "1e-3"),
       property: "length",
       isMetric: false,
@@ -4832,7 +5079,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[fdr_br]/60",
           unitUC: "[FDR_BR]/60",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -4846,7 +5093,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[fdr_us]/60",
           unitUC: "[FDR_US]/60",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -4860,7 +5107,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N/A2",
           unitUC: "4.[PI].10*-7.N/A2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "magnetic permeability",
       isMetric: true,
@@ -4880,7 +5127,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('6080'),
+          value: UcumDecimal.fromString('6080'),
           text: "6080"),
       property: "length",
       isMetric: false,
@@ -4901,7 +5148,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m",
           unitUC: "M",
-          value: Decimal.fromString('1852'),
+          value: UcumDecimal.fromString('1852'),
           text: "1852"),
       property: "length",
       isMetric: false,
@@ -4923,7 +5170,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[dr_ap]",
           unitUC: "[DR_AP]",
-          value: Decimal.fromString('8'),
+          value: UcumDecimal.fromString('8'),
           text: "8"),
       property: "mass",
       isMetric: false,
@@ -4943,7 +5190,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lb_av]/16",
           unitUC: "[LB_AV]/16",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "mass",
       isMetric: false,
@@ -4961,7 +5208,10 @@ final definedUnitsList = [
       code: "[oz_m]",
       codeUC: "[OZ_M]",
       value: Value(
-          unit: "g", unitUC: "g", value: Decimal.fromString('28'), text: "28"),
+          unit: "g",
+          unitUC: "g",
+          value: UcumDecimal.fromString('28'),
+          text: "28"),
       property: "mass",
       isMetric: false,
       isSpecial: false,
@@ -4974,7 +5224,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pwt_tr]",
           unitUC: "[PWT_TR]",
-          value: Decimal.fromString('20'),
+          value: UcumDecimal.fromString('20'),
           text: "20"),
       property: "mass",
       isMetric: false,
@@ -4988,7 +5238,7 @@ final definedUnitsList = [
       value: Value(
           unit: "rad",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "refraction of a prism",
       isMetric: false,
@@ -5015,7 +5265,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/l",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "acidity",
       isMetric: false,
@@ -5029,7 +5279,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('2.5'),
+          value: UcumDecimal.fromString('2.5'),
           text: "2.5"),
       property: "length",
       isMetric: false,
@@ -5043,7 +5293,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pnt]",
           unitUC: "[PNT]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "length",
       isMetric: false,
@@ -5057,7 +5307,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pnt_pr]",
           unitUC: "[PNT_PR]",
-          value: Decimal.fromString('12'),
+          value: UcumDecimal.fromString('12'),
           text: "12"),
       property: "length",
       isMetric: false,
@@ -5071,7 +5321,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: "1",
-          value: Decimal.fromString(
+          value: UcumDecimal.fromString(
               '3.1415926535897932384626433832795028841971693993751058209749445923'),
           text:
               "3.1415926535897932384626433832795028841971693993751058209749445923"),
@@ -5087,7 +5337,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm",
           unitUC: "CM",
-          value: Decimal.fromString('32.48'),
+          value: UcumDecimal.fromString('32.48'),
           text: "32.48"),
       property: "length",
       isMetric: false,
@@ -5101,7 +5351,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gal_br]",
           unitUC: "[GAL_BR]",
-          value: Decimal.fromString('2'),
+          value: UcumDecimal.fromString('2'),
           text: "2"),
       property: "volume",
       isMetric: false,
@@ -5121,7 +5371,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[bu_us]/4",
           unitUC: "[BU_US]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dry volume",
       isMetric: false,
@@ -5135,7 +5385,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lne]/6",
           unitUC: "[LNE]/6",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -5155,7 +5405,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "[IN_I]",
-          value: Decimal.fromString('0.013837'),
+          value: UcumDecimal.fromString('0.013837'),
           text: "0.013837"),
       property: "length",
       isMetric: false,
@@ -5169,7 +5419,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pied]/12",
           unitUC: "[PIED]/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -5183,7 +5433,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*-9",
           unitUC: "10*-9",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fraction",
       isMetric: false,
@@ -5197,7 +5447,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*-6",
           unitUC: "10*-6",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fraction",
       isMetric: false,
@@ -5211,7 +5461,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*-3",
           unitUC: "10*-3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fraction",
       isMetric: false,
@@ -5225,7 +5475,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*-12",
           unitUC: "10*-12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fraction",
       isMetric: false,
@@ -5239,7 +5489,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lbf_av]/[in_i]2",
           unitUC: "[LBF_AV]/[IN_I]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: false,
@@ -5253,7 +5503,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[qt_br]/2",
           unitUC: "[QT_BR]/2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -5275,7 +5525,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[qt_us]/2",
           unitUC: "[QT_US]/2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -5296,7 +5546,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gr]",
           unitUC: "[GR]",
-          value: Decimal.fromString('24'),
+          value: UcumDecimal.fromString('24'),
           text: "24"),
       property: "mass",
       isMetric: false,
@@ -5310,7 +5560,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gal_br]/4",
           unitUC: "[GAL_BR]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -5324,7 +5574,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gal_us]/4",
           unitUC: "[GAL_US]/4",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid volume",
       isMetric: false,
@@ -5338,7 +5588,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_us]",
           unitUC: "[FT_US]",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "length",
       isMetric: false,
@@ -5352,7 +5602,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('16.5'),
+          value: UcumDecimal.fromString('16.5'),
           text: "16.5"),
       property: "length",
       isMetric: false,
@@ -5366,7 +5616,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_us]",
           unitUC: "[FT_US]",
-          value: Decimal.fromString('16.5'),
+          value: UcumDecimal.fromString('16.5'),
           text: "16.5"),
       property: "length",
       isMetric: false,
@@ -5380,7 +5630,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rch_us]/100",
           unitUC: "[RCH_US]/100",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "length",
       isMetric: false,
@@ -5394,7 +5644,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[gr]",
           unitUC: "[GR]",
-          value: Decimal.fromString('20'),
+          value: UcumDecimal.fromString('20'),
           text: "20"),
       property: "mass",
       isMetric: false,
@@ -5408,7 +5658,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[mi_us]2",
           unitUC: "[MI_US]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5422,7 +5672,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lb_av]",
           unitUC: "[LB_AV]",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "mass",
       isMetric: false,
@@ -5442,7 +5692,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]2",
           unitUC: "[FT_I]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5464,7 +5714,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]2",
           unitUC: "[IN_I]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5483,7 +5733,10 @@ final definedUnitsList = [
       code: "[smgy'U]",
       codeUC: "[SMGY'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of amylase",
       isMetric: false,
       isSpecial: false,
@@ -5496,7 +5749,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[mi_us]2",
           unitUC: "[MI_US]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5510,7 +5763,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[in_i]",
           unitUC: "[IN_I]",
-          value: Decimal.fromString('67'),
+          value: UcumDecimal.fromString('67'),
           text: "67"),
       property: "length",
       isMetric: false,
@@ -5524,7 +5777,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[rd_us]2",
           unitUC: "[RD_US]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5538,7 +5791,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[scwt_av]",
           unitUC: "[SCWT_AV]",
-          value: Decimal.fromString('20'),
+          value: UcumDecimal.fromString('20'),
           text: "20"),
       property: "mass",
       isMetric: false,
@@ -5552,7 +5805,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[lb_av]",
           unitUC: "[LB_AV]",
-          value: Decimal.fromString('14'),
+          value: UcumDecimal.fromString('14'),
           text: "14"),
       property: "mass",
       isMetric: false,
@@ -5566,7 +5819,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[yd_i]2",
           unitUC: "[YD_I]2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "area",
       isMetric: false,
@@ -5585,7 +5838,10 @@ final definedUnitsList = [
       code: "[tb'U]",
       codeUC: "[TB'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity of tuberculin",
       isMetric: false,
       isSpecial: false,
@@ -5598,7 +5854,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mL",
           unitUC: "mL",
-          value: Decimal.fromString('15'),
+          value: UcumDecimal.fromString('15'),
           text: "15"),
       property: "volume",
       isMetric: false,
@@ -5619,7 +5875,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[foz_us]/2",
           unitUC: "[FOZ_US]/2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -5631,7 +5887,10 @@ final definedUnitsList = [
       code: "[todd'U]",
       codeUC: "[TODD'U]",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "biologic activity antistreptolysin O",
       isMetric: false,
       isSpecial: false,
@@ -5642,7 +5901,10 @@ final definedUnitsList = [
       code: "[tsp_m]",
       codeUC: "[TSP_M]",
       value: Value(
-          unit: "mL", unitUC: "mL", value: Decimal.fromString('5'), text: "5"),
+          unit: "mL",
+          unitUC: "mL",
+          value: UcumDecimal.fromString('5'),
+          text: "5"),
       property: "volume",
       isMetric: false,
       isSpecial: false,
@@ -5655,7 +5917,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[tbs_us]/3",
           unitUC: "[TBS_US]/3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: false,
@@ -5669,7 +5931,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[sct]",
           unitUC: "[SCT]",
-          value: Decimal.fromString('36'),
+          value: UcumDecimal.fromString('36'),
           text: "36"),
       property: "area",
       isMetric: false,
@@ -5683,7 +5945,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mm[Hg].min/L",
           unitUC: "MM[HG].MIN/L",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "fluid resistance",
       isMetric: false,
@@ -5703,7 +5965,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_br]",
           unitUC: "[FT_BR]",
-          value: Decimal.fromString('3'),
+          value: UcumDecimal.fromString('3'),
           text: "3"),
       property: "length",
       isMetric: false,
@@ -5717,7 +5979,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_i]",
           unitUC: "[FT_I]",
-          value: Decimal.fromString('3'),
+          value: UcumDecimal.fromString('3'),
           text: "3"),
       property: "length",
       isMetric: false,
@@ -5731,7 +5993,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[ft_us]",
           unitUC: "[FT_US]",
-          value: Decimal.fromString('3'),
+          value: UcumDecimal.fromString('3'),
           text: "3"),
       property: "length",
       isMetric: false,
@@ -5745,7 +6007,7 @@ final definedUnitsList = [
       value: Value(
           unit: "a_j",
           unitUC: "ANN_J",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "time",
       isMetric: false,
@@ -5759,7 +6021,7 @@ final definedUnitsList = [
       value: Value(
           unit: "d",
           unitUC: "D",
-          value: Decimal.fromString('365.2425'),
+          value: UcumDecimal.fromString('365.2425'),
           text: "365.2425"),
       property: "time",
       isMetric: false,
@@ -5778,7 +6040,7 @@ final definedUnitsList = [
       value: Value(
           unit: "d",
           unitUC: "D",
-          value: Decimal.fromString('365.25'),
+          value: UcumDecimal.fromString('365.25'),
           text: "365.25"),
       property: "time",
       isMetric: false,
@@ -5792,7 +6054,7 @@ final definedUnitsList = [
       value: Value(
           unit: "d",
           unitUC: "D",
-          value: Decimal.fromString('365.24219'),
+          value: UcumDecimal.fromString('365.24219'),
           text: "365.24219"),
       property: "time",
       isMetric: false,
@@ -5806,7 +6068,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m2",
           unitUC: "M2",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "area",
       isMetric: true,
@@ -5827,7 +6089,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('101325'),
+          value: UcumDecimal.fromString('101325'),
           text: "101325"),
       property: "pressure",
       isMetric: false,
@@ -5846,7 +6108,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kgf/cm2",
           unitUC: "KGF/CM2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: false,
@@ -5868,7 +6130,7 @@ final definedUnitsList = [
       value: Value(
           unit: "fm2",
           unitUC: "FM2",
-          value: Decimal.fromString('100'),
+          value: UcumDecimal.fromString('100'),
           text: "100"),
       property: "action area",
       isMetric: false,
@@ -5882,7 +6144,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('100000'),
+          value: UcumDecimal.fromString('100000'),
           text: "1e5"),
       property: "pressure",
       isMetric: true,
@@ -5894,7 +6156,10 @@ final definedUnitsList = [
       code: "bit",
       codeUC: "BIT",
       value: Value(
-          unit: "1", unitUC: "1", value: Decimal.fromString('1'), text: "1"),
+          unit: "1",
+          unitUC: "1",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "amount of information",
       isMetric: true,
       isSpecial: false,
@@ -5907,7 +6172,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "amount of information",
       isMetric: false,
@@ -5919,7 +6184,10 @@ final definedUnitsList = [
       code: "cL",
       codeUC: "CL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -5932,7 +6200,7 @@ final definedUnitsList = [
       value: Value(
           unit: "dyn.s/cm2",
           unitUC: "DYN.S/CM2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "dynamic viscosity",
       isMetric: true,
@@ -5946,7 +6214,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cm2/s",
           unitUC: "CM2/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "kinematic viscosity",
       isMetric: true,
@@ -5960,7 +6228,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -5974,7 +6242,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J",
           unitUC: "J",
-          value: Decimal.fromString('4.1868'),
+          value: UcumDecimal.fromString('4.1868'),
           text: "4.1868"),
       property: "energy",
       isMetric: true,
@@ -5993,7 +6261,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J",
           unitUC: "J",
-          value: Decimal.fromString('4.18580'),
+          value: UcumDecimal.fromString('4.18580'),
           text: "4.18580"),
       property: "energy",
       isMetric: true,
@@ -6012,7 +6280,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J",
           unitUC: "J",
-          value: Decimal.fromString('4.18190'),
+          value: UcumDecimal.fromString('4.18190'),
           text: "4.18190"),
       property: "energy",
       isMetric: true,
@@ -6031,7 +6299,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J",
           unitUC: "J",
-          value: Decimal.fromString('4.19002'),
+          value: UcumDecimal.fromString('4.19002'),
           text: "4.19002"),
       property: "energy",
       isMetric: true,
@@ -6045,7 +6313,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J",
           unitUC: "J",
-          value: Decimal.fromString('4.184'),
+          value: UcumDecimal.fromString('4.184'),
           text: "4.184"),
       property: "energy",
       isMetric: true,
@@ -6069,7 +6337,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pi].rad",
           unitUC: "[PI].RAD",
-          value: Decimal.fromString('2'),
+          value: UcumDecimal.fromString('2'),
           text: "2"),
       property: "plane angle",
       isMetric: false,
@@ -6129,7 +6397,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "pressure",
       isMetric: true,
@@ -6149,7 +6417,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "pressure",
       isMetric: true,
@@ -6174,7 +6442,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "pressure",
       isMetric: true,
@@ -6198,7 +6466,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('133.3220'),
+          value: UcumDecimal.fromString('133.3220'),
           text: "133.3220"),
       property: "pressure",
       isMetric: true,
@@ -6216,7 +6484,10 @@ final definedUnitsList = [
       code: "d",
       codeUC: "D",
       value: Value(
-          unit: "h", unitUC: "HR", value: Decimal.fromString('24'), text: "24"),
+          unit: "h",
+          unitUC: "HR",
+          value: UcumDecimal.fromString('24'),
+          text: "24"),
       property: "time",
       isMetric: false,
       isSpecial: false,
@@ -6229,7 +6500,7 @@ final definedUnitsList = [
       value: Value(
           unit: "1",
           unitUC: null,
-          value: Decimal.fromString('1.0'),
+          value: UcumDecimal.fromString('1.0'),
           text: "1.0"),
       property: "level",
       isMetric: true,
@@ -6241,7 +6512,10 @@ final definedUnitsList = [
       code: "dL",
       codeUC: "DL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -6252,7 +6526,10 @@ final definedUnitsList = [
       code: "daL/min",
       codeUC: "DAL/MIN",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -6268,7 +6545,10 @@ final definedUnitsList = [
       code: "daL/min/m2",
       codeUC: "(DAL/MIN)/M2",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -6290,7 +6570,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pi].rad/360",
           unitUC: "[PI].RAD/360",
-          value: Decimal.fromString('2'),
+          value: UcumDecimal.fromString('2'),
           text: "2"),
       property: "plane angle",
       isMetric: false,
@@ -6311,7 +6591,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pi].rad/360",
           unitUC: "[PI].RAD/360",
-          value: Decimal.fromString('2'),
+          value: UcumDecimal.fromString('2'),
           text: "2"),
       property: "plane angle",
       isMetric: false,
@@ -6378,7 +6658,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g.cm/s2",
           unitUC: "G.CM/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -6392,7 +6672,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g.cm/s2",
           unitUC: "G.CM/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -6416,7 +6696,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g.cm/s2",
           unitUC: "G.CM/S2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -6435,7 +6715,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[e].V",
           unitUC: "[E].V",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -6449,7 +6729,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -6463,7 +6743,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -6484,7 +6764,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -6504,7 +6784,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -6523,7 +6803,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -6542,7 +6822,7 @@ final definedUnitsList = [
       value: Value(
           unit: "dyn.cm",
           unitUC: "DYN.CM",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -6561,7 +6841,10 @@ final definedUnitsList = [
       code: "fL",
       codeUC: "FL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -6594,7 +6877,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -6608,7 +6891,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -6622,7 +6905,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -6636,7 +6919,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -6656,7 +6939,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -6670,7 +6953,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g/dl",
           unitUC: "G/DL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "mass concentration",
       isMetric: true,
@@ -7118,7 +7401,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g.[g]",
           unitUC: "G.[G]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "force",
       isMetric: true,
@@ -7132,7 +7415,7 @@ final definedUnitsList = [
       value: Value(
           unit: "deg",
           unitUC: "DEG",
-          value: Decimal.fromString('0.9'),
+          value: UcumDecimal.fromString('0.9'),
           text: "0.9"),
       property: "plane angle",
       isMetric: false,
@@ -7146,7 +7429,7 @@ final definedUnitsList = [
       value: Value(
           unit: "min",
           unitUC: "MIN",
-          value: Decimal.fromString('60'),
+          value: UcumDecimal.fromString('60'),
           text: "60"),
       property: "time",
       isMetric: false,
@@ -7158,7 +7441,10 @@ final definedUnitsList = [
       code: "kL",
       codeUC: "KL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7179,7 +7465,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N/m2",
           unitUC: "N/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: true,
@@ -7193,7 +7479,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7207,7 +7493,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7228,7 +7514,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7242,7 +7528,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7263,7 +7549,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -7286,7 +7572,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -7309,7 +7595,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7335,7 +7621,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7356,7 +7642,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -7376,7 +7662,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7396,7 +7682,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7425,7 +7711,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7447,7 +7733,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7473,7 +7759,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7494,7 +7780,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cal_th",
           unitUC: "CAL_TH",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "energy",
       isMetric: true,
@@ -7686,7 +7972,7 @@ final definedUnitsList = [
       value: Value(
           unit: "dm3",
           unitUC: "DM3",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "volume",
       isMetric: true,
@@ -7709,7 +7995,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cd.sr",
           unitUC: "CD.SR",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "luminous flux",
       isMetric: true,
@@ -7723,7 +8009,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cd.sr",
           unitUC: "CD.SR",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "luminous flux",
       isMetric: true,
@@ -7744,7 +8030,7 @@ final definedUnitsList = [
       value: Value(
           unit: "lm/m2",
           unitUC: "LM/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "illuminance",
       isMetric: true,
@@ -7853,7 +8139,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/s",
           unitUC: "C/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric current",
       isMetric: true,
@@ -7865,7 +8151,10 @@ final definedUnitsList = [
       code: "mL",
       codeUC: "ML",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7876,7 +8165,10 @@ final definedUnitsList = [
       code: "mL/(10.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7895,7 +8187,10 @@ final definedUnitsList = [
       code: "mL/(12.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7914,7 +8209,10 @@ final definedUnitsList = [
       code: "mL/(2.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7933,7 +8231,10 @@ final definedUnitsList = [
       code: "mL/(24.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7959,7 +8260,10 @@ final definedUnitsList = [
       code: "mL/(4.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7978,7 +8282,10 @@ final definedUnitsList = [
       code: "mL/(5.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -7997,7 +8304,10 @@ final definedUnitsList = [
       code: "mL/(6.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8016,7 +8326,10 @@ final definedUnitsList = [
       code: "mL/(72.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8035,7 +8348,10 @@ final definedUnitsList = [
       code: "mL/(8.h)",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8055,7 +8371,10 @@ final definedUnitsList = [
       code: "mL/(8.h)/kg",
       codeUC: "(ML/HR)/KG",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8080,7 +8399,10 @@ final definedUnitsList = [
       code: "mL/[sin_i]",
       codeUC: "ML/[SIN_I]",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8102,7 +8424,10 @@ final definedUnitsList = [
       code: "mL/cm[H2O]",
       codeUC: "ML/CM[H2O]",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8122,7 +8447,10 @@ final definedUnitsList = [
       code: "mL/d",
       codeUC: "ML/D",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8143,7 +8471,10 @@ final definedUnitsList = [
       code: "mL/dL",
       codeUC: "ML/DL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8160,7 +8491,10 @@ final definedUnitsList = [
       code: "mL/h",
       codeUC: "ML/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8179,7 +8513,10 @@ final definedUnitsList = [
       code: "mL/kg",
       codeUC: "ML/KG",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8195,7 +8532,10 @@ final definedUnitsList = [
       code: "mL/kg/(8.h)",
       codeUC: "(ML/KG)/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8216,7 +8556,10 @@ final definedUnitsList = [
       code: "mL/kg/d",
       codeUC: "(ML/KG)/D",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8236,7 +8579,10 @@ final definedUnitsList = [
       code: "mL/kg/h",
       codeUC: "(ML/KG)/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8254,7 +8600,10 @@ final definedUnitsList = [
       code: "mL/kg/min",
       codeUC: "(ML/KG)/MIN",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8272,7 +8621,10 @@ final definedUnitsList = [
       code: "mL/m2",
       codeUC: "ML/M2",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8293,7 +8645,10 @@ final definedUnitsList = [
       code: "mL/mbar",
       codeUC: "ML/MBAR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8309,7 +8664,10 @@ final definedUnitsList = [
       code: "mL/min",
       codeUC: "ML/MIN",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8325,7 +8683,10 @@ final definedUnitsList = [
       code: "mL/min/m2",
       codeUC: "(ML/MIN)/M2",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8347,7 +8708,10 @@ final definedUnitsList = [
       code: "mL/mm",
       codeUC: "ML/MM",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8364,7 +8728,10 @@ final definedUnitsList = [
       code: "mL/s",
       codeUC: "ML/S",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -8383,7 +8750,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N/m2",
           unitUC: "N/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: true,
@@ -8397,7 +8764,7 @@ final definedUnitsList = [
       value: Value(
           unit: "N/m2",
           unitUC: "N/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "pressure",
       isMetric: true,
@@ -8417,7 +8784,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -8437,7 +8804,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -8457,7 +8824,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -8478,7 +8845,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -8500,7 +8867,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -8518,7 +8885,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/C",
           unitUC: "J/C",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric potential",
       isMetric: true,
@@ -8532,7 +8899,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "pressure",
       isMetric: true,
@@ -8555,7 +8922,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('133.3220'),
+          value: UcumDecimal.fromString('133.3220'),
           text: "133.3220"),
       property: "pressure",
       isMetric: true,
@@ -8576,7 +8943,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -8597,7 +8964,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -8618,7 +8985,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('100000'),
+          value: UcumDecimal.fromString('100000'),
           text: "1e5"),
       property: "pressure",
       isMetric: true,
@@ -8632,7 +8999,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('100000'),
+          value: UcumDecimal.fromString('100000'),
           text: "1e5"),
       property: "pressure",
       isMetric: true,
@@ -8653,7 +9020,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Pa",
           unitUC: "PAL",
-          value: Decimal.fromString('100000'),
+          value: UcumDecimal.fromString('100000'),
           text: "1e5"),
       property: "pressure",
       isMetric: true,
@@ -8676,7 +9043,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8690,7 +9057,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8710,7 +9077,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8730,7 +9097,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8751,7 +9118,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8771,7 +9138,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8794,7 +9161,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8813,7 +9180,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8832,7 +9199,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8851,7 +9218,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8869,7 +9236,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8889,7 +9256,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8910,7 +9277,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -8929,7 +9296,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -9338,7 +9705,10 @@ final definedUnitsList = [
       code: "mho",
       codeUC: "MHO",
       value: Value(
-          unit: "S", unitUC: "S", value: Decimal.fromString('1'), text: "1"),
+          unit: "S",
+          unitUC: "S",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "electric conductance",
       isMetric: true,
       isSpecial: false,
@@ -9349,7 +9719,10 @@ final definedUnitsList = [
       code: "min",
       codeUC: "MIN",
       value: Value(
-          unit: "s", unitUC: "S", value: Decimal.fromString('60'), text: "60"),
+          unit: "s",
+          unitUC: "S",
+          value: UcumDecimal.fromString('60'),
+          text: "60"),
       property: "time",
       isMetric: false,
       isSpecial: false,
@@ -9431,7 +9804,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('9.80665'),
+          value: UcumDecimal.fromString('9.80665'),
           text: "980665e-5"),
       property: "pressure",
       isMetric: true,
@@ -9451,7 +9824,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kPa",
           unitUC: "KPAL",
-          value: Decimal.fromString('133.3220'),
+          value: UcumDecimal.fromString('133.3220'),
           text: "133.3220"),
       property: "pressure",
       isMetric: true,
@@ -9471,7 +9844,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9485,7 +9858,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9506,7 +9879,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9527,7 +9900,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9548,7 +9921,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9569,7 +9942,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9590,7 +9963,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9612,7 +9985,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9631,7 +10004,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9652,7 +10025,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9671,7 +10044,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9685,7 +10058,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9704,7 +10077,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9722,7 +10095,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9745,7 +10118,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9765,7 +10138,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9784,7 +10157,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9804,7 +10177,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9828,7 +10201,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9842,7 +10215,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9860,7 +10233,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9874,7 +10247,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9895,7 +10268,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mo_j",
           unitUC: "MO_J",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "time",
       isMetric: false,
@@ -9909,7 +10282,7 @@ final definedUnitsList = [
       value: Value(
           unit: "a_g/12",
           unitUC: "ANN_G/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "time",
       isMetric: false,
@@ -9928,7 +10301,7 @@ final definedUnitsList = [
       value: Value(
           unit: "a_j/12",
           unitUC: "ANN_J/12",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "time",
       isMetric: false,
@@ -9942,7 +10315,7 @@ final definedUnitsList = [
       value: Value(
           unit: "d",
           unitUC: "D",
-          value: Decimal.fromString('29.53059'),
+          value: UcumDecimal.fromString('29.53059'),
           text: "29.53059"),
       property: "time",
       isMetric: false,
@@ -9965,7 +10338,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -9979,7 +10352,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10000,7 +10373,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10014,7 +10387,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10034,7 +10407,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10062,7 +10435,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10082,7 +10455,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10096,7 +10469,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10110,7 +10483,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -10124,7 +10497,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -10143,7 +10516,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -10169,7 +10542,10 @@ final definedUnitsList = [
       code: "nL",
       codeUC: "NL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -10182,7 +10558,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -10492,7 +10868,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -10535,7 +10911,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10549,7 +10925,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10573,7 +10949,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10592,7 +10968,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10617,7 +10993,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10641,7 +11017,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10660,7 +11036,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10682,7 +11058,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10701,7 +11077,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10724,7 +11100,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10746,7 +11122,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10764,7 +11140,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10783,7 +11159,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10802,7 +11178,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10823,7 +11199,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10845,7 +11221,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10863,7 +11239,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10877,7 +11253,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10891,7 +11267,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10905,7 +11281,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10927,7 +11303,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -10961,7 +11337,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -10975,7 +11351,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -10995,7 +11371,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance (dissolved particles)",
       isMetric: true,
@@ -11014,7 +11390,7 @@ final definedUnitsList = [
       value: Value(
           unit: "C/s",
           unitUC: "C/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric current",
       isMetric: true,
@@ -11026,7 +11402,10 @@ final definedUnitsList = [
       code: "pL",
       codeUC: "PL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -11039,7 +11418,7 @@ final definedUnitsList = [
       value: Value(
           unit: "Wb/m2",
           unitUC: "WB/M2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "magnetic flux density",
       isMetric: true,
@@ -11053,7 +11432,7 @@ final definedUnitsList = [
       value: Value(
           unit: "m",
           unitUC: "M",
-          value: Decimal.fromString('30856780000000000'),
+          value: UcumDecimal.fromString('30856780000000000'),
           text: "3.085678e16"),
       property: "length",
       isMetric: true,
@@ -11139,7 +11518,7 @@ final definedUnitsList = [
       value: Value(
           unit: "lx",
           unitUC: "LX",
-          value: Decimal.fromString('0.0001'),
+          value: UcumDecimal.fromString('0.0001'),
           text: "1e-4"),
       property: "illuminance",
       isMetric: true,
@@ -11153,7 +11532,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -11177,7 +11556,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11191,7 +11570,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11214,7 +11593,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11234,7 +11613,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11256,7 +11635,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11275,7 +11654,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11294,7 +11673,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11317,7 +11696,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11340,7 +11719,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11362,7 +11741,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -11393,7 +11772,7 @@ final definedUnitsList = [
       value: Value(
           unit: "cd/cm2",
           unitUC: "CD/CM2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "lum. intensity density",
       isMetric: true,
@@ -11407,7 +11786,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[pi].sr",
           unitUC: "[PI].SR",
-          value: Decimal.fromString('4'),
+          value: UcumDecimal.fromString('4'),
           text: "4"),
       property: "solid angle",
       isMetric: false,
@@ -11421,7 +11800,7 @@ final definedUnitsList = [
       value: Value(
           unit: "rad2",
           unitUC: "RAD2",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "solid angle",
       isMetric: true,
@@ -11433,7 +11812,10 @@ final definedUnitsList = [
       code: "st",
       codeUC: "STR",
       value: Value(
-          unit: "m3", unitUC: "M3", value: Decimal.fromString('1'), text: "1"),
+          unit: "m3",
+          unitUC: "M3",
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -11454,7 +11836,7 @@ final definedUnitsList = [
       value: Value(
           unit: "kg",
           unitUC: "KG",
-          value: Decimal.fromString('1000'),
+          value: UcumDecimal.fromString('1000'),
           text: "1e3"),
       property: "mass",
       isMetric: true,
@@ -11468,7 +11850,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g/km",
           unitUC: "G/KM",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "linear mass density (of textile thread)",
       isMetric: true,
@@ -11482,7 +11864,7 @@ final definedUnitsList = [
       value: Value(
           unit: "g",
           unitUC: "G",
-          value: Decimal.fromString('0.0000000000000000000000016605402'),
+          value: UcumDecimal.fromString('0.0000000000000000000000016605402'),
           text: "1.6605402e-24"),
       property: "mass",
       isMetric: true,
@@ -11500,7 +11882,10 @@ final definedUnitsList = [
       code: "uL",
       codeUC: "UL",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -11511,7 +11896,10 @@ final definedUnitsList = [
       code: "uL/(2.h)",
       codeUC: "UL/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -11532,7 +11920,10 @@ final definedUnitsList = [
       code: "uL/h",
       codeUC: "UL/HR",
       value: Value(
-          unit: "l", unitUC: null, value: Decimal.fromString('1'), text: "1"),
+          unit: "l",
+          unitUC: null,
+          value: UcumDecimal.fromString('1'),
+          text: "1"),
       property: "volume",
       isMetric: true,
       isSpecial: false,
@@ -11553,7 +11944,7 @@ final definedUnitsList = [
       value: Value(
           unit: "V/A",
           unitUC: "V/A",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric resistance",
       isMetric: true,
@@ -11567,7 +11958,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -11588,7 +11979,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -11608,7 +11999,7 @@ final definedUnitsList = [
       value: Value(
           unit: "umol/min",
           unitUC: "UMOL/MIN",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -11629,7 +12020,7 @@ final definedUnitsList = [
       value: Value(
           unit: "J/C",
           unitUC: "J/C",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "electric potential",
       isMetric: true,
@@ -11643,7 +12034,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -11662,7 +12053,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -11684,7 +12075,7 @@ final definedUnitsList = [
       value: Value(
           unit: "[iU]",
           unitUC: "[IU]",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "arbitrary",
       isMetric: true,
@@ -11705,7 +12096,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -11724,7 +12115,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -11743,7 +12134,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol",
           unitUC: "MOL",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "amount of substance",
       isMetric: true,
@@ -12177,7 +12568,7 @@ final definedUnitsList = [
       value: Value(
           unit: "mol/s",
           unitUC: "MOL/S",
-          value: Decimal.fromString('1'),
+          value: UcumDecimal.fromString('1'),
           text: "1"),
       property: "catalytic activity",
       isMetric: true,
@@ -12219,7 +12610,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12233,7 +12624,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12254,7 +12645,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12275,7 +12666,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12299,7 +12690,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12320,7 +12711,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12342,7 +12733,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12370,7 +12761,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12391,7 +12782,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12410,7 +12801,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12430,7 +12821,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12448,7 +12839,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12467,7 +12858,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12486,7 +12877,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12505,7 +12896,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12525,7 +12916,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12547,7 +12938,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12568,7 +12959,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12586,7 +12977,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12600,7 +12991,7 @@ final definedUnitsList = [
       value: Value(
           unit: "10*23",
           unitUC: "10*23",
-          value: Decimal.fromString('6.0221367'),
+          value: UcumDecimal.fromString('6.0221367'),
           text: "6.0221367"),
       property: "amount of substance",
       isMetric: true,
@@ -12626,7 +13017,10 @@ final definedUnitsList = [
       code: "wk",
       codeUC: "WK",
       value: Value(
-          unit: "d", unitUC: "D", value: Decimal.fromString('7'), text: "7"),
+          unit: "d",
+          unitUC: "D",
+          value: UcumDecimal.fromString('7'),
+          text: "7"),
       property: "time",
       isMetric: false,
       isSpecial: false,

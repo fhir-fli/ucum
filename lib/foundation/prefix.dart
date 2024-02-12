@@ -30,7 +30,7 @@ import '../ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class Prefix extends UcumConcept {
-  Decimal value; // 1^-24 through to 1^24
+  UcumDecimal value; // 1^-24 through to 1^24
 
   Prefix({
     required super.code,

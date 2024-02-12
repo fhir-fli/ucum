@@ -40,7 +40,7 @@ void main() {
     });
 
     test('Convert', () {
-      Decimal ONE = Decimal.fromString('1', 15);
+      UcumDecimal ONE = UcumDecimal.fromString('1', 15);
       for (CommonUnit cu in units) {
         // BUG: avoid NPE
         if ('Cel' == cu.unit || '[degF]' == cu.unit || '[pH]' == cu.unit)
@@ -58,7 +58,7 @@ void main() {
 
     test('Convert2', () {
       void convertAll(List<CommonUnit> list) {
-        Decimal K = Decimal.fromString('2.3', 15);
+        UcumDecimal K = UcumDecimal.fromString('2.3', 15);
         for (CommonUnit a in list) {
           for (CommonUnit b in list) {
             try {

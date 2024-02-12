@@ -32,25 +32,25 @@ library org.fhir.ucum;
 import '../ucum.dart';
 
 class Canonical {
-  Decimal value;
+  UcumDecimal value;
   List<CanonicalUnit> units = [];
 
   Canonical(this.value);
 
-  void multiplyValueDecimal(Decimal multiplicand) {
+  void multiplyValueDecimal(UcumDecimal multiplicand) {
     value = value * multiplicand;
   }
 
   void multiplyValueInt(int multiplicand) {
-    value = value * Decimal.fromInt(multiplicand);
+    value = value * UcumDecimal.fromInt(multiplicand);
   }
 
-  void divideValueDecimal(Decimal divisor) {
+  void divideValueDecimal(UcumDecimal divisor) {
     value = value / divisor;
   }
 
   void divideValueInt(int divisor) {
-    value = value / Decimal.fromInt(divisor);
+    value = value / UcumDecimal.fromInt(divisor);
   }
 
   @override

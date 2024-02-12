@@ -12,7 +12,7 @@ void main() {
     test('make units', () {
       final ValidatedQuantity quantity1 =
           ValidatedQuantity.fromString('4 hours');
-      expect(quantity1.value.asDecimal(), '4');
+      expect(quantity1.value.asUcumDecimal(), '4');
       expect(quantity1.code, 'hours');
       final ValidatedQuantity quantity2 =
           ValidatedQuantity.fromString('16.5559988 mph');

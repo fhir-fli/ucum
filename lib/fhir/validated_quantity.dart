@@ -123,11 +123,15 @@ class ValidatedQuantity extends Pair {
   @override
   int get hashCode => super.hashCode;
 
-  ValidatedQuantity operator +(Object other) {
+  ValidatedQuantity? operator +(Object other) {
     if (other is UcumDecimal) {
       return copyWith(value: this.value.add(other));
     } else if (other is ValidatedQuantity) {
-      return copyWith(value: this.value.add(other.value));
+      if (UcumService().isComparable(this.code, other.code)) {
+        return copyWith(value: this.value.add(other.value));
+      } else {
+        return null;
+      }
     } else if (other is num || other is BigInt) {
       return copyWith(
           value: this.value.add(UcumDecimal.fromString(other.toString())));
@@ -145,11 +149,15 @@ class ValidatedQuantity extends Pair {
     }
   }
 
-  ValidatedQuantity operator -(Object other) {
+  ValidatedQuantity? operator -(Object other) {
     if (other is UcumDecimal) {
       return copyWith(value: this.value.subtract(other));
     } else if (other is ValidatedQuantity) {
-      return copyWith(value: this.value.subtract(other.value));
+      if (UcumService().isComparable(this.code, other.code)) {
+        return copyWith(value: this.value.subtract(other.value));
+      } else {
+        return null;
+      }
     } else if (other is num || other is BigInt) {
       return copyWith(
           value: this.value.subtract(UcumDecimal.fromString(other.toString())));

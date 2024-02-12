@@ -33,4 +33,4 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 library org.fhir.ucum;
 
-abstract class Expression {}
+abstract class UcumExpression {}

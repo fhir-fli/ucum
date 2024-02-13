@@ -1,6 +1,6 @@
 # ucum
 
-Dart Library Mimicking the Ucum-java FHIR Library Functionality
+Dart Library Mimicking the Unified Code for Units of Measure FHIR Library Functionality
 
 #### All credit goes to (I assume Graham) and everyone else who built this library in Java. With the help of ChatGPT, I've managed to get it to work in Dart. 
 
@@ -33,7 +33,7 @@ Dart Library Mimicking the Ucum-java FHIR Library Functionality
 /*******************************************************************************
 BSD 3-Clause License
 
-Copyright (c) 2006+, Health Intersections Pty Ltd
+Copyright (c) 2023, Grey Faulkenberry
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

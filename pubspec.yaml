@@ -1,6 +1,6 @@
 name: ucum
-description: Dart Library Mimicking the UCUM-LHC Library Functionality
-version: 0.0.1-dev1
+description: Dart Library Mimicking the Unified Code for Units of Measure Library Functionality
+version: 0.1.0
 homepage: https://www.fhirfli.dev/
 repository: https://github.com/fhir-fli/ucum
 
@@ -13,4 +13,4 @@ dependencies:
 dev_dependencies:
   # flutter pub run import_sorter:main
   lints: ^3.0.0
-  test: ^1.25.0
+  test: ^1.25.2

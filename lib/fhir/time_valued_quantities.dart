@@ -12,7 +12,7 @@ bool isMonths(String code) => [
       'mo',
     ].contains(code);
 
-bool isWeek(String code) => [
+bool isWeeks(String code) => [
       'weeks',
       'week',
       "'week'",

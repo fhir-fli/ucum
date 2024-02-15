@@ -128,7 +128,7 @@ class ValidatedQuantity extends Pair {
   }
 
   @override
-  int get hashCode => super.hashCode;
+  int get hashCode => value.hashCode ^ code.hashCode;
 
   ValidatedQuantity? operator +(Object other) {
     if (other is UcumDecimal) {

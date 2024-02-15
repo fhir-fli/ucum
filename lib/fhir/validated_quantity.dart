@@ -21,6 +21,9 @@ class ValidatedQuantity extends Pair {
         code: string.isEmpty ? '1' : string);
   }
 
+  factory ValidatedQuantity.fromNumber(num number, {String? code}) =>
+      ValidatedQuantity(value: UcumDecimal.fromString(number.toString()));
+
   ValidatedQuantity.fromPair(Pair pair)
       : super(value: pair.value, code: pair.code.isNotEmpty ? pair.code : '1');
 

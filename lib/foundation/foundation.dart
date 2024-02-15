@@ -3,7 +3,6 @@ export 'canonical.dart';
 export 'component.dart';
 export 'concept_kind.dart';
 export 'converter.dart';
-export 'ucum_decimal.dart';
 export 'defined_unit.dart';
 export 'expression_composer.dart';
 export 'expression_parser.dart';

@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
-import 'ucum_exception.dart';
-import 'utilities.dart';
+import '../foundation/ucum_exception.dart';
+import '../foundation/utilities.dart';
 
 class UcumDecimal {
   late int precision;
@@ -35,6 +35,10 @@ class UcumDecimal {
 
   UcumDecimal.fromInt(int i) {
     setValueUcumDecimal(i.toString());
+  }
+
+  UcumDecimal.fromDouble(double d) {
+    setValueUcumDecimal(d.toString());
   }
 
   void setValueUcumDecimal(String value) {

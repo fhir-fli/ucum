@@ -24,6 +24,9 @@ class ValidatedQuantity extends Pair {
   factory ValidatedQuantity.fromNumber(num number, {String? code}) =>
       ValidatedQuantity(value: UcumDecimal.fromString(number.toString()));
 
+  factory ValidatedQuantity.fromBigInt(BigInt number, {String? code}) =>
+      ValidatedQuantity(value: UcumDecimal.fromBigInt(number));
+
   ValidatedQuantity.fromPair(Pair pair)
       : super(value: pair.value, code: pair.code.isNotEmpty ? pair.code : '1');
 

@@ -41,6 +41,10 @@ class UcumDecimal {
     setValueUcumDecimal(d.toString());
   }
 
+  UcumDecimal.fromBigInt(BigInt i) {
+    setValueUcumDecimal(i.toString());
+  }
+
   void setValueUcumDecimal(String value) {
     scientific = false;
     negative = value.startsWith("-");

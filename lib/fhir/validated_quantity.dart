@@ -401,4 +401,13 @@ class ValidatedQuantity extends Pair {
       return false;
     }
   }
+
+  ValidatedQuantity convertTo(String newCode) {
+    if (UcumService().isComparable(code, newCode)) {
+      final value = UcumService().convert(this.value, this.code, newCode);
+      return ValidatedQuantity(value: value, code: newCode);
+    } else {
+      throw UcumException('Cannot convert $this to $newCode');
+    }
+  }
 }

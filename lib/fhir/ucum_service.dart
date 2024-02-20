@@ -148,16 +148,16 @@ class UcumService {
 // Dart translation of the `getCanonicalForm` method
   Pair getCanonicalForm(Pair value) {
     assert(
-        checkStringParam(value.code),
+        checkStringParam(value.unit),
         paramError(
-            'getCanonicalForm', 'value.code', 'must not be null or empty'));
+            'getCanonicalForm', 'value.unit', 'must not be null or empty'));
 
-    Term term = ExpressionParser(model).parse(value.code);
+    Term term = ExpressionParser(model).parse(value.unit);
     Canonical c = Converter(model, handlers).convert(term);
     Pair p;
     p = Pair(
         value: value.value.multiply(c.value),
-        code: ExpressionComposer().composeCanonical(c, false));
+        unit: ExpressionComposer().composeCanonical(c, false));
     if (value.value.isWholeNumber()) {
       p.value.checkForCouldBeWholeNumber();
     }
@@ -197,14 +197,14 @@ class UcumService {
   }
 
   Pair divideBy(Pair dividend, Pair divisor) {
-    String code = (dividend.code.contains("/") || dividend.code.contains("*")
-            ? "(${dividend.code})"
-            : dividend.code) +
+    String unit = (dividend.unit.contains("/") || dividend.unit.contains("*")
+            ? "(${dividend.unit})"
+            : dividend.unit) +
         "/" +
-        (divisor.code.contains("/") || divisor.code.contains("*")
-            ? "(${divisor.code})"
-            : divisor.code);
-    Pair res = Pair(value: dividend.value.divide(divisor.value), code: code);
+        (divisor.unit.contains("/") || divisor.unit.contains("*")
+            ? "(${divisor.unit})"
+            : divisor.unit);
+    Pair res = Pair(value: dividend.value.divide(divisor.value), unit: unit);
     return getCanonicalForm(res);
   }
 
@@ -223,8 +223,8 @@ class UcumService {
     // and that UcumDecimal has a multiply method.
     try {
       var resultValue = o1.value.multiply(o2.value);
-      var resultCode = '${o1.code}.${o2.code}';
-      Pair result = Pair(value: resultValue, code: resultCode);
+      var resultCode = '${o1.unit}.${o2.unit}';
+      Pair result = Pair(value: resultValue, unit: resultCode);
       return getCanonicalForm(result);
     } catch (e) {
       throw UcumException(e.toString());
@@ -232,13 +232,13 @@ class UcumService {
   }
 
   bool isValid(ValidatedQuantity validatedQuantity) =>
-      validate(validatedQuantity.code) == null;
+      validate(validatedQuantity.unit) == null;
 
   bool isEqual(ValidatedQuantity value1, ValidatedQuantity value2) {
-    if (isComparable(value1.code, value2.code)) {
+    if (isComparable(value1.unit, value2.unit)) {
       final UcumDecimal value2UcumDecimal =
-          convert(value2.value, value2.code, value1.code);
-      value2 = ValidatedQuantity(value: value2UcumDecimal, code: value1.code);
+          convert(value2.value, value2.unit, value1.unit);
+      value2 = ValidatedQuantity(value: value2UcumDecimal, unit: value1.unit);
       return value1.value.equalsValue(value2.value);
     } else {
       return false;

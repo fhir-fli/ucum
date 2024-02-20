@@ -43,22 +43,22 @@ Future<void> main() async {
     String? uRes = x.getAttribute("uRes");
 
     Pair? o1 = v1 != null && u1 != null
-        ? Pair(value: UcumDecimal.fromString(v1), code: u1)
+        ? Pair(value: UcumDecimal.fromString(v1), unit: u1)
         : null;
     Pair? o2 = v2 != null && u2 != null
-        ? Pair(value: UcumDecimal.fromString(v2), code: u2)
+        ? Pair(value: UcumDecimal.fromString(v2), unit: u2)
         : null;
     if (o1 != null && o2 != null) {
       Pair o3 = ucumServiceTest.ucumService.multiply(o1, o2);
 
       debug("Multiplication Test $id: the value '$v1$u1' * '$v2$u2 ==> "
-          '${o3.value.toString()} ${o3.code}');
+          '${o3.value.toString()} ${o3.unit}');
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we can get the precision right, which we can't
       if (o3.value.comparesTo(UcumDecimal.fromString(vRes)) != 0 ||
-          o3.code != uRes) {
+          o3.unit != uRes) {
         fail("Test $id : The value '$vRes $uRes' was expected, but the result "
-            "was '${o3.value.toString()} ${o3.code}'");
+            "was '${o3.value.toString()} ${o3.unit}'");
       }
     }
   }
@@ -73,22 +73,22 @@ Future<void> main() async {
     String? uRes = x.getAttribute("uRes");
 
     Pair? o1 = v1 != null && u1 != null
-        ? Pair(value: UcumDecimal.fromString(v1), code: u1)
+        ? Pair(value: UcumDecimal.fromString(v1), unit: u1)
         : null;
     Pair? o2 = v2 != null && u2 != null
-        ? Pair(value: UcumDecimal.fromString(v2), code: u2)
+        ? Pair(value: UcumDecimal.fromString(v2), unit: u2)
         : null;
     if (o1 != null && o2 != null) {
       Pair o3 = ucumServiceTest.ucumService.divideBy(o1, o2);
 
       debug(
-          "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> '${o3.value.toString()} ${o3.code}'");
+          "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> '${o3.value.toString()} ${o3.unit}'");
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we can get the precision right, which we can't
       if (o3.value.comparesTo(UcumDecimal.fromString(vRes)) != 0 ||
-          o3.code != uRes) {
+          o3.unit != uRes) {
         fail("Test $id : The value '$vRes $uRes' was expected, but the result "
-            "was '${o3.value.toString()} ${o3.code}'");
+            "was '${o3.value.toString()} ${o3.unit}'");
       }
     }
   }

@@ -31,14 +31,14 @@ import '../ucum.dart';
 
 class Pair {
   UcumDecimal value;
-  String code;
+  String unit;
 
-  Pair({required this.value, required this.code});
+  Pair({required this.value, required this.unit});
 
   @override
   bool operator ==(Object other) {
     if (other is Pair) {
-      return value == other.value && code == other.code;
+      return value == other.value && unit == other.unit;
     }
     return false;
   }
@@ -48,6 +48,6 @@ class Pair {
 
   @override
   String toString() {
-    return '${value.toString()} $code';
+    return '${value.toString()} $unit';
   }
 }

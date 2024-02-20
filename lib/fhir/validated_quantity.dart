@@ -1,8 +1,8 @@
 import '../ucum.dart';
 
 class ValidatedQuantity extends Pair {
-  ValidatedQuantity({required super.value, String? code})
-      : super(code: (code?.isNotEmpty ?? false) ? code! : '1');
+  ValidatedQuantity({required super.value, String? unit})
+      : super(unit: (unit?.isNotEmpty ?? false) ? unit! : '1');
 
   factory ValidatedQuantity.fromString(String string) {
     final matches = valueRegex.firstMatch(string);
@@ -18,28 +18,28 @@ class ValidatedQuantity extends Pair {
     }
     return ValidatedQuantity(
         value: UcumDecimal.fromString(matches.namedGroup('value')),
-        code: string.isEmpty ? '1' : string);
+        unit: string.isEmpty ? '1' : string);
   }
 
-  factory ValidatedQuantity.fromNumber(num number, {String? code}) =>
+  factory ValidatedQuantity.fromNumber(num number, {String? unit}) =>
       ValidatedQuantity(
-          value: UcumDecimal.fromString(number.toString()), code: code);
+          value: UcumDecimal.fromString(number.toString()), unit: unit);
 
-  factory ValidatedQuantity.fromBigInt(BigInt number, {String? code}) =>
-      ValidatedQuantity(value: UcumDecimal.fromBigInt(number), code: code);
+  factory ValidatedQuantity.fromBigInt(BigInt number, {String? unit}) =>
+      ValidatedQuantity(value: UcumDecimal.fromBigInt(number), unit: unit);
 
   ValidatedQuantity.fromPair(Pair pair)
-      : super(value: pair.value, code: pair.code.isNotEmpty ? pair.code : '1');
+      : super(value: pair.value, unit: pair.unit.isNotEmpty ? pair.unit : '1');
 
-  ValidatedQuantity copyWith({UcumDecimal? value, String? code}) =>
-      ValidatedQuantity(value: value ?? this.value, code: code ?? this.code);
+  ValidatedQuantity copyWith({UcumDecimal? value, String? unit}) =>
+      ValidatedQuantity(value: value ?? this.value, unit: unit ?? this.unit);
 
   ValidatedQuantity abs() =>
-      ValidatedQuantity(value: value.absolute(), code: code);
+      ValidatedQuantity(value: value.absolute(), unit: unit);
 
   bool isValid() =>
       num.tryParse(value.asUcumDecimal()) != null &&
-      UcumService().validate(code) == null;
+      UcumService().validate(unit) == null;
 
   static RegExp valueRegex = RegExp(r"^(?<value>(\+|-)?\d+(\.\d+)?)\s*");
 
@@ -48,11 +48,11 @@ class ValidatedQuantity extends Pair {
     if (other is ValidatedQuantity) {
       final shouldBeEqual = UcumService().isEqual(this, other);
       if (shouldBeEqual) {
-        if (definiteDurationUnits.contains(code) &&
-            !definiteDurationUnits.contains(other.code)) {
+        if (definiteDurationUnits.contains(unit) &&
+            !definiteDurationUnits.contains(other.unit)) {
           return false;
-        } else if (!definiteDurationUnits.contains(code) &&
-            definiteDurationUnits.contains(other.code)) {
+        } else if (!definiteDurationUnits.contains(unit) &&
+            definiteDurationUnits.contains(other.unit)) {
           return false;
         } else {
           return true;
@@ -65,11 +65,11 @@ class ValidatedQuantity extends Pair {
       if (newQuantity.isValid()) {
         final shouldBeEqual = UcumService().isEqual(this, newQuantity);
         if (shouldBeEqual) {
-          if (definiteDurationUnits.contains(code) &&
-              !definiteDurationUnits.contains(newQuantity.code)) {
+          if (definiteDurationUnits.contains(unit) &&
+              !definiteDurationUnits.contains(newQuantity.unit)) {
             return false;
-          } else if (!definiteDurationUnits.contains(code) &&
-              definiteDurationUnits.contains(newQuantity.code)) {
+          } else if (!definiteDurationUnits.contains(unit) &&
+              definiteDurationUnits.contains(newQuantity.unit)) {
             return false;
           } else {
             return true;
@@ -85,11 +85,11 @@ class ValidatedQuantity extends Pair {
       if (newQuantity.isValid()) {
         final shouldBeEqual = UcumService().isEqual(this, newQuantity);
         if (shouldBeEqual) {
-          if (definiteDurationUnits.contains(code) &&
-              !definiteDurationUnits.contains(newQuantity.code)) {
+          if (definiteDurationUnits.contains(unit) &&
+              !definiteDurationUnits.contains(newQuantity.unit)) {
             return false;
-          } else if (!definiteDurationUnits.contains(code) &&
-              definiteDurationUnits.contains(newQuantity.code)) {
+          } else if (!definiteDurationUnits.contains(unit) &&
+              definiteDurationUnits.contains(newQuantity.unit)) {
             return false;
           } else {
             return true;
@@ -128,13 +128,13 @@ class ValidatedQuantity extends Pair {
   }
 
   @override
-  int get hashCode => value.hashCode ^ code.hashCode;
+  int get hashCode => value.hashCode ^ unit.hashCode;
 
   ValidatedQuantity? operator +(Object other) {
     if (other is UcumDecimal) {
       return copyWith(value: this.value.add(other));
     } else if (other is ValidatedQuantity) {
-      if (UcumService().isComparable(this.code, other.code)) {
+      if (UcumService().isComparable(this.unit, other.unit)) {
         return copyWith(value: this.value.add(other.value));
       } else {
         return null;
@@ -160,7 +160,7 @@ class ValidatedQuantity extends Pair {
     if (other is UcumDecimal) {
       return copyWith(value: this.value.subtract(other));
     } else if (other is ValidatedQuantity) {
-      if (UcumService().isComparable(this.code, other.code)) {
+      if (UcumService().isComparable(this.unit, other.unit)) {
         return copyWith(value: this.value.subtract(other.value));
       } else {
         return null;
@@ -257,7 +257,7 @@ class ValidatedQuantity extends Pair {
       return this.value.comparesTo(other) > 0;
     } else if (other is ValidatedQuantity) {
       final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.code, code);
+          UcumService().convert(other.value, other.unit, unit);
       return this.value.comparesTo(compareValue) > 0;
     } else if (other is num || other is BigInt) {
       return this.value.comparesTo(UcumDecimal.fromString(other.toString())) >
@@ -281,7 +281,7 @@ class ValidatedQuantity extends Pair {
       return this.value.comparesTo(other) < 0;
     } else if (other is ValidatedQuantity) {
       final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.code, code);
+          UcumService().convert(other.value, other.unit, unit);
       return this.value.comparesTo(compareValue) < 0;
     } else if (other is num || other is BigInt) {
       return this.value.comparesTo(UcumDecimal.fromString(other.toString())) <
@@ -305,7 +305,7 @@ class ValidatedQuantity extends Pair {
       return this == other || this.value.comparesTo(other) > 0;
     } else if (other is ValidatedQuantity) {
       final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.code, code);
+          UcumService().convert(other.value, other.unit, unit);
       return this == other || this.value.comparesTo(compareValue) > 0;
     } else if (other is num || other is BigInt) {
       return this.value.comparesTo(UcumDecimal.fromString(other.toString())) >
@@ -330,7 +330,7 @@ class ValidatedQuantity extends Pair {
       return this == other || this.value.comparesTo(other) < 0;
     } else if (other is ValidatedQuantity) {
       final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.code, code);
+          UcumService().convert(other.value, other.unit, unit);
       return this == other || this.value.comparesTo(compareValue) < 0;
     } else if (other is num || other is BigInt) {
       return this.value.comparesTo(UcumDecimal.fromString(other.toString())) <
@@ -352,36 +352,36 @@ class ValidatedQuantity extends Pair {
 
   bool get isDuration => isTimeQuantity || isDefiniteDuration;
 
-  bool get isTimeQuantity => timeValuedQuantities.contains(code);
+  bool get isTimeQuantity => timeValuedQuantities.contains(unit);
 
-  bool get isDefiniteDuration => definiteDurationUnits.contains(code);
+  bool get isDefiniteDuration => definiteDurationUnits.contains(unit);
 
   num? get years =>
-      isDuration && isYears(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isYears(unit) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get months =>
-      isDuration && isMonths(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isMonths(unit) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get days =>
-      isDuration && isDays(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isDays(unit) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get hours =>
-      isDuration && isHours(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isHours(unit) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get minutes =>
-      isDuration && isMinutes(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isMinutes(unit) ? num.parse(value.asUcumDecimal()) : null;
 
   num? get seconds =>
-      isDuration && isSeconds(code) ? num.parse(value.asUcumDecimal()) : null;
+      isDuration && isSeconds(unit) ? num.parse(value.asUcumDecimal()) : null;
 
-  num? get milliseconds => isDuration && isMilliseconds(code)
+  num? get milliseconds => isDuration && isMilliseconds(unit)
       ? num.parse(value.asUcumDecimal())
       : null;
 
   @override
   String toString() => isTimeQuantity
-      ? '${value.toString()} $code'
-      : "${value.toString()} '$code'";
+      ? '${value.toString()} $unit'
+      : "${value.toString()} '$unit'";
 
   static bool isValidatedQuantity(Object other) {
     if (other is ValidatedQuantity) {
@@ -395,7 +395,7 @@ class ValidatedQuantity extends Pair {
     } else if (other is Map<String, dynamic>) {
       return ValidatedQuantity(
               value: UcumDecimal.fromString(other['value']?.toString()),
-              code: other['code']?.toString())
+              unit: other['unit']?.toString())
           .isValid();
     } else {
       return false;
@@ -403,9 +403,9 @@ class ValidatedQuantity extends Pair {
   }
 
   ValidatedQuantity convertTo(String newCode) {
-    if (UcumService().isComparable(code, newCode)) {
-      final value = UcumService().convert(this.value, this.code, newCode);
-      return ValidatedQuantity(value: value, code: newCode);
+    if (UcumService().isComparable(unit, newCode)) {
+      final value = UcumService().convert(this.value, this.unit, newCode);
+      return ValidatedQuantity(value: value, unit: newCode);
     } else {
       throw UcumException('Cannot convert $this to $newCode');
     }

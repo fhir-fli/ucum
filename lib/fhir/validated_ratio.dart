@@ -15,8 +15,8 @@ class ValidatedRatio {
     return other is ValidatedRatio &&
         other.numerator.value == numerator.value &&
         other.denominator.value == denominator.value &&
-        other.numerator.code == numerator.code &&
-        other.denominator.code == denominator.code;
+        other.numerator.unit == numerator.unit &&
+        other.denominator.unit == denominator.unit;
   }
 
   @override

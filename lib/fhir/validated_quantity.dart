@@ -395,7 +395,7 @@ class ValidatedQuantity extends Pair {
     } else if (other is Map<String, dynamic>) {
       return ValidatedQuantity(
               value: UcumDecimal.fromString(other['value']?.toString()),
-              unit: other['unit']?.toString())
+              unit: other['code']?.toString() ?? other['value']?.toString())
           .isValid();
     } else {
       return false;

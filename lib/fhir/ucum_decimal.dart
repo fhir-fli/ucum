@@ -727,6 +727,10 @@ class UcumDecimal {
     return divide(other);
   }
 
+  UcumDecimal operator ~/(UcumDecimal other) {
+    return divide(other).trunc();
+  }
+
   UcumDecimal divideInt(int other) {
     return divide(UcumDecimal.fromInt(other));
   }

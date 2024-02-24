@@ -230,6 +230,39 @@ class ValidatedQuantity extends Pair {
     }
   }
 
+  ValidatedQuantity operator ~/(Object other) {
+    if (other is UcumDecimal) {
+      final validatedQuantity = ValidatedQuantity.fromPair(
+          UcumService().divideBy(this, ValidatedQuantity(value: other)));
+      return validatedQuantity.copyWith(value: validatedQuantity.value.trunc());
+    } else if (other is ValidatedQuantity) {
+      final validatedQuantity =
+          ValidatedQuantity.fromPair(UcumService().divideBy(this, other));
+      return validatedQuantity.copyWith(value: validatedQuantity.value.trunc());
+    } else if (other is num || other is BigInt) {
+      final validatedQuantity = ValidatedQuantity.fromPair(UcumService()
+          .divideBy(
+              this,
+              ValidatedQuantity(
+                  value: UcumDecimal.fromString(other.toString()))));
+      return validatedQuantity.copyWith(value: validatedQuantity.value.trunc());
+    } else if (other is String) {
+      final newQuantity = ValidatedQuantity.fromString(other);
+      if (newQuantity.isValid()) {
+        final validatedQuantity = ValidatedQuantity.fromPair(
+            UcumService().divideBy(this, newQuantity));
+        return validatedQuantity.copyWith(
+            value: validatedQuantity.value.trunc());
+      } else {
+        throw UcumException('$this could not be trunc divided by $other '
+            '(reason: it is not an accepted type)');
+      }
+    } else {
+      throw UcumException('$this could not be trunc divided by $other '
+          '(reason: it is not an accepted type)');
+    }
+  }
+
   ValidatedQuantity operator %(Object other) {
     if (other is UcumDecimal) {
       return copyWith(value: this.value.modulo(other));

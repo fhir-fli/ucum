@@ -395,6 +395,9 @@ class ValidatedQuantity extends Pair {
   num? get months =>
       isDuration && isMonths(unit) ? num.parse(value.asUcumDecimal()) : null;
 
+  num? get weeks =>
+      isDuration && isWeeks(unit) ? num.parse(value.asUcumDecimal()) : null;
+
   num? get days =>
       isDuration && isDays(unit) ? num.parse(value.asUcumDecimal()) : null;
 

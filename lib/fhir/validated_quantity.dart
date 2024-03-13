@@ -46,20 +46,7 @@ class ValidatedQuantity extends Pair {
   @override
   operator ==(Object other) {
     if (other is ValidatedQuantity) {
-      final shouldBeEqual = UcumService().isEqual(this, other);
-      if (shouldBeEqual) {
-        if (definiteDurationUnits.contains(unit) &&
-            !definiteDurationUnits.contains(other.unit)) {
-          return false;
-        } else if (!definiteDurationUnits.contains(unit) &&
-            definiteDurationUnits.contains(other.unit)) {
-          return false;
-        } else {
-          return true;
-        }
-      } else {
-        return false;
-      }
+      return UcumService().isEqual(this, other);
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {

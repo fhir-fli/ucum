@@ -239,6 +239,10 @@ class UcumService {
       final UcumDecimal value2UcumDecimal =
           convert(value2.value, value2.unit, value1.unit);
       value2 = ValidatedQuantity(value: value2UcumDecimal, unit: value1.unit);
+      if (value1.unit.contains('d')) {
+        print(
+            '${value1.value} $value1 and ${value2.value} $value2 ${value1.value.equalsValue(value2.value)}');
+      }
       return value1.value.equalsValue(value2.value);
     } else {
       return false;

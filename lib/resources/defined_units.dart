@@ -13,7 +13,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["percents", ""],
+      names: [
+        "percents",
+      ],
       printSymbol: "%"),
   DefinedUnit(
       code: "%[slope]",
@@ -27,7 +29,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "clinical",
-      names: ["% slope", "%slope", "percents slopes", "percent of slope"],
+      names: [
+        "% slope",
+        "%slope",
+        "percents slopes",
+        "percent of slope",
+      ],
       printSymbol: "%"),
   DefinedUnit(
       code: "'",
@@ -41,7 +48,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["arcminutes", "arcmin", "arc minutes", "arc mins", "arc minute"],
+      names: [
+        "arcminutes",
+        "arcmin",
+        "arc minutes",
+        "arc mins",
+        "arc minute",
+      ],
       printSymbol: "\""),
   DefinedUnit(
       code: "''",
@@ -55,7 +68,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["arcseconds", "arcsecs", "arc second"],
+      names: [
+        "arcseconds",
+        "arcsecs",
+        "arc second",
+      ],
       printSymbol: "''"),
   DefinedUnit(
       code: "/(12.h)",
@@ -65,7 +82,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["per 12 hours", "12hrs", "12 hrs", "/12hrs", "per twelve hour"],
+      names: [
+        "per 12 hours",
+        "/12 hrs",
+        "/12hrs",
+        "per twelve hour",
+      ],
       printSymbol: "/h"),
   DefinedUnit(
       code: "/10*10",
@@ -75,7 +97,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/10^10", "per 10*10", "per 10 billion  "],
+      names: [
+        "/10^10",
+        "per 10*10",
+        "per 10 billion  ",
+      ],
       printSymbol: "/10<sup>10<.sup>"),
   DefinedUnit(
       code: "/10*12",
@@ -85,7 +111,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/10^12", "per 10*12", "per trillion "],
+      names: [
+        "/10^12",
+        "per 10*12",
+        "per trillion ",
+      ],
       printSymbol: "/10<sup>12<.sup>"),
   DefinedUnit(
       code: "/10*3",
@@ -95,7 +125,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/10^3", "per 10*3", "per thousand"],
+      names: [
+        "/10^3",
+        "per 10*3",
+        "per thousand",
+      ],
       printSymbol: "/10<sup>3<.sup>"),
   DefinedUnit(
       code: "/10*6",
@@ -105,7 +139,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/10^6", "per 10*6;", "per million", "per 10*6", ""],
+      names: [
+        "/10^6",
+        "per 10*6;",
+        "per million",
+        "per 10*6",
+      ],
       printSymbol: "/10<sup>6<.sup>"),
   DefinedUnit(
       code: "/10*9",
@@ -115,7 +154,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/10^9", "per 10*9", "per billion"],
+      names: [
+        "/10^9",
+        "per 10*9",
+        "per billion",
+      ],
       printSymbol: "/10<sup>9<.sup>"),
   DefinedUnit(
       code: "/100",
@@ -125,7 +168,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["per hundred", "10^2", "10*2", "per 100"],
+      names: [
+        "per hundred",
+        "10^2",
+        "10*2",
+        "per 100",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "/100DefinedUnit(WBCs)",
@@ -150,7 +198,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/100 cells", "/100cells", "per hundred", "per 100 cells"],
+      names: [
+        "/100 cells",
+        "/100cells",
+        "per hundred",
+        "per 100 cells",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "/100DefinedUnit(neutrophils)",
@@ -190,7 +243,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/liter", "litre", "per liter"],
+      names: [
+        "/liter",
+        "litre",
+        "per liter",
+      ],
       printSymbol: "/L"),
   DefinedUnit(
       code: "/U",
@@ -200,7 +257,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/enzyme units", "per U", "per enzyme unit"],
+      names: [
+        "/enzyme units",
+        "per U",
+        "per enzyme unit",
+      ],
       printSymbol: "/U"),
   DefinedUnit(
       code: "/[HPF]",
@@ -210,7 +271,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/HPF", "per HPF", "per high power field"],
+      names: [
+        "/HPF",
+        "per HPF",
+        "per high power field",
+      ],
       printSymbol: "/HPF"),
   DefinedUnit(
       code: "/[IU]",
@@ -220,7 +285,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["international units", "/IU", "per IU", "per international unit"],
+      names: [
+        "international units",
+        "/IU",
+        "per IU",
+        "per international unit",
+      ],
       printSymbol: "/i/U."),
   DefinedUnit(
       code: "/[LPF]",
@@ -230,7 +300,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/LPF", "per LPF", "per low power field"],
+      names: [
+        "/LPF",
+        "per LPF",
+        "per low power field",
+      ],
       printSymbol: "/LPF"),
   DefinedUnit(
       code: "/[arb'U]",
@@ -240,7 +314,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/arbU", "per arbitrary unit"],
+      names: [
+        "/arbU",
+        "per arbitrary unit",
+      ],
       printSymbol: "/arb/ U"),
   DefinedUnit(
       code: "/a",
@@ -250,7 +327,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/Years", "/yrs", "yearly", "per year"],
+      names: [
+        "/Years",
+        "/yrs",
+        "yearly",
+        "per year",
+      ],
       printSymbol: "/a"),
   DefinedUnit(
       code: "/cm[H2O]",
@@ -276,7 +358,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/dy", "per day"],
+      names: [
+        "/dy",
+        "per day",
+      ],
       printSymbol: "/d"),
   DefinedUnit(
       code: "/dL",
@@ -286,7 +371,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["per dL", "/deciliter", "decilitre", "per deciliter"],
+      names: [
+        "per dL",
+        "/deciliter",
+        "decilitre",
+        "per deciliter",
+      ],
       printSymbol: "/dL"),
   DefinedUnit(
       code: "/g",
@@ -296,7 +386,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/gm", "/gram", "per g", "per gram"],
+      names: [
+        "/gm",
+        "/gram",
+        "per g",
+        "per gram",
+      ],
       printSymbol: "/g"),
   DefinedUnit(
       code: "/h",
@@ -306,7 +401,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/hr", "/hour", "per hr", "per hour"],
+      names: [
+        "/hr",
+        "/hour",
+        "per hr",
+        "per hour",
+      ],
       printSymbol: "/h"),
   DefinedUnit(
       code: "/kg",
@@ -316,7 +416,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["per kg", "per kilogram"],
+      names: [
+        "per kg",
+        "per kilogram",
+      ],
       printSymbol: "/kg"),
   DefinedUnit(
       code: "/m2",
@@ -332,7 +435,7 @@ final definedUnitsList = [
         "/sq. m",
         "per square meter",
         "meter squared",
-        "metre"
+        "metre squared"
       ],
       printSymbol: "/m<sup>2<.sup>"),
   DefinedUnit(
@@ -350,7 +453,7 @@ final definedUnitsList = [
         "per cubic meter",
         "meter cubed",
         "per m3",
-        "metre"
+        "metre^3"
       ],
       printSymbol: "/m<sup>3<.sup>"),
   DefinedUnit(
@@ -361,7 +464,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/milliliter", "per mL", "millilitre", "per milliliter"],
+      names: [
+        "/milliliter",
+        "per mL",
+        "millilitre",
+        "per milliliter",
+      ],
       printSymbol: "/mL"),
   DefinedUnit(
       code: "/mg",
@@ -371,7 +479,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/milligram", "per mg", "per milligram"],
+      names: [
+        "/milligram",
+        "per mg",
+        "per milligram",
+      ],
       printSymbol: "/mg"),
   DefinedUnit(
       code: "/min",
@@ -381,7 +493,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/minute", "per mins", "breaths beats per minute", "per minute"],
+      names: [
+        "/minute",
+        "per mins",
+        "breaths beats per minute",
+        "per minute",
+      ],
       printSymbol: "/min"),
   DefinedUnit(
       code: "/mm",
@@ -391,7 +508,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/millimeter", "per mm", "millimetre", "per millimeter"],
+      names: [
+        "/millimeter",
+        "per mm",
+        "millimetre",
+        "per millimeter",
+      ],
       printSymbol: "/mm"),
   DefinedUnit(
       code: "/mo",
@@ -401,7 +523,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/month", "per mo", "monthly", "month", "per month"],
+      names: [
+        "/month",
+        "per mo",
+        "monthly",
+        "per month",
+      ],
       printSymbol: "/mo"),
   DefinedUnit(
       code: "/s",
@@ -434,7 +561,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/microliter", "microlitre", "/mcl", "per uL", "per microliter"],
+      names: [
+        "/microliter",
+        "/microlitre",
+        "/mcl",
+        "per uL",
+        "per microliter",
+      ],
       printSymbol: "/μL"),
   DefinedUnit(
       code: "/wk",
@@ -444,7 +577,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["/week", "per wk", "weekly, weeks", "per week"],
+      names: [
+        "/week",
+        "per wk",
+        "weekly",
+        "/weeks",
+        "per week",
+      ],
       printSymbol: "/wk"),
   DefinedUnit(
       code: "10*",
@@ -476,7 +615,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["10^12/L", "10*12 per Liter", "trillion per liter", "litre"],
+      names: [
+        "10^12/L",
+        "10*12 per Liter",
+        "trillion per liter",
+        "trillion per litre",
+      ],
       printSymbol: "(10<sup>12</sup>)/L"),
   DefinedUnit(
       code: "10*3",
@@ -490,7 +634,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["10^3", "thousand", "10^3 (used for cell count)"],
+      names: [
+        "10^3",
+        "thousand",
+        "10^3 (used for cell count)",
+      ],
       printSymbol: "10<sup>3</sup>"),
   DefinedUnit(
       code: "10*3/L",
@@ -504,7 +652,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["10^3/L", "10*3 per liter", "litre", "thousand per liter"],
+      names: [
+        "10^3/L",
+        "10*3 per liter",
+        "thousand per litre",
+        "thousand per liter",
+      ],
       printSymbol: "(10<sup>3</sup>)/L"),
   DefinedUnit(
       code: "10*3/mL",
@@ -522,7 +675,7 @@ final definedUnitsList = [
         "10^3/mL",
         "10*3 per mL",
         "thousand per milliliter",
-        "millilitre"
+        "thousand per millilitre"
       ],
       printSymbol: "(10<sup>3</sup>)/mL"),
   DefinedUnit(
@@ -541,7 +694,7 @@ final definedUnitsList = [
         "10^3/uL",
         "10*3 per uL",
         "thousand per microliter",
-        "microlitre"
+        "thousand per microlitre"
       ],
       printSymbol: "(10<sup>3</sup>)/μL"),
   DefinedUnit(
@@ -556,12 +709,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: [
-        "10^4/uL",
-        "10*4 per uL",
-        "microlitre",
-        "10 thousand per microliter"
-      ],
+      names: ["10^4/uL", "10*4 per uL", "10 thousand per microliter"],
       printSymbol: "(10<sup>4</sup>)/μL"),
   DefinedUnit(
       code: "10*5",
@@ -575,7 +723,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["one hundred thousand", "10^5 "],
+      names: [
+        "one hundred thousand",
+        "10^5 ",
+      ],
       printSymbol: "10<sup>5</sup>"),
   DefinedUnit(
       code: "10*6",
@@ -589,7 +740,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["", "10^6"],
+      names: [
+        "10^6",
+      ],
       printSymbol: "10<sup>6</sup>"),
   DefinedUnit(
       code: "10*6.[CFU]/L",
@@ -609,7 +762,6 @@ final definedUnitsList = [
         "10^6CFU",
         "10^6 CFU per liter",
         "million colony forming units",
-        "litre",
         "million colony forming unit per liter"
       ],
       printSymbol: "(10<sup>6</sup>).CFU/L"),
@@ -668,7 +820,7 @@ final definedUnitsList = [
         "10^6/L",
         "10*6 per Liter",
         "10^6 per Liter",
-        "litre",
+        "mllion per litre",
         "million per liter"
       ],
       printSymbol: "(10<sup>6</sup>)/L"),
@@ -688,7 +840,7 @@ final definedUnitsList = [
         "10^6/kg",
         "10*6 per kg",
         "10*6 per kilogram",
-        "millions",
+        "millions per kilogram",
         "million per kilogram"
       ],
       printSymbol: "(10<sup>6</sup>)/kg"),
@@ -708,7 +860,7 @@ final definedUnitsList = [
         "10^6/mL",
         "10*6 per mL",
         "10*6 per milliliter",
-        "millilitre",
+        "million per millilitre",
         "million per milliliter"
       ],
       printSymbol: "(10<sup>6</sup>)/mL"),
@@ -730,7 +882,7 @@ final definedUnitsList = [
         "10^6/mcl",
         "10^6 per mcl",
         "10^6 per microliter",
-        "microlitre",
+        "million per microlitre",
         "million per microliter"
       ],
       printSymbol: "(10<sup>6</sup>)/μL"),
@@ -746,7 +898,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["100 million", "one hundred million", "10^8"],
+      names: [
+        "100 million",
+        "one hundred million",
+        "10^8",
+      ],
       printSymbol: "10<sup>8</sup>"),
   DefinedUnit(
       code: "10*9/L",
@@ -760,7 +916,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["10^9/L", "10*9 per Liter", "litre", "billion per liter"],
+      names: [
+        "10^9/L",
+        "10*9 per Liter",
+        "billion per litre",
+        "billion per liter",
+      ],
       printSymbol: "(10<sup>9</sup>)/L"),
   DefinedUnit(
       code: "10*9/mL",
@@ -779,7 +940,7 @@ final definedUnitsList = [
         "10*9 per mL",
         "10^9 per mL",
         "10*9 per milliliter",
-        "millilitre",
+        "billion per millilitre",
         "billion per milliliter"
       ],
       printSymbol: "(10<sup>9</sup>)/mL"),
@@ -804,7 +965,7 @@ final definedUnitsList = [
         "10*9 per mcl",
         "10*9/mcl",
         "10^9 per microliter",
-        "microlitre",
+        "billion per microlitre",
         "billion per microliter"
       ],
       printSymbol: "(10<sup>9</sup>)/μL"),
@@ -840,9 +1001,9 @@ final definedUnitsList = [
       names: [
         "10 liters per minute",
         "10 L per min",
-        "10L",
+        "10L per min",
         "10 L/min",
-        "litre",
+        "10 litre per minute",
         "10 liter per minute"
       ],
       printSymbol: "L/min"),
@@ -893,7 +1054,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["24hrs", "24 hrs", "24 hours", "days", "dy", "24 hour"],
+      names: [
+        "24hrs",
+        "24 hrs",
+        "24 hours",
+        "days",
+        "dy",
+        "24 hour",
+      ],
       printSymbol: "h"),
   DefinedUnit(
       code: "A",
@@ -907,7 +1075,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Ampère", "Amperes", "Ampere"],
+      names: [
+        "Ampère",
+        "Amperes",
+        "Ampere",
+      ],
       printSymbol: "A"),
   DefinedUnit(
       code: "A/m",
@@ -926,7 +1098,6 @@ final definedUnitsList = [
         "amp/meter",
         "magnetic field strength",
         "H",
-        "B",
         "amperes per meter",
         "metre",
         "ampere per meter"
@@ -944,7 +1115,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["AU", "units", "astronomic unit"],
+      names: [
+        "AU",
+        "units",
+        "astronomic unit",
+      ],
       printSymbol: "AU"),
   DefinedUnit(
       code: "Ao",
@@ -958,7 +1133,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["Å", "Angstroms", "Ao", "Ångströms", "Ångström"],
+      names: [
+        "Å",
+        "Angstroms",
+        "Ao",
+        "Ångströms",
+        "Ångström",
+      ],
       printSymbol: "Å"),
   DefinedUnit(
       code: "B",
@@ -972,7 +1153,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["bels", "bel"],
+      names: [
+        "bels",
+        "bel",
+      ],
       printSymbol: "B"),
   DefinedUnit(
       code: "B[10.nV]",
@@ -986,7 +1170,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["bel 10 nV", "B 10 nV", "10 nanovolts bels", "bel 10 nanovolt"],
+      names: [
+        "bel 10 nV",
+        "B 10 nV",
+        "10 nanovolts bels",
+        "bel 10 nanovolt",
+      ],
       printSymbol: "B(10 nV)"),
   DefinedUnit(
       code: "B[SPL]",
@@ -1000,7 +1189,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["bel SPL", "B SPL", "sound pressure bels", "bel sound pressure"],
+      names: [
+        "bel SPL",
+        "B SPL",
+        "sound pressure bels",
+        "bel sound pressure",
+      ],
       printSymbol: "B(SPL)"),
   DefinedUnit(
       code: "B[V]",
@@ -1014,7 +1208,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["bel V", "B V", "volts bels", "bel volt"],
+      names: [
+        "bel V",
+        "B V",
+        "volts bels",
+        "bel volt",
+      ],
       printSymbol: "B(V)"),
   DefinedUnit(
       code: "B[W]",
@@ -1028,7 +1227,13 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["bel W", "b W", "b Watt", "Watts bels", "bel watt"],
+      names: [
+        "bel W",
+        "b W",
+        "b Watt",
+        "Watts bels",
+        "bel watt",
+      ],
       printSymbol: "B(W)"),
   DefinedUnit(
       code: "B[kW]",
@@ -1105,7 +1310,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "infotech",
-      names: ["Bd", "bauds", "baud"],
+      names: [
+        "Bd",
+        "bauds",
+        "baud",
+      ],
       printSymbol: "Bd"),
   DefinedUnit(
       code: "Bi",
@@ -1119,7 +1328,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["Bi", "abamperes", "abA", "Biot"],
+      names: [
+        "Bi",
+        "abamperes",
+        "abA",
+        "Biot",
+      ],
       printSymbol: "Bi"),
   DefinedUnit(
       code: "Bq",
@@ -1133,7 +1347,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["activity", "radiation", "becquerels", "becquerel"],
+      names: [
+        "activity",
+        "radiation",
+        "becquerels",
+        "becquerel",
+      ],
       printSymbol: "Bq"),
   DefinedUnit(
       code: "By",
@@ -1147,7 +1366,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "infotech",
-      names: ["bytes", "byte"],
+      names: [
+        "bytes",
+        "byte",
+      ],
       printSymbol: "B"),
   DefinedUnit(
       code: "Cel",
@@ -1161,7 +1383,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "si",
-      names: ["°C", "degrees", "degree Celsius"],
+      names: [
+        "°C",
+        "degrees",
+        "degree Celsius",
+      ],
       printSymbol: "°C"),
   DefinedUnit(
       code: "Ci",
@@ -1175,7 +1401,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["curies", "Curie"],
+      names: [
+        "curies",
+        "Curie",
+      ],
       printSymbol: "Ci"),
   DefinedUnit(
       code: "F",
@@ -1189,7 +1418,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["farads", "electric capacitance", "farad"],
+      names: [
+        "farads",
+        "electric capacitance",
+        "farad",
+      ],
       printSymbol: "F"),
   DefinedUnit(
       code: "G",
@@ -1223,7 +1456,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["galileos", "Gals", "Gal"],
+      names: [
+        "galileos",
+        "Gals",
+        "Gal",
+      ],
       printSymbol: "Gal"),
   DefinedUnit(
       code: "Gb",
@@ -1237,7 +1474,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["Gi", "magnetomotive force", "Gilberts", "Gilbert"],
+      names: [
+        "Gi",
+        "magnetomotive force",
+        "Gilberts",
+        "Gilbert",
+      ],
       printSymbol: "Gb"),
   DefinedUnit(
       code: "Gy",
@@ -1271,7 +1513,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["henries", "inductance", "henry"],
+      names: [
+        "henries",
+        "inductance",
+        "henry",
+      ],
       printSymbol: "H"),
   DefinedUnit(
       code: "Hz",
@@ -1285,7 +1531,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Herz", "frequency", "frequencies", "hertz"],
+      names: [
+        "Herz",
+        "frequency",
+        "frequencies",
+        "hertz",
+      ],
       printSymbol: "Hz"),
   DefinedUnit(
       code: "J",
@@ -1299,7 +1550,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["joules", "joule"],
+      names: [
+        "joules",
+        "joule",
+      ],
       printSymbol: "J"),
   DefinedUnit(
       code: "J/L",
@@ -1313,7 +1567,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["joules per liter", "litre", "J per L", "joule per liter"],
+      names: [
+        "joules per liter",
+        "J per L",
+        "joule per liter",
+      ],
       printSymbol: "J/L"),
   DefinedUnit(
       code: "K/W",
@@ -1344,7 +1602,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["wavenumbers", "kaysers", "Kayser"],
+      names: [
+        "wavenumbers",
+        "kaysers",
+        "Kayser",
+      ],
       printSymbol: "K"),
   DefinedUnit(
       code: "L",
@@ -1386,9 +1648,6 @@ final definedUnitsList = [
         "L/24 hrs",
         "L per 24hrs",
         "liters per 24 hours",
-        "day",
-        "dy",
-        "litres",
         "volume flow rate",
         "Liters per 24 hour"
       ],
@@ -1433,11 +1692,8 @@ final definedUnitsList = [
         "L/min/m^2",
         "L/min/sq. meter",
         "L per min per m2",
-        "m^2",
         "liters per minutes per square meter",
-        "meter squared",
-        "litres",
-        "metre",
+        "litres per minute per meter squared",
         "Liters per minute per square meter"
       ],
       printSymbol: "L/(min.(m<sup>2</sup>))"),
@@ -1453,7 +1709,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["L per L", "liter/liter", "litre", "Liters per liter"],
+      names: [
+        "L per L",
+        "liter/liter",
+        "Liters per liter",
+      ],
       printSymbol: "L/L"),
   DefinedUnit(
       code: "L/d",
@@ -1470,11 +1730,12 @@ final definedUnitsList = [
       names: [
         "L/dy",
         "L per day",
-        "24hrs",
-        "24 hrs",
-        "24 hours",
-        "liters",
-        "litres",
+        "liters per 24 hrs",
+        "liters per day",
+        "liters per day",
+        "litres per 24 hrs",
+        "litres per day",
+        "litres per 24hrs",
         "Liters per day"
       ],
       printSymbol: "L/d"),
@@ -1490,7 +1751,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["L/hr", "L per hr", "litres", "Liters per hour"],
+      names: [
+        "L/hr",
+        "L per hr",
+        "litres per hour",
+        "Liters per hour",
+      ],
       printSymbol: "L/h"),
   DefinedUnit(
       code: "L/kg",
@@ -1504,7 +1770,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["L per kg", "litre", "Liters per kilogram"],
+      names: [
+        "L per kg",
+        "litre per kilogram",
+        "Liters per kilogram",
+      ],
       printSymbol: "L/kg"),
   DefinedUnit(
       code: "L/min",
@@ -1518,7 +1788,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["liters per minute", "litre", "Liters per minute"],
+      names: [
+        "liters per minute",
+        "litres per minute",
+        "Liters per minute",
+      ],
       printSymbol: "L/min"),
   DefinedUnit(
       code: "L/min/m2",
@@ -1537,11 +1811,7 @@ final definedUnitsList = [
         "L/min/m^2",
         "L/min/sq. meter",
         "L per min per m2",
-        "m^2",
         "liters per minutes per square meter",
-        "meter squared",
-        "litres",
-        "metre",
         "Liters per minute per square meter"
       ],
       printSymbol: "(L/min)/(m<sup>2</sup>)"),
@@ -1557,7 +1827,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["L per sec", "litres", "Liters per second"],
+      names: [
+        "L per sec",
+        "Liters per second",
+      ],
       printSymbol: "L/s"),
   DefinedUnit(
       code: "L/s/s2",
@@ -1578,11 +1851,8 @@ final definedUnitsList = [
         "L/sec/sq. sec",
         "L per s per s2",
         "L per sec per sec2",
-        "s^2",
-        "sec^2",
         "liters per seconds per square second",
-        "second squared",
-        "litres",
+        "litres per second squared",
         "Liters per second per square second"
       ],
       printSymbol: "(L/s)/(s<sup>2</sup>)"),
@@ -1598,7 +1868,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["luminance", "lamberts", "Lambert"],
+      names: [
+        "luminance",
+        "lamberts",
+        "Lambert",
+      ],
       printSymbol: "L"),
   DefinedUnit(
       code: "Ms",
@@ -1608,7 +1882,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["megaseconds", "megasecond"],
+      names: [
+        "megaseconds",
+        "megasecond",
+      ],
       printSymbol: "Ms"),
   DefinedUnit(
       code: "Mx",
@@ -1622,7 +1899,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["magnetix flux", "Maxwells", "Maxwell"],
+      names: [
+        "magnetix flux",
+        "Maxwells",
+        "Maxwell",
+      ],
       printSymbol: "Mx"),
   DefinedUnit(
       code: "N",
@@ -1636,7 +1917,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Newton", "Newtons", "newton"],
+      names: [
+        "Newton",
+        "Newtons",
+        "newton",
+      ],
       printSymbol: "N"),
   DefinedUnit(
       code: "N.cm",
@@ -1695,7 +1980,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["nepers", "neper"],
+      names: [
+        "nepers",
+        "neper",
+      ],
       printSymbol: "Np"),
   DefinedUnit(
       code: "Oe",
@@ -1709,7 +1997,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["H magnetic B field", "Oersteds", "Oersted"],
+      names: [
+        "H magnetic B field",
+        "Oersteds",
+        "Oersted",
+      ],
       printSymbol: "Oe"),
   DefinedUnit(
       code: "Ohm",
@@ -1723,7 +2015,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Ω", "resistance", "ohms", "ohm"],
+      names: [
+        "Ω",
+        "resistance",
+        "ohms",
+        "ohm",
+      ],
       printSymbol: "Ω"),
   DefinedUnit(
       code: "Ohm.m",
@@ -1737,7 +2034,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["electric resistivity", "meters", "metres", "Ohm meter"],
+      names: [
+        "electric resistivity",
+        "meters",
+        "metres",
+        "Ohm meter",
+      ],
       printSymbol: "Ω.m"),
   DefinedUnit(
       code: "P",
@@ -1751,7 +2053,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["dynamic viscosity", "poises", "Poise"],
+      names: [
+        "dynamic viscosity",
+        "poises",
+        "Poise",
+      ],
       printSymbol: "P"),
   DefinedUnit(
       code: "Pa",
@@ -1765,7 +2071,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Pascal", "pascals", "pascal"],
+      names: [
+        "Pascal",
+        "pascals",
+        "pascal",
+      ],
       printSymbol: "Pa"),
   DefinedUnit(
       code: "R",
@@ -1779,7 +2089,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["röntgen", "Roentgens", "Roentgen"],
+      names: [
+        "röntgen",
+        "Roentgens",
+        "Roentgen",
+      ],
       printSymbol: "R"),
   DefinedUnit(
       code: "RAD",
@@ -1793,7 +2107,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["doses", "radiation absorbed dose"],
+      names: [
+        "doses",
+        "radiation absorbed dose",
+      ],
       printSymbol: "RAD"),
   DefinedUnit(
       code: "REM",
@@ -1826,7 +2143,13 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Reciprocal ohm", "mho", "Ω−1", "conductance", "siemens"],
+      names: [
+        "Reciprocal ohm",
+        "mho",
+        "Ω−1",
+        "conductance",
+        "siemens",
+      ],
       printSymbol: "S"),
   DefinedUnit(
       code: "St",
@@ -1840,7 +2163,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["kinematic viscosity", "Stokes"],
+      names: [
+        "kinematic viscosity",
+        "Stokes",
+      ],
       printSymbol: "St"),
   DefinedUnit(
       code: "Sv",
@@ -1876,7 +2202,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["Teslas", "magnetic field", "tesla"],
+      names: [
+        "Teslas",
+        "magnetic field",
+        "tesla",
+      ],
       printSymbol: "T"),
   DefinedUnit(
       code: "Torr",
@@ -1890,7 +2220,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "const",
-      names: ["torrs", "Torr"],
+      names: [
+        "torrs",
+        "Torr",
+      ],
       printSymbol: "Torr"),
   DefinedUnit(
       code: "U",
@@ -1909,8 +2242,6 @@ final definedUnitsList = [
         "umol/min",
         "umol per minute",
         "umol min-1",
-        "enzymatic activity",
-        "enzyme activity",
         "enzyme unit"
       ],
       printSymbol: "U"),
@@ -1930,9 +2261,7 @@ final definedUnitsList = [
         "U/12hrs",
         "U/ 12hrs",
         "U per 12 hrs",
-        "12hrs",
         "enzyme units per 12 hours",
-        "enzyme activity",
         "enzymatic activity per time",
         "umol per min per 12 hours",
         "micromoles per minute per 12 hours",
@@ -1956,9 +2285,7 @@ final definedUnitsList = [
         "U/2hrs",
         "U/ 2hrs",
         "U per 2 hrs",
-        "2hrs",
         "enzyme units per 2 hours",
-        "enzyme activity",
         "enzymatic activity per time",
         "umol per minute per 2 hours",
         "micromoles per minute",
@@ -1983,9 +2310,7 @@ final definedUnitsList = [
         "U/24hrs",
         "U/ 24hrs",
         "U per 24 hrs",
-        "24hrs",
         "enzyme units per 24 hours",
-        "enzyme activity",
         "enzymatic activity per time",
         "micromoles per minute per 24 hours",
         "umol/min/24hr",
@@ -2009,8 +2334,6 @@ final definedUnitsList = [
         "enzyme unit/10",
         "U per 10",
         "enzyme units per 10",
-        "enzymatic activity",
-        "enzyme activity",
         "micromoles per minute",
         "umol/min/10",
         "enzyme unit per 10"
@@ -2032,8 +2355,6 @@ final definedUnitsList = [
         "U per 10*10",
         "enzyme units per 10*10",
         "U per 10 billion",
-        "enzyme units",
-        "enzymatic activity",
         "micromoles per minute per 10 billion",
         "umol/min/10*10",
         "enzyme unit per 10 billion"
@@ -2056,7 +2377,6 @@ final definedUnitsList = [
         "U per 10*12",
         "enzyme units per 10*12",
         "enzyme units per trillion",
-        "enzymatic activity",
         "micromoles per minute per trillion",
         "umol/min/10*12",
         "umol per min per 10*12",
@@ -2079,7 +2399,6 @@ final definedUnitsList = [
         "enzyme unit/10*6",
         "U per 10*6",
         "enzyme units per 10*6",
-        "enzyme units",
         "enzymatic activity per volume",
         "micromoles per minute per million",
         "umol/min/10*6",
@@ -2149,8 +2468,6 @@ final definedUnitsList = [
       names: [
         "U/dy",
         "enzyme units per day",
-        "enzyme units",
-        "enzyme activity",
         "enzymatic activity per time",
         "micromoles per minute per day",
         "umol/min/day",
@@ -2239,7 +2556,6 @@ final definedUnitsList = [
       names: [
         "U per mL",
         "enzyme units per milliliter",
-        "millilitre",
         "micromoles per minute per milliliter",
         "umol/min/mL",
         "umol per min per mL",
@@ -2261,11 +2577,9 @@ final definedUnitsList = [
       names: [
         "enzyme unit/minute",
         "U per min",
-        "enzyme units",
         "umol/min/min",
         "micromoles per minute per minute",
         "micromoles per min per min",
-        "umol",
         "enzyme unit per minute"
       ],
       printSymbol: "U/min"),
@@ -2303,7 +2617,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["volts", "volt"],
+      names: [
+        "volts",
+        "volt",
+      ],
       printSymbol: "V"),
   DefinedUnit(
       code: "W",
@@ -2317,7 +2634,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["watts", "watt"],
+      names: [
+        "watts",
+        "watt",
+      ],
       printSymbol: "W"),
   DefinedUnit(
       code: "Wb",
@@ -2331,7 +2651,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["magnetic flux", "webers", "weber"],
+      names: [
+        "magnetic flux",
+        "webers",
+        "weber",
+      ],
       printSymbol: "Wb"),
   DefinedUnit(
       code: "[APL'U]",
@@ -2391,7 +2715,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["allergy units", "allergen units", "AU", "allergy unit"],
+      names: [
+        "allergy units",
+        "allergen units",
+        "AU",
+        "allergy unit",
+      ],
       printSymbol: "AU"),
   DefinedUnit(
       code: "[Amb'a'1'U]",
@@ -2559,7 +2888,6 @@ final definedUnitsList = [
         "B.Th.U. mean",
         "BThU mean",
         "British thermal units mean",
-        "",
         "mean British thermal unit"
       ],
       printSymbol: "Btu<sub>m</sub>"),
@@ -2615,7 +2943,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["CFU", "colony forming units"],
+      names: [
+        "CFU",
+        "colony forming units",
+      ],
       printSymbol: "CFU"),
   DefinedUnit(
       code: "[CFU]/L",
@@ -2629,7 +2960,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["CFU per Liter", "CFU/L", "colony forming units per liter"],
+      names: [
+        "CFU per Liter",
+        "CFU/L",
+        "colony forming units per liter",
+      ],
       printSymbol: "CFU/L"),
   DefinedUnit(
       code: "[CFU]/mL",
@@ -2643,7 +2978,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["CFU per mL", "CFU/mL", "colony forming units per milliliter"],
+      names: [
+        "CFU per mL",
+        "CFU/mL",
+        "colony forming units per milliliter",
+      ],
       printSymbol: "CFU/mL"),
   DefinedUnit(
       code: "[Cal]",
@@ -2657,7 +2996,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "heat",
-      names: ["food calories", "Cal", "kcal", "nutrition label Calories"],
+      names: [
+        "food calories",
+        "Cal",
+        "kcal",
+        "nutrition label Calories",
+      ],
       printSymbol: "Cal"),
   DefinedUnit(
       code: "[Ch]",
@@ -2691,7 +3035,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["DAgU", "units", "D-antigen unit (polio)"],
+      names: [
+        "DAgU",
+        "units",
+        "D-antigen unit (polio)",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[EID_50]",
@@ -2762,7 +3110,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["FEU", "fibrinogen equivalent units"],
+      names: [
+        "FEU",
+        "fibrinogen equivalent units",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[FFU]",
@@ -2776,7 +3127,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["FFU", "focus forming units (cells)"],
+      names: [
+        "FFU",
+        "focus forming units (cells)",
+      ],
       printSymbol: "FFU"),
   DefinedUnit(
       code: "[GPL'U]",
@@ -2852,7 +3206,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["HPF", "high power field (microscope)"],
+      names: [
+        "HPF",
+        "high power field (microscope)",
+      ],
       printSymbol: "HPF"),
   DefinedUnit(
       code: "[HP]",
@@ -2866,7 +3223,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "heat",
-      names: ["imperial horsepowers", "horsepower - mechanical"],
+      names: [
+        "imperial horsepowers",
+        "horsepower - mechanical",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[IR]",
@@ -2881,7 +3241,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["IR", "indexes", "index of reactivity (allergen)"],
+      names: [
+        "IR",
+        "indexes",
+        "index of reactivity (allergen)",
+      ],
       printSymbol: "IR"),
   DefinedUnit(
       code: "[IU]",
@@ -2958,8 +3322,6 @@ final definedUnitsList = [
         "IU/L",
         "IU/liter",
         "IU per liter",
-        "units",
-        "litre",
         "international unit per liter"
       ],
       printSymbol: "(i.U.)/L"),
@@ -2999,7 +3361,6 @@ final definedUnitsList = [
         "IU/dL",
         "IU per dL",
         "international units per deciliters",
-        "decilitres",
         "international unit per deciliter"
       ],
       printSymbol: "(i.U.)/dL"),
@@ -3059,7 +3420,6 @@ final definedUnitsList = [
         "IU/kg",
         "IU/kilogram",
         "IU per kg",
-        "units",
         "international unit per kilogram"
       ],
       printSymbol: "(i.U.)/kg"),
@@ -3080,7 +3440,6 @@ final definedUnitsList = [
         "IU/kg/day",
         "IU/kilogram/day",
         "IU per kg per day",
-        "units",
         "international unit per kilogram per day"
       ],
       printSymbol: "(i.U.)/kg/d"),
@@ -3100,7 +3459,6 @@ final definedUnitsList = [
         "IU/mL",
         "IU per mL",
         "international units per milliliter",
-        "millilitre",
         "international unit per milliliter"
       ],
       printSymbol: "(i.U.)/mL"),
@@ -3120,7 +3478,7 @@ final definedUnitsList = [
         "IU/min",
         "IU/minute",
         "IU per minute",
-        "international units",
+        "international units per minute",
         "international unit per minute"
       ],
       printSymbol: "(i.U.)/min"),
@@ -3136,7 +3494,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["LPF", "fields", "low power field (microscope)"],
+      names: [
+        "LPF",
+        "fields",
+        "low power field (microscope)",
+      ],
       printSymbol: "LPF"),
   DefinedUnit(
       code: "[Lf]",
@@ -3150,7 +3512,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["Lf doses", "Limit of flocculation"],
+      names: [
+        "Lf doses",
+        "Limit of flocculation",
+      ],
       printSymbol: "Lf"),
   DefinedUnit(
       code: "[MET]",
@@ -3164,7 +3529,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["metabolic equivalents", "Metabolic Equivalent of Task "],
+      names: [
+        "metabolic equivalents",
+        "Metabolic Equivalent of Task ",
+      ],
       printSymbol: "MET"),
   DefinedUnit(
       code: "[MPL'U]",
@@ -3205,7 +3573,6 @@ final definedUnitsList = [
         "MPL'U/mL",
         "IgM anticardiolipin units",
         "IgM Phospholipid Units",
-        "millilitre",
         "MPL unit per milliliter"
       ],
       printSymbol: "/mL"),
@@ -3221,7 +3588,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["PFU", "plaque forming units"],
+      names: [
+        "PFU",
+        "plaque forming units",
+      ],
       printSymbol: "PFU"),
   DefinedUnit(
       code: "[PNU]",
@@ -3312,7 +3682,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["USP U", "USP'U", "United States Pharmacopeia unit"],
+      names: [
+        "USP U",
+        "USP'U",
+        "United States Pharmacopeia unit",
+      ],
       printSymbol: "U.S.P."),
   DefinedUnit(
       code: "[acr_br]",
@@ -3326,7 +3700,15 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-length",
-      names: ["Imperial acres", "British", "a", "ac", "ar", "acr", "acre"],
+      names: [
+        "Imperial acres",
+        "British",
+        "a",
+        "ac",
+        "ar",
+        "acr",
+        "acre",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[acr_us]",
@@ -3340,7 +3722,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["Acre USA Survey", "Acre USA", "survey acres", "acre - US"],
+      names: [
+        "Acre USA Survey",
+        "Acre USA",
+        "survey acres",
+        "acre - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[anti'Xa'U]",
@@ -3354,7 +3741,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["units", "anti factor Xa unit"],
+      names: [
+        "units",
+        "anti factor Xa unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[arb'U]",
@@ -3368,7 +3758,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["arbitary units", "arb units", "arbU", "arbitary unit"],
+      names: [
+        "arbitary units",
+        "arb units",
+        "arbU",
+        "arbitary unit",
+      ],
       printSymbol: "arb. U"),
   DefinedUnit(
       code: "[arb'U]/mL",
@@ -3403,7 +3798,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["bbl", "barrel - US"],
+      names: [
+        "bbl",
+        "barrel - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[bdsk'U]",
@@ -3417,7 +3815,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["", "Bodansky unit"],
+      names: [
+        "Bodansky unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[beth'U]",
@@ -3431,7 +3831,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["BU", "Bethesda unit"],
+      names: [
+        "BU",
+        "Bethesda unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[bf_i]",
@@ -3445,7 +3848,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["BDFT", "FBM", "BF", "board feet", "international", "board foot"],
+      names: [
+        "BDFT",
+        "FBM",
+        "BF",
+        "board feet",
+        "international",
+        "board foot",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[bu_br]",
@@ -3480,7 +3890,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US bushels", "US bsh", "US bu", "bushel - US"],
+      names: [
+        "US bushels",
+        "US bsh",
+        "US bu",
+        "bushel - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[c]",
@@ -3494,7 +3909,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["speed of light", "velocity of light in a vacuum"],
+      names: [
+        "speed of light",
+        "velocity of light in a vacuum",
+      ],
       printSymbol: "<i>c</i>"),
   DefinedUnit(
       code: "[car_Au]",
@@ -3508,7 +3926,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["karats", "k", "kt", "car au", "carats", "carat of gold alloys"],
+      names: [
+        "karats",
+        "k",
+        "kt",
+        "car au",
+        "carats",
+        "carat of gold alloys",
+      ],
       printSymbol: "ct<sub><r>Au</r></sub>"),
   DefinedUnit(
       code: "[car_m]",
@@ -3522,7 +3947,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["carats", "ct", "car m", "metric carat"],
+      names: [
+        "carats",
+        "ct",
+        "car m",
+        "metric carat",
+      ],
       printSymbol: "ct<sub>m</sub>"),
   DefinedUnit(
       code: "[cft_i]",
@@ -3544,7 +3974,6 @@ final definedUnitsList = [
         "cubic feet",
         "cubed",
         "[ft_i]3",
-        "international",
         "cubic foot"
       ],
       printSymbol: null),
@@ -3600,7 +4029,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["Didot's pica", "ciceros", "picas", "cicero"],
+      names: [
+        "Didot's pica",
+        "ciceros",
+        "picas",
+        "cicero",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[cin_i]",
@@ -3640,7 +4074,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["circular mils", "cml I", "international", "circular mil"],
+      names: [
+        "circular mils",
+        "cml I",
+        "international",
+        "circular mil",
+      ],
       printSymbol: "circ.mil"),
   DefinedUnit(
       code: "[cr_i]",
@@ -3654,7 +4093,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["crd I", "international cords", "cord"],
+      names: [
+        "crd I",
+        "international cords",
+        "cord",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[crd_us]",
@@ -3668,7 +4111,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US cord", "US cords", "crd us", "us crd", "cord - US"],
+      names: [
+        "US cord",
+        "US cords",
+        "crd us",
+        "us crd",
+        "cord - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[cup_m]",
@@ -3682,7 +4131,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["cup m", "metric cups", "cup - US legal"],
+      names: [
+        "cup m",
+        "metric cups",
+        "cup - US legal",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[cup_us]",
@@ -3696,7 +4149,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["cup us", "us cups", "cup - US customary"],
+      names: [
+        "cup us",
+        "us cups",
+        "cup - US customary",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[cyd_i]",
@@ -3735,7 +4192,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "heat",
-      names: ["°F", "deg F", "degrees Fahrenheit"],
+      names: [
+        "°F",
+        "deg F",
+        "degrees Fahrenheit",
+      ],
       printSymbol: "°F"),
   DefinedUnit(
       code: "[degR]",
@@ -3749,7 +4210,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "heat",
-      names: ["°R", "°Ra", "Rankine", "degrees Rankine"],
+      names: [
+        "°R",
+        "°Ra",
+        "Rankine",
+        "degrees Rankine",
+      ],
       printSymbol: "°R"),
   DefinedUnit(
       code: "[degRe]",
@@ -3783,7 +4249,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "heat",
-      names: ["den", "deniers", "Denier (linear mass density)"],
+      names: [
+        "den",
+        "deniers",
+        "Denier (linear mass density)",
+      ],
       printSymbol: "den"),
   DefinedUnit(
       code: "[didot]",
@@ -3797,7 +4267,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["Didot point", "dd", "Didots Point", "didots", "points", "didot"],
+      names: [
+        "Didot point",
+        "dd",
+        "Didots Point",
+        "didots",
+        "points",
+        "didot",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[diop]",
@@ -3937,7 +4414,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["units", "Dye unit"],
+      names: [
+        "units",
+        "Dye unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[e]",
@@ -3951,7 +4431,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["e", "q", "electric charges", "elementary charge"],
+      names: [
+        "e",
+        "q",
+        "electric charges",
+        "elementary charge",
+      ],
       printSymbol: "<i>e</i>"),
   DefinedUnit(
       code: "[eps_0]",
@@ -3985,7 +4470,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-volumes",
-      names: ["British fluid drams", "fdr br", "fluid dram - British"],
+      names: [
+        "British fluid drams",
+        "fdr br",
+        "fluid dram - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[fdr_us]",
@@ -3999,7 +4488,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US fluid drams", "fdr us", "fluid dram - US"],
+      names: [
+        "US fluid drams",
+        "fdr us",
+        "fluid dram - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[foz_br]",
@@ -4180,7 +4673,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["international fathoms", "fathom"],
+      names: [
+        "international fathoms",
+        "fathom",
+      ],
       printSymbol: "fth"),
   DefinedUnit(
       code: "[fth_us]",
@@ -4194,7 +4690,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["US fathoms", "fathom USA", "fth us", "fathom - US"],
+      names: [
+        "US fathoms",
+        "fathom USA",
+        "fth us",
+        "fathom - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[fur_us]",
@@ -4208,7 +4709,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["US furlongs", "fur us", "furlong - US"],
+      names: [
+        "US furlongs",
+        "fur us",
+        "furlong - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[g]",
@@ -4324,7 +4829,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US gills", "gil us", "gill - US"],
+      names: [
+        "US gills",
+        "gil us",
+        "gill - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[gr]",
@@ -4338,7 +4847,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "avoirdupois",
-      names: ["gr", "grains", "grain"],
+      names: [
+        "gr",
+        "grains",
+        "grain",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[h]",
@@ -4353,7 +4866,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["Planck's constant", "Planck constant"],
+      names: [
+        "Planck's constant",
+        "Planck constant",
+      ],
       printSymbol: "<i>h</i>"),
   DefinedUnit(
       code: "[hd_i]",
@@ -4367,7 +4883,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["hands", "international", "hand"],
+      names: [
+        "hands",
+        "international",
+        "hand",
+      ],
       printSymbol: "hd"),
   DefinedUnit(
       code: "[hnsf'U]",
@@ -4381,7 +4901,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["HU", "units", "Hounsfield unit"],
+      names: [
+        "HU",
+        "units",
+        "Hounsfield unit",
+      ],
       printSymbol: "HF"),
   DefinedUnit(
       code: "[hp'_C]",
@@ -4395,7 +4919,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "clinical",
-      names: ["homeopathic potency of centesimal series (retired)"],
+      names: [
+        "homeopathic potency of centesimal series (retired)",
+      ],
       printSymbol: "C"),
   DefinedUnit(
       code: "[hp'_M]",
@@ -4409,7 +4935,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "clinical",
-      names: ["homeopathic potency of millesimal series (retired)"],
+      names: [
+        "homeopathic potency of millesimal series (retired)",
+      ],
       printSymbol: "M"),
   DefinedUnit(
       code: "[hp'_Q]",
@@ -4423,7 +4951,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "clinical",
-      names: ["homeopathic potency of quintamillesimal series (retired)"],
+      names: [
+        "homeopathic potency of quintamillesimal series (retired)",
+      ],
       printSymbol: "Q"),
   DefinedUnit(
       code: "[hp'_X]",
@@ -4437,7 +4967,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "clinical",
-      names: ["homeopathic potency of decimal series (retired)"],
+      names: [
+        "homeopathic potency of decimal series (retired)",
+      ],
       printSymbol: "X"),
   DefinedUnit(
       code: "[hp_C]",
@@ -4451,7 +4983,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of centesimal hahnemannian series"],
+      names: [
+        "homeopathic potency of centesimal hahnemannian series",
+      ],
       printSymbol: "C"),
   DefinedUnit(
       code: "[hp_M]",
@@ -4465,7 +4999,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of millesimal hahnemannian series"],
+      names: [
+        "homeopathic potency of millesimal hahnemannian series",
+      ],
       printSymbol: "M"),
   DefinedUnit(
       code: "[hp_Q]",
@@ -4479,7 +5015,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of quintamillesimal hahnemannian series"],
+      names: [
+        "homeopathic potency of quintamillesimal hahnemannian series",
+      ],
       printSymbol: "Q"),
   DefinedUnit(
       code: "[hp_X]",
@@ -4493,7 +5031,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of decimal hahnemannian series"],
+      names: [
+        "homeopathic potency of decimal hahnemannian series",
+      ],
       printSymbol: "X"),
   DefinedUnit(
       code: "[iU]",
@@ -4568,7 +5108,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["inHg", "in Hg", "pressure", "inches", "inch of mercury column"],
+      names: [
+        "inHg",
+        "in Hg",
+        "pressure",
+        "inches",
+        "inch of mercury column",
+      ],
       printSymbol: "in Hg"),
   DefinedUnit(
       code: "[in_i]",
@@ -4582,7 +5128,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["inches", "in", "international inch", "body height", "inch"],
+      names: [
+        "inches",
+        "in",
+        "international inch",
+        "body height",
+        "inch",
+      ],
       printSymbol: "in"),
   DefinedUnit(
       code: "[in_us]",
@@ -4596,7 +5148,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["US inches", "in us", "us in", "inch US", "inch - US"],
+      names: [
+        "US inches",
+        "in us",
+        "us in",
+        "inch US",
+        "inch - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[k]",
@@ -4610,7 +5168,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["k", "kB", "Boltzmann constant"],
+      names: [
+        "k",
+        "kB",
+        "Boltzmann constant",
+      ],
       printSymbol: "<i>k</i>"),
   DefinedUnit(
       code: "[ka'U]",
@@ -4624,7 +5186,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["King-Armstrong Units", "King units", "King-Armstrong unit"],
+      names: [
+        "King-Armstrong Units",
+        "King units",
+        "King-Armstrong unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[kn_br]",
@@ -4638,7 +5204,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-length",
-      names: ["British knots", "kn br", "kt", "knot - British"],
+      names: [
+        "British knots",
+        "kn br",
+        "kt",
+        "knot - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[kn_i]",
@@ -4652,7 +5223,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["kn", "kt", "international knots", "knot"],
+      names: [
+        "kn",
+        "kt",
+        "international knots",
+        "knot",
+      ],
       printSymbol: "knot"),
   DefinedUnit(
       code: "[knk'U]",
@@ -4666,7 +5242,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["Kunkel unit"],
+      names: [
+        "Kunkel unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[kp_C]",
@@ -4680,7 +5258,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of centesimal korsakovian series"],
+      names: [
+        "homeopathic potency of centesimal korsakovian series",
+      ],
       printSymbol: "C"),
   DefinedUnit(
       code: "[kp_M]",
@@ -4694,7 +5274,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of millesimal korsakovian series"],
+      names: [
+        "homeopathic potency of millesimal korsakovian series",
+      ],
       printSymbol: "M"),
   DefinedUnit(
       code: "[kp_Q]",
@@ -4708,7 +5290,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of quintamillesimal korsakovian series"],
+      names: [
+        "homeopathic potency of quintamillesimal korsakovian series",
+      ],
       printSymbol: "Q"),
   DefinedUnit(
       code: "[kp_X]",
@@ -4722,7 +5306,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["homeopathic potency of decimal korsakovian series"],
+      names: [
+        "homeopathic potency of decimal korsakovian series",
+      ],
       printSymbol: "X"),
   DefinedUnit(
       code: "[lb_ap]",
@@ -4777,7 +5363,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "troy",
-      names: ["troy pounds", "tr lbs", "pound - troy"],
+      names: [
+        "troy pounds",
+        "tr lbs",
+        "pound - troy",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[lbf_av]",
@@ -4791,7 +5381,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "const",
-      names: ["lbfs", "US lbf", "US pound forces", "pound force - US"],
+      names: [
+        "lbfs",
+        "US lbf",
+        "US pound forces",
+        "pound force - US",
+      ],
       printSymbol: "lbf"),
   DefinedUnit(
       code: "[lcwt_av]",
@@ -4825,7 +5420,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["Paris lines", "lignes", "ligne"],
+      names: [
+        "Paris lines",
+        "lignes",
+        "ligne",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[lk_br]",
@@ -4856,7 +5455,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["Links for Gunter's Chain USA", "link for Gunter's chain - US"],
+      names: [
+        "Links for Gunter's Chain USA",
+        "link for Gunter's chain - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[lne]",
@@ -4870,7 +5472,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["British lines", "br L", "L", "l", "line"],
+      names: [
+        "British lines",
+        "br L",
+        "L",
+        "l",
+        "line",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[lton_av]",
@@ -4904,7 +5512,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["light years", "ly", "light-year"],
+      names: [
+        "light years",
+        "ly",
+        "light-year",
+      ],
       printSymbol: "l.y."),
   DefinedUnit(
       code: "[m/s2/Hz^(1/2)]",
@@ -4938,7 +5550,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["electron rest mass", "me", "electron mass"],
+      names: [
+        "electron rest mass",
+        "me",
+        "electron mass",
+      ],
       printSymbol: "<i>m<sub><r>e</r></sub></i>"),
   DefinedUnit(
       code: "[m_p]",
@@ -4952,7 +5568,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["mp", "masses", "proton mass"],
+      names: [
+        "mp",
+        "masses",
+        "proton mass",
+      ],
       printSymbol: "<i>m<sub><r>p</r></sub></i>"),
   DefinedUnit(
       code: "[mclg'U]",
@@ -4988,7 +5608,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "clinical",
-      names: ["meshes", "mesh"],
+      names: [
+        "meshes",
+        "mesh",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[mi_br]",
@@ -5022,7 +5645,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["international miles", "mi I", "statute mile", "mile"],
+      names: [
+        "international miles",
+        "mi I",
+        "statute mile",
+        "mile",
+      ],
       printSymbol: "mi"),
   DefinedUnit(
       code: "[mi_us]",
@@ -5057,7 +5685,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["thou, thousandth", "mils", "international", "mil"],
+      names: [
+        "thou, thousandth",
+        "mils",
+        "international",
+        "mil",
+      ],
       printSymbol: "mil"),
   DefinedUnit(
       code: "[mil_us]",
@@ -5071,7 +5704,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["thou, thousandth", "mils", "mil - US"],
+      names: [
+        "thou, thousandth",
+        "mils",
+        "mil - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[min_br]",
@@ -5085,7 +5722,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-volumes",
-      names: ["min br", "br min", "♏ br", "minim - British"],
+      names: [
+        "min br",
+        "br min",
+        "♏ br",
+        "minim - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[min_us]",
@@ -5099,7 +5741,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["min US", "US min", "♏ US", "minim - US"],
+      names: [
+        "min US",
+        "US min",
+        "♏ US",
+        "minim - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[mu_0]",
@@ -5216,7 +5863,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "apoth",
-      names: ["metric ounces", "m ozs", "ounce - metric"],
+      names: [
+        "metric ounces",
+        "m ozs",
+        "ounce - metric",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[oz_tr]",
@@ -5230,7 +5881,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "troy",
-      names: ["troy ounces", "tr ozs", "ounce - troy"],
+      names: [
+        "troy ounces",
+        "tr ozs",
+        "ounce - troy",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[p'diop]",
@@ -5271,7 +5926,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "chemical",
-      names: ["pH scale", "pH"],
+      names: [
+        "pH scale",
+        "pH",
+      ],
       printSymbol: "pH"),
   DefinedUnit(
       code: "[pc_br]",
@@ -5285,7 +5943,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-length",
-      names: ["British paces", "br pc", "pace - British"],
+      names: [
+        "British paces",
+        "br pc",
+        "pace - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pca]",
@@ -5299,7 +5961,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["picas", "pica (typography)"],
+      names: [
+        "picas",
+        "pica (typography)",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pca_pr]",
@@ -5313,7 +5978,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["pca pr", "Printer's picas", "Printer's pica  (typography)"],
+      names: [
+        "pca pr",
+        "Printer's picas",
+        "Printer's pica  (typography)",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pi]",
@@ -5329,7 +5998,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["the number pi", "π"],
+      names: [
+        "the number pi",
+        "π",
+      ],
       printSymbol: "π"),
   DefinedUnit(
       code: "[pied]",
@@ -5343,7 +6015,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["pieds du roi", "Paris foot", "royal", "French", "feet", "pied"],
+      names: [
+        "pieds du roi",
+        "Paris foot",
+        "royal",
+        "French",
+        "feet",
+        "pied",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pk_br]",
@@ -5377,7 +6056,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US pecks", "US pk", "peck - US"],
+      names: [
+        "US pecks",
+        "US pk",
+        "peck - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pnt]",
@@ -5411,7 +6094,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["pnt pr", "Printer's point (typography)"],
+      names: [
+        "pnt pr",
+        "Printer's point (typography)",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[pouce]",
@@ -5425,7 +6111,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "typeset",
-      names: ["historical French inches", "French royal inches", "pouce"],
+      names: [
+        "historical French inches",
+        "French royal inches",
+        "pouce",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[ppb]",
@@ -5439,7 +6129,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["ppb", "10^-9", "parts per billion"],
+      names: [
+        "ppb",
+        "10^-9",
+        "parts per billion",
+      ],
       printSymbol: "ppb"),
   DefinedUnit(
       code: "[ppm]",
@@ -5453,7 +6147,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["ppm", "10^-6", "parts per million"],
+      names: [
+        "ppm",
+        "10^-6",
+        "parts per million",
+      ],
       printSymbol: "ppm"),
   DefinedUnit(
       code: "[ppth]",
@@ -5467,7 +6165,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["ppth", "10^-3", "parts per thousand"],
+      names: [
+        "ppth",
+        "10^-3",
+        "parts per thousand",
+      ],
       printSymbol: "ppth"),
   DefinedUnit(
       code: "[pptr]",
@@ -5481,7 +6183,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["pptr", "10^-12", "parts per trillion"],
+      names: [
+        "pptr",
+        "10^-12",
+        "parts per trillion",
+      ],
       printSymbol: "pptr"),
   DefinedUnit(
       code: "[psi]",
@@ -5495,7 +6201,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["psi", "lb/in2", "lb per in2", "pound per square inch"],
+      names: [
+        "psi",
+        "lb/in2",
+        "lb per in2",
+        "pound per square inch",
+      ],
       printSymbol: "psi"),
   DefinedUnit(
       code: "[pt_br]",
@@ -5552,7 +6263,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "troy",
-      names: ["dwt", "denarius weights", "pennyweight - troy"],
+      names: [
+        "dwt",
+        "denarius weights",
+        "pennyweight - troy",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[qt_br]",
@@ -5566,7 +6281,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-volumes",
-      names: ["British quarts", "imperial quarts", "br qts", "quart - British"],
+      names: [
+        "British quarts",
+        "imperial quarts",
+        "br qts",
+        "quart - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[qt_us]",
@@ -5580,7 +6300,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["US quarts", "us qts", "quart - US"],
+      names: [
+        "US quarts",
+        "us qts",
+        "quart - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[rch_us]",
@@ -5594,7 +6318,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["Ramsden's chain", "engineer's chains", "Ramden's chain - US"],
+      names: [
+        "Ramsden's chain",
+        "engineer's chains",
+        "Ramden's chain - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[rd_br]",
@@ -5608,7 +6336,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-length",
-      names: ["British rods", "br rd", "rod - British"],
+      names: [
+        "British rods",
+        "br rd",
+        "rod - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[rd_us]",
@@ -5622,7 +6354,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["US rod", "US rods", "rd US", "US rd", "rod - US"],
+      names: [
+        "US rod",
+        "US rods",
+        "rd US",
+        "US rd",
+        "rod - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[rlk_us]",
@@ -5636,7 +6374,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["links for Ramsden's chain", "link for Ramden's chain - US"],
+      names: [
+        "links for Ramsden's chain",
+        "link for Ramden's chain - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[sc_ap]",
@@ -5650,7 +6391,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "apoth",
-      names: ["scruples", "sc ap", "scruple"],
+      names: [
+        "scruples",
+        "sc ap",
+        "scruple",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[sct]",
@@ -5664,7 +6409,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["sct", "sections", "section"],
+      names: [
+        "sct",
+        "sections",
+        "section",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[scwt_av]",
@@ -5698,15 +6447,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: [
-        "ft2",
-        "ft^2",
-        "ft squared",
-        "sq ft",
-        "feet",
-        "international",
-        "square foot"
-      ],
+      names: ["ft2", "ft^2", "ft squared", "sq ft", "square foot"],
       printSymbol: null),
   DefinedUnit(
       code: "[sin_i]",
@@ -5725,8 +6466,7 @@ final definedUnitsList = [
         "in^2",
         "inches squared",
         "sq inch",
-        "international",
-        "square inch"
+        "square inch",
       ],
       printSymbol: null),
   DefinedUnit(
@@ -5741,7 +6481,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["Somogyi units", "smgy U", "Somogyi unit"],
+      names: [
+        "Somogyi units",
+        "smgy U",
+        "Somogyi unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[smi_us]",
@@ -5755,7 +6499,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["mi2", "mi^2", "sq mi", "miles squared", "square mile - US"],
+      names: [
+        "mi2",
+        "mi^2",
+        "sq mi",
+        "miles squared",
+        "square mile - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[smoot]",
@@ -5769,7 +6519,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["", "Smoot"],
+      names: [
+        "Smoot",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[srd_us]",
@@ -5783,7 +6535,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["rod2", "rod^2", "sq. rod", "rods squared", "square rod - US"],
+      names: [
+        "rod2",
+        "rod^2",
+        "sq. rod",
+        "rods squared",
+        "square rod - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[ston_av]",
@@ -5797,7 +6555,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "avoirdupois",
-      names: ["ton", "US tons", "avoirdupois tons", "short ton - US"],
+      names: [
+        "ton",
+        "US tons",
+        "avoirdupois tons",
+        "short ton - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[stone_av]",
@@ -5811,7 +6574,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "avoirdupois",
-      names: ["British stones", "avoirdupois", "stone - British"],
+      names: [
+        "British stones",
+        "avoirdupois",
+        "stone - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[syd_i]",
@@ -5846,7 +6613,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["TU", "units", "tuberculin unit"],
+      names: [
+        "TU",
+        "units",
+        "tuberculin unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[tbs_m]",
@@ -5881,7 +6652,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["Tbs", "tbsp", "tbs us", "US tablespoons", "tablespoon - US"],
+      names: [
+        "Tbs",
+        "tbsp",
+        "tbs us",
+        "US tablespoons",
+        "tablespoon - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[todd'U]",
@@ -5895,7 +6672,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "chemical",
-      names: ["units", "Todd unit"],
+      names: [
+        "units",
+        "Todd unit",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[tsp_m]",
@@ -5909,7 +6689,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["tsp", "t", "metric teaspoons", "teaspoon - metric"],
+      names: [
+        "tsp",
+        "t",
+        "metric teaspoons",
+        "teaspoon - metric",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[tsp_us]",
@@ -5923,7 +6708,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-volumes",
-      names: ["tsp", "t", "US teaspoons", "teaspoon - US"],
+      names: [
+        "tsp",
+        "t",
+        "US teaspoons",
+        "teaspoon - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[twp]",
@@ -5937,7 +6727,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["twp", "townships", "township"],
+      names: [
+        "twp",
+        "townships",
+        "township",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[wood'U]",
@@ -5971,7 +6765,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "brit-length",
-      names: ["British yards", "Br yds", "distance", "yard - British"],
+      names: [
+        "British yards",
+        "Br yds",
+        "distance",
+        "yard - British",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "[yd_i]",
@@ -5985,7 +6784,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "intcust",
-      names: ["international yards", "yds", "distance", "yard"],
+      names: [
+        "international yards",
+        "yds",
+        "distance",
+        "yard",
+      ],
       printSymbol: "yd"),
   DefinedUnit(
       code: "[yd_us]",
@@ -5999,7 +6803,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "us-lengths",
-      names: ["US yards", "us yds", "distance", "yard - US"],
+      names: [
+        "US yards",
+        "us yds",
+        "distance",
+        "yard - US",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "a",
@@ -6013,7 +6822,14 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["years", "a", "yr, yrs", "annum", "year"],
+      names: [
+        "years",
+        "a",
+        "yr",
+        "yrs",
+        "annum",
+        "year",
+      ],
       printSymbol: "a"),
   DefinedUnit(
       code: "a_g",
@@ -6030,7 +6846,7 @@ final definedUnitsList = [
       names: [
         "mean Gregorian yr",
         "a gregorian",
-        "years",
+        "Gregorian years",
         "mean Gregorian year"
       ],
       printSymbol: "a<sub>g</sub>"),
@@ -6046,7 +6862,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["mean Julian yr", "a julian", "years", "mean Julian year"],
+      names: [
+        "mean Julian yr",
+        "a julian",
+        "Julian years",
+        "mean Julian year",
+      ],
       printSymbol: "a<sub>j</sub>"),
   DefinedUnit(
       code: "a_t",
@@ -6060,7 +6881,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["solar years", "a tropical", "years", "tropical year"],
+      names: [
+        "solar years",
+        "a tropical",
+        "tropical years",
+        "tropical year",
+      ],
       printSymbol: "a<sub>t</sub>"),
   DefinedUnit(
       code: "ar",
@@ -6080,7 +6906,7 @@ final definedUnitsList = [
         "100 square meter",
         "meters squared",
         "metres",
-        "are"
+        "area"
       ],
       printSymbol: "a"),
   DefinedUnit(
@@ -6136,7 +6962,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["barns", "barn"],
+      names: [
+        "barns",
+        "barn",
+      ],
       printSymbol: "b"),
   DefinedUnit(
       code: "bar",
@@ -6150,7 +6979,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["bars", "bar"],
+      names: [
+        "bars",
+        "bar",
+      ],
       printSymbol: "bar"),
   DefinedUnit(
       code: "bit",
@@ -6164,7 +6996,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "infotech",
-      names: ["bits", "bit"],
+      names: [
+        "bits",
+        "bit",
+      ],
       printSymbol: "bit"),
   DefinedUnit(
       code: "bit_s",
@@ -6178,7 +7013,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: true,
       class_: "infotech",
-      names: ["bit-s", "bit s", "bit logarithmic", "bit - logarithmic"],
+      names: [
+        "bit-s",
+        "bit s",
+        "bit logarithmic",
+        "bit - logarithmic",
+      ],
       printSymbol: "bit<sub>s</sub>"),
   DefinedUnit(
       code: "cL",
@@ -6192,7 +7032,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["centiliters", "centilitres", "centiliter"],
+      names: [
+        "centiliters",
+        "centilitres",
+        "centiliter",
+      ],
       printSymbol: "cL"),
   DefinedUnit(
       code: "cP",
@@ -6206,7 +7050,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["cps", "centiposes", "centipoise"],
+      names: [
+        "cps",
+        "centiposes",
+        "centipoise",
+      ],
       printSymbol: "cP"),
   DefinedUnit(
       code: "cSt",
@@ -6220,7 +7068,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["centistokes", "centistoke"],
+      names: [
+        "centistokes",
+        "centistoke",
+      ],
       printSymbol: "cSt"),
   DefinedUnit(
       code: "cal",
@@ -6234,7 +7085,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "heat",
-      names: ["gram calories", "small calories", "calorie"],
+      names: [
+        "gram calories",
+        "small calories",
+        "calorie",
+      ],
       printSymbol: "cal"),
   DefinedUnit(
       code: "cal_IT",
@@ -6305,7 +7160,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "heat",
-      names: ["mean cals", "mean calories", "mean calorie"],
+      names: [
+        "mean cals",
+        "mean calories",
+        "mean calorie",
+      ],
       printSymbol: "cal<sub>m</sub>"),
   DefinedUnit(
       code: "cal_th",
@@ -6319,7 +7178,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "heat",
-      names: ["thermochemical calories", "th cals", "thermochemical calorie"],
+      names: [
+        "thermochemical calories",
+        "th cals",
+        "thermochemical calorie",
+      ],
       printSymbol: "cal<sub>th</sub>"),
   DefinedUnit(
       code: "cg",
@@ -6329,7 +7192,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["centigrams", "cg", "cgm", "centigram"],
+      names: [
+        "centigrams",
+        "cg",
+        "cgm",
+        "centigram",
+      ],
       printSymbol: "cg"),
   DefinedUnit(
       code: "circ",
@@ -6343,7 +7211,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["angles", "circles", "circle - plane angle"],
+      names: [
+        "angles",
+        "circles",
+        "circle - plane angle",
+      ],
       printSymbol: "circ"),
   DefinedUnit(
       code: "cm",
@@ -6353,7 +7225,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["centimeters", "centimetres", "centimeter"],
+      names: [
+        "centimeters",
+        "centimetres",
+        "centimeter",
+      ],
       printSymbol: "cm"),
   DefinedUnit(
       code: "cm2",
@@ -6368,7 +7244,7 @@ final definedUnitsList = [
         "sq cm",
         "centimeters squared",
         "square centimeters",
-        "centimetre",
+        "centimetre squared",
         "area",
         "square centimeter"
       ],
@@ -6387,7 +7263,7 @@ final definedUnitsList = [
         "sq cm per sec",
         "cm2",
         "centimeters squared",
-        "centimetres",
+        "centimetres squared",
         "square centimeter per second"
       ],
       printSymbol: "(cm<sup>2</sup>)/s"),
@@ -6431,8 +7307,6 @@ final definedUnitsList = [
         "cmH2O/Liter",
         "cmH2O per L per secs",
         "centimeters of water per liters per second",
-        "centimetres",
-        "litres",
         "centimeter of water per liter per second"
       ],
       printSymbol: "(cm HO<sub><r>2</r></sub>)/L/s"),
@@ -6455,8 +7329,6 @@ final definedUnitsList = [
         "cmH2O/sec/m",
         "cmH2O per secs per meters",
         "centimeters of water per seconds per meter",
-        "centimetres",
-        "metre",
         "centimeter of water per second per meter"
       ],
       printSymbol: "(cm HO<sub><r>2</r></sub>)/s/m"),
@@ -6492,7 +7364,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["days", "age", "dy", "24 hours", "24 hrs", "day"],
+      names: [
+        "days",
+        "dy",
+        "24 hours",
+        "24 hrs",
+        "day",
+      ],
       printSymbol: "d"),
   DefinedUnit(
       code: "dB",
@@ -6506,7 +7384,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: true,
       class_: "levels",
-      names: ["decibels", "decibel"],
+      names: [
+        "decibels",
+        "decibel",
+      ],
       printSymbol: "dB"),
   DefinedUnit(
       code: "dL",
@@ -6520,7 +7401,13 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["deciliters", "decilitres", "0.1 liters", "1/10 L", "deciliter"],
+      names: [
+        "deciliters",
+        "decilitres",
+        "0.1 liters",
+        "1/10 L",
+        "deciliter",
+      ],
       printSymbol: "dL"),
   DefinedUnit(
       code: "daL/min",
@@ -6535,9 +7422,8 @@ final definedUnitsList = [
       isSpecial: false,
       class_: "iso1000",
       names: [
-        "dekalitres",
+        "dekalitres per min",
         "dekaliters per minute",
-        "per min",
         "dekaliter per minute"
       ],
       printSymbol: "daL/min"),
@@ -6558,9 +7444,6 @@ final definedUnitsList = [
         "daL/minute/m2",
         "sq. meter",
         "dekaliters per minutes per square meter",
-        "meter squared",
-        "dekalitres",
-        "metre",
         "dekaliter per minute per square meter"
       ],
       printSymbol: "(daL/min)/(m<sup>2</sup>)"),
@@ -6615,7 +7498,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["decigrams", "dgm", "0.1 grams", "1/10 gm", "decigram"],
+      names: [
+        "decigrams",
+        "dgm",
+        "0.1 grams",
+        "1/10 gm",
+        "decigram",
+      ],
       printSymbol: "dg"),
   DefinedUnit(
       code: "dm",
@@ -6630,8 +7519,7 @@ final definedUnitsList = [
         "decimetres",
         "0.1 meters",
         "1/10 m",
-        "10 cm",
-        "centimeters",
+        "10 cm centimeters",
         "decimeter"
       ],
       printSymbol: "dm"),
@@ -6664,7 +7552,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["dynes", "dyne"],
+      names: [
+        "dynes",
+        "dyne",
+      ],
       printSymbol: "dyn"),
   DefinedUnit(
       code: "dyn.s/(cm.m2)",
@@ -6682,11 +7573,7 @@ final definedUnitsList = [
         "(dyn*s)/(cm*m2)",
         "(dyn*s)/(cm*m^2)",
         "dyn s per cm per m2",
-        "m^2",
         "dyne seconds per centimeters per square meter",
-        "centimetres",
-        "sq. meter",
-        "squared",
         "dyne second per centimeter per square meter"
       ],
       printSymbol: "(dyn.s)/(cm.(m<sup>2</sup>))"),
@@ -6721,7 +7608,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["Electron Volts", "electronvolts", "electronvolt"],
+      names: [
+        "Electron Volts",
+        "electronvolts",
+        "electronvolt",
+      ],
       printSymbol: "eV"),
   DefinedUnit(
       code: "eq",
@@ -6735,7 +7626,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["equivalents", "equivalent"],
+      names: [
+        "equivalents",
+        "equivalent",
+      ],
       printSymbol: "eq"),
   DefinedUnit(
       code: "eq/L",
@@ -6752,9 +7646,8 @@ final definedUnitsList = [
       names: [
         "eq/liter",
         "eq/litre",
-        "eqs",
+        "eqs per litre",
         "equivalents per liter",
-        "litre",
         "equivalent per liter"
       ],
       printSymbol: "eq/L"),
@@ -6774,7 +7667,6 @@ final definedUnitsList = [
         "equivalent/milliliter",
         "equivalents per milliliter",
         "eq per mL",
-        "millilitre",
         "equivalent per milliliter"
       ],
       printSymbol: "eq/mL"),
@@ -6849,7 +7741,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["femtolitres", "femtoliters", "femtoliter"],
+      names: [
+        "femtolitres",
+        "femtoliters",
+        "femtoliter",
+      ],
       printSymbol: "fL"),
   DefinedUnit(
       code: "fg",
@@ -6859,7 +7755,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["fg", "fgm", "femtograms", "weight", "femtogram"],
+      names: [
+        "fg",
+        "fgm",
+        "femtograms",
+        "femtogram",
+      ],
       printSymbol: "fg"),
   DefinedUnit(
       code: "fm",
@@ -6869,7 +7770,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["femtometres", "femtometers", "femtometer"],
+      names: [
+        "femtometres",
+        "femtometers",
+        "femtometer",
+      ],
       printSymbol: "fm"),
   DefinedUnit(
       code: "fmol",
@@ -6883,7 +7788,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["femtomoles", "femtomole"],
+      names: [
+        "femtomoles",
+        "femtomole",
+      ],
       printSymbol: "fmol"),
   DefinedUnit(
       code: "fmol/L",
@@ -6897,7 +7805,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["femtomoles", "fmol per liter", "litre", "femtomole per liter"],
+      names: [
+        "femtomoles per litre",
+        "fmol per liter",
+        "femtomole per liter",
+      ],
       printSymbol: "fmol/L"),
   DefinedUnit(
       code: "fmol/g",
@@ -6911,7 +7823,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["femtomoles", "fmol/gm", "fmol per gm", "femtomole per gram"],
+      names: [
+        "femtomoles",
+        "fmol/gm",
+        "fmol per gm",
+        "femtomole per gram",
+      ],
       printSymbol: "fmol/g"),
   DefinedUnit(
       code: "fmol/mL",
@@ -6926,8 +7843,7 @@ final definedUnitsList = [
       isSpecial: false,
       class_: "si",
       names: [
-        "femtomoles",
-        "millilitre",
+        "femtomoles per millilitre",
         "fmol per mL",
         "fmol per milliliter",
         "femtomole per milliliter"
@@ -6945,7 +7861,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["fmol per mg", "femtomoles", "femtomole per milligram"],
+      names: [
+        "fmol per mg",
+        "femtomole per milligram",
+      ],
       printSymbol: "fmol/mg"),
   DefinedUnit(
       code: "g%",
@@ -6977,7 +7896,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["g*m", "gxm", "meters", "metres", "gram meter"],
+      names: [
+        "g*m",
+        "gxm",
+        "meters",
+        "metres",
+        "gram meter",
+      ],
       printSymbol: "g.m"),
   DefinedUnit(
       code: "g/(100.g)",
@@ -7005,9 +7930,7 @@ final definedUnitsList = [
       class_: null,
       names: [
         "gm/12hrs",
-        "12 hrs",
         "gm per 12 hrs",
-        "12hrs",
         "grams per 12 hours",
         "gram per 12 hour"
       ],
@@ -7024,7 +7947,6 @@ final definedUnitsList = [
         "gm/24hrs",
         "gm/24 hrs",
         "gm per 24 hrs",
-        "24hrs",
         "grams per 24 hours",
         "gm/dy",
         "gm per dy",
@@ -7040,7 +7962,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["gm/3dy", "gm/3 dy", "gm per 3 days", "grams", "gram per 3 days"],
+      names: [
+        "gm/3dy",
+        "gm/3 dy",
+        "gm per 3 days",
+        "gram per 3 days",
+      ],
       printSymbol: "g/d"),
   DefinedUnit(
       code: "g/(4.h)",
@@ -7054,7 +7981,6 @@ final definedUnitsList = [
         "gm/4hrs",
         "gm/4 hrs",
         "gm per 4 hrs",
-        "4hrs",
         "grams per 4 hours",
         "gram per 4 hour"
       ],
@@ -7071,7 +7997,6 @@ final definedUnitsList = [
         "gm/48hrs",
         "gm/48 hrs",
         "gm per 48 hrs",
-        "48hrs",
         "grams per 48 hours",
         "gram per 48 hour"
       ],
@@ -7088,7 +8013,6 @@ final definedUnitsList = [
         "gm/5hrs",
         "gm/5 hrs",
         "gm per 5 hrs",
-        "5hrs",
         "grams per 5 hours",
         "gram per 5 hour"
       ],
@@ -7105,7 +8029,6 @@ final definedUnitsList = [
         "gm/6hrs",
         "gm/6 hrs",
         "gm per 6 hrs",
-        "6hrs",
         "grams per 6 hours",
         "gram per 6 hour"
       ],
@@ -7122,7 +8045,6 @@ final definedUnitsList = [
         "gm/72hrs",
         "gm/72 hrs",
         "gm per 72 hrs",
-        "72hrs",
         "grams per 72 hours",
         "gram per 72 hour"
       ],
@@ -7139,8 +8061,7 @@ final definedUnitsList = [
         "gm per liter",
         "g/liter",
         "grams per liter",
-        "litre",
-        "gram per liter"
+        "gram per liter",
       ],
       printSymbol: "g/L"),
   DefinedUnit(
@@ -7156,11 +8077,8 @@ final definedUnitsList = [
         "gm per cm3",
         "g per cm^3",
         "grams per centimeter cubed",
-        "cu. cm",
-        "centimetre",
         "g/mL",
         "gram per milliliter",
-        "millilitre",
         "gram per cubic centimeter"
       ],
       printSymbol: "g/(cm<sup>3</sup>)"),
@@ -7179,9 +8097,7 @@ final definedUnitsList = [
         "gm/24hrs",
         "gm/24 hrs",
         "gm per 24 hrs",
-        "24hrs",
         "grams per 24 hours",
-        "serving",
         "gram per day"
       ],
       printSymbol: "g/d"),
@@ -7197,7 +8113,6 @@ final definedUnitsList = [
         "gm/dL",
         "gm per dL",
         "grams per deciliter",
-        "decilitre",
         "gram per deciliter"
       ],
       printSymbol: "g/dL"),
@@ -7209,7 +8124,9 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["gm", "grams", "gram per gram"],
+      names: [
+        "gram per gram",
+      ],
       printSymbol: "g/g"),
   DefinedUnit(
       code: "g/h",
@@ -7219,14 +8136,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: [
-        "gm/hr",
-        "gm per hr",
-        "grams",
-        "intake",
-        "output",
-        "gram per hour"
-      ],
+      names: ["gm/hr", "gm per hr", "intake", "output", "gram per hour"],
       printSymbol: "g/h"),
   DefinedUnit(
       code: "g/h/m2",
@@ -7239,12 +8149,10 @@ final definedUnitsList = [
       names: [
         "gm/hr/m2",
         "gm/h/m2",
-        "/m^2",
-        "sq. m",
+        "g/m^2",
+        "g per sq. m",
         "g per hr per m2",
         "grams per hours per square meter",
-        "meter squared",
-        "metre",
         "gram per hour per square meter"
       ],
       printSymbol: "(g/h)/(m<sup>2</sup>)"),
@@ -7256,7 +8164,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["g per kg", "gram per kilograms", "gram per kilogram"],
+      names: [
+        "g per kg",
+        "gram per kilograms",
+        "gram per kilogram",
+      ],
       printSymbol: "g/kg"),
   DefinedUnit(
       code: "g/kg/(8.h)",
@@ -7269,11 +8181,8 @@ final definedUnitsList = [
       names: [
         "g/(8.kg.h)",
         "gm/kg/8hrs",
-        "8 hrs",
         "g per kg per 8 hrs",
-        "8hrs",
         "grams per kilograms per 8 hours",
-        "shift",
         "gram per kilogram per 8 hour "
       ],
       printSymbol: "(g/kg)/h"),
@@ -7340,8 +8249,6 @@ final definedUnitsList = [
         "g per m2",
         "g per m^2",
         "grams per square meter",
-        "meters squared",
-        "metre",
         "gram per square meter"
       ],
       printSymbol: "g/(m<sup>2</sup>)"),
@@ -7353,12 +8260,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: [
-        "g per mL",
-        "grams per milliliter",
-        "millilitre",
-        "gram per milliliter"
-      ],
+      names: ["g per mL", "grams per milliliter", "gram per milliliter"],
       printSymbol: "g/mL"),
   DefinedUnit(
       code: "g/mg",
@@ -7368,7 +8270,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["g per mg", "grams per milligram", "gram per milligram"],
+      names: [
+        "g per mg",
+        "grams per milligram",
+        "gram per milligram",
+      ],
       printSymbol: "g/mg"),
   DefinedUnit(
       code: "g/min",
@@ -7393,7 +8299,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["grams per millimole", "g per mmol", "gram per millimole"],
+      names: [
+        "grams per millimole",
+        "g per mmol",
+        "gram per millimole",
+      ],
       printSymbol: "g/mmol"),
   DefinedUnit(
       code: "gf",
@@ -7407,7 +8317,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "const",
-      names: ["Newtons", "gram forces", "gram-force"],
+      names: [
+        "Newtons",
+        "gram forces",
+        "gram-force",
+      ],
       printSymbol: "gf"),
   DefinedUnit(
       code: "gon",
@@ -7421,7 +8335,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["gon (grade)", "gons", "gon"],
+      names: [
+        "gon (grade)",
+        "gons",
+        "gon",
+      ],
       printSymbol: "□<sup>g</sup>"),
   DefinedUnit(
       code: "h",
@@ -7435,7 +8353,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["hours", "hrs", "age", "hour"],
+      names: [
+        "hours",
+        "hrs",
+        "hour",
+      ],
       printSymbol: "h"),
   DefinedUnit(
       code: "kL",
@@ -7455,7 +8377,6 @@ final definedUnitsList = [
         "m3",
         "m^3",
         "meters cubed",
-        "metre",
         "kiloliter"
       ],
       printSymbol: "kL"),
@@ -7471,7 +8392,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["kilopascals", "pressure", "kilopascal"],
+      names: [
+        "kilopascals",
+        "pressure",
+        "kilopascal",
+      ],
       printSymbol: "kPa"),
   DefinedUnit(
       code: "kU",
@@ -7485,7 +8410,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["units", "mmol/min", "millimoles per minute", "kilo enzyme unit"],
+      names: [
+        "units",
+        "mmol/min",
+        "millimoles per minute",
+        "kilo enzyme unit",
+      ],
       printSymbol: "kU"),
   DefinedUnit(
       code: "kU/L",
@@ -7500,9 +8430,6 @@ final definedUnitsList = [
       isSpecial: false,
       class_: "chemical",
       names: [
-        "units per liter",
-        "litre",
-        "enzymatic activity",
         "enzyme activity per volume",
         "activities",
         "kilo enzyme unit per liter"
@@ -7520,7 +8447,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["units per grams", "kU per gm", "kilo enzyme unit per gram"],
+      names: [
+        "units per grams",
+        "kU per gm",
+        "kilo enzyme unit per gram",
+      ],
       printSymbol: "kU/g"),
   DefinedUnit(
       code: "kU/mL",
@@ -7537,7 +8468,6 @@ final definedUnitsList = [
       names: [
         "kU per mL",
         "units per milliliter",
-        "millilitre",
         "enzymatic activity per volume",
         "enzyme activities",
         "kilo enzyme unit per milliliter"
@@ -7560,7 +8490,6 @@ final definedUnitsList = [
         "kIU per L",
         "kIU per liter",
         "kilo international units",
-        "litre",
         "allergens",
         "allergy units",
         "kilo international unit per liter"
@@ -7583,7 +8512,6 @@ final definedUnitsList = [
         "kIU per mL",
         "kIU per milliliter",
         "kilo international units",
-        "millilitre",
         "allergens",
         "allergy units",
         "kilo international unit per milliliter"
@@ -7610,7 +8538,6 @@ final definedUnitsList = [
         "katals",
         "catalytic activity",
         "enzymatic",
-        "enzyme units",
         "activities",
         "katal"
       ],
@@ -7630,7 +8557,6 @@ final definedUnitsList = [
       names: [
         "kat per L",
         "katals per liter",
-        "litre",
         "mol/s/L",
         "moles per seconds per liter",
         "katal per liter"
@@ -7803,7 +8729,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["kilograms", "kgs", "kilogram"],
+      names: [
+        "kilograms",
+        "kgs",
+        "kilogram",
+      ],
       printSymbol: "kg"),
   DefinedUnit(
       code: "kg.m/s",
@@ -7846,7 +8776,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["kg per liter", "litre", "kilograms", "kilogram per liter"],
+      names: [
+        "kg per liter",
+        "litre",
+        "kilograms",
+        "kilogram per liter",
+      ],
       printSymbol: "kg/L"),
   DefinedUnit(
       code: "kg/h",
@@ -7856,7 +8791,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["kg/hr", "kg per hr", "kilograms per hour", "kilogram per hour"],
+      names: [
+        "kg/hr",
+        "kg per hr",
+        "kilograms per hour",
+        "kilogram per hour",
+      ],
       printSymbol: "kg/h"),
   DefinedUnit(
       code: "kg/m2",
@@ -7895,7 +8835,6 @@ final definedUnitsList = [
         "per cu. m",
         "kilograms",
         "meters cubed",
-        "metre",
         "kilogram per cubic meter"
       ],
       printSymbol: "kg/(m<sup>3</sup>)"),
@@ -7941,8 +8880,7 @@ final definedUnitsList = [
         "kg/sec",
         "kilogram/second",
         "kg per sec",
-        "kilograms",
-        "second",
+        "kilograms per second",
         "kilogram per second"
       ],
       printSymbol: "kg/s"),
@@ -7954,7 +8892,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["kilometers", "kilometres", "distance", "kilometer"],
+      names: [
+        "kilometers",
+        "kilometres",
+        "distance",
+        "kilometer",
+      ],
       printSymbol: "km"),
   DefinedUnit(
       code: "ks",
@@ -7964,7 +8907,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["kiloseconds", "ksec", "kilosecond"],
+      names: [
+        "kiloseconds",
+        "ksec",
+        "kilosecond",
+      ],
       printSymbol: "ks"),
   DefinedUnit(
       code: "l",
@@ -8001,7 +8948,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["luminous flux", "lumens", "lumen"],
+      names: [
+        "luminous flux",
+        "lumens",
+        "lumen",
+      ],
       printSymbol: "lm"),
   DefinedUnit(
       code: "lm.m2",
@@ -8036,7 +8987,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["illuminance", "luxes", "lux"],
+      names: [
+        "illuminance",
+        "luxes",
+        "lux",
+      ],
       printSymbol: "lx"),
   DefinedUnit(
       code: "m/s",
@@ -8050,7 +9005,6 @@ final definedUnitsList = [
         "meter/second",
         "m per sec",
         "meters per second",
-        "metres",
         "velocity",
         "speed",
         "meter per second"
@@ -8068,12 +9022,8 @@ final definedUnitsList = [
         "m/s^2",
         "m/sq. sec",
         "m per s2",
-        "per s^2",
+        "metres per s^2",
         "meters per square second",
-        "second squared",
-        "sq second",
-        "metres",
-        "acceleration",
         "meter per square second"
       ],
       printSymbol: "m/(s<sup>2</sup>)"),
@@ -8090,8 +9040,7 @@ final definedUnitsList = [
         "sq m",
         "square meters",
         "meters squared",
-        "metres",
-        "square meter"
+        "square meter",
       ],
       printSymbol: "m<sup>2</sup>"),
   DefinedUnit(
@@ -8109,8 +9058,7 @@ final definedUnitsList = [
         "sq m/sec",
         "meters squared/seconds",
         "sq m per sec",
-        "meters squared",
-        "metres",
+        "meters squared per second",
         "square meter per second"
       ],
       printSymbol: "(m<sup>2</sup>)/s"),
@@ -8129,7 +9077,6 @@ final definedUnitsList = [
         "cu m/sec",
         "cubic meters per seconds",
         "meters cubed",
-        "metres",
         "cubic meter per second"
       ],
       printSymbol: "(m<sup>3</sup>)/s"),
@@ -8145,7 +9092,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mamp", "milliamperes", "milliampere"],
+      names: [
+        "mamp",
+        "milliamperes",
+        "milliampere",
+      ],
       printSymbol: "mA"),
   DefinedUnit(
       code: "mL",
@@ -8159,7 +9110,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["milliliters", "millilitres", "milliliter"],
+      names: [
+        "milliliters",
+        "millilitres",
+        "milliliter",
+      ],
       printSymbol: "mL"),
   DefinedUnit(
       code: "mL/(10.h)",
@@ -8177,7 +9132,6 @@ final definedUnitsList = [
         "ml/10hrs",
         "ml/10 hrs",
         "mL per 10hrs",
-        "10 hrs",
         "milliliters per 10 hours",
         "millilitres",
         "milliliter per 10 hour"
@@ -8199,7 +9153,6 @@ final definedUnitsList = [
         "ml/12hrs",
         "ml/12 hrs",
         "mL per 12hrs",
-        "12 hrs",
         "milliliters per 12 hours",
         "millilitres",
         "milliliter per 12 hour"
@@ -8221,9 +9174,8 @@ final definedUnitsList = [
         "ml/2hrs",
         "ml/2 hrs",
         "mL per 2hrs",
-        "2 hrs",
         "milliliters per 2 hours",
-        "millilitres",
+        "millilitres per 2 hours",
         "milliliter per 2 hour"
       ],
       printSymbol: "mL/h"),
@@ -8243,13 +9195,10 @@ final definedUnitsList = [
         "ml/24hrs",
         "ml/24 hrs",
         "mL per 24hrs",
-        "24 hrs",
         "milliliters per 24 hours",
-        "millilitres",
         "ml/dy",
-        "/day",
+        "milliliters/day",
         "ml per dy",
-        "days",
         "fluid outputs",
         "fluid inputs",
         "flow rate",
@@ -8272,7 +9221,6 @@ final definedUnitsList = [
         "ml/4hrs",
         "ml/4 hrs",
         "mL per 4hrs",
-        "4 hrs",
         "milliliters per 4 hours",
         "millilitres",
         "milliliter per 4 hour"
@@ -8294,9 +9242,8 @@ final definedUnitsList = [
         "ml/5hrs",
         "ml/5 hrs",
         "mL per 5hrs",
-        "5 hrs",
         "milliliters per 5 hours",
-        "millilitres",
+        "millilitres per 5 hrs",
         "milliliter per 5 hour"
       ],
       printSymbol: "mL/h"),
@@ -8316,9 +9263,8 @@ final definedUnitsList = [
         "ml/6hrs",
         "ml/6 hrs",
         "mL per 6hrs",
-        "6 hrs",
         "milliliters per 6 hours",
-        "millilitres",
+        "millilitres per 6 hrs",
         "milliliter per 6 hour"
       ],
       printSymbol: "mL/h"),
@@ -8338,9 +9284,8 @@ final definedUnitsList = [
         "ml/72hrs",
         "ml/72 hrs",
         "mL per 72hrs",
-        "72 hrs",
         "milliliters per 72 hours",
-        "millilitres",
+        "millilitres per 72 hrs",
         "milliliter per 72 hour"
       ],
       printSymbol: "mL/h"),
@@ -8360,10 +9305,8 @@ final definedUnitsList = [
         "ml/8hrs",
         "ml/8 hrs",
         "mL per 8hrs",
-        "8 hrs",
         "milliliters per 8 hours",
-        "millilitres",
-        "shift",
+        "millilitres per 8 hrs",
         "milliliter per 8 hour"
       ],
       printSymbol: "mL/h"),
@@ -8386,12 +9329,8 @@ final definedUnitsList = [
         "ml/8hr/kg",
         "ml/8 hr/kgr",
         "mL per 8h per kg",
-        "8 h",
-        "8hr",
-        "8 hr",
         "milliliters per 8 hours per kilogram",
-        "millilitres",
-        "shift",
+        "millilitres per 8 hours per kilogram",
         "milliliter per 8 hour per kilogram"
       ],
       printSymbol: "(mL/h)/kg"),
@@ -8459,12 +9398,9 @@ final definedUnitsList = [
         "ml/day",
         "ml per day",
         "milliliters per day",
-        "24 hours",
-        "24hrs",
-        "millilitre;",
+        "millilitre per 24 hours",
         "milliliter per day",
-        "millilitre",
-        ""
+        "millilitre/24hrs",
       ],
       printSymbol: "mL/d"),
   DefinedUnit(
@@ -8481,9 +9417,7 @@ final definedUnitsList = [
       class_: "iso1000",
       names: [
         "mL per dL",
-        "millilitres",
-        "decilitre",
-        "milliliters",
+        "millilitres per decilitre",
         "milliliter per deciliter"
       ],
       printSymbol: "mL/dL"),
@@ -8503,7 +9437,6 @@ final definedUnitsList = [
         "mL/hr",
         "mL per hr",
         "milliliters per hour",
-        "millilitres",
         "fluid intake",
         "fluid output",
         "milliliter per hour"
@@ -8524,7 +9457,6 @@ final definedUnitsList = [
       names: [
         "mL per kg",
         "milliliters per kilogram",
-        "millilitres",
         "milliliter per kilogram"
       ],
       printSymbol: "mL/kg"),
@@ -8545,10 +9477,8 @@ final definedUnitsList = [
         "mL/kg/8hrs",
         "mL/kg/8 hrs",
         "mL per kg per 8hrs",
-        "8 hrs",
         "milliliters per kilograms per 8 hours",
-        "millilitres",
-        "shift",
+        "millilitres per 8hrs",
         "milliliter per kilogram per 8 hour"
       ],
       printSymbol: "(mL/kg)/h"),
@@ -8570,8 +9500,6 @@ final definedUnitsList = [
         "mL per kg per day",
         "milliliters per kilograms per day",
         "mg/kg/24hrs",
-        "24 hrs",
-        "per 24 hours millilitres",
         "milliliter per kilogram per day"
       ],
       printSymbol: "(mL/kg)/d"),
@@ -8592,7 +9520,6 @@ final definedUnitsList = [
         "mL/kg/hr",
         "mL per kg per hr",
         "milliliters per kilograms per hour",
-        "millilitres",
         "milliliter per kilogram per hour"
       ],
       printSymbol: "(mL/kg)/h"),
@@ -8613,7 +9540,6 @@ final definedUnitsList = [
         "mL/kg/dy",
         "mL per kg per day",
         "milliliters per kilograms per day",
-        "millilitres",
         "milliliter per kilogram per minute"
       ],
       printSymbol: "(mL/kg)/min"),
@@ -8633,11 +9559,8 @@ final definedUnitsList = [
         "mL/m^2",
         "mL/sq. meter",
         "mL per m2",
-        "m^2",
-        "sq. meter",
         "milliliters per square meter",
-        "millilitres",
-        "meter squared",
+        "millilitres per meter squared",
         "milliliter per square meter"
       ],
       printSymbol: "mL/(m<sup>2</sup>)"),
@@ -8656,7 +9579,6 @@ final definedUnitsList = [
       names: [
         "mL per mbar",
         "milliliters per millibar",
-        "millilitres",
         "milliliter per millibar"
       ],
       printSymbol: "mL/mbar"),
@@ -8672,12 +9594,7 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: [
-        "mL per min",
-        "milliliters",
-        "millilitres",
-        "milliliter per minute"
-      ],
+      names: ["mL per min", "milliliter per minute"],
       printSymbol: "mL/min"),
   DefinedUnit(
       code: "mL/min/m2",
@@ -8695,12 +9612,7 @@ final definedUnitsList = [
         "ml/min/m^2",
         "ml/min/sq. meter",
         "mL per min per m2",
-        "m^2",
-        "sq. meter",
         "milliliters per minutes per square meter",
-        "millilitres",
-        "metre",
-        "meter squared",
         "milliliter per minute per square meter"
       ],
       printSymbol: "(mL/min)/(m<sup>2</sup>)"),
@@ -8719,8 +9631,6 @@ final definedUnitsList = [
       names: [
         "mL per mm",
         "milliliters per millimeter",
-        "millilitres",
-        "millimetre",
         "milliliter per millimeter"
       ],
       printSymbol: "mL/mm"),
@@ -8740,7 +9650,6 @@ final definedUnitsList = [
         "ml/sec",
         "mL per sec",
         "milliliters per second",
-        "millilitres",
         "milliliter per second"
       ],
       printSymbol: "mL/s"),
@@ -8756,7 +9665,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["millipascals", "millipascal"],
+      names: [
+        "millipascals",
+        "millipascal",
+      ],
       printSymbol: "mPa"),
   DefinedUnit(
       code: "mPa.s",
@@ -8794,7 +9706,6 @@ final definedUnitsList = [
         "mU per liter",
         "litre",
         "milli enzyme units enzymatic activity per volume",
-        "enzyme activity",
         "milli enzyme unit per liter"
       ],
       printSymbol: "mU/L"),
@@ -8813,7 +9724,6 @@ final definedUnitsList = [
       names: [
         "mU per gm",
         "milli enzyme units per gram",
-        "enzyme activity",
         "enzymatic activity per mass",
         "milli enzyme unit per gram"
       ],
@@ -8833,9 +9743,7 @@ final definedUnitsList = [
       names: [
         "mU per mL",
         "milli enzyme units per milliliter",
-        "millilitre",
         "enzymatic activity per volume",
-        "enzyme activity",
         "milli enzyme unit per milliliter"
       ],
       printSymbol: "mU/mL"),
@@ -8854,10 +9762,7 @@ final definedUnitsList = [
       names: [
         "mU per mL per min",
         "mU per milliliters per minute",
-        "millilitres",
         "milli enzyme units",
-        "enzymatic activity",
-        "enzyme activity",
         "milli enzyme unit per milliliter per minute"
       ],
       printSymbol: "(mU/mL)/min"),
@@ -8891,7 +9796,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["millivolts", "millivolt"],
+      names: [
+        "millivolts",
+        "millivolt",
+      ],
       printSymbol: "mV"),
   DefinedUnit(
       code: "m[H2O]",
@@ -8910,9 +9818,6 @@ final definedUnitsList = [
         "meters of water column",
         "mH2O",
         "m H2O",
-        "metres",
-        "pressure",
-        "(meters of water column)",
         "(meters of water column)",
       ],
       printSymbol: "m HO<sub><r>2</r></sub>"),
@@ -8932,8 +9837,6 @@ final definedUnitsList = [
         "mHg",
         "m Hg",
         "meters of mercury column",
-        "metres",
-        "pressure",
         "meter of mercury column"
       ],
       printSymbol: "m Hg"),
@@ -8953,8 +9856,6 @@ final definedUnitsList = [
         "mIU/L",
         "m IU/L",
         "mIU per liter",
-        "units",
-        "litre",
         "milli international unit per liter"
       ],
       printSymbol: "(mi.U.)/L"),
@@ -8975,7 +9876,6 @@ final definedUnitsList = [
         "m IU/mL",
         "mIU per mL",
         "milli international units per milliliter",
-        "millilitre",
         "milli  international unit per milliliter"
       ],
       printSymbol: "(mi.U.)/mL"),
@@ -8991,7 +9891,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["millibars", "millibar"],
+      names: [
+        "millibars",
+        "millibar",
+      ],
       printSymbol: "mbar"),
   DefinedUnit(
       code: "mbar.s/L",
@@ -9033,7 +9936,6 @@ final definedUnitsList = [
         "mbar per L per sec",
         "mbar per liter per second",
         "millibars per liters per seconds",
-        "litres",
         "millibar per liter per second"
       ],
       printSymbol: "(mbar/L)/s"),
@@ -9049,7 +9951,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["milliequivalents", "meqs", "milliequivalent"],
+      names: [
+        "milliequivalents",
+        "meqs",
+        "milliequivalent",
+      ],
       printSymbol: "meq"),
   DefinedUnit(
       code: "meq/(2.h)",
@@ -9108,7 +10014,6 @@ final definedUnitsList = [
         "meq/8 hrs",
         "meq per 8 hrs",
         "milliequivalents per 8 hours",
-        "shift",
         "milliequivalent per 8 hour"
       ],
       printSymbol: "meq/h"),
@@ -9126,9 +10031,7 @@ final definedUnitsList = [
       class_: "chemical",
       names: [
         "milliequivalents per liter",
-        "litre",
         "meq per l",
-        "acidity",
         "milliequivalent per liter"
       ],
       printSymbol: "meq/L"),
@@ -9170,7 +10073,6 @@ final definedUnitsList = [
       names: [
         "meq per dL",
         "milliequivalents per deciliter",
-        "decilitre",
         "milliequivalent per deciliter"
       ],
       printSymbol: "meq/dL"),
@@ -9266,8 +10168,6 @@ final definedUnitsList = [
         "meq/m^2",
         "meq/sq. m",
         "milliequivalents per square meter",
-        "meter squared",
-        "metre",
         "milliequivalent per square meter"
       ],
       printSymbol: "meq/(m<sup>2</sup>)"),
@@ -9286,7 +10186,6 @@ final definedUnitsList = [
       names: [
         "meq per mL",
         "milliequivalents per milliliter",
-        "millilitre",
         "milliequivalent per milliliter"
       ],
       printSymbol: "meq/mL"),
@@ -9316,7 +10215,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["milligrams", "milligram"],
+      names: [
+        "milligrams",
+        "milligram",
+      ],
       printSymbol: "mg"),
   DefinedUnit(
       code: "mg/(10.h)",
@@ -9346,7 +10248,6 @@ final definedUnitsList = [
         "mg/12hrs",
         "mg/12 hrs",
         "per 12 hrs",
-        "12hrs",
         "milligrams per 12 hours",
         "milligram per 12 hour"
       ],
@@ -9363,7 +10264,6 @@ final definedUnitsList = [
         "mg/2hrs",
         "mg/2 hrs",
         "mg per 2 hrs",
-        "2hrs",
         "milligrams per 2 hours",
         "milligram per 2 hour"
       ],
@@ -9398,7 +10298,6 @@ final definedUnitsList = [
         "mg/6hrs",
         "mg/6 hrs",
         "mg per 6 hrs",
-        "6hrs",
         "milligrams per 6 hours",
         "milligram per 6 hour"
       ],
@@ -9414,8 +10313,6 @@ final definedUnitsList = [
       names: [
         "mg/72hrs",
         "mg/72 hrs",
-        "72 hrs",
-        "72hrs",
         "milligrams per 72 hours",
         "milligram per 72 hour"
       ],
@@ -9432,7 +10329,6 @@ final definedUnitsList = [
         "mg/8hrs",
         "mg/8 hrs",
         "milligrams per 8 hours",
-        "shift",
         "milligram per 8 hour"
       ],
       printSymbol: "mg/h"),
@@ -9444,12 +10340,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: [
-        "mg per l",
-        "milligrams per liter",
-        "litre",
-        "milligram per liter"
-      ],
+      names: ["mg per l", "milligrams per liter", "milligram per liter"],
       printSymbol: "mg/L"),
   DefinedUnit(
       code: "mg/d",
@@ -9465,7 +10356,6 @@ final definedUnitsList = [
         "milligrams per 24 hours",
         "mg/dy",
         "mg per day",
-        "milligrams",
         "milligram per day"
       ],
       printSymbol: "mg/d"),
@@ -9480,7 +10370,6 @@ final definedUnitsList = [
       names: [
         "mg per dL",
         "milligrams per deciliter",
-        "decilitre",
         "milligram per deciliter"
       ],
       printSymbol: "mg/dL"),
@@ -9492,7 +10381,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["mg per gm", "milligrams per gram", "milligram per gram"],
+      names: [
+        "mg per gm",
+        "milligrams per gram",
+        "milligram per gram",
+      ],
       printSymbol: "mg/g"),
   DefinedUnit(
       code: "mg/h",
@@ -9502,7 +10395,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["mg/hr", "mg per hr", "milligrams", "milligram per hour"],
+      names: [
+        "mg/hr",
+        "mg per hr",
+        "milligrams",
+        "milligram per hour",
+      ],
       printSymbol: "mg/h"),
   DefinedUnit(
       code: "mg/kg",
@@ -9531,9 +10429,7 @@ final definedUnitsList = [
         "mg/kg/8hrs",
         "mg/kg/8 hrs",
         "mg per kg per 8hrs",
-        "8 hrs",
         "milligrams per kilograms per 8 hours",
-        "shift",
         "milligram per kilogram per 8 hour"
       ],
       printSymbol: "(mg/kg)/h"),
@@ -9552,8 +10448,6 @@ final definedUnitsList = [
         "milligrams per kilograms per days",
         "mg/kg/(24.h)",
         "mg/kg/24hrs",
-        "24 hrs",
-        "24 hours",
         "milligram per kilogram per day"
       ],
       printSymbol: "(mg/kg)/d"),
@@ -9602,8 +10496,6 @@ final definedUnitsList = [
         "mg per m2",
         "mg per m^2",
         "mg per sq. milligrams",
-        "meter squared",
-        "metre",
         "milligram per square meter"
       ],
       printSymbol: "mg/(m<sup>2</sup>)"),
@@ -9620,8 +10512,6 @@ final definedUnitsList = [
         "mg/cu. m",
         "mg per m3",
         "milligrams per cubic meter",
-        "meter cubed",
-        "metre",
         "milligram per cubic meter"
       ],
       printSymbol: "mg/(m<sup>3</sup>)"),
@@ -9636,7 +10526,6 @@ final definedUnitsList = [
       names: [
         "mg per mL",
         "milligrams per milliliters",
-        "millilitre",
         "milligram per milliliter"
       ],
       printSymbol: "mg/mL"),
@@ -9648,12 +10537,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: [
-        "mg per mg",
-        "milligrams",
-        "milligram/milligram",
-        "milligram per milligram"
-      ],
+      names: ["mg per mg", "milligram/milligram", "milligram per milligram"],
       printSymbol: "mg/mg"),
   DefinedUnit(
       code: "mg/min",
@@ -9681,7 +10565,6 @@ final definedUnitsList = [
       names: [
         "mg per mmol",
         "milligrams per millimole",
-        "",
         "milligram per millimole"
       ],
       printSymbol: "mg/mmol"),
@@ -9713,7 +10596,13 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "misc",
-      names: ["siemens", "ohm reciprocals", "Ω^−1", "Ω-1", "mho"],
+      names: [
+        "siemens",
+        "ohm reciprocals",
+        "Ω^−1",
+        "Ω-1",
+        "mho",
+      ],
       printSymbol: "mho"),
   DefinedUnit(
       code: "min",
@@ -9727,7 +10616,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["minutes", "minute"],
+      names: [
+        "minutes",
+        "minute",
+      ],
       printSymbol: "min"),
   DefinedUnit(
       code: "mm",
@@ -9762,7 +10654,6 @@ final definedUnitsList = [
         "mm/hr",
         "mm per hr",
         "millimeters per hour",
-        "millimetres",
         "millimeter per hour"
       ],
       printSymbol: "mm/h"),
@@ -9774,12 +10665,7 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: [
-        "mm per min",
-        "millimeters per minute",
-        "millimetres",
-        "millimeter per minute"
-      ],
+      names: ["mm per min", "millimeters per minute", "millimeter per minute"],
       printSymbol: "mm/min"),
   DefinedUnit(
       code: "mm2",
@@ -9794,7 +10680,6 @@ final definedUnitsList = [
         "sq. mm.",
         "sq. millimeters",
         "millimeters squared",
-        "millimetres",
         "square millimeter"
       ],
       printSymbol: "mm<sup>2</sup>"),
@@ -9810,13 +10695,7 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "clinical",
-      names: [
-        "mmH2O",
-        "mm H2O",
-        "millimeters of water",
-        "millimetres",
-        "millimeter of water"
-      ],
+      names: ["mmH2O", "mm H2O", "millimeters of water", "millimeter of water"],
       printSymbol: "mm HO<sub><r>2</r></sub>"),
   DefinedUnit(
       code: "mm[Hg]",
@@ -9834,7 +10713,6 @@ final definedUnitsList = [
         "mmHg",
         "mm Hg",
         "millimeters of mercury",
-        "millimetres",
         "millimeter of mercury"
       ],
       printSymbol: "mm Hg"),
@@ -9850,7 +10728,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["millimoles", "millimole"],
+      names: [
+        "millimoles",
+        "millimole",
+      ],
       printSymbol: "mmol"),
   DefinedUnit(
       code: "mmol/(12.h)",
@@ -9868,7 +10749,6 @@ final definedUnitsList = [
         "mmol/12hrs",
         "mmol/12 hrs",
         "mmol per 12 hrs",
-        "12hrs",
         "millimoles per 12 hours",
         "millimole per 12 hour"
       ],
@@ -9889,7 +10769,6 @@ final definedUnitsList = [
         "mmol/2hrs",
         "mmol/2 hrs",
         "mmol per 2 hrs",
-        "2hrs",
         "millimoles per 2 hours",
         "millimole per 2 hour"
       ],
@@ -9910,7 +10789,6 @@ final definedUnitsList = [
         "mmol/24hrs",
         "mmol/24 hrs",
         "mmol per 24 hrs",
-        "24hrs",
         "millimoles per 24 hours",
         "millimole per 24 hour"
       ],
@@ -9931,7 +10809,6 @@ final definedUnitsList = [
         "mmol/5hrs",
         "mmol/5 hrs",
         "mmol per 5 hrs",
-        "5hrs",
         "millimoles per 5 hours",
         "millimole per 5 hour"
       ],
@@ -9952,7 +10829,6 @@ final definedUnitsList = [
         "mmol/6hrs",
         "mmol/6 hrs",
         "mmol per 6 hrs",
-        "6hrs",
         "millimoles per 6 hours",
         "millimole per 6 hour"
       ],
@@ -9973,9 +10849,7 @@ final definedUnitsList = [
         "mmol/8hrs",
         "mmol/8 hrs",
         "mmol per 8 hrs",
-        "8hrs",
         "millimoles per 8 hours",
-        "shift",
         "millimole per 8 hour"
       ],
       printSymbol: "mmol/h"),
@@ -9991,12 +10865,7 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: [
-        "mmol per L",
-        "millimoles per liter",
-        "litre",
-        "millimole per liter"
-      ],
+      names: ["mmol per L", "millimoles per liter", "millimole per liter"],
       printSymbol: "mmol/L"),
   DefinedUnit(
       code: "mmol/d",
@@ -10014,7 +10883,6 @@ final definedUnitsList = [
         "mmol/24hrs",
         "mmol/24 hrs",
         "mmol per 24 hrs",
-        "24hrs",
         "millimoles per 24 hours",
         "millimole per day"
       ],
@@ -10033,8 +10901,7 @@ final definedUnitsList = [
       class_: "si",
       names: [
         "mmol per dL",
-        "millimoles",
-        "decilitre",
+        "millimoles per deciliter",
         "millimole per deciliter"
       ],
       printSymbol: "mmol/dL"),
@@ -10050,7 +10917,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mmol per gram", "millimoles", "millimole per gram"],
+      names: [
+        "mmol per gram",
+        "millimole per gram",
+      ],
       printSymbol: "mmol/g"),
   DefinedUnit(
       code: "mmol/h",
@@ -10106,9 +10976,7 @@ final definedUnitsList = [
         "mmol/kg/8hrs",
         "mmol/kg/8 hrs",
         "mmol per kg per 8hrs",
-        "8 hrs",
         "millimoles per kilograms per 8 hours",
-        "shift",
         "millimole per kilogram per 8 hour"
       ],
       printSymbol: "(mmol/kg)/h"),
@@ -10187,11 +11055,6 @@ final definedUnitsList = [
         "mmol/m^2",
         "mmol/sq. meter",
         "mmol per m2",
-        "m^2",
-        "sq. meter",
-        "millimoles",
-        "meter squared",
-        "metre",
         "millimole per square meter"
       ],
       printSymbol: "mmol/(m<sup>2</sup>)"),
@@ -10207,7 +11070,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mmol per min", "millimoles per minute", "millimole per minute"],
+      names: [
+        "mmol per min",
+        "millimoles per minute",
+        "millimole per minute",
+      ],
       printSymbol: "mmol/min"),
   DefinedUnit(
       code: "mmol/mmol",
@@ -10239,7 +11106,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mmol per mol", "millimoles per mole", "millimole per mole"],
+      names: [
+        "mmol per mol",
+        "millimoles per mole",
+        "millimole per mole",
+      ],
       printSymbol: "mmol/mol"),
   DefinedUnit(
       code: "mmol/s/L",
@@ -10256,9 +11127,7 @@ final definedUnitsList = [
       names: [
         "mmol/sec/L",
         "mmol per s per L",
-        "per sec",
         "millimoles per seconds per liter",
-        "litre",
         "millimole per second per liter"
       ],
       printSymbol: "(mmol/s)/L"),
@@ -10274,7 +11143,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["months", "duration", "month"],
+      names: [
+        "months",
+        "duration",
+        "month",
+      ],
       printSymbol: "mo"),
   DefinedUnit(
       code: "mo_g",
@@ -10289,10 +11162,9 @@ final definedUnitsList = [
       isSpecial: false,
       class_: "iso1000",
       names: [
-        "months",
         "month-gregorian",
         "mo-gregorian",
-        "mean Gregorian month"
+        "mean Gregorian month",
       ],
       printSymbol: "mo<sub>g</sub>"),
   DefinedUnit(
@@ -10307,7 +11179,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["mo-julian", "mo Julian", "months", "mean Julian month"],
+      names: [
+        "mo-julian",
+        "mo Julian",
+        "mean Julian month",
+      ],
       printSymbol: "mo<sub>j</sub>"),
   DefinedUnit(
       code: "mo_s",
@@ -10327,7 +11203,6 @@ final definedUnitsList = [
         "lunar month",
         "mo-s",
         "mo s",
-        "months",
         "moons",
         "synodal month"
       ],
@@ -10344,7 +11219,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["moles", "mole"],
+      names: [
+        "moles",
+        "mole",
+      ],
       printSymbol: "mol"),
   DefinedUnit(
       code: "mol/L",
@@ -10361,10 +11239,7 @@ final definedUnitsList = [
       names: [
         "mol per L",
         "moles per liter",
-        "litre",
-        "moles",
-        "mols",
-        "mole per liter"
+        "mole per liter",
       ],
       printSymbol: "mol/L"),
   DefinedUnit(
@@ -10379,7 +11254,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mol per kg", "moles", "mols", "mole per kilogram"],
+      names: [
+        "mol per kg",
+        "mole per kilogram",
+      ],
       printSymbol: "mol/kg"),
   DefinedUnit(
       code: "mol/kg/s",
@@ -10397,7 +11275,6 @@ final definedUnitsList = [
         "mol/kg/sec",
         "mol per kg per sec",
         "moles per kilograms per second",
-        "mols",
         "mole per kilogram per second"
       ],
       printSymbol: "(mol/kg)/s"),
@@ -10417,15 +11294,7 @@ final definedUnitsList = [
         "mol/m^3",
         "mol/cu. m",
         "mol per m3",
-        "m^3",
-        "cu. meter",
-        "mols",
-        "moles",
-        "meters cubed",
-        "metre",
         "mole per kiloliter",
-        "kilolitre",
-        "mol/kL",
         "mole per cubic meter"
       ],
       printSymbol: "mol/(m<sup>3</sup>)"),
@@ -10443,10 +11312,7 @@ final definedUnitsList = [
       class_: "si",
       names: [
         "mol per mL",
-        "moles",
-        "millilitre",
-        "mols",
-        "mole per milliliter"
+        "mole per milliliter",
       ],
       printSymbol: "mol/mL"),
   DefinedUnit(
@@ -10461,7 +11327,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mol per mol", "moles per mol", "mols", "mole per mole"],
+      names: [
+        "mol per mol",
+        "moles per mol",
+        "mole per mole",
+      ],
       printSymbol: "mol/mol"),
   DefinedUnit(
       code: "mol/s",
@@ -10475,7 +11345,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["mol per sec", "moles per second", "mols", "mole per second"],
+      names: [
+        "mol per sec",
+        "moles per second",
+        "mole per second",
+      ],
       printSymbol: "mol/s"),
   DefinedUnit(
       code: "mosm",
@@ -10489,7 +11363,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["milliosmoles", "milliosmole"],
+      names: [
+        "milliosmoles",
+        "milliosmole",
+      ],
       printSymbol: "mosm"),
   DefinedUnit(
       code: "mosm/L",
@@ -10505,9 +11382,7 @@ final definedUnitsList = [
       class_: "chemical",
       names: [
         "mosm per liter",
-        "litre",
-        "milliosmoles",
-        "milliosmole per liter"
+        "milliosmole per liter",
       ],
       printSymbol: "mosm/L"),
   DefinedUnit(
@@ -10536,7 +11411,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["milliseconds", "duration", "millisecond"],
+      names: [
+        "milliseconds",
+        "duration",
+        "millisecond",
+      ],
       printSymbol: "ms"),
   DefinedUnit(
       code: "nL",
@@ -10550,7 +11429,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["nanoliters", "nanolitres", "nanoliter"],
+      names: [
+        "nanoliters",
+        "nanolitres",
+        "nanoliter",
+      ],
       printSymbol: "nL"),
   DefinedUnit(
       code: "nU/mL",
@@ -10569,7 +11452,6 @@ final definedUnitsList = [
         "nanoenzyme units per milliliter",
         "millilitre",
         "enzymatic activity per volume",
-        "enzyme activity",
         "nanoenzyme unit per milliliter"
       ],
       printSymbol: "nU/mL"),
@@ -10581,7 +11463,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["nanograms", "nanogram"],
+      names: [
+        "nanograms",
+        "nanogram",
+      ],
       printSymbol: "ng"),
   DefinedUnit(
       code: "ng/(24.h)",
@@ -10624,9 +11509,7 @@ final definedUnitsList = [
       names: [
         "ng/10^6",
         "ng per 10*6",
-        "10^6",
-        "nanograms",
-        "nanogram per million"
+        "nanogram per million",
       ],
       printSymbol: "ng/(10<sup>6</sup>)"),
   DefinedUnit(
@@ -10637,7 +11520,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng per L", "nanograms per liter", "litre", "nanogram per liter"],
+      names: [
+        "ng per L",
+        "nanograms per liter",
+        "nanogram per liter",
+      ],
       printSymbol: "ng/L"),
   DefinedUnit(
       code: "ng/U",
@@ -10661,7 +11548,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng/dy", "ng per day", "nanograms", "nanogram per day"],
+      names: [
+        "ng/dy",
+        "ng per day",
+        "nanograms",
+        "nanogram per day",
+      ],
       printSymbol: "ng/d"),
   DefinedUnit(
       code: "ng/dL",
@@ -10674,8 +11566,7 @@ final definedUnitsList = [
       names: [
         "ng per dL",
         "nanograms per deciliter",
-        "decilitre",
-        "nanogram per deciliter"
+        "nanogram per deciliter",
       ],
       printSymbol: "ng/dL"),
   DefinedUnit(
@@ -10686,7 +11577,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng/gm", "ng per gm", "nanograms per gram", "nanogram per gram"],
+      names: [
+        "ng/gm",
+        "ng per gm",
+        "nanograms per gram",
+        "nanogram per gram",
+      ],
       printSymbol: "ng/g"),
   DefinedUnit(
       code: "ng/h",
@@ -10696,7 +11592,12 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng/hr", "ng per hr", "nanograms per hour", "nanogram per hour"],
+      names: [
+        "ng/hr",
+        "ng per hr",
+        "nanograms per hour",
+        "nanogram per hour",
+      ],
       printSymbol: "ng/h"),
   DefinedUnit(
       code: "ng/kg",
@@ -10706,7 +11607,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng per kg", "nanograms per kilogram", "nanogram per kilogram"],
+      names: [
+        "ng per kg",
+        "nanograms per kilogram",
+        "nanogram per kilogram",
+      ],
       printSymbol: "ng/kg"),
   DefinedUnit(
       code: "ng/kg/(8.h)",
@@ -10721,9 +11626,7 @@ final definedUnitsList = [
         "ng/kg/8hrs",
         "ng/kg/8 hrs",
         "ng per kg per 8hrs",
-        "8 hrs",
         "nanograms per kilograms per 8 hours",
-        "shift",
         "nanogram per kilogram per 8 hour"
       ],
       printSymbol: "(ng/kg)/h"),
@@ -10770,12 +11673,7 @@ final definedUnitsList = [
         "ng/m^2",
         "ng/sq. m",
         "ng per m2",
-        "m^2",
-        "sq. meter",
-        "nanograms",
-        "meter squared",
-        "metre",
-        "nanogram per square meter"
+        "nanogram per square meter",
       ],
       printSymbol: "ng/(m<sup>2</sup>)"),
   DefinedUnit(
@@ -10788,9 +11686,8 @@ final definedUnitsList = [
       class_: null,
       names: [
         "ng per mL",
-        "nanograms",
-        "millilitre",
-        "nanogram per millliiter"
+        "nanograms/millilitre",
+        "nanogram per millliiter",
       ],
       printSymbol: "ng/mL"),
   DefinedUnit(
@@ -10820,7 +11717,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng per mg", "nanograms", "nanogram per milligram"],
+      names: [
+        "ng per mg",
+        "nanogram per milligram",
+      ],
       printSymbol: "ng/mg"),
   DefinedUnit(
       code: "ng/mg/h",
@@ -10845,7 +11745,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["ng per min", "nanograms", "nanogram per minute"],
+      names: [
+        "ng per min",
+        "nanograms",
+        "nanogram per minute",
+      ],
       printSymbol: "ng/min"),
   DefinedUnit(
       code: "ng/s",
@@ -10874,7 +11778,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["nanokatals", "nanokatal"],
+      names: [
+        "nanokatals",
+        "nanokatal",
+      ],
       printSymbol: "nkat"),
   DefinedUnit(
       code: "nm",
@@ -10884,7 +11791,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["nanometers", "nanometres", "nanometer"],
+      names: [
+        "nanometers",
+        "nanometres",
+        "nanometer",
+      ],
       printSymbol: "nm"),
   DefinedUnit(
       code: "nm/s/L",
@@ -10917,7 +11828,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["nanomoles", "nanomole"],
+      names: [
+        "nanomoles",
+        "nanomole",
+      ],
       printSymbol: "nmol"),
   DefinedUnit(
       code: "nmol/(24.h)",
@@ -10958,8 +11872,7 @@ final definedUnitsList = [
       names: [
         "nmol per L",
         "nanomoles per liter",
-        "litre",
-        "nanomole per liter"
+        "nanomole per liter",
       ],
       printSymbol: "nmol/L"),
   DefinedUnit(
@@ -10983,7 +11896,6 @@ final definedUnitsList = [
         "nmol/24hr",
         "nmol/24 hr",
         "nanomoles per 24 hours",
-        "",
         "nanomole per day"
       ],
       printSymbol: "nmol/d"),
@@ -11046,7 +11958,6 @@ final definedUnitsList = [
         "nmol/hrs/L",
         "nmol per hrs per L",
         "nanomoles per hours per liter",
-        "litre",
         "enzymatic activity per volume",
         "enzyme activities",
         "nanomole per hour per liter"
@@ -11067,7 +11978,6 @@ final definedUnitsList = [
       names: [
         "nmol per mL",
         "nanomoles per milliliter",
-        "millilitre",
         "nanomole per milliliter"
       ],
       printSymbol: "nmol/mL"),
@@ -11087,10 +11997,7 @@ final definedUnitsList = [
         "nmol/mL/hr",
         "nmol per mL per hr",
         "nanomoles per milliliters per hour",
-        "millilitres",
         "milli enzyme units per volume",
-        "enzyme activity",
-        "enzymatic activity",
         "nanomole per milliliter per hour"
       ],
       printSymbol: "(nmol/mL)/h"),
@@ -11109,10 +12016,7 @@ final definedUnitsList = [
       names: [
         "nmol per mL per min",
         "nanomoles per milliliters per min",
-        "millilitres",
         "milli enzyme units per volume",
-        "enzyme activity",
-        "enzymatic activity",
         "nanomole per milliliter per minute"
       ],
       printSymbol: "(nmol/mL)/min"),
@@ -11189,7 +12093,6 @@ final definedUnitsList = [
         "nanomoles per minute",
         "milli enzyme units",
         "enzyme activity per volume",
-        "enzymatic activity",
         "nanomole per minute"
       ],
       printSymbol: "nmol/min"),
@@ -11208,10 +12111,7 @@ final definedUnitsList = [
       names: [
         "nmol per min per mL",
         "nanomoles per minutes per milliliter",
-        "millilitre",
         "milli enzyme units per volume",
-        "enzyme activity",
-        "enzymatic activity",
         "nanomole per minute per milliliter"
       ],
       printSymbol: "(nmol/min)/mL"),
@@ -11245,7 +12145,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["nanomoles", "nanomole per millimole of creatinine"],
+      names: [
+        "nanomoles",
+        "nanomole per millimole of creatinine",
+      ],
       printSymbol: "nmol/mmol"),
   DefinedUnit(
       code: "nmol/mol",
@@ -11259,7 +12162,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["nmol per mole", "nanomoles", "nanomole per mole"],
+      names: [
+        "nmol per mole",
+        "nanomoles",
+        "nanomole per mole",
+      ],
       printSymbol: "nmol/mol"),
   DefinedUnit(
       code: "nmol/nmol",
@@ -11273,7 +12180,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["nmol per nmol", "nanomoles", "nanomole per nanomole"],
+      names: [
+        "nmol per nmol",
+        "nanomole per nanomole",
+      ],
       printSymbol: "nmol/nmol"),
   DefinedUnit(
       code: "nmol/s",
@@ -11292,8 +12202,6 @@ final definedUnitsList = [
         "nmol per sec",
         "nanomoles per sercond",
         "milli enzyme units",
-        "enzyme activity",
-        "enzymatic activity",
         "nanomole per second"
       ],
       printSymbol: "nmol/s"),
@@ -11314,10 +12222,7 @@ final definedUnitsList = [
         "nmol per s per L",
         "nmol per sec per L",
         "nanomoles per seconds per liter",
-        "litre",
         "milli enzyme units per volume",
-        "enzyme activity",
-        "enzymatic activity",
         "nanomole per second per liter"
       ],
       printSymbol: "(nmol/s)/L"),
@@ -11329,7 +12234,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["nanoseconds", "nanosecond"],
+      names: [
+        "nanoseconds",
+        "nanosecond",
+      ],
       printSymbol: "ns"),
   DefinedUnit(
       code: "osm",
@@ -11343,7 +12251,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["osmoles", "osmols", "osmole"],
+      names: [
+        "osmoles",
+        "osmols",
+        "osmole",
+      ],
       printSymbol: "osm"),
   DefinedUnit(
       code: "osm/L",
@@ -11360,9 +12272,7 @@ final definedUnitsList = [
       names: [
         "osm per L",
         "osmoles per liter",
-        "litre",
-        "osmols",
-        "osmole per liter"
+        "osmole per liter",
       ],
       printSymbol: "osm/L"),
   DefinedUnit(
@@ -11380,8 +12290,7 @@ final definedUnitsList = [
       names: [
         "osm per kg",
         "osmoles per kilogram",
-        "osmols",
-        "osmole per kilogram"
+        "osmole per kilogram",
       ],
       printSymbol: "osm/kg"),
   DefinedUnit(
@@ -11396,7 +12305,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["picoamperes", "picoampere"],
+      names: [
+        "picoamperes",
+        "picoampere",
+      ],
       printSymbol: "pA"),
   DefinedUnit(
       code: "pL",
@@ -11410,7 +12322,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["picoliters", "picolitres", "picoliter"],
+      names: [
+        "picoliters",
+        "picolitres",
+        "picoliter",
+      ],
       printSymbol: "pL"),
   DefinedUnit(
       code: "pT",
@@ -11424,7 +12340,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["picoteslas", "picotesla"],
+      names: [
+        "picoteslas",
+        "picotesla",
+      ],
       printSymbol: "pT"),
   DefinedUnit(
       code: "pc",
@@ -11438,7 +12357,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["parsecs", "parsec"],
+      names: [
+        "parsecs",
+        "parsec",
+      ],
       printSymbol: "pc"),
   DefinedUnit(
       code: "pg",
@@ -11448,7 +12370,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["picograms", "picogram"],
+      names: [
+        "picograms",
+        "picogram",
+      ],
       printSymbol: "pg"),
   DefinedUnit(
       code: "pg/L",
@@ -11458,7 +12383,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["pg per L", "picograms", "litre", "picogram per liter"],
+      names: [
+        "pg per L",
+        "picograms/litre",
+        "picogram per liter",
+      ],
       printSymbol: "pg/L"),
   DefinedUnit(
       code: "pg/dL",
@@ -11468,7 +12397,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["pg per dL", "picograms", "decilitre", "picogram per deciliter"],
+      names: [
+        "pg per dL",
+        "picograms/decilitre",
+        "picogram per deciliter",
+      ],
       printSymbol: "pg/dL"),
   DefinedUnit(
       code: "pg/mL",
@@ -11481,7 +12414,6 @@ final definedUnitsList = [
       names: [
         "pg per mL",
         "picograms per milliliter",
-        "millilitre",
         "picogram per milliliter"
       ],
       printSymbol: "pg/mL"),
@@ -11493,7 +12425,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["pg per mg", "picograms", "picogram per milligram"],
+      names: [
+        "pg per mg",
+        "picograms",
+        "picogram per milligram",
+      ],
       printSymbol: "pg/mg"),
   DefinedUnit(
       code: "pg/mm",
@@ -11508,7 +12444,6 @@ final definedUnitsList = [
         "picogram/millimeter",
         "picogram/millimetre",
         "picograms per millimeter",
-        "millimetre",
         "picogram per millimeter"
       ],
       printSymbol: "pg/mm"),
@@ -11524,7 +12459,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["phots", "phot"],
+      names: [
+        "phots",
+        "phot",
+      ],
       printSymbol: "ph"),
   DefinedUnit(
       code: "pkat",
@@ -11538,7 +12476,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["pkats", "picokatals", "picokatal"],
+      names: [
+        "pkats",
+        "picokatals",
+        "picokatal",
+      ],
       printSymbol: "pkat"),
   DefinedUnit(
       code: "pm",
@@ -11548,7 +12490,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["picometers", "picometres", "picometer"],
+      names: [
+        "picometers",
+        "picometres",
+        "picometer",
+      ],
       printSymbol: "pm"),
   DefinedUnit(
       code: "pmol",
@@ -11562,7 +12508,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["picomoles", "pmols", "picomole"],
+      names: [
+        "picomoles",
+        "pmols",
+        "picomole",
+      ],
       printSymbol: "pmol"),
   DefinedUnit(
       code: "pmol/(24.h)",
@@ -11580,9 +12530,6 @@ final definedUnitsList = [
         "pmol/24hrs",
         "pmol/24 hrs",
         "pmol per 24 hrs",
-        "24hrs",
-        "days",
-        "dy",
         "picomoles per 24 hours",
         "picomole per 24 hour"
       ],
@@ -11622,11 +12569,7 @@ final definedUnitsList = [
       names: [
         "pmol/dy",
         "pmol per day",
-        "24 hours",
-        "24hrs",
-        "24 hrs",
-        "picomoles",
-        "picomole per day"
+        "picomole per day",
       ],
       printSymbol: "pmol/d"),
   DefinedUnit(
@@ -11644,7 +12587,6 @@ final definedUnitsList = [
       names: [
         "pmol per dL",
         "picomoles per deciliter",
-        "decilitre",
         "picomole per deciliter"
       ],
       printSymbol: "pmol/dL"),
@@ -11683,10 +12625,7 @@ final definedUnitsList = [
         "pmol/hrs/mL",
         "pmol per hrs per mL",
         "picomoles per hour per milliliter",
-        "millilitre",
         "micro enzyme units per volume",
-        "enzymatic activity",
-        "enzyme activity",
         "picomole per hour per milliliter "
       ],
       printSymbol: "(pmol/h)/mL"),
@@ -11706,10 +12645,6 @@ final definedUnitsList = [
         "picomole/milliliter",
         "picomole/millilitre",
         "pmol per mL",
-        "picomoles",
-        "millilitre",
-        "picomols",
-        "pmols",
         "picomole per milliliter"
       ],
       printSymbol: "pmol/mL"),
@@ -11730,8 +12665,6 @@ final definedUnitsList = [
         "pmol per min",
         "picomoles per minute",
         "micro enzyme units",
-        "enzymatic activity",
-        "enzyme activity",
         "picomole per minute"
       ],
       printSymbol: "pmol/min"),
@@ -11752,7 +12685,6 @@ final definedUnitsList = [
         "picomole/micromole",
         "pmol per umol",
         "pmol per mcgmol",
-        "picomoles",
         "picomole per micromole"
       ],
       printSymbol: "pmol/μmol"),
@@ -11764,7 +12696,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["picoseconds", "psec", "picosecond"],
+      names: [
+        "picoseconds",
+        "psec",
+        "picosecond",
+      ],
       printSymbol: "ps"),
   DefinedUnit(
       code: "sb",
@@ -11778,7 +12714,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "cgs",
-      names: ["stilbs", "stilb"],
+      names: [
+        "stilbs",
+        "stilb",
+      ],
       printSymbol: "sb"),
   DefinedUnit(
       code: "sph",
@@ -11792,7 +12731,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "misc",
-      names: ["speres", "spere - solid angle"],
+      names: [
+        "speres",
+        "spere - solid angle",
+      ],
       printSymbol: "sph"),
   DefinedUnit(
       code: "sr",
@@ -11806,7 +12748,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["square radian", "rad2", "rad^2", "steradian - solid angle"],
+      names: [
+        "square radian",
+        "rad2",
+        "rad^2",
+        "steradian - solid angle",
+      ],
       printSymbol: "sr"),
   DefinedUnit(
       code: "st",
@@ -11826,8 +12773,7 @@ final definedUnitsList = [
         "cubic meter",
         "m^3",
         "meters cubed",
-        "metre",
-        "stere"
+        "stere",
       ],
       printSymbol: "st"),
   DefinedUnit(
@@ -11842,7 +12788,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["tonnes", "megagrams", "tons", "metric ton"],
+      names: [
+        "tonnes",
+        "megagrams",
+        "tons",
+        "metric ton",
+      ],
       printSymbol: "t"),
   DefinedUnit(
       code: "tex",
@@ -11856,7 +12807,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "heat",
-      names: ["linear mass density", "texes", "tex"],
+      names: [
+        "linear mass density",
+        "texes",
+        "tex",
+      ],
       printSymbol: "tex"),
   DefinedUnit(
       code: "u",
@@ -11890,7 +12845,12 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "iso1000",
-      names: ["microliters", "microlitres", "mcl", "microliter"],
+      names: [
+        "microliters",
+        "microlitres",
+        "mcl",
+        "microliter",
+      ],
       printSymbol: "μL"),
   DefinedUnit(
       code: "uL/(2.h)",
@@ -11912,7 +12872,6 @@ final definedUnitsList = [
         "uL per 2hr",
         "uL per 2 hrs",
         "microliters per 2 hours",
-        "microlitres",
         "microliter per 2 hour"
       ],
       printSymbol: "μL/h"),
@@ -11934,7 +12893,6 @@ final definedUnitsList = [
         "mcg per hr",
         "uL per hr",
         "microliters per hour",
-        "microlitres",
         "microliter per hour"
       ],
       printSymbol: "μL/h"),
@@ -11950,7 +12908,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["microOhms", "µΩ", "microOhm"],
+      names: [
+        "microOhms",
+        "µΩ",
+        "microOhm",
+      ],
       printSymbol: "μΩ"),
   DefinedUnit(
       code: "uU/L",
@@ -11967,9 +12929,7 @@ final definedUnitsList = [
       names: [
         "uU per L",
         "micro enzyme units per liter",
-        "litre",
         "enzymatic activity per volume",
-        "enzyme activity",
         "micro enzyme unit per liter"
       ],
       printSymbol: "μU/L"),
@@ -11989,7 +12949,6 @@ final definedUnitsList = [
         "uU per gm",
         "micro enzyme units per gram",
         "micro enzymatic activity per mass",
-        "enzyme activity",
         "micro enzyme unit per gram"
       ],
       printSymbol: "μU/g"),
@@ -12008,9 +12967,7 @@ final definedUnitsList = [
       names: [
         "uU per mL",
         "micro enzyme units per milliliter",
-        "millilitre",
         "enzymatic activity per volume",
-        "enzyme activity",
         "micro enzyme unit per milliliter"
       ],
       printSymbol: "μU/mL"),
@@ -12026,7 +12983,10 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["microvolts", "microvolt"],
+      names: [
+        "microvolts",
+        "microvolt",
+      ],
       printSymbol: "μV"),
   DefinedUnit(
       code: "u[IU]",
@@ -12065,7 +13025,6 @@ final definedUnitsList = [
         "uIU per L",
         "microinternational units per liter",
         "litre",
-        "",
         "micro international unit per liter"
       ],
       printSymbol: "(μi.U.)/L"),
@@ -12086,7 +13045,6 @@ final definedUnitsList = [
         "u IU/mL",
         "uIU per mL",
         "microinternational units per milliliter",
-        "millilitre",
         "micro international unit per milliliter"
       ],
       printSymbol: "(μi.U.)/mL"),
@@ -12123,8 +13081,7 @@ final definedUnitsList = [
       class_: "chemical",
       names: [
         "ueq per liter",
-        "litre",
-        "microequivalents",
+        "microequivalents/litre",
         "microequivalent per liter"
       ],
       printSymbol: "μeq/L"),
@@ -12142,8 +13099,7 @@ final definedUnitsList = [
       class_: "chemical",
       names: [
         "ueq per milliliter",
-        "millilitre",
-        "microequivalents",
+        "microequivalents/millilitre",
         "microequivalent per milliliter"
       ],
       printSymbol: "μeq/mL"),
@@ -12155,7 +13111,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["mcg", "micrograms", "10^-6 grams", "10-6 grams", "microgram"],
+      names: [
+        "mcg",
+        "micrograms",
+        "10^-6 grams",
+        "10-6 grams",
+        "microgram",
+      ],
       printSymbol: "μg"),
   DefinedUnit(
       code: "ug/(100.g)",
@@ -12168,9 +13130,7 @@ final definedUnitsList = [
       names: [
         "ug/100gm",
         "ug/100 gm",
-        "mcg",
         "ug per 100g",
-        "100 gm",
         "mcg per 100g",
         "micrograms per 100 grams",
         "microgram per 100 gram"
@@ -12190,7 +13150,6 @@ final definedUnitsList = [
         "mcg/24hrs",
         "ug per 24hrs",
         "mcg per 24hrs",
-        "24 hrs",
         "micrograms per 24 hours",
         "microgram per 24 hour"
       ],
@@ -12209,9 +13168,7 @@ final definedUnitsList = [
         "mcg/8hrs",
         "ug per 8hrs",
         "mcg per 8hrs",
-        "8 hrs",
         "micrograms per 8 hours",
-        "shift",
         "microgram per 8 hour"
       ],
       printSymbol: "μg/h"),
@@ -12226,9 +13183,7 @@ final definedUnitsList = [
       names: [
         "mcg/L",
         "ug per L",
-        "mcg",
         "micrograms per liter",
-        "litre",
         "microgram per liter"
       ],
       printSymbol: "μg/L"),
@@ -12245,11 +13200,8 @@ final definedUnitsList = [
         "ug/L/24 hrs",
         "mcg/L/24hrs",
         "ug per L per 24hrs",
-        "24 hrs",
-        "day",
         "dy mcg",
         "micrograms per liters per 24 hours",
-        "litres",
         "microgram per liter per 24 hour"
       ],
       printSymbol: "(μg/L)/h"),
@@ -12284,7 +13236,6 @@ final definedUnitsList = [
         "ug/dy",
         "mcg/dy",
         "ug per day",
-        "mcg",
         "micrograms per day",
         "microgram per day"
       ],
@@ -12302,7 +13253,6 @@ final definedUnitsList = [
         "mcg/dl",
         "mcg per dl",
         "micrograms per deciliter",
-        "decilitre",
         "microgram per deciliter"
       ],
       printSymbol: "μg/dL"),
@@ -12370,10 +13320,8 @@ final definedUnitsList = [
         "ug/kg/8 hrs",
         "mcg/kg/8 hrs",
         "ug per kg per 8hrs",
-        "8 hrs",
         "mcg per kg per 8hrs",
         "micrograms per kilograms per 8 hours",
-        "shift",
         "microgram per kilogram per 8 hour"
       ],
       printSymbol: "(μg/kg)/h"),
@@ -12390,10 +13338,6 @@ final definedUnitsList = [
         "ug/kg/dy",
         "mcg/kg/day",
         "ug per kg per dy",
-        "24 hours",
-        "24hrs",
-        "mcg",
-        "kilograms",
         "microgram per kilogram and day",
         "microgram per kilogram per day"
       ],
@@ -12412,7 +13356,6 @@ final definedUnitsList = [
         "mcg/kg/hr",
         "ug per kg per hr",
         "mcg per kg per hr",
-        "kilograms",
         "microgram per kilogram per hour"
       ],
       printSymbol: "(μg/kg)/h"),
@@ -12428,7 +13371,6 @@ final definedUnitsList = [
         "ug/kg/min",
         "mcg/kg/min",
         "ug per kg per min",
-        "mcg",
         "micrograms per kilograms per minute",
         "microgram per kilogram per minute"
       ],
@@ -12448,12 +13390,7 @@ final definedUnitsList = [
         "mcg/m^2",
         "mcg/sq. m",
         "ug per m2",
-        "m^2",
-        "sq. meter",
-        "mcg",
         "micrograms per square meter",
-        "meter squared",
-        "metre",
         "microgram per square meter"
       ],
       printSymbol: "μg/(m<sup>2</sup>)"),
@@ -12474,10 +13411,7 @@ final definedUnitsList = [
         "ug per m3",
         "ug per m^3",
         "ug per cu. m",
-        "mcg",
         "micrograms per cubic meter",
-        "meter cubed",
-        "metre",
         "microgram per cubic meter"
       ],
       printSymbol: "μg/(m<sup>3</sup>)"),
@@ -12494,7 +13428,6 @@ final definedUnitsList = [
         "mcg/mL",
         "mcg per mL",
         "micrograms per milliliter",
-        "millilitre",
         "microgram per milliliter"
       ],
       printSymbol: "μg/mL"),
@@ -12574,7 +13507,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "chemical",
-      names: ["microkatals", "ukats", "microkatal"],
+      names: [
+        "microkatals",
+        "ukats",
+        "microkatal",
+      ],
       printSymbol: "μkat"),
   DefinedUnit(
       code: "um",
@@ -12584,7 +13521,13 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["micrometers", "micrometres", "μm", "microns", "micrometer"],
+      names: [
+        "micrometers",
+        "micrometres",
+        "μm",
+        "microns",
+        "micrometer",
+      ],
       printSymbol: "μm"),
   DefinedUnit(
       code: "um/s",
@@ -12600,7 +13543,6 @@ final definedUnitsList = [
         "microns/second",
         "um per sec",
         "micrometers per second",
-        "micrometres",
         "microns per second"
       ],
       printSymbol: "μm/s"),
@@ -12616,7 +13558,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["micromoles", "umols", "micromole"],
+      names: [
+        "micromoles",
+        "umols",
+        "micromole",
+      ],
       printSymbol: "μmol"),
   DefinedUnit(
       code: "umol/(2.h)",
@@ -12634,7 +13580,6 @@ final definedUnitsList = [
         "umol/2hrs",
         "umol/2 hrs",
         "umol per 2 hrs",
-        "2hrs",
         "micromoles per 2 hours",
         "micromole per 2 hour"
       ],
@@ -12655,7 +13600,6 @@ final definedUnitsList = [
         "umol/24hrs",
         "umol/24 hrs",
         "umol per 24 hrs",
-        "per 24hrs",
         "micromoles per 24 hours",
         "micromole per 24 hour"
       ],
@@ -12680,7 +13624,6 @@ final definedUnitsList = [
         "umols per 8hr",
         "umol per 8 hours",
         "micromoles per 8 hours",
-        "shift",
         "micromole per 8 hour"
       ],
       printSymbol: "μmol/h"),
@@ -12701,7 +13644,6 @@ final definedUnitsList = [
         "micromole/litre",
         "umol per liter",
         "micromoles per liter",
-        "litre",
         "micromole per liter"
       ],
       printSymbol: "μmol/L"),
@@ -12723,7 +13665,6 @@ final definedUnitsList = [
         "umol per L per hr",
         "umol per liter per hour",
         "micromoles per liters per hour",
-        "litre",
         "micromole per liter per hour"
       ],
       printSymbol: "(μmol/L)/h"),
@@ -12848,7 +13789,6 @@ final definedUnitsList = [
       names: [
         "umol per mL",
         "micromoles per milliliter",
-        "millilitre",
         "micromole per milliliter"
       ],
       printSymbol: "μmol/mL"),
@@ -12867,7 +13807,6 @@ final definedUnitsList = [
       names: [
         "umol per mL per min",
         "micromoles per milliliters per minute",
-        "millilitres",
         "micromole per milliliter per minute"
       ],
       printSymbol: "(μmol/mL)/min"),
@@ -12906,7 +13845,6 @@ final definedUnitsList = [
         "micromole/minute",
         "umol per min",
         "micromoles per minute",
-        "enzyme units",
         "micromole per minute"
       ],
       printSymbol: "μmol/min"),
@@ -12926,9 +13864,6 @@ final definedUnitsList = [
         "umol/min/liter",
         "umol/minute/liter",
         "micromoles per minutes per liter",
-        "litre",
-        "enzyme units",
-        "U/L",
         "micromole per minute per liter"
       ],
       printSymbol: "(μmol/min)/L"),
@@ -12948,8 +13883,6 @@ final definedUnitsList = [
         "umol/min/gm",
         "umol per min per gm",
         "micromoles per minutes per gram",
-        "U/g",
-        "enzyme units",
         "micromole per minute per gram"
       ],
       printSymbol: "(μmol/min)/g"),
@@ -12983,7 +13916,11 @@ final definedUnitsList = [
       isMetric: true,
       isSpecial: false,
       class_: "si",
-      names: ["umol per mol", "micromoles per mole", "micromole per mole"],
+      names: [
+        "umol per mol",
+        "micromoles per mole",
+        "micromole per mole",
+      ],
       printSymbol: "μmol/mol"),
   DefinedUnit(
       code: "umol/umol",
@@ -13011,7 +13948,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["microseconds", "microsecond"],
+      names: [
+        "microseconds",
+        "microsecond",
+      ],
       printSymbol: "μs"),
   DefinedUnit(
       code: "wk",
@@ -13025,7 +13965,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "iso1000",
-      names: ["weeks", "wks", "week"],
+      names: [
+        "weeks",
+        "wks",
+        "week",
+      ],
       printSymbol: "wk"),
   DefinedUnit(
       code: "DefinedUnit(#)/[HPF]",
@@ -13081,7 +14025,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["enzyme immunoassay index", "EIA index"],
+      names: [
+        "enzyme immunoassay index",
+        "EIA index",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "DefinedUnit(KCT'U)",
@@ -13091,7 +14038,10 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: null,
-      names: ["KCT", "kaolin clotting time"],
+      names: [
+        "KCT",
+        "kaolin clotting time",
+      ],
       printSymbol: null),
   DefinedUnit(
       code: "DefinedUnit(MPS'U)",

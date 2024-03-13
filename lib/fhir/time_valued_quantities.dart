@@ -93,6 +93,6 @@ const definiteDurationUnits = {
   'd',
   'h',
   'min',
-  // 's',
-  // 'ms',
+  's',
+  'ms',
 };

@@ -34,6 +34,28 @@ class ValidatedQuantity extends Pair {
   ValidatedQuantity copyWith({UcumDecimal? value, String? unit}) =>
       ValidatedQuantity(value: value ?? this.value, unit: unit ?? this.unit);
 
+  Map<String, dynamic> toJson() {
+    final num? numberValue = num.tryParse(value.asUcumDecimal());
+    if (numberValue != null) {
+      return {
+        'value': numberValue,
+        'code': unit,
+      };
+    } else {
+      final BigInt? bigIntValue = BigInt.tryParse(value.asUcumDecimal());
+      if (bigIntValue != null) {
+        return {
+          'value': bigIntValue,
+          'code': unit,
+        };
+      }
+    }
+    return {
+      'value': value,
+      'code': unit,
+    };
+  }
+
   ValidatedQuantity abs() =>
       ValidatedQuantity(value: value.absolute(), unit: unit);
 

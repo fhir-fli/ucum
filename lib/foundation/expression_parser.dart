@@ -76,7 +76,6 @@ class ExpressionParser {
         }
         res.term = parseTerm(lexer, false);
       }
-      // }
     }
     return res;
   }
@@ -114,6 +113,16 @@ class ExpressionParser {
     Prefix? selected;
     UcumUnit? unit;
     for (Prefix prefix in model.prefixes) {
+      // TODO(Dokotela): relook at this
+      if (prefix.names.isNotEmpty && sym.startsWith(prefix.names.first)) {
+        unit = model.getUnit(sym.substring(prefix.names.first.length));
+        if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {
+          selected = prefix;
+        }
+      }
+      if (selected == prefix) {
+        break;
+      }
       if (sym.startsWith(prefix.code)) {
         unit = model.getUnit(sym.substring(prefix.code.length));
         if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {

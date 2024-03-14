@@ -245,7 +245,7 @@ final definedUnitsList = [
       class_: null,
       names: [
         "/liter",
-        "litre",
+        "/litre",
         "per liter",
       ],
       printSymbol: "/L"),
@@ -374,7 +374,7 @@ final definedUnitsList = [
       names: [
         "per dL",
         "/deciliter",
-        "decilitre",
+        "/decilitre",
         "per deciliter",
       ],
       printSymbol: "/dL"),
@@ -467,7 +467,7 @@ final definedUnitsList = [
       names: [
         "/milliliter",
         "per mL",
-        "millilitre",
+        "/millilitre",
         "per milliliter",
       ],
       printSymbol: "/mL"),
@@ -709,7 +709,11 @@ final definedUnitsList = [
       isMetric: false,
       isSpecial: false,
       class_: "dimless",
-      names: ["10^4/uL", "10*4 per uL", "10 thousand per microliter"],
+      names: [
+        "10^4/uL",
+        "10*4 per uL",
+        "10 thousand per microliter",
+      ],
       printSymbol: "(10<sup>4</sup>)/μL"),
   DefinedUnit(
       code: "10*5",
@@ -1669,9 +1673,7 @@ final definedUnitsList = [
         "L/8 hrs",
         "L per 8hrs",
         "liters per 8 hours",
-        "litres",
         "volume flow rate",
-        "shift",
         "Liters per 8 hour"
       ],
       printSymbol: "L/h"),
@@ -11412,9 +11414,9 @@ final definedUnitsList = [
       isSpecial: false,
       class_: null,
       names: [
-        "milliseconds",
-        "duration",
+        "ms",
         "millisecond",
+        "milliseconds",
       ],
       printSymbol: "ms"),
   DefinedUnit(

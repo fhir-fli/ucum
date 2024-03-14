@@ -210,4 +210,7 @@ class Lexer {
   bool finished() {
     return index >= source.length;
   }
+
+  @override
+  String toString() => 'Lexer (source: $source, index: $index, token: $_token)';
 }

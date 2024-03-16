@@ -1,6 +1,6 @@
 import '../ucum.dart';
 
-class ValidatedQuantity extends Pair {
+class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
   ValidatedQuantity({required super.value, String? unit})
       : super(unit: (unit?.isNotEmpty ?? false) ? unit! : '1');
 
@@ -454,5 +454,12 @@ class ValidatedQuantity extends Pair {
     } else {
       throw UcumException('Cannot convert $this to $newCode');
     }
+  }
+
+  @override
+  int compareTo(ValidatedQuantity other) {
+    final UcumDecimal compareValue =
+        UcumService().convert(other.value, other.unit, unit);
+    return this.value.comparesTo(compareValue);
   }
 }

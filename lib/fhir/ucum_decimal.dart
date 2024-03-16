@@ -33,6 +33,10 @@ class UcumDecimal {
     }
   }
 
+  UcumDecimal.fromNum(num i) {
+    setValueUcumDecimal(i.toString());
+  }
+
   UcumDecimal.fromInt(int i) {
     setValueUcumDecimal(i.toString());
   }

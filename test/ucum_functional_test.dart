@@ -186,7 +186,7 @@ Future<void> main() async {
   }
 
   List<TestCase> elements = <TestCase>[];
-  File tests = File("test/resources/UcumFunctionalTests.xml");
+  File tests = File("resources/UcumFunctionalTests.xml");
   XmlDocument doc = await XmlUtils.parseDOM(tests);
   XmlElement element = doc.rootElement;
 

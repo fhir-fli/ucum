@@ -6,8 +6,6 @@ import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 import 'package:xml/xml.dart';
 
-import 'ucum_service_test.dart';
-
 Future<void> main() async {
   final UcumServiceTest ucumServiceTest = UcumServiceTest();
   ucumServiceTest.beforeAll();
@@ -227,4 +225,12 @@ class TestCase {
   final XmlElement testCase;
 
   const TestCase(this.testName, this.testType, this.testCase);
+}
+
+class UcumServiceTest {
+  late UcumService ucumService;
+
+  void beforeAll() {
+    ucumService = UcumService();
+  }
 }

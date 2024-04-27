@@ -31,7 +31,7 @@
 ///
 ///  ************************************************************************
 
-library org.fhir.ucum;
+library dart_ucum;
 
 import '../ucum.dart';
 

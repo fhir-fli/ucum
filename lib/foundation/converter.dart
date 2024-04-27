@@ -117,7 +117,8 @@ class Converter {
       if (sym.unit is BaseUnit) {
         result.units.add(CanonicalUnit(sym.unit! as BaseUnit, sym.exponent!));
       } else {
-        final Canonical can = expandDefinedUnit(indent, sym.unit! as DefinedUnit);
+        final Canonical can =
+            expandDefinedUnit(indent, sym.unit! as DefinedUnit);
         for (final CanonicalUnit c in can.units) {
           c.exponent = c.exponent * sym.exponent!;
         }

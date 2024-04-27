@@ -197,12 +197,10 @@ class UcumService {
   }
 
   Pair divideBy(Pair dividend, Pair divisor) {
-    final String unit = "${dividend.unit.contains("/") || dividend.unit.contains("*")
-            ? "(${dividend.unit})"
-            : dividend.unit}/${divisor.unit.contains("/") || divisor.unit.contains("*")
-            ? "(${divisor.unit})"
-            : divisor.unit}";
-    final Pair res = Pair(value: dividend.value.divide(divisor.value), unit: unit);
+    final String unit =
+        "${dividend.unit.contains("/") || dividend.unit.contains("*") ? "(${dividend.unit})" : dividend.unit}/${divisor.unit.contains("/") || divisor.unit.contains("*") ? "(${divisor.unit})" : divisor.unit}";
+    final Pair res =
+        Pair(value: dividend.value.divide(divisor.value), unit: unit);
     return getCanonicalForm(res);
   }
 

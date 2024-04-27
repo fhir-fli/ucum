@@ -2,7 +2,8 @@ import '../ucum.dart';
 
 /// A registry class for managing special unit handlers.
 class Registry {
-  final Map<String, SpecialUnitHandler> handlers = <String, SpecialUnitHandler>{};
+  final Map<String, SpecialUnitHandler> handlers =
+      <String, SpecialUnitHandler>{};
 
   Registry() {
     _init();

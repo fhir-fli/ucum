@@ -34,8 +34,7 @@ class UcumValidator {
   List<String> result;
   Registry handlers;
 
-  UcumValidator(
-      {required this.model, required this.handlers})
+  UcumValidator({required this.model, required this.handlers})
       : result = <String>[];
 
   List<String> validate() {

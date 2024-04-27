@@ -31,6 +31,6 @@
 ///
 ///  ************************************************************************
 
-library org.fhir.ucum;
+library dart_ucum;
 
 abstract class UcumExpression {}

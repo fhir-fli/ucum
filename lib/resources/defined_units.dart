@@ -20,10 +20,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: '%[slope]',
       codeUC: '%[SLOPE]',
-      value: Value(
-          unit: 'deg',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'deg', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'slope',
       isMetric: false,
       isSpecial: true,
@@ -1104,10 +1102,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B',
       codeUC: 'B',
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'level',
       isMetric: true,
       isSpecial: true,
@@ -1121,9 +1117,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: 'B[10.nV]',
       codeUC: 'B[10.NV]',
       value: Value(
-          unit: 'nV',
-          value: UcumDecimal.fromString('10.0'),
-          text: '10.0'),
+          unit: 'nV', value: UcumDecimal.fromString('10.0'), text: '10.0'),
       property: 'electric potential level',
       isMetric: true,
       isSpecial: true,
@@ -1156,10 +1150,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B[V]',
       codeUC: 'B[V]',
-      value: Value(
-          unit: 'V',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'V', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'electric potential level',
       isMetric: true,
       isSpecial: true,
@@ -1174,10 +1166,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B[W]',
       codeUC: 'B[W]',
-      value: Value(
-          unit: 'W',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'W', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'power level',
       isMetric: true,
       isSpecial: true,
@@ -1193,10 +1183,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B[kW]',
       codeUC: 'B[KW]',
-      value: Value(
-          unit: 'kW',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'kW', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'power level',
       isMetric: true,
       isSpecial: true,
@@ -1213,10 +1201,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B[mV]',
       codeUC: 'B[MV]',
-      value: Value(
-          unit: 'mV',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'mV', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'electric potential level',
       isMetric: true,
       isSpecial: true,
@@ -1233,10 +1219,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'B[uV]',
       codeUC: 'B[UV]',
-      value: Value(
-          unit: 'uV',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'uV', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'electric potential level',
       isMetric: true,
       isSpecial: true,
@@ -1326,10 +1310,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'Cel',
       codeUC: 'CEL',
-      value: Value(
-          unit: 'K',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'K', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'temperature',
       isMetric: true,
       isSpecial: true,
@@ -1561,10 +1543,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L',
       codeUC: 'L',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1583,10 +1562,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/(24.h)',
       codeUC: 'L/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1603,10 +1579,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/(8.h)',
       codeUC: 'L/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1623,10 +1596,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/(min.m2) ',
       codeUC: 'L/(MIN.M2)',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1644,10 +1614,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/L',
       codeUC: 'L/L',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1661,10 +1628,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/d',
       codeUC: 'L/D',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1684,10 +1648,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/h',
       codeUC: 'L/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1702,10 +1663,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/kg',
       codeUC: 'L/KG',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1719,10 +1677,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/min',
       codeUC: 'L/MIN',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1736,10 +1691,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/min/m2',
       codeUC: '(L/MIN)/M2',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1756,10 +1708,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/s',
       codeUC: 'L/S',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1772,10 +1721,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'L/s/s2',
       codeUC: '(L/S)/S2',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -1906,10 +1852,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'Np',
       codeUC: 'NEP',
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'level',
       isMetric: true,
       isSpecial: true,
@@ -4127,10 +4071,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: '[degRe]',
       codeUC: '[degRe]',
-      value: Value(
-          unit: 'K',
-          value: UcumDecimal.fromString('1.25'),
-          text: '1.25'),
+      value:
+          Value(unit: 'K', value: UcumDecimal.fromString('1.25'), text: '1.25'),
       property: 'temperature',
       isMetric: false,
       isSpecial: true,
@@ -4797,10 +4739,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: "[hp'_C]",
       codeUC: "[HP'_C]",
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'homeopathic potency (retired)',
       isMetric: false,
       isSpecial: true,
@@ -4812,10 +4752,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: "[hp'_M]",
       codeUC: "[HP'_M]",
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'homeopathic potency (retired)',
       isMetric: false,
       isSpecial: true,
@@ -4827,10 +4765,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: "[hp'_Q]",
       codeUC: "[HP'_Q]",
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'homeopathic potency (retired)',
       isMetric: false,
       isSpecial: true,
@@ -4842,10 +4778,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: "[hp'_X]",
       codeUC: "[HP'_X]",
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'homeopathic potency (retired)',
       isMetric: false,
       isSpecial: true,
@@ -5392,9 +5326,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[m/s2/Hz^(1/2)]',
       codeUC: '[M/S2/HZ^(1/2)]',
       value: Value(
-          unit: 'm2/s4/Hz',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+          unit: 'm2/s4/Hz', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'amplitude spectral density',
       isMetric: false,
       isSpecial: true,
@@ -5747,10 +5679,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: "[p'diop]",
       codeUC: "[P'DIOP]",
-      value: Value(
-          unit: 'rad',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: 'rad', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'refraction of a prism',
       isMetric: false,
       isSpecial: true,
@@ -5774,9 +5704,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[pH]',
       codeUC: '[PH]',
       value: Value(
-          unit: 'mol/l',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+          unit: 'mol/l', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'acidity',
       isMetric: false,
       isSpecial: true,
@@ -6820,10 +6748,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'bit_s',
       codeUC: 'BIT_S',
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'amount of information',
       isMetric: false,
       isSpecial: true,
@@ -6838,10 +6764,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'cL',
       codeUC: 'CL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -7185,10 +7108,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'dB',
       codeUC: 'DB',
-      value: Value(
-          unit: '1',
-          value: UcumDecimal.fromString('1.0'),
-          text: '1.0'),
+      value:
+          Value(unit: '1', value: UcumDecimal.fromString('1.0'), text: '1.0'),
       property: 'level',
       isMetric: true,
       isSpecial: true,
@@ -7201,10 +7122,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'dL',
       codeUC: 'DL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -7220,10 +7138,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'daL/min',
       codeUC: 'DAL/MIN',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -7237,10 +7152,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'daL/min/m2',
       codeUC: '(DAL/MIN)/M2',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -7535,10 +7447,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'fL',
       codeUC: 'FL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -7920,7 +7829,13 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       property: 'mass',
       isMetric: false,
       isSpecial: false,
-      names: <String>['gm/hr', 'gm per hr', 'intake', 'output', 'gram per hour'],
+      names: <String>[
+        'gm/hr',
+        'gm per hr',
+        'intake',
+        'output',
+        'gram per hour'
+      ],
       printSymbol: 'g/h'),
   DefinedUnit(
       code: 'g/h/m2',
@@ -8036,7 +7951,11 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       property: 'mass',
       isMetric: false,
       isSpecial: false,
-      names: <String>['g per mL', 'grams per milliliter', 'gram per milliliter'],
+      names: <String>[
+        'g per mL',
+        'grams per milliliter',
+        'gram per milliliter'
+      ],
       printSymbol: 'g/mL'),
   DefinedUnit(
       code: 'g/mg',
@@ -8135,10 +8054,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'kL',
       codeUC: 'KL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8856,10 +8772,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL',
       codeUC: 'ML',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8873,10 +8786,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(10.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8893,10 +8803,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(12.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8913,10 +8820,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(2.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8933,10 +8837,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(24.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8958,10 +8859,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(4.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8978,10 +8876,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(5.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -8998,10 +8893,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(6.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9018,10 +8910,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(72.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9038,10 +8927,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(8.h)',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9058,10 +8944,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/(8.h)/kg',
       codeUC: '(ML/HR)/KG',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9081,10 +8964,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/[sin_i]',
       codeUC: 'ML/[SIN_I]',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9105,10 +8985,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/cm[H2O]',
       codeUC: 'ML/CM[H2O]',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9127,10 +9004,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/d',
       codeUC: 'ML/D',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9147,10 +9021,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/dL',
       codeUC: 'ML/DL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9164,10 +9035,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/h',
       codeUC: 'ML/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9184,10 +9052,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/kg',
       codeUC: 'ML/KG',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9201,10 +9066,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/kg/(8.h)',
       codeUC: '(ML/KG)/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9222,10 +9084,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/kg/d',
       codeUC: '(ML/KG)/D',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9242,10 +9101,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/kg/h',
       codeUC: '(ML/KG)/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9261,10 +9117,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/kg/min',
       codeUC: '(ML/KG)/MIN',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9280,10 +9133,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/m2',
       codeUC: 'ML/M2',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9300,10 +9150,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/mbar',
       codeUC: 'ML/MBAR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9317,10 +9164,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/min',
       codeUC: 'ML/MIN',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9330,10 +9174,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/min/m2',
       codeUC: '(ML/MIN)/M2',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9349,10 +9190,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/mm',
       codeUC: 'ML/MM',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -9366,10 +9204,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'mL/s',
       codeUC: 'ML/S',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -10059,7 +9894,11 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       property: 'mass',
       isMetric: false,
       isSpecial: false,
-      names: <String>['mg per l', 'milligrams per liter', 'milligram per liter'],
+      names: <String>[
+        'mg per l',
+        'milligrams per liter',
+        'milligram per liter'
+      ],
       printSymbol: 'mg/L'),
   DefinedUnit(
       code: 'mg/d',
@@ -10243,7 +10082,11 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       property: 'mass',
       isMetric: false,
       isSpecial: false,
-      names: <String>['mg per mg', 'milligram/milligram', 'milligram per milligram'],
+      names: <String>[
+        'mg per mg',
+        'milligram/milligram',
+        'milligram per milligram'
+      ],
       printSymbol: 'mg/mg'),
   DefinedUnit(
       code: 'mg/min',
@@ -10365,7 +10208,11 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       property: 'length',
       isMetric: false,
       isSpecial: false,
-      names: <String>['mm per min', 'millimeters per minute', 'millimeter per minute'],
+      names: <String>[
+        'mm per min',
+        'millimeters per minute',
+        'millimeter per minute'
+      ],
       printSymbol: 'mm/min'),
   DefinedUnit(
       code: 'mm2',
@@ -10394,7 +10241,12 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       isMetric: true,
       isSpecial: false,
       class_: 'clinical',
-      names: <String>['mmH2O', 'mm H2O', 'millimeters of water', 'millimeter of water'],
+      names: <String>[
+        'mmH2O',
+        'mm H2O',
+        'millimeters of water',
+        'millimeter of water'
+      ],
       printSymbol: 'mm HO<sub><r>2</r></sub>'),
   DefinedUnit(
       code: 'mm[Hg]',
@@ -10564,7 +10416,11 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       isMetric: true,
       isSpecial: false,
       class_: 'si',
-      names: <String>['mmol per L', 'millimoles per liter', 'millimole per liter'],
+      names: <String>[
+        'mmol per L',
+        'millimoles per liter',
+        'millimole per liter'
+      ],
       printSymbol: 'mmol/L'),
   DefinedUnit(
       code: 'mmol/d',
@@ -11118,10 +10974,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'nL',
       codeUC: 'NL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -11986,10 +11839,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'pL',
       codeUC: 'PL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -12500,10 +12350,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'uL',
       codeUC: 'UL',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -12518,10 +12365,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'uL/(2.h)',
       codeUC: 'UL/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,
@@ -12540,10 +12384,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
   DefinedUnit(
       code: 'uL/h',
       codeUC: 'UL/HR',
-      value: Value(
-          unit: 'l',
-          value: UcumDecimal.fromString('1'),
-          text: '1'),
+      value: Value(unit: 'l', value: UcumDecimal.fromString('1'), text: '1'),
       property: 'volume',
       isMetric: true,
       isSpecial: false,

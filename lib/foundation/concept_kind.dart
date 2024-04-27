@@ -30,8 +30,8 @@
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 ///  *******************************************************************************/
-///
-library org.fhir.ucum;
+
+library dart_ucum;
 
 enum ConceptKind {
   prefix,

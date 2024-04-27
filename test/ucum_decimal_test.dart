@@ -1,4 +1,3 @@
-
 import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 
@@ -16,8 +15,7 @@ void main() {
           reason: '$message$maxValue');
       expect(-1, UcumDecimal.fromInt(-1).asInteger(), reason: '$message-1');
       expect(-2, UcumDecimal.fromInt(-2).asInteger(), reason: '$message-2');
-      expect(-64, UcumDecimal.fromInt(-64).asInteger(),
-          reason: '$message-64');
+      expect(-64, UcumDecimal.fromInt(-64).asInteger(), reason: '$message-64');
       expect(minValue, UcumDecimal.fromInt(minValue).asInteger(),
           reason: '$message$minValue');
     });

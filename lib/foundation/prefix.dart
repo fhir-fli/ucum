@@ -38,14 +38,16 @@ class Prefix extends UcumConcept {
     required this.value,
     String? name,
     super.printSymbol,
-  }) : super(kind: ConceptKind.prefix, names: name == null ? null : [name]);
+  }) : super(
+            kind: ConceptKind.prefix,
+            names: name == null ? null : <String>[name]);
 
   @override
   String getDescription() {
-    return super.getDescription() + " = " + value.toString();
+    return '${super.getDescription()} = $value';
   }
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => <String, dynamic>{
         'code': code,
         'CODE': codeUC,
         'value': value.toString(),

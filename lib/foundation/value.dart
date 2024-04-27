@@ -38,25 +38,25 @@ class Value {
   Value({this.unit, this.unitUC, this.value, this.text});
 
   String getDescription() {
-    return '${value.toString()}$unit';
+    return '$value$unit';
   }
 
   @override
   String toString() =>
       'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => <String, dynamic>{
         'unit': unit,
         'UNIT': unitUC,
         'value': value?.asUcumDecimal(),
         'text': text,
       };
   factory Value.fromJson(Map<String, dynamic> json) => Value(
-        unit: json['unit'],
-        unitUC: json['UNIT'],
+        unit: json['unit'] as String?,
+        unitUC: json['UNIT'] as String?,
         value: json['value'] == null
             ? null
             : UcumDecimal.fromString(json['value'].toString()),
-        text: json['text'],
+        text: json['text'] as String?,
       );
 }

@@ -26,6 +26,7 @@
 /// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+library;
 
 abstract class Utilities {
   static bool isWhitespace(String s) {
@@ -59,7 +60,7 @@ abstract class Utilities {
     if (ch.length != 1) {
       return false;
     } else {
-      int codeUnit = ch.codeUnitAt(0);
+      final int codeUnit = ch.codeUnitAt(0);
       return codeUnit >= 32 && codeUnit <= 126;
     }
   }

@@ -38,9 +38,7 @@ import '../ucum.dart';
 class Factor extends Component {
   int value;
 
-  /**
-	 * @param value
-	 */
+  /// @param value
   Factor(this.value);
 
   @override

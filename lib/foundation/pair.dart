@@ -48,6 +48,6 @@ class Pair {
 
   @override
   String toString() {
-    return '${value.toString()} $unit';
+    return '$value $unit';
   }
 }

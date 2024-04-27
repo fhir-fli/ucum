@@ -30,7 +30,6 @@ import '../ucum.dart';
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 class DefinedUnit extends UcumUnit {
-  bool? isMetric;
   bool? isSpecial;
   String? class_;
   Value value;
@@ -39,7 +38,7 @@ class DefinedUnit extends UcumUnit {
     required super.code,
     required super.codeUC,
     required super.property,
-    required this.isMetric,
+    required super.isMetric,
     required this.isSpecial,
     this.class_,
     required this.value,
@@ -49,10 +48,10 @@ class DefinedUnit extends UcumUnit {
 
   @override
   String getDescription() {
-    return super.getDescription() + " = " + value.getDescription();
+    return '${super.getDescription()} = ${value.getDescription()}';
   }
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => <String, dynamic>{
         'code': code,
         'CODE': codeUC,
         'value': value.toJson(),
@@ -66,17 +65,21 @@ class DefinedUnit extends UcumUnit {
 
   factory DefinedUnit.fromJson(Map<String, dynamic> json) {
     return DefinedUnit(
-      code: json['code'],
-      codeUC: json['CODE'],
-      property: json['property'],
-      isMetric: json['isMetric'],
-      isSpecial: json['isSpecial'],
-      value: json['value'] == null ? Value() : Value.fromJson(json['value']!),
-      class_: json['class'],
+      code: json['code'] as String,
+      codeUC: json['CODE'] as String?,
+      property: json['property'] as String,
+      isMetric: json['isMetric'] as bool?,
+      isSpecial: json['isSpecial'] as bool?,
+      value: json['value'] == null
+          ? Value()
+          : Value.fromJson(json['value']! as Map<String, dynamic>),
+      class_: json['class'] as String,
       names: json['name'] is List<dynamic>
-          ? (json['name'] as List<dynamic>).map((e) => e.toString()).toList()
+          ? (json['name'] as List<dynamic>)
+              .map((dynamic e) => e.toString())
+              .toList()
           : null,
-      printSymbol: json['printSymbol'],
+      printSymbol: json['printSymbol'] as String?,
     );
   }
 }

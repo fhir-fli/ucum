@@ -33,7 +33,7 @@ import '../ucum.dart';
 
 class Canonical {
   UcumDecimal value;
-  List<CanonicalUnit> units = [];
+  List<CanonicalUnit> units = <CanonicalUnit>[];
 
   Canonical(this.value);
 

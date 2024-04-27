@@ -35,27 +35,27 @@ class UcumValidator {
   Registry handlers;
 
   UcumValidator(
-      {required this.model, required this.handlers, List<String>? result})
+      {required this.model, required this.handlers})
       : result = <String>[];
 
   List<String> validate() {
-    this.result = [];
+    result = <String>[];
     checkCodes();
     checkUnits();
     return result;
   }
 
   void checkCodes() {
-    for (var unit in model.baseUnits) {
+    for (final BaseUnit unit in model.baseUnits) {
       checkUnitCode(unit.code, true);
     }
-    for (var unit in model.definedUnits) {
+    for (final DefinedUnit unit in model.definedUnits) {
       checkUnitCode(unit.code, true);
     }
   }
 
   void checkUnits() {
-    for (var unit in model.definedUnits) {
+    for (final DefinedUnit unit in model.definedUnits) {
       if (!(unit.isSpecial ?? false)) {
         checkUnitCode(unit.value.unit ?? '', false);
       } else if (!handlers.exists(unit.code)) {
@@ -66,23 +66,23 @@ class UcumValidator {
 
   void checkUnitCode(String code, bool primary) {
     try {
-      var term = ExpressionParser(model).parse(code);
-      var c = ExpressionComposer().compose(term);
+      final Term term = ExpressionParser(model).parse(code);
+      final String c = ExpressionComposer().compose(term);
       if (c != code) {
         result.add('Round trip failed: $code -> $c');
       }
       Converter(model, handlers).convert(term);
     } catch (e) {
-      result.add('$code: ${e.toString()}');
+      result.add('$code: $e');
     }
 
     if (primary) {
       try {
         // Additional checks for primary codes
-        var inBrack = false;
-        var nonDigits = false;
-        for (var i = 0; i < code.length; i++) {
-          var ch = code[i];
+        bool inBrack = false;
+        bool nonDigits = false;
+        for (int i = 0; i < code.length; i++) {
+          final String ch = code[i];
           if (ch == '[') {
             if (inBrack) {
               throw Exception('nested [');

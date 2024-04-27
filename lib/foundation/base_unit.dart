@@ -27,8 +27,6 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-library org.fhir.ucum;
-
 import '../ucum.dart';
 
 class BaseUnit extends UcumUnit {
@@ -48,7 +46,7 @@ class BaseUnit extends UcumUnit {
   }) : super(
             kind: ConceptKind.baseUnit,
             names: name != null || (synonyms != null && synonyms.isNotEmpty)
-                ? [
+                ? <String>[
                     if (name != null) name,
                     if (synonyms != null && synonyms.isNotEmpty) ...synonyms
                   ]
@@ -57,7 +55,7 @@ class BaseUnit extends UcumUnit {
   @override
   String toString() => 'BaseUnit(dim: $dim, ${super.toString()})';
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => <String, dynamic>{
         'code': code,
         'CODE': codeUC,
         'property': property,

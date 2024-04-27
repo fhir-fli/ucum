@@ -31,7 +31,7 @@ import '../ucum.dart';
 
 class FormalStructureComposer {
   String compose(Term term) {
-    var buffer = StringBuffer();
+    final StringBuffer buffer = StringBuffer();
     composeTerm(buffer, term);
     return buffer.toString();
   }

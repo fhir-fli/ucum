@@ -1,26 +1,25 @@
-library org.fhir.ucum;
 
 import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 
 void main() {
   group('testAsInteger', () {
-    String message = 'Failed to round trip the integer ';
-    int MIN_VALUE = -2147483647;
-    int MAX_VALUE = 2147483647;
+    const String message = 'Failed to round trip the integer ';
+    const int minValue = -2147483647;
+    const int maxValue = 2147483647;
     test('', () {
-      expect(0, UcumDecimal.fromInt(0).asInteger(), reason: message + '0');
-      expect(1, UcumDecimal.fromInt(1).asInteger(), reason: message + '1');
-      expect(2, UcumDecimal.fromInt(2).asInteger(), reason: message + '2');
-      expect(64, UcumDecimal.fromInt(64).asInteger(), reason: message + '64');
-      expect(MAX_VALUE, UcumDecimal.fromInt(MAX_VALUE).asInteger(),
-          reason: '$message$MAX_VALUE');
-      expect(-1, UcumDecimal.fromInt(-1).asInteger(), reason: message + '-1');
-      expect(-2, UcumDecimal.fromInt(-2).asInteger(), reason: message + '-2');
+      expect(0, UcumDecimal.fromInt(0).asInteger(), reason: '${message}0');
+      expect(1, UcumDecimal.fromInt(1).asInteger(), reason: '${message}1');
+      expect(2, UcumDecimal.fromInt(2).asInteger(), reason: '${message}2');
+      expect(64, UcumDecimal.fromInt(64).asInteger(), reason: '${message}64');
+      expect(maxValue, UcumDecimal.fromInt(maxValue).asInteger(),
+          reason: '$message$maxValue');
+      expect(-1, UcumDecimal.fromInt(-1).asInteger(), reason: '$message-1');
+      expect(-2, UcumDecimal.fromInt(-2).asInteger(), reason: '$message-2');
       expect(-64, UcumDecimal.fromInt(-64).asInteger(),
-          reason: message + '-64');
-      expect(MIN_VALUE, UcumDecimal.fromInt(MIN_VALUE).asInteger(),
-          reason: '$message$MIN_VALUE');
+          reason: '$message-64');
+      expect(minValue, UcumDecimal.fromInt(minValue).asInteger(),
+          reason: '$message$minValue');
     });
   });
 
@@ -418,7 +417,7 @@ void main() {
   });
 
   group('testTruncate', () {
-    String message = 'wrong trunc - ';
+    const String message = 'wrong trunc - ';
     test('trunc', () {
       expect('1', UcumDecimal.fromString('1').trunc().asUcumDecimal(),
           reason: message);
@@ -525,7 +524,7 @@ void main() {
       expect('321', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('15300000000000000000000000000000000001')
           .add(UcumDecimal.fromString('1680'));
-      message = getAddSubMessage('\'15300000000000000000000000000000000001',
+      message = getAddSubMessage("'15300000000000000000000000000000000001",
           '1680', '15300000000000000000000000000000001681', '+', res);
       expect('15300000000000000000000000000000001681', res.asUcumDecimal(),
           reason: message);
@@ -947,7 +946,7 @@ void main() {
 }
 
 void testRounding(String value, String expected) {
-  UcumDecimal dec = UcumDecimal.fromString(value);
+  final UcumDecimal dec = UcumDecimal.fromString(value);
   dec.checkForCouldBeWholeNumber();
   expect(expected, dec.asUcumDecimal());
 }

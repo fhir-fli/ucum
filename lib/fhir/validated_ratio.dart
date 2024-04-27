@@ -1,4 +1,4 @@
-import 'package:ucum/ucum.dart';
+import '../ucum.dart';
 
 class ValidatedRatio {
   ValidatedQuantity numerator;

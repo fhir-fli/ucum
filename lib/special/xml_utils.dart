@@ -3,13 +3,13 @@ import 'package:xml/xml.dart';
 
 abstract class XmlUtils {
   static Future<XmlDocument> parseDOM(File file) async {
-    final contents = await file.readAsString();
-    final xmlDoc = XmlDocument.parse(contents);
+    final String contents = await file.readAsString();
+    final XmlDocument xmlDoc = XmlDocument.parse(contents);
     return xmlDoc;
   }
 
   static XmlElement? getNamedChild(XmlElement? e, String name) {
-    var c = getFirstChild(e);
+    XmlElement? c = getFirstChild(e);
     while (c != null && name != c.name.local && name != c.name.qualified) {
       c = getNextSibling(c);
     }
@@ -17,13 +17,13 @@ abstract class XmlUtils {
   }
 
   static String? getNamedChildText(XmlElement? element, String name) {
-    final e = getNamedChild(element, name);
+    final XmlElement? e = getNamedChild(element, name);
     return e?.text;
   }
 
   static XmlElement? getFirstChild(XmlElement? e) {
     if (e == null) return null;
-    var n = e.findElements('*').firstOrNull;
+    final XmlElement? n = e.findElements('*').firstOrNull;
     return n;
   }
 
@@ -31,8 +31,8 @@ abstract class XmlUtils {
     if (e == null) {
       return null;
     } else {
-      XmlNode? parentNode = e.parent;
-      final index = parentNode?.childElements.toList().indexOf(e);
+      final XmlNode? parentNode = e.parent;
+      final int? index = parentNode?.childElements.toList().indexOf(e);
       if (index == null ||
           index == -1 ||
           index == ((parentNode?.childElements.length ?? 0) - 1)) {
@@ -44,8 +44,8 @@ abstract class XmlUtils {
   }
 
   static List<XmlElement> getNamedChildren(XmlElement e, String name) {
-    final res = <XmlElement>[];
-    var c = getFirstChild(e);
+    final List<XmlElement> res = <XmlElement>[];
+    XmlElement? c = getFirstChild(e);
     while (c != null) {
       if (name == c.name.local || name == c.name.qualified) {
         res.add(c);

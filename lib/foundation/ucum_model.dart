@@ -40,23 +40,23 @@ class UcumModel {
   UcumModel({this.version, this.revision, this.revisionDate});
 
   UcumUnit? getUnit(String code) {
-    for (var unit in baseUnits) {
+    for (final BaseUnit unit in baseUnits) {
       if (unit.code == code) return unit;
     }
-    for (var unit in definedUnits) {
+    for (final DefinedUnit unit in definedUnits) {
       if (unit.code == code) return unit;
     }
-    for (final unit in baseUnits) {
+    for (final BaseUnit unit in baseUnits) {
       if (unit.names.contains(code)) return unit;
     }
-    for (final unit in definedUnits) {
+    for (final DefinedUnit unit in definedUnits) {
       if (unit.names.contains(code)) return unit;
     }
     return null;
   }
 
   BaseUnit? getBaseUnit(String code) {
-    for (var unit in baseUnits) {
+    for (final BaseUnit unit in baseUnits) {
       if (unit.code == code) return unit;
     }
     return null;

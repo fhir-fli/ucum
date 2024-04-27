@@ -26,6 +26,7 @@
 /// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+library;
 
 import '../ucum.dart';
 
@@ -35,17 +36,17 @@ class ExpressionParser {
   ExpressionParser(this.model);
 
   Term parse(String code) {
-    Lexer lexer = Lexer(code);
-    Term res = parseTerm(lexer, true);
+    final Lexer lexer = Lexer(code);
+    final Term res = parseTerm(lexer, true);
     if (!lexer.finished()) {
       throw UcumException(
-          "Expression was not parsed completely. Syntax Error? - Code: $code");
+          'Expression was not parsed completely. Syntax Error? - Code: $code');
     }
     return res;
   }
 
   Term parseTerm(Lexer lexer, bool first) {
-    Term res = Term();
+    final Term res = Term();
     if (first && lexer.type == TokenType.none) {
       res.comp = Factor(1);
     } else if (lexer.type == TokenType.solidus) {
@@ -82,17 +83,17 @@ class ExpressionParser {
 
   Component parseComp(Lexer lexer) {
     if (lexer.type == TokenType.number) {
-      Factor fact = Factor(lexer.getTokenAsInt());
+      final Factor fact = Factor(lexer.getTokenAsInt());
       lexer.consume();
       return fact;
     } else if (lexer.type == TokenType.symbol) {
       return parseSymbol(lexer);
     } else if (lexer.type == TokenType.none) {
       throw UcumException(
-          "Unexpected end of expression looking for a symbol or a number");
+          'Unexpected end of expression looking for a symbol or a number');
     } else if (lexer.type == TokenType.open) {
       lexer.consume();
-      Term res = parseTerm(lexer, true);
+      final Term res = parseTerm(lexer, true);
       if (lexer.type == TokenType.close) {
         lexer.consume();
       } else {
@@ -101,18 +102,18 @@ class ExpressionParser {
       }
       return res;
     } else {
-      throw UcumException("Unexpected token looking for a symbol or a number");
+      throw UcumException('Unexpected token looking for a symbol or a number');
     }
   }
 
   Component parseSymbol(Lexer lexer) {
-    Symbol symbol = Symbol();
-    String sym = lexer.token!;
+    final Symbol symbol = Symbol();
+    final String sym = lexer.token!;
 
     // Now, can we pick a prefix that leaves behind a metric unit?
     Prefix? selected;
     UcumUnit? unit;
-    for (Prefix prefix in model.prefixes) {
+    for (final Prefix prefix in model.prefixes) {
       // TODO(Dokotela): relook at this
       if (prefix.names.isNotEmpty && sym.startsWith(prefix.names.first)) {
         unit = model.getUnit(sym.substring(prefix.names.first.length));
@@ -134,12 +135,12 @@ class ExpressionParser {
 
     if (selected != null) {
       symbol.prefix = selected;
-      symbol.unit = unit!;
+      symbol.unit = unit;
     } else {
       unit = model.getUnit(sym);
       if (unit != null) {
         symbol.unit = unit;
-      } else if (sym != "1") {
+      } else if (sym != '1') {
         throw UcumException("Error processing unit: '${lexer.source}' The unit "
             "'$sym' is unknown at position ${lexer.start}");
       }

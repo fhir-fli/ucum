@@ -2,7 +2,7 @@ import '../ucum.dart';
 
 /// A registry class for managing special unit handlers.
 class Registry {
-  final Map<String, SpecialUnitHandler> handlers = {};
+  final Map<String, SpecialUnitHandler> handlers = <String, SpecialUnitHandler>{};
 
   Registry() {
     _init();
@@ -16,7 +16,7 @@ class Registry {
     // Initialize and register handlers
     _register(CelsiusHandler());
     _register(FahrenheitHandler());
-    _register(HoldingHandler('[p\'diop]', 'deg'));
+    _register(HoldingHandler("[p'diop]", 'deg'));
     _register(HoldingHandler('%[slope]', 'deg'));
     _register(HoldingHandler('[hp_X]', '1'));
     _register(HoldingHandler('[hp_C]', '1'));

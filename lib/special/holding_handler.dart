@@ -5,9 +5,9 @@ import '../ucum.dart';
 /// This is a placeholder implementation. If you want to actually use one of these
 /// units, then you'll have to figure out how to implement them.
 class HoldingHandler extends SpecialUnitHandler {
-  String _code;
-  String _units;
-  UcumDecimal _value;
+  final String _code;
+  final String _units;
+  final UcumDecimal _value;
 
   /// Constructor for the handler with a specified code and unit.
   HoldingHandler(String code, String units)

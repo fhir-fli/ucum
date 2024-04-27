@@ -26,18 +26,19 @@
 /// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+library;
 
 import 'canonical.dart';
-import 'term.dart';
 import 'component.dart';
 import 'factor.dart';
-import 'symbol.dart';
 import 'operator.dart';
+import 'symbol.dart';
+import 'term.dart';
 
 class ExpressionComposer {
   String compose(Term? term) {
     if (term == null) return '1';
-    var buffer = StringBuffer();
+    final StringBuffer buffer = StringBuffer();
     composeTerm(buffer, term);
     return buffer.toString();
   }
@@ -87,12 +88,12 @@ class ExpressionComposer {
   }
 
   String composeCanonical(Canonical can, [bool value = true]) {
-    var buffer = StringBuffer();
+    final StringBuffer buffer = StringBuffer();
     if (value) {
       buffer.write(can.value.asUcumDecimal());
     }
     bool first = true;
-    for (var c in can.units) {
+    for (final CanonicalUnit c in can.units) {
       if (!first) buffer.write('.');
       first = false;
       buffer.write(c.base.code);

@@ -48,5 +48,5 @@ abstract class UcumUnit extends UcumConcept {
 
   /// Method to get the description.
   @override
-  String getDescription() => super.getDescription() + " ($property)";
+  String getDescription() => '${super.getDescription()} ($property)';
 }

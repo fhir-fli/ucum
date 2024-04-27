@@ -36,22 +36,22 @@ class Converter {
   Converter(this.model, this.handlers);
 
   Canonical convert(Term term) {
-    return normaliseTerm("  ", term);
+    return normaliseTerm('  ', term);
   }
 
   Canonical normaliseTerm(String indent, Term term) {
-    Canonical result =
-        Canonical(UcumDecimal.fromString("1.000000000000000000000000000000"));
+    final Canonical result =
+        Canonical(UcumDecimal.fromString('1.000000000000000000000000000000'));
 
-    debugTerm(indent, "canonicalise", term);
+    debugTerm(indent, 'canonicalise', term);
     bool div = false;
     Term? t = term;
     while (t != null) {
       if (t.comp is Term) {
-        Canonical temp = normaliseTerm(indent + "  ", t.comp as Term);
+        final Canonical temp = normaliseTerm('$indent  ', t.comp! as Term);
         if (div) {
           result.value = result.value.divide(temp.value);
-          for (var c in temp.units) {
+          for (final CanonicalUnit c in temp.units) {
             c.exponent = -c.exponent;
           }
         } else {
@@ -60,16 +60,16 @@ class Converter {
         result.units.addAll(temp.units);
       } else if (t.comp is Factor) {
         if (div) {
-          result.value = result.value.divideInt((t.comp as Factor).value);
+          result.value = result.value.divideInt((t.comp! as Factor).value);
         } else {
-          result.value = result.value.multiplyInt((t.comp as Factor).value);
+          result.value = result.value.multiplyInt((t.comp! as Factor).value);
         }
       } else if (t.comp is Symbol) {
-        Symbol o = t.comp as Symbol;
-        Canonical temp = normaliseSymbol(indent, o);
+        final Symbol o = t.comp! as Symbol;
+        final Canonical temp = normaliseSymbol(indent, o);
         if (div) {
           result.value = result.value.divide(temp.value);
-          for (var c in temp.units) {
+          for (final CanonicalUnit c in temp.units) {
             c.exponent = -c.exponent;
           }
         } else {
@@ -81,12 +81,12 @@ class Converter {
       t = t.term;
     }
 
-    debugCanonical(indent, "collate", result);
+    debugCanonical(indent, 'collate', result);
 
     for (int i = result.units.length - 1; i >= 0; i--) {
-      CanonicalUnit sf = result.units[i];
+      final CanonicalUnit sf = result.units[i];
       for (int j = i - 1; j >= 0; j--) {
-        CanonicalUnit st = result.units[j];
+        final CanonicalUnit st = result.units[j];
         if (st.base == sf.base) {
           st.exponent = sf.exponent + st.exponent;
           result.units.removeAt(i);
@@ -101,24 +101,24 @@ class Converter {
       }
     }
 
-    debugCanonical(indent, "sort", result);
+    debugCanonical(indent, 'sort', result);
     result.units.sort((CanonicalUnit lhs, CanonicalUnit rhs) =>
         lhs.base.code.compareTo(rhs.base.code));
-    debugCanonical(indent, "done", result);
+    debugCanonical(indent, 'done', result);
 
     return result;
   }
 
   Canonical normaliseSymbol(String indent, Symbol sym) {
-    Canonical result =
-        Canonical(UcumDecimal.fromString("1.000000000000000000000000000000"));
+    final Canonical result =
+        Canonical(UcumDecimal.fromString('1.000000000000000000000000000000'));
 
     if (sym.exponent != null) {
       if (sym.unit is BaseUnit) {
-        result.units.add(CanonicalUnit(sym.unit as BaseUnit, sym.exponent!));
+        result.units.add(CanonicalUnit(sym.unit! as BaseUnit, sym.exponent!));
       } else {
-        Canonical can = expandDefinedUnit(indent, sym.unit as DefinedUnit);
-        for (var c in can.units) {
+        final Canonical can = expandDefinedUnit(indent, sym.unit! as DefinedUnit);
+        for (final CanonicalUnit c in can.units) {
           c.exponent = c.exponent * sym.exponent!;
         }
         result.units.addAll(can.units);
@@ -157,7 +157,7 @@ class Converter {
 
     if (unit.isSpecial ?? false) {
       if (!handlers.exists(unit.code)) {
-        throw UcumException("Not handled yet (special unit)");
+        throw UcumException('Not handled yet (special unit)');
       } else {
         u = handlers.get(unit.code)?.getUnits();
         v = handlers.get(unit.code)?.getValue();
@@ -170,9 +170,9 @@ class Converter {
       }
     }
 
-    Term t = u == null ? Term() : ExpressionParser(model).parse(u);
-    debugTerm(indent, "now handle", t);
-    Canonical result = normaliseTerm(indent + "  ", t);
+    final Term t = u == null ? Term() : ExpressionParser(model).parse(u);
+    debugTerm(indent, 'now handle', t);
+    final Canonical result = normaliseTerm('$indent  ', t);
     if (v != null) {
       result.value = result.value.multiply(v);
     }

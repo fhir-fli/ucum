@@ -3,7 +3,7 @@ import '../ucum.dart';
 class Search {
   List<UcumConcept> doSearch(
       UcumModel model, ConceptKind? kind, String text, bool isRegex) {
-    var concepts = <UcumConcept>[];
+    final List<UcumConcept> concepts = <UcumConcept>[];
     if (kind == null || kind == ConceptKind.prefix) {
       searchPrefixes(concepts, model.prefixes, text, isRegex);
     }
@@ -18,7 +18,7 @@ class Search {
 
   void searchUnits(List<UcumConcept> concepts, List<UcumUnit> units,
       String text, bool isRegex) {
-    for (var unit in units) {
+    for (final UcumUnit unit in units) {
       if (matchesUnit(unit, text, isRegex)) {
         // Assuming here that UcumUnit extends or implements UcumConcept
         concepts.add(unit);
@@ -33,7 +33,7 @@ class Search {
 
   void searchPrefixes(List<UcumConcept> concepts, List<Prefix> prefixes,
       String text, bool isRegex) {
-    for (var concept in prefixes) {
+    for (final Prefix concept in prefixes) {
       if (matchesUcumConcept(concept, text, isRegex)) {
         concepts.add(concept);
       }
@@ -41,7 +41,7 @@ class Search {
   }
 
   bool matchesUcumConcept(UcumConcept concept, String text, bool isRegex) {
-    for (var name in concept.names) {
+    for (final String name in concept.names) {
       if (matches(name, text, isRegex)) {
         return true;
       }

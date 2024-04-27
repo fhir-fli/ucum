@@ -52,10 +52,10 @@ class UcumConcept {
       this.codeUC,
       this.printSymbol,
       List<String>? names})
-      : names = names ?? [];
+      : names = names ?? <String>[];
 
   String getDescription() {
-    return '${kind.toString().toLowerCase()} $code (\'${names.isNotEmpty ? names.first : ""}\')';
+    return "${kind.toString().toLowerCase()} $code ('${names.isNotEmpty ? names.first : ""}')";
   }
 
   @override

@@ -1,4 +1,4 @@
-const ucumUnitCodes = [
+const List<String> ucumUnitCodes = <String>[
   'millisecond',
   'second',
   'seconds',

@@ -54,7 +54,7 @@ class Lexer {
     type = TokenType.none;
     start = index;
     if (index < source.length) {
-      String? ch = nextChar();
+      final String? ch = nextChar();
       if (ch != null &&
           (!(checkSingle(ch, '/', TokenType.solidus) ||
               checkSingle(ch, '.', TokenType.period) ||
@@ -133,7 +133,7 @@ class Lexer {
           ch == '%' ||
           ch == '*' ||
           ch == '^' ||
-          ch == '\'' ||
+          ch == "'" ||
           ch == '"' ||
           ch == '_' ||
           (inBrackets && ch == '.');
@@ -141,7 +141,7 @@ class Lexer {
   }
 
   String? nextChar() {
-    String? res = index < source.length ? source[index] : null;
+    final String? res = index < source.length ? source[index] : null;
     index++;
     return res;
   }
@@ -172,7 +172,7 @@ class Lexer {
 
   bool checkAnnotation(String? ch) {
     if (ch == '{') {
-      StringBuffer buffer = StringBuffer();
+      final StringBuffer buffer = StringBuffer();
       while (ch != '}') {
         ch = nextChar();
         if (ch != null) {

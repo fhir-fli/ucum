@@ -51,7 +51,7 @@ class Term extends Component {
   void setTermCheckOp(Term? term) {
     this.term = term;
     if (term == null) {
-      this.op = null;
+      op = null;
     }
   }
 

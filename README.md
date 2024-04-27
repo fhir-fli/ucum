@@ -26,7 +26,7 @@ Dart Library Mimicking the Unified Code for Units of Measure FHIR Library Functi
 
 ### While I'll be maintaining this package, I want to ensure I give proper credit everywhere it's due
 - This is the [original Java Library]()
-- The essence file can be downloaded from: [http://unitsofmeasure.org](http://unitsofmeasure.org)
+- The essence file can be downloaded from: [https://unitsofmeasure.org](https://unitsofmeasure.org)
 
 
 ### Original Copyright Notice

@@ -1,3 +1,7 @@
+## 0.4.0
+
+- More lints
+
 ## 0.3.0
 
 - Just more linting updates

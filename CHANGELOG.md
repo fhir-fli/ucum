@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Just more linting updates
+
 ## 0.2.0
 
 - Updates for linting errors

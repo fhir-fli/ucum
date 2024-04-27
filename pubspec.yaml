@@ -1,6 +1,6 @@
 name: ucum
 description: Dart Library Mimicking the Unified Code for Units of Measure Library Functionality
-version: 0.2.0
+version: 0.3.0
 homepage: https://www.fhirfli.dev/
 repository: https://github.com/fhir-fli/ucum
 

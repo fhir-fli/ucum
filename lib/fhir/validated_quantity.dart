@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes
+// ignore_for_file: unrelated_type_equality_checks
+
 import '../ucum.dart';
 
 class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
@@ -7,7 +10,7 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
   factory ValidatedQuantity.fromString(String string) {
     final RegExpMatch? matches = valueRegex.firstMatch(string);
     if (matches?.namedGroup('value') == null) {
-      throw 'Quantity must have a number, but was passed $string';
+      throw Exception('Quantity must have a number, but was passed $string');
     }
     string = string.replaceAll(matches!.namedGroup('value')!, '').trim();
     if (string.startsWith("'")) {

@@ -1,10 +1,12 @@
+// ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes
+
 import '../ucum.dart';
 
 class ValidatedRatio {
-  ValidatedQuantity numerator;
-  ValidatedQuantity denominator;
+  final ValidatedQuantity numerator;
+  final ValidatedQuantity denominator;
 
-  ValidatedRatio({required this.numerator, required this.denominator});
+  const ValidatedRatio({required this.numerator, required this.denominator});
 
   @override
   bool operator ==(Object other) {

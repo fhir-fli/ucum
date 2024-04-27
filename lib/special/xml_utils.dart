@@ -22,7 +22,9 @@ abstract class XmlUtils {
   }
 
   static XmlElement? getFirstChild(XmlElement? e) {
-    if (e == null) return null;
+    if (e == null) {
+      return null;
+    }
     final XmlElement? n = e.findElements('*').firstOrNull;
     return n;
   }

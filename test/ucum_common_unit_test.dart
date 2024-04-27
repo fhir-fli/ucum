@@ -1,11 +1,12 @@
+// ignore_for_file: avoid_print, non_constant_identifier_names
 
 import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 
 void main() {
   group('UCUM Common Unit Tests: ', () {
-    // TODO: In the Java tests, the print statements below also print out, so
-    // it's unclear to me if they are errors or just making notations
+    // TODO(Dokotela): In the Java tests, the print statements below also print
+    // out, so it's unclear to me if they are errors or just making notations
 
     late UcumService ucumService;
 
@@ -28,7 +29,9 @@ void main() {
       final Set<String> set = <String>{};
       for (final CommonUnit cu in units) {
         // BUG?
-        if ('db' == cu.unit) continue;
+        if ('db' == cu.unit) {
+          continue;
+        }
         final String can = ucumService.getCanonicalUnits(cu.unit);
         if (null != cu.can) {
           expect(cu.can, can, reason: cu.unit);
@@ -46,10 +49,14 @@ void main() {
           continue;
         }
         // maybe bug? avoid UnumException
-        if ('dB' == cu.unit) continue;
+        if ('dB' == cu.unit) {
+          continue;
+        }
         try {
           final String can = ucumService.getCanonicalUnits(cu.unit);
-          if ('' != can) ucumService.convert(ONE, cu.unit, can);
+          if ('' != can) {
+            ucumService.convert(ONE, cu.unit, can);
+          }
         } catch (x) {
           expect(true, false, reason: '${cu.unit}: $x');
         }
@@ -63,8 +70,12 @@ void main() {
           for (final CommonUnit b in list) {
             try {
               // BUG?
-              if ('[pH]' == a.unit) continue;
-              if ('Cel' == a.unit || '[degF]' == a.unit) continue;
+              if ('[pH]' == a.unit) {
+                continue;
+              }
+              if ('Cel' == a.unit || '[degF]' == a.unit) {
+                continue;
+              }
               ucumService.convert(K, a.unit, b.unit);
             } catch (x) {
               print('${a.unit}->${b.unit} : $x');
@@ -76,9 +87,13 @@ void main() {
       final Map<String, List<CommonUnit>> map = <String, List<CommonUnit>>{};
       for (final CommonUnit cu in units) {
         // BUG?
-        if ('dB' == cu.unit) continue;
+        if ('dB' == cu.unit) {
+          continue;
+        }
         final String can = ucumService.getCanonicalUnits(cu.unit);
-        if ('' == can) continue;
+        if ('' == can) {
+          continue;
+        }
         if (!map.containsKey(can)) {
           map[can] = <CommonUnit>[];
         }

@@ -1,5 +1,3 @@
-import '../ucum.dart';
-
 /// BSD 3-Clause License
 /// Copyright (c) 2006+, Health Intersections Pty Ltd
 /// All rights reserved.
@@ -29,18 +27,16 @@ import '../ucum.dart';
 /// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 /// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+library org.fhir.ucum;
+
+import '../ucum.dart';
+
 class Lexer {
   static const String noChar = '';
   late String source;
   int index = 0;
 
-  String? _token;
-
-  String? get token => _token;
-
-  set token(String? token) {
-    _token = token;
-  }
+  String? token;
 
   TokenType? type;
   late int start;
@@ -212,5 +208,5 @@ class Lexer {
   }
 
   @override
-  String toString() => 'Lexer (source: $source, index: $index, token: $_token)';
+  String toString() => 'Lexer (source: $source, index: $index, token: $token)';
 }

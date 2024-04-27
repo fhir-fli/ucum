@@ -52,7 +52,9 @@ class Search {
   }
 
   bool matches(String? value, String text, bool isRegex) {
-    if (value == null) return false;
+    if (value == null) {
+      return false;
+    }
     return isRegex
         ? RegExp(text).hasMatch(value)
         : value.toLowerCase().contains(text.toLowerCase());

@@ -35,7 +35,9 @@ abstract class Utilities {
   }
 
   static bool isDecimal(String string) {
-    if (noString(string)) return false;
+    if (noString(string)) {
+      return false;
+    }
     return double.tryParse(string) != null;
   }
 
@@ -44,7 +46,9 @@ abstract class Utilities {
   }
 
   static bool isHex(String string) {
-    if (noString(string)) return false;
+    if (noString(string)) {
+      return false;
+    }
     return int.tryParse(string, radix: 16) != null;
   }
 

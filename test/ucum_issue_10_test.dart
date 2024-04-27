@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 
 import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
@@ -29,10 +30,11 @@ void main() {
         //    float i = 90.7183f;
         final UcumDecimal decimal = UcumDecimal.fromString(i.toString());
         final double expectPound = i * 2.2046226218487758072297380134503;
-        final UcumDecimal actual = ucumService.convert(decimal, 'kg', '[lb_av]');
+        final UcumDecimal actual =
+            ucumService.convert(decimal, 'kg', '[lb_av]');
         if ((double.parse(actual.asUcumDecimal()) - expectPound).abs() >
             0.001) {
-          throw '$i actual:$actual expected:$expectPound';
+          throw Exception('$i actual:$actual expected:$expectPound');
         }
         print(
             'elapsed = ${describeDuration(DateTime.now().millisecondsSinceEpoch - start)}');

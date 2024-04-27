@@ -41,23 +41,33 @@ class UcumModel {
 
   UcumUnit? getUnit(String code) {
     for (final BaseUnit unit in baseUnits) {
-      if (unit.code == code) return unit;
+      if (unit.code == code) {
+        return unit;
+      }
     }
     for (final DefinedUnit unit in definedUnits) {
-      if (unit.code == code) return unit;
+      if (unit.code == code) {
+        return unit;
+      }
     }
     for (final BaseUnit unit in baseUnits) {
-      if (unit.names.contains(code)) return unit;
+      if (unit.names.contains(code)) {
+        return unit;
+      }
     }
     for (final DefinedUnit unit in definedUnits) {
-      if (unit.names.contains(code)) return unit;
+      if (unit.names.contains(code)) {
+        return unit;
+      }
     }
     return null;
   }
 
   BaseUnit? getBaseUnit(String code) {
     for (final BaseUnit unit in baseUnits) {
-      if (unit.code == code) return unit;
+      if (unit.code == code) {
+        return unit;
+      }
     }
     return null;
   }

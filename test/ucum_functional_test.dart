@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print, unreachable_from_main
 
 import 'dart:io';
 
@@ -16,18 +17,19 @@ Future<void> main() async {
   FunctionalTestType getFunctionalTestType(String typeString) {
     if (typeString == 'history') {
       return FunctionalTestType.HISTORY;
-    } else if (typeString == 'validation')
+    } else if (typeString == 'validation') {
       return FunctionalTestType.VALIDATION;
-    else if (typeString == 'displayNameGeneration')
+    } else if (typeString == 'displayNameGeneration') {
       return FunctionalTestType.DISPLAY_NAME_GENERATION;
-    else if (typeString == 'conversion')
+    } else if (typeString == 'conversion') {
       return FunctionalTestType.CONVERSION;
-    else if (typeString == 'multiplication')
+    } else if (typeString == 'multiplication') {
       return FunctionalTestType.MULTIPLICATION;
-    else if (typeString == 'division')
+    } else if (typeString == 'division') {
       return FunctionalTestType.DIVISION;
-    else
-      throw 'unknown element name $typeString';
+    } else {
+      throw Exception('unknown element name $typeString');
+    }
   }
 
   void runMultiplicationCase(XmlElement x) {
@@ -90,7 +92,7 @@ Future<void> main() async {
     }
   }
 
-  runConversionCase(XmlElement x) {
+  void runConversionCase(XmlElement x) {
     final String? id = x.getAttribute('id');
     final String? value = x.getAttribute('value');
     final String? srcUnit = x.getAttribute('srcUnit');
@@ -167,18 +169,20 @@ Future<void> main() async {
   void testXmlElement(TestCase testCase) {
     if (testCase.testType == FunctionalTestType.HISTORY) {
       // Test history element. Not a test. Do nothing.
-    } else if (testCase.testType == FunctionalTestType.VALIDATION)
+    } else if (testCase.testType == FunctionalTestType.VALIDATION) {
       runValidationCase(testCase.testCase);
-    else if (testCase.testType == FunctionalTestType.DISPLAY_NAME_GENERATION)
+    } else if (testCase.testType ==
+        FunctionalTestType.DISPLAY_NAME_GENERATION) {
       runDisplayNameGenerationCase(testCase.testCase);
-    else if (testCase.testType == FunctionalTestType.CONVERSION)
+    } else if (testCase.testType == FunctionalTestType.CONVERSION) {
       runConversionCase(testCase.testCase);
-    else if (testCase.testType == FunctionalTestType.MULTIPLICATION)
+    } else if (testCase.testType == FunctionalTestType.MULTIPLICATION) {
       runMultiplicationCase(testCase.testCase);
-    else if (testCase.testType == FunctionalTestType.DIVISION)
+    } else if (testCase.testType == FunctionalTestType.DIVISION) {
       runDivisionCase(testCase.testCase);
-    else
-      throw 'unknown test type ${testCase.testCase.name}';
+    } else {
+      throw Exception('unknown test type ${testCase.testCase.name}');
+    }
   }
 
   final List<TestCase> elements = <TestCase>[];
@@ -187,15 +191,17 @@ Future<void> main() async {
   final XmlElement element = doc.rootElement;
 
   if (element.name.toString() != 'ucumTests') {
-    throw "Unable to process XML document: expected 'ucumTests' but found "
-        "'${element.name}'";
+    throw Exception(
+        "Unable to process XML document: expected 'ucumTests' but found "
+        "'${element.name}'");
   }
 
   XmlElement? focus = XmlUtils.getFirstChild(element);
   while (focus != null) {
     final String testTypeString = focus.name.toString();
     final FunctionalTestType testType = getFunctionalTestType(testTypeString);
-    for (final XmlElement testCase in XmlUtils.getNamedChildren(focus, 'case')) {
+    for (final XmlElement testCase
+        in XmlUtils.getNamedChildren(focus, 'case')) {
       final String? testId = testCase.getAttribute('id');
       if (testId != null) {
         elements.add(TestCase('$testTypeString: $testId', testType, testCase));
@@ -203,9 +209,7 @@ Future<void> main() async {
     }
     focus = XmlUtils.getNextSibling(focus);
   }
-  for (final TestCase testCase in elements) {
-    testXmlElement(testCase);
-  }
+  elements.forEach(testXmlElement);
 }
 
 enum FunctionalTestType {

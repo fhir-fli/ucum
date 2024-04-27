@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes
+
 import 'dart:math' as math;
 
 import '../foundation/ucum_exception.dart';
@@ -90,7 +92,9 @@ class UcumDecimal {
       return false;
     } else {
       for (int i = start; i < s.length; i++) {
-        if (s[i] != '0') return false;
+        if (s[i] != '0') {
+          return false;
+        }
       }
       return true;
     }
@@ -424,7 +428,7 @@ class UcumDecimal {
 
   String stringAddition(String s1, String s2) {
     assert(s1.length == s2.length);
-    final List<String> result = List.filled(s2.length, '0');
+    final List<String> result = List<String>.filled(s2.length, '0');
     int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
       final int t = c + dig(s1[i]) + dig(s2[i]);
@@ -437,7 +441,7 @@ class UcumDecimal {
 
   String stringSubtraction(String s1, String s2) {
     assert(s1.length == s2.length);
-    final List<String> result = List.filled(s2.length, '0');
+    final List<String> result = List<String>.filled(s2.length, '0');
 
     const int c = 0;
     for (int i = s1.length - 1; i >= 0; i--) {
@@ -485,7 +489,7 @@ class UcumDecimal {
       s2 = temp;
     }
 
-    List<String> s = List.generate(s2.length, (_) => '');
+    List<String> s = List<String>.generate(s2.length, (_) => '');
 
     int carry;
     for (int i = s2.length - 1; i >= 0; i--) {

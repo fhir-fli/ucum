@@ -37,7 +37,9 @@ import 'term.dart';
 
 class ExpressionComposer {
   String compose(Term? term) {
-    if (term == null) return '1';
+    if (term == null) {
+      return '1';
+    }
     final StringBuffer buffer = StringBuffer();
     composeTerm(buffer, term);
     return buffer.toString();
@@ -94,7 +96,9 @@ class ExpressionComposer {
     }
     bool first = true;
     for (final CanonicalUnit c in can.units) {
-      if (!first) buffer.write('.');
+      if (!first) {
+        buffer.write('.');
+      }
       first = false;
       buffer.write(c.base.code);
       if (c.exponent != 1) {

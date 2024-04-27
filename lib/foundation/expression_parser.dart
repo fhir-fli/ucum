@@ -54,7 +54,7 @@ class ExpressionParser {
       lexer.consume();
       res.term = parseTerm(lexer, false);
     } else {
-      /// TODO(this does not exactly mirror Java, but passes tests)
+      // TODO(Dokotela): this does not exactly mirror Java, but passes tests
       if (lexer.type == TokenType.annotation) {
         // Handle annotation - assuming it's skipped or processed elsewhere
         res.comp = Factor(1); // Example handling, might need to be adjusted

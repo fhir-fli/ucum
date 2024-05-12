@@ -321,48 +321,52 @@ class UcumDecimal {
   }
 
   UcumDecimal doAdd(UcumDecimal other) {
-    int max = math.max(decimal, other.decimal);
-    String s1 = stringMultiply('0', max - decimal + 1) + digits;
-    String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
+    // Compute total number of decimal places for both numbers
+    final int thisScale = digits.length - decimal;
+    final int otherScale = other.digits.length - other.decimal;
 
-    if (s1.length < s2.length) {
-      s1 = s1 + stringMultiply('0', s2.length - s1.length);
-    } else if (s2.length < s1.length) {
-      s2 = s2 + stringMultiply('0', s1.length - s2.length);
+    // Normalize numbers to have the same number of decimal places
+    final String normalizedThisDigits = digits + '0' * (otherScale - thisScale);
+    final String normalizedOtherDigits =
+        other.digits + '0' * (thisScale - otherScale);
+
+    // Prepare to sum the digits
+    final int maxLength =
+        math.max(normalizedThisDigits.length, normalizedOtherDigits.length);
+    final String paddedThisDigits =
+        normalizedThisDigits.padLeft(maxLength, '0');
+    final String paddedOtherDigits =
+        normalizedOtherDigits.padLeft(maxLength, '0');
+
+    String resultDigits = '';
+    int carry = 0;
+    // Perform addition from right to left
+    for (int i = maxLength - 1; i >= 0; i--) {
+      final int sum = int.parse(paddedThisDigits[i]) +
+          int.parse(paddedOtherDigits[i]) +
+          carry;
+      carry = sum ~/ 10;
+      resultDigits = (sum % 10).toString() + resultDigits;
     }
 
-    String s3 = stringAddition(s1, s2);
-
-    if (s3.isNotEmpty && s3[0] == '1') {
-      max++;
-    } else {
-      s3 = delete(s3, 0, 1);
+    // Handle any remaining carry
+    if (carry > 0) {
+      resultDigits = carry.toString() + resultDigits;
     }
 
-    if (max != s3.length) {
-      if (max < 0) {
-        throw Exception('Unhandled');
-      } else if (max < s3.length) {
-        s3 = insert('.', s3, max);
-      } else {
-        throw Exception('Unhandled');
-      }
-    }
+    // Calculate where the decimal should be placed
+    final int resultDecimal =
+        resultDigits.length - (thisScale > otherScale ? thisScale : otherScale);
 
-    final UcumDecimal result = UcumDecimal();
-    try {
-      result.setValueUcumDecimal(s3);
-    } catch (e) {
-      // won't happen
-    }
-    result.scientific = scientific || other.scientific;
-    if (decimal < other.decimal) {
-      result.precision = precision;
-    } else if (other.decimal < decimal) {
-      result.precision = other.precision;
-    } else {
-      result.precision = math.min(precision, other.precision);
-    }
+    // Final construction of result UcumDecimal
+    final UcumDecimal result = UcumDecimal()
+      ..digits = resultDigits
+      ..decimal = resultDecimal
+      ..precision = math.min(precision, other.precision)
+      ..scientific = scientific || other.scientific
+      ..negative =
+          negative; // Assuming addition of two positive numbers for simplicity
+
     return result;
   }
 

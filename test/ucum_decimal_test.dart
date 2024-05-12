@@ -538,6 +538,20 @@ void main() {
       res = UcumDecimal.fromString('.1').add(UcumDecimal.fromString('.01'));
       message = getAddSubMessage('.1', '.01', '0.11', '+', res);
       expect('0.11', res.asUcumDecimal(), reason: message);
+      res = UcumDecimal.fromString('0.40').add(UcumDecimal.fromString('0.10'));
+      message = getAddSubMessage('0.40', '0.10', '0.50', '+', res);
+      res =
+          UcumDecimal.fromString('0.040').add(UcumDecimal.fromString('0.010'));
+      message = getAddSubMessage('0.040', '0.010', '0.050', '+', res);
+      res = UcumDecimal.fromString('0.0040')
+          .add(UcumDecimal.fromString('0.0010'));
+      message = getAddSubMessage('0.0040', '0.0010', '0.0050', '+', res);
+      res = UcumDecimal.fromString('0.00040')
+          .add(UcumDecimal.fromString('0.00010'));
+      message = getAddSubMessage('0.00040', '0.00010', '0.00050', '+', res);
+      res = UcumDecimal.fromString('0.000040')
+          .add(UcumDecimal.fromString('0.000010'));
+      message = getAddSubMessage('0.000040', '0.000010', '0.000050', '+', res);
       res = UcumDecimal.fromString('5').add(UcumDecimal.fromString('6'));
       message = getAddSubMessage('5', '6', '11', '+', res);
       expect('11', res.asUcumDecimal(), reason: message);

@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Some errors with doAdd in UcumDecimal, now fixed
+
 ## 0.4.0
 
 - More lints

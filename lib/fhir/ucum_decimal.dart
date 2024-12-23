@@ -51,6 +51,8 @@ class UcumDecimal {
     setValueUcumDecimal(i.toString());
   }
 
+  double get asDouble => double.parse(asUcumDecimal());
+
   void setValueUcumDecimal(String value) {
     scientific = false;
     negative = value.startsWith('-');

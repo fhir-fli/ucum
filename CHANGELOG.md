@@ -1,3 +1,7 @@
+## 0.6.0
+
+- Just needed this one function
+
 ## 0.5.0
 
 - Some errors with doAdd in UcumDecimal, now fixed

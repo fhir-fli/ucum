@@ -15,7 +15,7 @@ void main() {
       final double days = ms / (1000 * 60 * 60 * 24);
       final double hours = ms / (1000 * 60 * 60) % 24;
       final double mins = ms / (1000 * 60) % 60;
-      final double secs = ms / (1000) % 60;
+      final double secs = ms / 1000 % 60;
       ms = ms % 1000;
       if (days > 0) {
         return '${days}d ${hours}h ${mins}m ${secs}s ${ms}ms';

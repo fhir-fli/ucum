@@ -1,10 +1,17 @@
+## 0.7.0
+
+- Fixed 6 unit definition data bugs (Bd, Oe, [S], [diop], [mesh_i], [mu_0])
+- Fixed converter precision to use 24 significant digits consistently
+- Removed deprecated lints from analysis_options.yaml
+- Updated dependencies (xml ^6.6.1, lints ^6.1.0, test ^1.29.0)
+
 ## 0.6.0
 
-- Just needed this one function
+- Added asDouble getter to UcumDecimal
 
 ## 0.5.0
 
-- Some errors with doAdd in UcumDecimal, now fixed
+- Fixed errors with doAdd in UcumDecimal
 
 ## 0.4.0
 

@@ -1238,8 +1238,8 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: 'Bd',
       codeUC: 'BD',
       value: Value(
-          unit: 's',
-          unitUC: '/s',
+          unit: '/s',
+          unitUC: '/S',
           value: UcumDecimal.fromString('1'),
           text: '1'),
       property: 'signal transmission rate',
@@ -1867,7 +1867,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: 'Oe',
       codeUC: 'OE',
       value: Value(
-          unit: 'A/m',
+          unit: '/[pi].A/m',
           unitUC: '/[PI].A/M',
           value: UcumDecimal.fromString('250'),
           text: '250'),
@@ -3505,7 +3505,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[S]',
       codeUC: '[S]',
       value: Value(
-          unit: 's',
+          unit: '10*-13.s',
           unitUC: '10*-13.S',
           value: UcumDecimal.fromString('1'),
           text: '1'),
@@ -4127,7 +4127,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[diop]',
       codeUC: '[DIOP]',
       value: Value(
-          unit: 'm',
+          unit: '/m',
           unitUC: '/M',
           value: UcumDecimal.fromString('1'),
           text: '1'),
@@ -5399,7 +5399,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[mesh_i]',
       codeUC: '[MESH_I]',
       value: Value(
-          unit: '[in_i]',
+          unit: '/[in_i]',
           unitUC: '/[IN_I]',
           value: UcumDecimal.fromString('1'),
           text: '1'),
@@ -5545,7 +5545,7 @@ final List<DefinedUnit> definedUnitsList = <DefinedUnit>[
       code: '[mu_0]',
       codeUC: '[MU_0]',
       value: Value(
-          unit: 'N/A2',
+          unit: '4.[pi].10*-7.N/A2',
           unitUC: '4.[PI].10*-7.N/A2',
           value: UcumDecimal.fromString('1'),
           text: '1'),

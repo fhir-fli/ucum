@@ -42,7 +42,7 @@ class Converter {
 
   Canonical normaliseTerm(String indent, Term term) {
     final Canonical result =
-        Canonical(UcumDecimal.fromString('1.000000000000000000000000000000'));
+        Canonical(UcumDecimal.fromString('1.00000000000000000000000'));
 
     debugTerm(indent, 'canonicalise', term);
     bool div = false;
@@ -112,7 +112,7 @@ class Converter {
 
   Canonical normaliseSymbol(String indent, Symbol sym) {
     final Canonical result =
-        Canonical(UcumDecimal.fromString('1.000000000000000000000000000000'));
+        Canonical(UcumDecimal.fromString('1.00000000000000000000000'));
 
     if (sym.exponent != null) {
       if (sym.unit is BaseUnit) {
@@ -176,7 +176,12 @@ class Converter {
     debugTerm(indent, 'now handle', t);
     final Canonical result = normaliseTerm('$indent  ', t);
     if (v != null) {
-      result.value = result.value.multiply(v);
+      // Ensure unit conversion constants don't limit canonical precision
+      // (similar to how prefix values have precision=24)
+      final UcumDecimal vAdj = v.precision < 24
+          ? UcumDecimal.fromString(v.asUcumDecimal(), 24)
+          : v;
+      result.value = result.value.multiply(vAdj);
     }
     return result;
   }

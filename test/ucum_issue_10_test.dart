@@ -27,7 +27,6 @@ void main() {
     test('KgToPoundTest', () {
       final int start = DateTime.now().millisecondsSinceEpoch;
       for (double i = 90.5; i < 100; i += 0.001) {
-        //    float i = 90.7183f;
         final UcumDecimal decimal = UcumDecimal.fromString(i.toString());
         final double expectPound = i * 2.2046226218487758072297380134503;
         final UcumDecimal actual =
@@ -36,9 +35,9 @@ void main() {
             0.001) {
           throw Exception('$i actual:$actual expected:$expectPound');
         }
-        print(
-            'elapsed = ${describeDuration(DateTime.now().millisecondsSinceEpoch - start)}');
       }
+      print(
+          'elapsed = ${describeDuration(DateTime.now().millisecondsSinceEpoch - start)}');
     });
   });
 }

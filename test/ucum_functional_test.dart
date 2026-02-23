@@ -186,7 +186,7 @@ Future<void> main() async {
   }
 
   final List<TestCase> elements = <TestCase>[];
-  final File tests = File('resources/UcumFunctionalTests.xml');
+  final File tests = File('test/resources/UcumFunctionalTests.xml');
   final XmlDocument doc = await XmlUtils.parseDOM(tests);
   final XmlElement element = doc.rootElement;
 
@@ -209,7 +209,13 @@ Future<void> main() async {
     }
     focus = XmlUtils.getNextSibling(focus);
   }
-  elements.forEach(testXmlElement);
+  group('UCUM Functional Tests', () {
+    for (final TestCase testCase in elements) {
+      test(testCase.testName, () {
+        testXmlElement(testCase);
+      });
+    }
+  });
 }
 
 enum FunctionalTestType {

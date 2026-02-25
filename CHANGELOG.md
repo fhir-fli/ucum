@@ -1,3 +1,7 @@
+## 0.8.0
+
+- Fix +, -, % operators to convert units before arithmetic
+
 ## 0.7.0
 
 - Fixed 6 unit definition data bugs (Bd, Oe, [S], [diop], [mesh_i], [mu_0])

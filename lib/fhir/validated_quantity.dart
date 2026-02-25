@@ -149,7 +149,9 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       return copyWith(value: value.add(other));
     } else if (other is ValidatedQuantity) {
       if (UcumService().isComparable(unit, other.unit)) {
-        return copyWith(value: value.add(other.value));
+        final UcumDecimal convertedValue =
+            UcumService().convert(other.value, other.unit, unit);
+        return copyWith(value: value.add(convertedValue));
       } else {
         return null;
       }
@@ -159,7 +161,13 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
     } else if (other is String) {
       final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        return copyWith(value: value.add(newQuantity.value));
+        if (UcumService().isComparable(unit, newQuantity.unit)) {
+          final UcumDecimal convertedValue =
+              UcumService().convert(newQuantity.value, newQuantity.unit, unit);
+          return copyWith(value: value.add(convertedValue));
+        } else {
+          return null;
+        }
       } else {
         throw UcumException('$this could not be added to $other '
             '(reason: it is not an accepted type)');
@@ -175,7 +183,9 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       return copyWith(value: value.subtract(other));
     } else if (other is ValidatedQuantity) {
       if (UcumService().isComparable(unit, other.unit)) {
-        return copyWith(value: value.subtract(other.value));
+        final UcumDecimal convertedValue =
+            UcumService().convert(other.value, other.unit, unit);
+        return copyWith(value: value.subtract(convertedValue));
       } else {
         return null;
       }
@@ -185,7 +195,13 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
     } else if (other is String) {
       final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        return copyWith(value: value.subtract(newQuantity.value));
+        if (UcumService().isComparable(unit, newQuantity.unit)) {
+          final UcumDecimal convertedValue =
+              UcumService().convert(newQuantity.value, newQuantity.unit, unit);
+          return copyWith(value: value.subtract(convertedValue));
+        } else {
+          return null;
+        }
       } else {
         throw UcumException('$other could not be subtracted from $this '
             '(reason: it is not an accepted type)');
@@ -281,14 +297,28 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
     if (other is UcumDecimal) {
       return copyWith(value: value.modulo(other));
     } else if (other is ValidatedQuantity) {
-      return copyWith(value: value.modulo(other.value));
+      if (UcumService().isComparable(unit, other.unit)) {
+        final UcumDecimal convertedValue =
+            UcumService().convert(other.value, other.unit, unit);
+        return copyWith(value: value.modulo(convertedValue));
+      } else {
+        throw UcumException('$this could not be moduloed with $other '
+            '(reason: units are not comparable)');
+      }
     } else if (other is num || other is BigInt) {
       return copyWith(
           value: value.modulo(UcumDecimal.fromString(other.toString())));
     } else if (other is String) {
       final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
-        return copyWith(value: value.modulo(newQuantity.value));
+        if (UcumService().isComparable(unit, newQuantity.unit)) {
+          final UcumDecimal convertedValue =
+              UcumService().convert(newQuantity.value, newQuantity.unit, unit);
+          return copyWith(value: value.modulo(convertedValue));
+        } else {
+          throw UcumException('$this could not be moduloed with $other '
+              '(reason: units are not comparable)');
+        }
       } else {
         throw UcumException('$this could not be moduloed with $other '
             '(reason: it is not an accepted type)');

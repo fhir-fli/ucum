@@ -1,5 +1,31 @@
 # CLAUDE.md
 
+# 🛑🛑🛑 ABSOLUTE RULE #1 — INCREMENTAL OUTPUT — NO EXCEPTIONS — READ THIS FIRST 🛑🛑🛑
+
+## **EVERY SCRIPT WRITES RESULTS TO DISK INCREMENTALLY. EVERY ITERATION. NO EXCEPTIONS. NEVER.**
+
+Violated multiple times; **the user has been furious every single time**. Applies to EVERY script — regardless of runtime, regardless of how "throwaway" it feels. No exceptions.
+
+**If you think "this is just a quick diagnostic, I don't need to write incrementally" — THAT THOUGHT IS THE VIOLATION.** Stop. Open the file. Write incrementally. NOW.
+
+**MANDATORY pattern:**
+```python
+fh = open(out_path, 'w'); fh.write('header\n')
+for item in items:
+    result = compute(item)
+    fh.write(f'{result}\n'); fh.flush()
+    print(f'{item}: {result}', flush=True)
+fh.close()
+```
+
+**FORBIDDEN:** `results.append(...)` accumulators with a final `json.dumps`; `print()` without `flush=True`; bash pipes that buffer (`| head`, `| tail`, `| tee`, `| grep`); single `>` redirect with no incremental writes; `concurrent.futures` final-collection patterns; importing/running ANY existing script WITHOUT first opening it to check for buffering.
+
+**Before running any existing script: READ IT.** If it buffers, fix it first. No exceptions.
+
+The user has been burned by scripts that ran 11+ minutes, crashed at the end, and left zero output. **Buffered output is data loss waiting to happen.** Apply every time.
+
+---
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview

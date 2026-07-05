@@ -195,6 +195,13 @@ class UcumDecimal {
     if (other == null) {
       return 0;
     } else {
+      // Negative zero must compare equal to zero: without this, the sign
+      // short-circuit below reports -0 < 0. (Ucum-java has the same latent
+      // flaw, but its subtraction paths can't produce -0 through any
+      // reachable route; our affine temperature conversions can.)
+      if (isZero() && other.isZero()) {
+        return 0;
+      }
       if (negative && !other.negative) {
         return -1;
       } else if (!negative && other.negative) {
@@ -297,11 +304,11 @@ class UcumDecimal {
     if (negative == other.negative) {
       final UcumDecimal result = doAdd(other);
       result.negative = negative;
-      return result;
+      return _normalizeZeroSign(result);
     } else if (negative) {
-      return other.doSubtract(this);
+      return _normalizeZeroSign(other.doSubtract(this));
     } else {
-      return doSubtract(other);
+      return _normalizeZeroSign(doSubtract(other));
     }
   }
 
@@ -318,6 +325,15 @@ class UcumDecimal {
     } else {
       result = other.doSubtract(this);
       result.negative = !result.negative;
+    }
+    return _normalizeZeroSign(result);
+  }
+
+  /// A zero result must never carry a negative sign, or comparison and
+  /// string output report -0.
+  static UcumDecimal _normalizeZeroSign(UcumDecimal result) {
+    if (result.negative && result.isZero()) {
+      result.negative = false;
     }
     return result;
   }

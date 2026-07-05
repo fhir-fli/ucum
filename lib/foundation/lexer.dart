@@ -170,17 +170,18 @@ class Lexer {
       final StringBuffer buffer = StringBuffer();
       while (ch != '}') {
         ch = nextChar();
-        if (ch != null) {
-          if (!Utilities.isAsciiChar(ch)) {
-            throw UcumException(
-                "Error processing unit '$source': Annotation contains non-ascii characters");
-          }
-          if (ch == noChar) {
-            throw UcumException(
-                "Error processing unit '$source': unterminated annotation");
-          }
-          buffer.write(ch);
+        // Java's lexer returns a NO_CHAR sentinel at end of input and throws
+        // there; our nextChar() returns null, which must terminate the loop
+        // the same way or an unmatched '{' spins forever.
+        if (ch == null) {
+          throw UcumException(
+              "Error processing unit '$source': unterminated annotation");
         }
+        if (!Utilities.isAsciiChar(ch)) {
+          throw UcumException(
+              "Error processing unit '$source': Annotation contains non-ascii characters");
+        }
+        buffer.write(ch);
       }
       token = buffer.toString();
       type = TokenType.annotation;

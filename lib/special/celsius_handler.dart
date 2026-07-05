@@ -27,4 +27,16 @@ class CelsiusHandler extends SpecialUnitHandler {
   bool hasOffset() {
     return true;
   }
+
+  /// K = Cel + 273.15
+  @override
+  UcumDecimal toRatio(UcumDecimal value) =>
+      SpecialUnitHandler.atWorkingPrecision(value)
+          .add(UcumDecimal.fromString('273.15', 24));
+
+  /// Cel = K - 273.15
+  @override
+  UcumDecimal fromRatio(UcumDecimal value) =>
+      SpecialUnitHandler.atWorkingPrecision(value)
+          .subtract(UcumDecimal.fromString('273.15', 24));
 }

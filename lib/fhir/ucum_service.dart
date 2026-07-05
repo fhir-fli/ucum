@@ -153,6 +153,18 @@ class UcumService {
             'getCanonicalForm', 'value.unit', 'must not be null or empty'));
 
     final Term term = ExpressionParser(model).parse(value.unit);
+
+    // Unlike unit-level canonicalization (which must throw for affine
+    // scales — no multiplicative form exists), a Pair carries the actual
+    // measurement value, so a bare Cel/[degF] can be converted onto its
+    // ratio scale (K) and canonicalized from there. This is what lets
+    // FHIRPath/CQL compare temperatures across scales.
+    final SpecialUnitHandler? special = _offsetHandlerFor(term);
+    if (special != null) {
+      return getCanonicalForm(
+          Pair(value: special.toRatio(value.value), unit: special.getUnits()));
+    }
+
     final Canonical c = Converter(model, handlers).convert(term);
     Pair p;
     p = Pair(
@@ -174,10 +186,35 @@ class UcumService {
       return value;
     }
 
-    final Canonical src = Converter(model, handlers)
-        .convert(ExpressionParser(model).parse(sourceUnit));
-    final Canonical dst = Converter(model, handlers)
-        .convert(ExpressionParser(model).parse(destUnit));
+    final Term srcTerm = ExpressionParser(model).parse(sourceUnit);
+    final Term dstTerm = ExpressionParser(model).parse(destUnit);
+
+    // Affine special units (Cel, [degF]) have no multiplicative canonical
+    // form, so the canonical path below cannot handle them (the Converter
+    // throws, as Ucum-java does). A *bare* offset unit is instead converted
+    // through its ratio scale (K): scale in, convert linearly, scale out —
+    // the approach ucum-lhc uses. Compound or prefixed offset units (Cel/s,
+    // mCel) still throw from the Converter rather than silently mis-convert.
+    final SpecialUnitHandler? srcSpecial = _offsetHandlerFor(srcTerm);
+    final SpecialUnitHandler? dstSpecial = _offsetHandlerFor(dstTerm);
+    if (srcSpecial != null || dstSpecial != null) {
+      final UcumDecimal ratioValue =
+          srcSpecial == null ? value : srcSpecial.toRatio(value);
+      final String ratioSource = srcSpecial?.getUnits() ?? sourceUnit;
+      final String ratioDest = dstSpecial?.getUnits() ?? destUnit;
+      final UcumDecimal converted = ratioSource == ratioDest
+          ? ratioValue
+          : convert(ratioValue, ratioSource, ratioDest);
+      final UcumDecimal special =
+          dstSpecial == null ? converted : dstSpecial.fromRatio(converted);
+      if (value.isWholeNumber()) {
+        special.checkForCouldBeWholeNumber();
+      }
+      return special;
+    }
+
+    final Canonical src = Converter(model, handlers).convert(srcTerm);
+    final Canonical dst = Converter(model, handlers).convert(dstTerm);
     final String s = ExpressionComposer().composeCanonical(src, false);
     final String d = ExpressionComposer().composeCanonical(dst, false);
 
@@ -209,9 +246,38 @@ class UcumService {
   }
 
   bool isComparable(String units1, String units2) {
-    final String u1 = getCanonicalUnits(units1);
-    final String u2 = getCanonicalUnits(units2);
+    final String u1 = getCanonicalUnits(_ratioUnits(units1));
+    final String u2 = getCanonicalUnits(_ratioUnits(units2));
     return u1 == u2;
+  }
+
+  /// Substitutes a bare affine special unit (Cel, [degF]) with its ratio
+  /// scale unit (K), so comparability and equality can be decided even
+  /// though the affine unit itself has no canonical form. [convert] handles
+  /// the actual affine arithmetic.
+  String _ratioUnits(String unit) {
+    final SpecialUnitHandler? special =
+        _offsetHandlerFor(ExpressionParser(model).parse(unit));
+    return special?.getUnits() ?? unit;
+  }
+
+  /// If [term] is exactly one bare symbol — no prefix, exponent 1, nothing
+  /// multiplied or divided — of a special unit whose handler has an offset
+  /// (an affine scale such as Cel or [degF]), returns that handler.
+  SpecialUnitHandler? _offsetHandlerFor(Term term) {
+    if (term.op != null || term.term != null) {
+      return null;
+    }
+    final Component? comp = term.comp;
+    if (comp is! Symbol || comp.prefix != null || (comp.exponent ?? 1) != 1) {
+      return null;
+    }
+    final UcumUnit? unit = comp.unit;
+    if (unit is! DefinedUnit || !(unit.isSpecial ?? false)) {
+      return null;
+    }
+    final SpecialUnitHandler? handler = handlers.get(unit.code);
+    return (handler != null && handler.hasOffset()) ? handler : null;
   }
 
   Pair multiply(Pair o1, Pair o2) {

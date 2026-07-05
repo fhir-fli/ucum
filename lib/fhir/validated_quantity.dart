@@ -12,7 +12,9 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
     if (matches?.namedGroup('value') == null) {
       throw Exception('Quantity must have a number, but was passed $string');
     }
-    string = string.replaceAll(matches!.namedGroup('value')!, '').trim();
+    // Cut at the match boundary — replaceAll would also delete digits that
+    // happen to appear inside the unit (e.g. the '2' of 'm2' for '2 m2').
+    string = string.substring(matches!.end).trim();
     if (string.startsWith("'")) {
       string = string.substring(1);
     }
@@ -68,81 +70,76 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
 
   static RegExp valueRegex = RegExp(r'^(?<value>(\+|-)?\d+(\.\d+)?)\s*');
 
+  /// Coerces [other] into a quantity for comparison/equality: quantities
+  /// pass through, numbers and [UcumDecimal]s become dimensionless
+  /// quantities (unit `'1'`, matching CQL/FHIRPath integer→Quantity
+  /// promotion), and strings are parsed (`'50 cm'`). Returns null when
+  /// [other] is not an accepted type or fails unit validation.
+  static ValidatedQuantity? _coerceOperand(Object other) {
+    if (other is ValidatedQuantity) {
+      return other;
+    }
+    if (other is UcumDecimal) {
+      return ValidatedQuantity(value: other);
+    }
+    if (other is num || other is BigInt) {
+      return ValidatedQuantity(
+          value: UcumDecimal.fromString(other.toString()));
+    }
+    if (other is String) {
+      final ValidatedQuantity parsed = ValidatedQuantity.fromString(other);
+      return parsed.isValid() ? parsed : null;
+    }
+    return null;
+  }
+
   @override
   bool operator ==(Object other) {
     if (other is ValidatedQuantity) {
       return UcumService().isEqual(this, other);
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        final bool shouldBeEqual = UcumService().isEqual(this, newQuantity);
-        if (shouldBeEqual) {
-          if (definiteDurationUnits.contains(unit) &&
-              !definiteDurationUnits.contains(newQuantity.unit)) {
-            return false;
-          } else if (!definiteDurationUnits.contains(unit) &&
-              definiteDurationUnits.contains(newQuantity.unit)) {
-            return false;
-          } else {
-            return true;
-          }
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    } else if (other is num || other is BigInt) {
-      final ValidatedQuantity newQuantity =
-          ValidatedQuantity.fromString(other.toString());
-      if (newQuantity.isValid()) {
-        final bool shouldBeEqual = UcumService().isEqual(this, newQuantity);
-        if (shouldBeEqual) {
-          if (definiteDurationUnits.contains(unit) &&
-              !definiteDurationUnits.contains(newQuantity.unit)) {
-            return false;
-          } else if (!definiteDurationUnits.contains(unit) &&
-              definiteDurationUnits.contains(newQuantity.unit)) {
-            return false;
-          } else {
-            return true;
-          }
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    } else {
+    }
+    final ValidatedQuantity? that = _coerceOperand(other);
+    if (that == null || !UcumService().isEqual(this, that)) {
       return false;
     }
+    // FHIRPath: a definite duration ('a', 'mo'...) never equals a calendar
+    // duration ('year', 'month'...) even when the values align.
+    return definiteDurationUnits.contains(unit) ==
+        definiteDurationUnits.contains(that.unit);
   }
 
   bool equivalent(Object other) {
-    if (other is ValidatedQuantity) {
-      return UcumService().isEqual(this, other);
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        return UcumService().isEqual(this, newQuantity);
-      } else {
-        return false;
-      }
-    } else if (other is num || other is BigInt) {
-      final ValidatedQuantity newQuantity =
-          ValidatedQuantity.fromString(other.toString());
-      if (newQuantity.isValid()) {
-        return UcumService().isEqual(this, newQuantity);
-      } else {
-        return false;
-      }
-    } else {
-      return false;
+    final ValidatedQuantity? that = _coerceOperand(other);
+    return that != null && UcumService().isEqual(this, that);
+  }
+
+  /// Consistent with the unit-converting [operator ==]: equal quantities in
+  /// different units (1 m, 100 cm) must produce identical hash codes, so we
+  /// hash the canonical form. Falls back to the raw value/unit when no
+  /// canonical form exists (e.g. an invalid unit).
+  @override
+  int get hashCode {
+    try {
+      final Pair canonical =
+          UcumService().getCanonicalForm(Pair(value: value, unit: unit));
+      return Object.hash(_normalizedNumber(canonical.value), canonical.unit);
+    } on Exception {
+      return Object.hash(_normalizedNumber(value), unit);
     }
   }
 
-  @override
-  int get hashCode => value.hashCode ^ unit.hashCode;
+  /// Strips presentation-precision artifacts ('1.00' vs '1', '-0') so that
+  /// numerically equal decimals hash identically.
+  static String _normalizedNumber(UcumDecimal value) {
+    String s = value.asUcumDecimal();
+    if (s.contains('.')) {
+      s = s.replaceAll(RegExp(r'0+$'), '');
+      if (s.endsWith('.')) {
+        s = s.substring(0, s.length - 1);
+      }
+    }
+    return s == '-0' ? '0' : s;
+  }
 
   ValidatedQuantity? operator +(Object other) {
     if (other is UcumDecimal) {
@@ -329,97 +326,34 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
     }
   }
 
-  bool operator >(Object other) {
-    if (other is UcumDecimal) {
-      return value.comparesTo(other) > 0;
-    } else if (other is ValidatedQuantity) {
-      final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.unit, unit);
-      return value.comparesTo(compareValue) > 0;
-    } else if (other is num || other is BigInt) {
-      return value.comparesTo(UcumDecimal.fromString(other.toString())) > 0;
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        return value.comparesTo(newQuantity.value) > 0;
-      } else {
-        throw UcumException('> could not be performed on $this and $other '
-            '(reason: it is not an accepted type)');
-      }
-    } else {
-      throw UcumException('> could not be performed on $this and $other '
+  /// Shared comparison for the ordering operators: coerces [other] (see
+  /// [_coerceOperand]), converts it into this quantity's unit, and returns
+  /// the [UcumDecimal.comparesTo] result. Throws [UcumException] when
+  /// [other] is not an accepted type or the units are not comparable — the
+  /// old per-operator bodies drifted apart (the String branches compared
+  /// raw values without unit conversion; the num branches of >= and <=
+  /// dropped the equality case).
+  int _compareWith(String op, Object other) {
+    final ValidatedQuantity? that = _coerceOperand(other);
+    if (that == null) {
+      throw UcumException('$op could not be performed on $this and $other '
           '(reason: it is not an accepted type)');
     }
+    if (!UcumService().isComparable(unit, that.unit)) {
+      throw UcumException('$op could not be performed on $this and $other '
+          "(reason: units '$unit' and '${that.unit}' are not comparable)");
+    }
+    return value
+        .comparesTo(UcumService().convert(that.value, that.unit, unit));
   }
 
-  bool operator <(Object other) {
-    if (other is UcumDecimal) {
-      return value.comparesTo(other) < 0;
-    } else if (other is ValidatedQuantity) {
-      final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.unit, unit);
-      return value.comparesTo(compareValue) < 0;
-    } else if (other is num || other is BigInt) {
-      return value.comparesTo(UcumDecimal.fromString(other.toString())) < 0;
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        return value.comparesTo(newQuantity.value) < 0;
-      } else {
-        throw UcumException('> could not be performed on $this and $other '
-            '(reason: it is not an accepted type)');
-      }
-    } else {
-      throw UcumException('> could not be performed on $this and $other '
-          '(reason: it is not an accepted type)');
-    }
-  }
+  bool operator >(Object other) => _compareWith('>', other) > 0;
 
-  bool operator >=(Object other) {
-    if (other is UcumDecimal) {
-      return this == other || value.comparesTo(other) > 0;
-    } else if (other is ValidatedQuantity) {
-      final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.unit, unit);
-      return this == other || value.comparesTo(compareValue) > 0;
-    } else if (other is num || other is BigInt) {
-      return value.comparesTo(UcumDecimal.fromString(other.toString())) > 0;
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        return this == newQuantity || value.comparesTo(newQuantity.value) > 0;
-      } else {
-        throw UcumException('> could not be performed on $this and $other '
-            '(reason: it is not an accepted type)');
-      }
-    } else {
-      throw UcumException('> could not be performed on $this and $other '
-          '(reason: it is not an accepted type)');
-    }
-  }
+  bool operator <(Object other) => _compareWith('<', other) < 0;
 
-  bool operator <=(Object other) {
-    if (other is UcumDecimal) {
-      return this == other || value.comparesTo(other) < 0;
-    } else if (other is ValidatedQuantity) {
-      final UcumDecimal compareValue =
-          UcumService().convert(other.value, other.unit, unit);
-      return this == other || value.comparesTo(compareValue) < 0;
-    } else if (other is num || other is BigInt) {
-      return value.comparesTo(UcumDecimal.fromString(other.toString())) < 0;
-    } else if (other is String) {
-      final ValidatedQuantity newQuantity = ValidatedQuantity.fromString(other);
-      if (newQuantity.isValid()) {
-        return this == newQuantity || value.comparesTo(newQuantity.value) < 0;
-      } else {
-        throw UcumException('> could not be performed on $this and $other '
-            '(reason: it is not an accepted type)');
-      }
-    } else {
-      throw UcumException('> could not be performed on $this and $other '
-          '(reason: it is not an accepted type)');
-    }
-  }
+  bool operator >=(Object other) => _compareWith('>=', other) >= 0;
+
+  bool operator <=(Object other) => _compareWith('<=', other) <= 0;
 
   bool get isDuration => isTimeQuantity || isDefiniteDuration;
 
@@ -485,9 +419,5 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
   }
 
   @override
-  int compareTo(ValidatedQuantity other) {
-    final UcumDecimal compareValue =
-        UcumService().convert(other.value, other.unit, unit);
-    return value.comparesTo(compareValue);
-  }
+  int compareTo(ValidatedQuantity other) => _compareWith('compareTo', other);
 }

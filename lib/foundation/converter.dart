@@ -164,10 +164,13 @@ class Converter {
         u = handlers.get(unit.code)?.getUnits();
         v = handlers.get(unit.code)?.getValue();
         if (handlers.get(unit.code)?.hasOffset() ?? false) {
-          v = v?.add(handlers.get(unit.code)!.getOffset());
-          // Handling for special case with offset
-          // throw UcumException(
-          //     "Not handled yet (special unit with offset from 0 at intersect)");
+          // An affine scale (Cel, [degF]) has no multiplicative canonical
+          // form: folding the offset into the factor silently corrupts every
+          // conversion (37 Cel became -10069.55 K). Ucum-java throws here for
+          // the same reason; absolute conversions are handled separately in
+          // UcumService.convert via SpecialUnitHandler.toRatio/fromRatio.
+          throw UcumException(
+              'Not handled yet (special unit with offset from 0 at intersect)');
         }
       }
     }

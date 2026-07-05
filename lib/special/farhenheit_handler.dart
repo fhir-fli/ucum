@@ -24,4 +24,20 @@ class FahrenheitHandler extends SpecialUnitHandler {
 
   @override
   bool hasOffset() => true;
+
+  /// K = ([degF] + 459.67) * 5/9
+  @override
+  UcumDecimal toRatio(UcumDecimal value) =>
+      SpecialUnitHandler.atWorkingPrecision(value)
+          .add(UcumDecimal.fromString('459.67', 24))
+          .multiplyInt(5)
+          .divideInt(9);
+
+  /// [degF] = K * 9/5 - 459.67
+  @override
+  UcumDecimal fromRatio(UcumDecimal value) =>
+      SpecialUnitHandler.atWorkingPrecision(value)
+          .multiplyInt(9)
+          .divideInt(5)
+          .subtract(UcumDecimal.fromString('459.67', 24));
 }

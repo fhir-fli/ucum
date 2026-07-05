@@ -1,37 +1,45 @@
-import 'package:test/test.dart';
+// ignore_for_file: avoid_print
 import 'package:ucum/ucum.dart';
 
+/// Demonstrates the main entry points of package:ucum.
 void main() {
-  group("grey's tests", () {
-    late UcumService ucumService;
+  final UcumService ucum = UcumService();
 
-    setUpAll(() {
-      ucumService = getUcumService();
-    });
+  // Which UCUM data is loaded?
+  print(ucum.ucumIdentification()); // UCUM specification 2.2, ...
 
-    test('make units', () {
-      final ValidatedQuantity quantity1 =
-          ValidatedQuantity.fromString('4 hours');
-      expect(quantity1.value.asUcumDecimal(), '4');
-      expect(quantity1.unit, 'hours');
-      final ValidatedQuantity quantity2 =
-          ValidatedQuantity.fromString('16.5559988 mph');
-      expect(ucumService.validate(quantity2.unit), isNull);
-    });
+  // Strict validation: null means valid UCUM.
+  print(ucum.validate('mg/dL')); // null (valid)
+  print(ucum.validate('mcg')); // error message ('mcg' is not UCUM)
 
-    test('Equal', () {
-      final ValidatedQuantity quantity3 = ValidatedQuantity.fromString('4 m');
-      final ValidatedQuantity quantity4 =
-          ValidatedQuantity.fromString('400 cm');
-      expect(ucumService.isEqual(quantity3, quantity4), true);
-      final ValidatedQuantity quantity5 =
-          ValidatedQuantity.fromString('2.54 cm');
-      final ValidatedQuantity quantity6 =
-          ValidatedQuantity.fromString('1 inch');
-      expect(ucumService.isEqual(quantity5, quantity6), true);
-      expect(ucumService.isEqual(quantity6, quantity5), true);
-    });
-  });
+  // Explicit lenient resolution of common non-UCUM spellings.
+  print(ucum.resolveCommonUnit('mcg')); // ug
+  print(ucum.resolveCommonUnit('mcg/mL')); // ug/mL
+  print(ucum.resolveCommonUnit('hours')); // h
+
+  // Conversion (including correct affine temperature handling).
+  print(ucum.convert(UcumDecimal.fromString('37'), 'Cel', 'K')); // 310.15
+  print(ucum.convert(
+      UcumDecimal.fromString('98.6'), '[degF]', 'Cel')); // 37.0000
+  print(ucum.convert(UcumDecimal.fromString('15'), '/min', '/h')); // 900
+
+  // Canonical forms and comparability.
+  print(ucum.getCanonicalUnits('N')); // g.m.s-2
+  print(ucum.isComparable('N', 'kg.m/s2')); // true
+
+  // ValidatedQuantity: the lenient, FHIR/CQL-facing value+unit type.
+  final ValidatedQuantity height = ValidatedQuantity.fromString('72 inch');
+  final ValidatedQuantity heightCm = ValidatedQuantity.fromString('182.88 cm');
+  print(height == heightCm); // true
+  print(height.convertTo('cm')); // 182.88 'cm'
+
+  final ValidatedQuantity bodyTemp = ValidatedQuantity.fromString('37 Cel');
+  print(bodyTemp == ValidatedQuantity.fromString('310.15 K')); // true
+  print(bodyTemp > '98 [degF]'); // true
+
+  // Quantity arithmetic.
+  final ValidatedQuantity dose = ValidatedQuantity.fromString('250 mcg');
+  print(dose + '0.25 mg'); // 500 'mcg' equivalent, in dose's unit
+  print(ValidatedQuantity.fromString('10 mg') /
+      ValidatedQuantity.fromString('5 mL')); // canonical g/m3 form
 }
-
-UcumService getUcumService() => UcumService();

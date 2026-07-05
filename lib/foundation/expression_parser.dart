@@ -111,19 +111,13 @@ class ExpressionParser {
     final String sym = lexer.token!;
 
     // Now, can we pick a prefix that leaves behind a metric unit?
+    // Prefixes match by CODE only ('k', 'm', 'u'...), as in Ucum-java —
+    // matching prefix display names ('kilo') here made strict validation
+    // accept non-UCUM strings like 'kseconds'; that leniency belongs in
+    // UcumService.resolveCommonUnit.
     Prefix? selected;
     UcumUnit? unit;
     for (final Prefix prefix in model.prefixes) {
-      // TODO(Dokotela): relook at this
-      if (prefix.names.isNotEmpty && sym.startsWith(prefix.names.first)) {
-        unit = model.getUnit(sym.substring(prefix.names.first.length));
-        if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {
-          selected = prefix;
-        }
-      }
-      if (selected == prefix) {
-        break;
-      }
       if (sym.startsWith(prefix.code)) {
         unit = model.getUnit(sym.substring(prefix.code.length));
         if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {

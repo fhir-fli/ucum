@@ -1,3 +1,5 @@
+// GENERATED FILE - DO NOT EDIT BY HAND.
+// Generated from tool/ucum-essence.xml by tool/generate_definitions.dart.
 import '../ucum.dart';
 
 final List<BaseUnit> baseUnitsList = <BaseUnit>[
@@ -7,7 +9,6 @@ final List<BaseUnit> baseUnitsList = <BaseUnit>[
       property: 'length',
       dim: 'L',
       name: 'meter',
-      synonyms: <String>['meters'],
       printSymbol: 'm'),
   BaseUnit(
       code: 's',
@@ -15,7 +16,6 @@ final List<BaseUnit> baseUnitsList = <BaseUnit>[
       property: 'time',
       dim: 'T',
       name: 'second',
-      synonyms: <String>['seconds'],
       printSymbol: 's'),
   BaseUnit(
       code: 'g',
@@ -23,7 +23,6 @@ final List<BaseUnit> baseUnitsList = <BaseUnit>[
       property: 'mass',
       dim: 'M',
       name: 'gram',
-      synonyms: <String>['grams'],
       printSymbol: 'g'),
   BaseUnit(
       code: 'rad',
@@ -31,21 +30,20 @@ final List<BaseUnit> baseUnitsList = <BaseUnit>[
       property: 'plane angle',
       dim: 'A',
       name: 'radian',
-      synonyms: <String>['radians'],
       printSymbol: 'rad'),
   BaseUnit(
       code: 'K',
       codeUC: 'K',
       property: 'temperature',
       dim: 'C',
-      name: 'Kelvin',
+      name: 'kelvin',
       printSymbol: 'K'),
   BaseUnit(
       code: 'C',
       codeUC: 'C',
       property: 'electric charge',
       dim: 'Q',
-      name: 'Coulomb',
+      name: 'coulomb',
       printSymbol: 'C'),
   BaseUnit(
       code: 'cd',
@@ -53,5 +51,5 @@ final List<BaseUnit> baseUnitsList = <BaseUnit>[
       property: 'luminous intensity',
       dim: 'F',
       name: 'candela',
-      printSymbol: 'cd')
+      printSymbol: 'cd'),
 ];

@@ -14,6 +14,46 @@ class UcumService {
   final UcumModel model = UcumModel();
   Registry handlers = Registry();
 
+  /// Identifies the UCUM essence data backing this service, e.g.
+  /// 'UCUM specification 2.2, revision N/A (2024-06-17)'. Parity with
+  /// Ucum-java's ucumIdentification(); the raw fields are available as
+  /// [ucumEssenceVersion], [ucumEssenceRevision], [ucumEssenceRevisionDate].
+  String ucumIdentification() =>
+      'UCUM specification $ucumEssenceVersion, revision '
+      '$ucumEssenceRevision ($ucumEssenceRevisionDate)';
+
+  static final List<String> _synonymKeysByLength = commonUnitSynonyms.keys
+      .toList()
+    ..sort((String a, String b) => b.length.compareTo(a.length));
+
+  /// Resolves a human-friendly unit string to strict UCUM, following
+  /// ucum-lhc's substitution contract: input that is already valid UCUM is
+  /// returned unchanged; otherwise known synonym tokens ('mcg', 'hours',
+  /// 'inch' — see [commonUnitSynonyms]) are substituted on word boundaries
+  /// and the result is returned if it now validates. Returns null when no
+  /// resolution to valid UCUM exists.
+  ///
+  /// [validate] itself stays spec-strict; call this when you want the
+  /// lenient behavior and can surface the substitution to the caller.
+  String? resolveCommonUnit(String unit) {
+    if (unit.isEmpty) {
+      return null;
+    }
+    if (validate(unit) == null) {
+      return unit;
+    }
+    String candidate = unit;
+    for (final String key in _synonymKeysByLength) {
+      candidate = candidate.replaceAll(
+          RegExp('\\b${RegExp.escape(key)}\\b', caseSensitive: false),
+          commonUnitSynonyms[key]!);
+    }
+    if (candidate != unit && validate(candidate) == null) {
+      return candidate;
+    }
+    return null;
+  }
+
   String paramError(String method, String param, String msg) {
     return '$runtimeType.$method.$param is not acceptable: $msg';
   }
@@ -294,16 +334,19 @@ class UcumService {
   }
 
   bool isValid(ValidatedQuantity validatedQuantity) =>
-      validate(validatedQuantity.unit) == null;
+      resolveCommonUnit(validatedQuantity.unit) != null;
 
+  /// Quantity equality with unit conversion. Because the operands are
+  /// [ValidatedQuantity]s (the lenient, FHIR-facing type), common synonyms
+  /// are resolved first ('1 inch' == '2.54 cm'); the String-based APIs
+  /// ([validate], [convert], [isComparable]) remain spec-strict.
   bool isEqual(ValidatedQuantity value1, ValidatedQuantity value2) {
-    if (isComparable(value1.unit, value2.unit)) {
-      final UcumDecimal value2UcumDecimal =
-          convert(value2.value, value2.unit, value1.unit);
-      value2 = ValidatedQuantity(value: value2UcumDecimal, unit: value1.unit);
-      return value1.value.equalsValue(value2.value);
-    } else {
+    final String? u1 = resolveCommonUnit(value1.unit);
+    final String? u2 = resolveCommonUnit(value2.unit);
+    if (u1 == null || u2 == null || !isComparable(u1, u2)) {
       return false;
     }
+    final UcumDecimal converted = convert(value2.value, u2, u1);
+    return value1.value.equalsValue(converted);
   }
 }

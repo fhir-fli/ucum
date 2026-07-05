@@ -181,9 +181,8 @@ class Converter {
     if (v != null) {
       // Ensure unit conversion constants don't limit canonical precision
       // (similar to how prefix values have precision=24)
-      final UcumDecimal vAdj = v.precision < 24
-          ? UcumDecimal.fromString(v.asUcumDecimal(), 24)
-          : v;
+      final UcumDecimal vAdj =
+          v.precision < 24 ? UcumDecimal.fromString(v.asUcumDecimal(), 24) : v;
       result.value = result.value.multiply(vAdj);
     }
     return result;

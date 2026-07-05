@@ -38,8 +38,17 @@ class UcumModel {
   final List<BaseUnit> baseUnits = baseUnitsList;
   final List<DefinedUnit> definedUnits = definedUnitsList;
 
-  UcumModel({this.version, this.revision, this.revisionDate});
+  UcumModel({String? version, String? revision, DateTime? revisionDate})
+      : version = version ?? ucumEssenceVersion,
+        revision = revision ?? ucumEssenceRevision,
+        revisionDate =
+            revisionDate ?? DateTime.tryParse(ucumEssenceRevisionDate);
 
+  /// Case-sensitive lookup by UCUM code only, matching Ucum-java. Display
+  /// names and synonyms ('meter', 'mcg') deliberately do NOT resolve here —
+  /// that leniency lives in `UcumService.resolveCommonUnit`, where the
+  /// substitution is explicit instead of silently changing what counts as
+  /// valid UCUM.
   UcumUnit? getUnit(String code) {
     for (final BaseUnit unit in baseUnits) {
       if (unit.code == code) {
@@ -48,16 +57,6 @@ class UcumModel {
     }
     for (final DefinedUnit unit in definedUnits) {
       if (unit.code == code) {
-        return unit;
-      }
-    }
-    for (final BaseUnit unit in baseUnits) {
-      if (unit.names.contains(code)) {
-        return unit;
-      }
-    }
-    for (final DefinedUnit unit in definedUnits) {
-      if (unit.names.contains(code)) {
         return unit;
       }
     }

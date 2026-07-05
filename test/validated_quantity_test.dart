@@ -72,8 +72,7 @@ void main() {
 
     test('temperatures across scales hash identically', () {
       final ValidatedQuantity celsius = ValidatedQuantity.fromString('37 Cel');
-      final ValidatedQuantity kelvin =
-          ValidatedQuantity.fromString('310.15 K');
+      final ValidatedQuantity kelvin = ValidatedQuantity.fromString('310.15 K');
       expect(celsius == kelvin, isTrue);
       expect(celsius.hashCode, kelvin.hashCode);
     });

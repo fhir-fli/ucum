@@ -72,10 +72,8 @@ void main() {
     });
 
     test('divideBy: 10.0 mg / 4 mg should be 2.5', () {
-      final Pair o1 =
-          Pair(value: UcumDecimal.fromString('10.0'), unit: 'mg');
-      final Pair o2 =
-          Pair(value: UcumDecimal.fromString('4'), unit: 'mg');
+      final Pair o1 = Pair(value: UcumDecimal.fromString('10.0'), unit: 'mg');
+      final Pair o2 = Pair(value: UcumDecimal.fromString('4'), unit: 'mg');
       final Pair result = ucumService.divideBy(o1, o2);
       print('10.0 mg / 4 mg = ${result.value} ${result.unit}');
       expect(result.value.comparesTo(UcumDecimal.fromString('2.5')), equals(0));

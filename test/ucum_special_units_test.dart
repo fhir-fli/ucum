@@ -51,8 +51,8 @@ void main() {
     });
 
     test('round trip preserves value', () {
-      final UcumDecimal roundTripped = ucumService.convert(
-          convert('37', 'Cel', '[degF]'), '[degF]', 'Cel');
+      final UcumDecimal roundTripped =
+          ucumService.convert(convert('37', 'Cel', '[degF]'), '[degF]', 'Cel');
       expectValue(roundTripped, '37');
     });
   });
@@ -68,11 +68,11 @@ void main() {
     test('getCanonicalForm of a measurement Pair converts through K', () {
       // A Pair carries the value, so the affine conversion IS possible at
       // the measurement level (unlike the unit level above).
-      final Pair canonical = ucumService
-          .getCanonicalForm(Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'));
+      final Pair canonical = ucumService.getCanonicalForm(
+          Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'));
       expect(canonical.unit, 'K');
-      expect(
-          canonical.value.equalsValue(UcumDecimal.fromString('310.15')), isTrue);
+      expect(canonical.value.equalsValue(UcumDecimal.fromString('310.15')),
+          isTrue);
     });
 
     test('compound expressions containing an affine unit throw', () {

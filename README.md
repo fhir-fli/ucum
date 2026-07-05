@@ -1,64 +1,98 @@
 # ucum
 
-Dart Library Mimicking the Unified Code for Units of Measure FHIR Library Functionality
+UCUM ([Unified Code for Units of Measure](https://unitsofmeasure.org)) for
+Dart: unit validation, canonicalization, conversion, and quantity arithmetic
+for healthcare and scientific measurements. A port of the reference
+[Ucum-java](https://github.com/FHIR/Ucum-java) library by Grahame Grieve /
+Health Intersections, used across the [fhir-fli](https://github.com/fhir-fli)
+ecosystem (FHIRPath, CQL).
 
-#### All credit goes to (I assume Graham) and everyone else who built this library in Java. With the help of ChatGPT, I've managed to get it to work in Dart. 
+The full official UCUM functional test suite (575 cases) runs in CI, and the
+unit data is generated from **ucum-essence 2.2** (2024-06-17) by a checked-in
+generator (`tool/generate_definitions.dart`) — no runtime XML parsing, no
+assets, works on every platform including web.
 
-#### As does the original library, this package provides a set of services around UCUM:
-
-- first step in using this library is getting the Ucum service
-
-```dart
-    ucumService = await getUcumEssenceService();
-```
-
-- validate a UCUM unit (and also against a particular base unit)
-- decide whether one unit can be converted/compared to another
-- translate a quantity from one unit to another 
+## Usage
 
 ```dart
-    await ucumService.convert(Decimal.fromString('15'), '/min', '/h');
+import 'package:ucum/ucum.dart';
+
+final ucum = UcumService();
+
+// Which UCUM data is loaded?
+print(ucum.ucumIdentification()); // UCUM specification 2.2, ... (2024-06-17)
+
+// Strict validation: null means valid UCUM.
+print(ucum.validate('mg/dL')); // null (valid)
+print(ucum.validate('mcg'));   // error message — 'mcg' is not UCUM
+
+// Explicit lenient resolution of common non-UCUM spellings.
+print(ucum.resolveCommonUnit('mcg'));    // ug
+print(ucum.resolveCommonUnit('mcg/mL')); // ug/mL
+print(ucum.resolveCommonUnit('hours'));  // h
+
+// Conversion — including correct affine temperature handling.
+print(ucum.convert(UcumDecimal.fromString('37'), 'Cel', 'K'));        // 310.15
+print(ucum.convert(UcumDecimal.fromString('98.6'), '[degF]', 'Cel')); // 37
+print(ucum.convert(UcumDecimal.fromString('15'), '/min', '/h'));      // 900
+
+// Canonical forms and comparability.
+print(ucum.getCanonicalUnits('N'));       // g.m.s-2
+print(ucum.isComparable('N', 'kg.m/s2')); // true
 ```
 
-- prepare a human readable display of a unit 
-- multiply 2 quantities together
+### ValidatedQuantity
 
+`ValidatedQuantity` is the lenient, FHIR/CQL-facing value+unit type: it
+resolves common spellings through `resolveCommonUnit` for every comparison
+and arithmetic operation, while keeping the original unit string for display
+and FHIRPath calendar-duration semantics.
 
-### While I'll be maintaining this package, I want to ensure I give proper credit everywhere it's due
-- This is the [original Java Library]()
-- The essence file can be downloaded from: [https://unitsofmeasure.org](https://unitsofmeasure.org)
+```dart
+final height = ValidatedQuantity.fromString('72 inch');
+print(height == ValidatedQuantity.fromString('182.88 cm')); // true
+print(height.convertTo('cm'));                              // 182.88 'cm'
 
+final temp = ValidatedQuantity.fromString('37 Cel');
+print(temp == ValidatedQuantity.fromString('310.15 K'));    // true
+print(temp > '98 [degF]');                                  // true
 
-### Original Copyright Notice
-/*******************************************************************************
-BSD 3-Clause License
+final dose = ValidatedQuantity.fromString('250 mcg');
+print(dose + '0.25 mg'); // 500 (in dose's resolved unit, ug)
+```
 
-Copyright (c) 2023, Grey Faulkenberry
-All rights reserved.
+### Strict vs lenient, by design
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+- `validate`, `convert`, `isComparable`, `getCanonicalUnits` are
+  **spec-strict**: only real UCUM is accepted, matching Ucum-java.
+- `resolveCommonUnit` is the **explicit** leniency layer (the approach used
+  by NLM's [ucum-lhc](https://github.com/lhncbc/ucum-lhc)): known synonym
+  tokens are substituted and the corrected code is returned. Valid codes are
+  never rewritten — `mph` stays milli-phot, because it *is* valid UCUM.
+- `ValidatedQuantity` uses the lenient layer automatically.
 
-* Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
+### Affine temperatures
 
-* Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
+Celsius and Fahrenheit are affine scales — they have no multiplicative
+canonical form, so unit-level canonicalization (`getCanonicalUnits('Cel')`)
+throws, exactly like Ucum-java. Conversions and quantity comparisons work
+correctly (`convert`, `getCanonicalForm(Pair)`, `ValidatedQuantity`) by
+routing through the Kelvin ratio scale, the approach used by ucum-lhc.
+Compound or prefixed affine units (`Cel/s`, `mCel`) throw rather than
+silently mis-convert.
 
-* Neither the name of the copyright holder nor the names of its
-  contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
+## Regenerating the unit data
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```bash
+dart run tool/generate_definitions.dart   # reads tool/ucum-essence.xml
+dart format lib/src/resources
+```
 
-*******************************************************************************/
+## Credits and license
+
+- Ported from [Ucum-java](https://github.com/FHIR/Ucum-java) (BSD-3-Clause,
+  © Health Intersections Pty Ltd) — the original copyright headers are
+  retained in the ported source files.
+- UCUM and the ucum-essence data are © Regenstrief Institute, Inc., used
+  under the [UCUM license](https://unitsofmeasure.org/license).
+- This package: BSD-3-Clause, © 2023+ Grey Faulkenberry / FHIR-FLI.

@@ -6,6 +6,8 @@ import 'package:test/test.dart';
 import 'package:ucum/ucum.dart';
 import 'package:xml/xml.dart';
 
+import 'xml_utils.dart';
+
 Future<void> main() async {
   final UcumServiceTest ucumServiceTest = UcumServiceTest();
   ucumServiceTest.beforeAll();

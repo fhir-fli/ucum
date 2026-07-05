@@ -100,8 +100,8 @@ void main() {
     });
 
     test('mole uses the 2019 SI Avogadro number', () {
-      final UcumDecimal converted = ucumService.convert(
-          UcumDecimal.fromString('1'), 'mol', '10*23');
+      final UcumDecimal converted =
+          ucumService.convert(UcumDecimal.fromString('1'), 'mol', '10*23');
       expect(converted.asUcumDecimal(), startsWith('6.02214076'));
     });
 

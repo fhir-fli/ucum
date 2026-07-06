@@ -19,8 +19,8 @@ void main() {
 
   // Conversion (including correct affine temperature handling).
   print(ucum.convert(UcumDecimal.fromString('37'), 'Cel', 'K')); // 310.15
-  print(ucum.convert(
-      UcumDecimal.fromString('98.6'), '[degF]', 'Cel')); // 37.0000
+  print(
+      ucum.convert(UcumDecimal.fromString('98.6'), '[degF]', 'Cel')); // 37.0000
   print(ucum.convert(UcumDecimal.fromString('15'), '/min', '/h')); // 900
 
   // Canonical forms and comparability.

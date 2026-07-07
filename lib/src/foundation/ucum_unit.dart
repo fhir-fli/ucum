@@ -19,8 +19,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -28,13 +29,13 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
+/// Abstract base for measurable units, sitting between [UcumConcept] and the
+/// concrete [BaseUnit]/[DefinedUnit]. Adds the physical [property] measured and
+/// whether the unit accepts SI prefixes.
 abstract class UcumUnit extends UcumConcept {
-  /// Kind of thing this base unit represents.
-  String property;
-  bool? isMetric;
-
+  /// Creates a unit with its measured [property] and metric flag.
   UcumUnit({
     required super.kind,
     required super.code,
@@ -44,6 +45,12 @@ abstract class UcumUnit extends UcumConcept {
     super.names,
     super.printSymbol,
   });
+
+  /// The physical property this unit measures (e.g. `length`, `mass`, `time`).
+  String property;
+
+  /// Whether this unit is metric and may therefore take an SI [Prefix].
+  bool? isMetric;
 
   /// Method to get the description.
   @override

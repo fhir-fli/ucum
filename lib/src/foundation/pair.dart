@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes
 
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -23,8 +23,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -32,11 +33,17 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// An immutable-by-convention numeric quantity: a decimal [value] together
+/// with its [unit] code, e.g. the result of a canonical conversion.
 class Pair {
-  UcumDecimal value;
-  String unit;
-
+  /// Creates a value/unit pair.
   Pair({required this.value, required this.unit});
+
+  /// The magnitude of the quantity.
+  UcumDecimal value;
+
+  /// The UCUM code of the unit the [value] is expressed in.
+  String unit;
 
   @override
   bool operator ==(Object other) {

@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,11 +31,15 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// A UCUM unit defined in terms of other units (the 2000+ derived units such
+/// as `L`, `mmHg`, `[in_i]`), as opposed to one of the seven [BaseUnit]s.
+///
+/// Its [value] gives the magnitude and reference expression from which the
+/// converter derives its canonical form.
 class DefinedUnit extends UcumUnit {
-  bool? isSpecial;
-  String? class_;
-  Value value;
-
+  /// Creates a defined unit. [isSpecial] marks non-linear units handled by a
+  /// [SpecialUnitHandler]; [class_] is the UCUM class grouping; [value] is the
+  /// defining magnitude and reference unit expression.
   DefinedUnit({
     required super.code,
     required super.codeUC,
@@ -47,23 +52,8 @@ class DefinedUnit extends UcumUnit {
     super.printSymbol,
   }) : super(kind: ConceptKind.unit);
 
-  @override
-  String getDescription() {
-    return '${super.getDescription()} = ${value.getDescription()}';
-  }
-
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'code': code,
-        'CODE': codeUC,
-        'value': value.toJson(),
-        'property': property,
-        'isMetric': isMetric,
-        'isSpecial': isSpecial,
-        'class': class_,
-        'names': names,
-        'printSymbol': printSymbol,
-      };
-
+  /// Builds a [DefinedUnit] from its JSON representation in the unit
+  /// definitions data (keys `code`, `CODE`, `property`, `value`, `class`, …).
   factory DefinedUnit.fromJson(Map<String, dynamic> json) {
     return DefinedUnit(
       code: json['code'] as String,
@@ -83,4 +73,32 @@ class DefinedUnit extends UcumUnit {
       printSymbol: json['printSymbol'] as String?,
     );
   }
+  /// Whether this is a special (non-linear) unit whose conversion requires a
+  /// [SpecialUnitHandler] rather than a plain multiplier.
+  bool? isSpecial;
+
+  /// The UCUM class this unit belongs to (e.g. `si`, `clinical`, `us-lengths`).
+  String? class_;
+
+  /// The defining value: the magnitude and reference unit expression this unit
+  /// resolves to during canonicalization.
+  Value value;
+
+  @override
+  String getDescription() {
+    return '${super.getDescription()} = ${value.getDescription()}';
+  }
+
+  /// Serializes this unit back to its JSON definition form.
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'code': code,
+        'CODE': codeUC,
+        'value': value.toJson(),
+        'property': property,
+        'isMetric': isMetric,
+        'isSpecial': isSpecial,
+        'class': class_,
+        'names': names,
+        'printSymbol': printSymbol,
+      };
 }

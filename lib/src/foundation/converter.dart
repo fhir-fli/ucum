@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,29 +31,41 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// Reduces a parsed [Term] tree to its [Canonical] form — the product of SI
+/// base units with an accumulated scalar multiplier — by recursively expanding
+/// defined units, applying prefixes, and collating repeated base units.
 class Converter {
-  UcumModel model;
-  Registry handlers;
-
+  /// Creates a converter backed by [model] (for unit/prefix lookups) and
+  /// [handlers] (for special, non-linear units).
   Converter(this.model, this.handlers);
 
+  /// The unit model providing base units, defined units and prefixes.
+  UcumModel model;
+
+  /// Registry of special-unit handlers for non-linear conversions.
+  Registry handlers;
+
+  /// Reduces [term] to canonical base-unit form.
   Canonical convert(Term term) {
     return normaliseTerm('  ', term);
   }
 
+  /// Recursively canonicalises [term], multiplying or dividing sub-results
+  /// according to each node's operator, then collating and sorting the
+  /// resulting base units. [indent] is used only for debug tracing.
   Canonical normaliseTerm(String indent, Term term) {
-    final Canonical result =
+    final result =
         Canonical(UcumDecimal.fromString('1.00000000000000000000000'));
 
     debugTerm(indent, 'canonicalise', term);
-    bool div = false;
+    var div = false;
     Term? t = term;
     while (t != null) {
       if (t.comp is Term) {
-        final Canonical temp = normaliseTerm('$indent  ', t.comp! as Term);
+        final temp = normaliseTerm('$indent  ', t.comp! as Term);
         if (div) {
           result.value = result.value.divide(temp.value);
-          for (final CanonicalUnit c in temp.units) {
+          for (final c in temp.units) {
             c.exponent = -c.exponent;
           }
         } else {
@@ -66,11 +79,11 @@ class Converter {
           result.value = result.value.multiplyInt((t.comp! as Factor).value);
         }
       } else if (t.comp is Symbol) {
-        final Symbol o = t.comp! as Symbol;
-        final Canonical temp = normaliseSymbol(indent, o);
+        final o = t.comp! as Symbol;
+        final temp = normaliseSymbol(indent, o);
         if (div) {
           result.value = result.value.divide(temp.value);
-          for (final CanonicalUnit c in temp.units) {
+          for (final c in temp.units) {
             c.exponent = -c.exponent;
           }
         } else {
@@ -84,10 +97,10 @@ class Converter {
 
     debugCanonical(indent, 'collate', result);
 
-    for (int i = result.units.length - 1; i >= 0; i--) {
-      final CanonicalUnit sf = result.units[i];
-      for (int j = i - 1; j >= 0; j--) {
-        final CanonicalUnit st = result.units[j];
+    for (var i = result.units.length - 1; i >= 0; i--) {
+      final sf = result.units[i];
+      for (var j = i - 1; j >= 0; j--) {
+        final st = result.units[j];
         if (st.base == sf.base) {
           st.exponent = sf.exponent + st.exponent;
           result.units.removeAt(i);
@@ -96,53 +109,56 @@ class Converter {
       }
     }
 
-    for (int i = result.units.length - 1; i >= 0; i--) {
+    for (var i = result.units.length - 1; i >= 0; i--) {
       if (result.units[i].exponent == 0) {
         result.units.removeAt(i);
       }
     }
 
     debugCanonical(indent, 'sort', result);
-    result.units.sort((CanonicalUnit lhs, CanonicalUnit rhs) =>
-        lhs.base.code.compareTo(rhs.base.code));
+    result.units.sort((lhs, rhs) =>
+        lhs.base.code.compareTo(rhs.base.code),);
     debugCanonical(indent, 'done', result);
 
     return result;
   }
 
+  /// Canonicalises a single [sym] (unit + optional prefix + exponent): for a
+  /// base unit it emits one [CanonicalUnit]; for a defined unit it expands the
+  /// definition, then applies the exponent and prefix value to the scalar.
   Canonical normaliseSymbol(String indent, Symbol sym) {
-    final Canonical result =
+    final result =
         Canonical(UcumDecimal.fromString('1.00000000000000000000000'));
 
     if (sym.exponent != null) {
       if (sym.unit is BaseUnit) {
         result.units.add(CanonicalUnit(sym.unit! as BaseUnit, sym.exponent!));
       } else {
-        final Canonical can =
+        final can =
             expandDefinedUnit(indent, sym.unit! as DefinedUnit);
-        for (final CanonicalUnit c in can.units) {
+        for (final c in can.units) {
           c.exponent = c.exponent * sym.exponent!;
         }
         result.units.addAll(can.units);
         if (sym.exponent! > 0) {
-          for (int i = 0; i < sym.exponent!; i++) {
+          for (var i = 0; i < sym.exponent!; i++) {
             result.value = result.value.multiply(can.value);
           }
         } else {
-          for (int i = 0; i > sym.exponent!; i--) {
+          for (var i = 0; i > sym.exponent!; i--) {
             result.value = result.value.divide(can.value);
           }
         }
       }
       if (sym.prefix != null) {
         if (sym.exponent! > 0) {
-          for (int i = 0; i < sym.exponent!; i++) {
+          for (var i = 0; i < sym.exponent!; i++) {
             result.value = sym.prefix?.value == null
                 ? result.value
                 : result.value.multiply(sym.prefix!.value);
           }
         } else {
-          for (int i = 0; i > sym.exponent!; i--) {
+          for (var i = 0; i > sym.exponent!; i--) {
             result.value = sym.prefix?.value == null
                 ? result.value
                 : result.value.divide(sym.prefix!.value);
@@ -153,9 +169,13 @@ class Converter {
     return result;
   }
 
+  /// Expands a [DefinedUnit] into canonical form by parsing and normalising
+  /// its definition string, applying its scaling value. Special units are
+  /// resolved through [handlers]; affine (offset) units cannot be expressed
+  /// multiplicatively and throw.
   Canonical expandDefinedUnit(String indent, DefinedUnit unit) {
-    String? u = unit.value.unit;
-    UcumDecimal? v = unit.value.value;
+    var u = unit.value.unit;
+    var v = unit.value.value;
 
     if (unit.isSpecial ?? false) {
       if (!handlers.exists(unit.code)) {
@@ -170,29 +190,35 @@ class Converter {
           // the same reason; absolute conversions are handled separately in
           // UcumService.convert via SpecialUnitHandler.toRatio/fromRatio.
           throw UcumException(
-              'Not handled yet (special unit with offset from 0 at intersect)');
+              'Not handled yet (special unit with offset from 0 at '
+              'intersect)',);
         }
       }
     }
 
-    final Term t = u == null ? Term() : ExpressionParser(model).parse(u);
+    final t = u == null ? Term() : ExpressionParser(model).parse(u);
     debugTerm(indent, 'now handle', t);
-    final Canonical result = normaliseTerm('$indent  ', t);
+    final result = normaliseTerm('$indent  ', t);
     if (v != null) {
       // Ensure unit conversion constants don't limit canonical precision
       // (similar to how prefix values have precision=24)
-      final UcumDecimal vAdj =
+      final vAdj =
           v.precision < 24 ? UcumDecimal.fromString(v.asUcumDecimal(), 24) : v;
       result.value = result.value.multiply(vAdj);
     }
     return result;
   }
 
+  /// Trace hook for a [Term] at a pipeline [state]; a no-op unless the debug
+  /// print is enabled. [indent] reflects recursion depth.
   void debugTerm(String indent, String state, Term unit) {
     // print(indent + state + ": " + ExpressionComposer().compose(unit));
   }
 
+  /// Trace hook for a [Canonical] result at a pipeline [state]; a no-op unless
+  /// the debug print is enabled. [indent] reflects recursion depth.
   void debugCanonical(String indent, String state, Canonical can) {
-    // print(indent + state + ": " + ExpressionComposer().composeCanonical(can));
+    // print(indent + state + ": "
+    //     + ExpressionComposer().composeCanonical(can));
   }
 }

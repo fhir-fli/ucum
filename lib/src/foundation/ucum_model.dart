@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,19 +31,34 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// In-memory UCUM model: all prefixes, base units and defined units loaded
+/// from the generated `ucum-essence` data, plus lookup helpers by code.
 class UcumModel {
-  final String? version;
-  final String? revision;
-  final DateTime? revisionDate;
-  final List<Prefix> prefixes = prefixesList;
-  final List<BaseUnit> baseUnits = baseUnitsList;
-  final List<DefinedUnit> definedUnits = definedUnitsList;
-
+  /// Creates a model, defaulting [version], [revision] and [revisionDate] to
+  /// the bundled ucum-essence release metadata when not supplied.
   UcumModel({String? version, String? revision, DateTime? revisionDate})
       : version = version ?? ucumEssenceVersion,
         revision = revision ?? ucumEssenceRevision,
         revisionDate =
             revisionDate ?? DateTime.tryParse(ucumEssenceRevisionDate);
+
+  /// The UCUM release version this model represents.
+  final String? version;
+
+  /// The ucum-essence revision identifier.
+  final String? revision;
+
+  /// The date of the ucum-essence revision, if parseable.
+  final DateTime? revisionDate;
+
+  /// The 20 SI metric prefixes (kilo, milli, micro, ...).
+  final List<Prefix> prefixes = prefixesList;
+
+  /// The 7 SI base units (meter, gram, second, ...).
+  final List<BaseUnit> baseUnits = baseUnitsList;
+
+  /// The 2000+ defined units derived from the base units.
+  final List<DefinedUnit> definedUnits = definedUnitsList;
 
   /// Case-sensitive lookup by UCUM code only, matching Ucum-java. Display
   /// names and synonyms ('meter', 'mcg') deliberately do NOT resolve here —
@@ -50,12 +66,12 @@ class UcumModel {
   /// substitution is explicit instead of silently changing what counts as
   /// valid UCUM.
   UcumUnit? getUnit(String code) {
-    for (final BaseUnit unit in baseUnits) {
+    for (final unit in baseUnits) {
       if (unit.code == code) {
         return unit;
       }
     }
-    for (final DefinedUnit unit in definedUnits) {
+    for (final unit in definedUnits) {
       if (unit.code == code) {
         return unit;
       }
@@ -63,8 +79,9 @@ class UcumModel {
     return null;
   }
 
+  /// Returns the base unit whose code exactly matches [code], or null if none.
   BaseUnit? getBaseUnit(String code) {
-    for (final BaseUnit unit in baseUnits) {
+    for (final unit in baseUnits) {
       if (unit.code == code) {
         return unit;
       }

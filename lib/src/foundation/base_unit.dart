@@ -18,8 +18,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -27,12 +28,13 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
+/// One of the seven irreducible SI base units (meter, gram, second, radian,
+/// kelvin, coulomb, candela) from which every [DefinedUnit] is derived.
+///
+/// Adds a dimension symbol ([dim]) used when reducing units to canonical form.
 class BaseUnit extends UcumUnit {
-  /// Abbreviation for property.
-  String dim;
-
   /// Constructor for BaseUnit.
   BaseUnit({
     required super.code,
@@ -48,13 +50,16 @@ class BaseUnit extends UcumUnit {
             names: name != null || (synonyms != null && synonyms.isNotEmpty)
                 ? <String>[
                     if (name != null) name,
-                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms
+                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms,
                   ]
-                : null);
+                : null,);
+  /// Abbreviation for property.
+  String dim;
 
   @override
   String toString() => 'BaseUnit(dim: $dim, ${super.toString()})';
 
+  /// Serializes this base unit to its JSON definition form.
   Map<String, dynamic> toJson() => <String, dynamic>{
         'code': code,
         'CODE': codeUC,

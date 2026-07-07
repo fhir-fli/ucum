@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,14 +31,26 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// Self-checks the integrity of a [UcumModel]: every unit code must parse,
+/// round-trip through the composer, and canonicalise, and every special unit
+/// must have a registered handler. Returns a list of human-readable problems.
 class UcumValidator {
-  UcumModel model;
-  List<String> result;
-  Registry handlers;
-
+  /// Creates a validator over [model], using [handlers] to check that special
+  /// units are handled.
   UcumValidator({required this.model, required this.handlers})
       : result = <String>[];
 
+  /// The unit model being validated.
+  UcumModel model;
+
+  /// Accumulated validation messages; empty means the model is internally
+  /// consistent.
+  List<String> result;
+
+  /// Registry of special-unit handlers, checked for coverage.
+  Registry handlers;
+
+  /// Runs every check and returns the collected problem messages.
   List<String> validate() {
     result = <String>[];
     checkCodes();
@@ -45,17 +58,20 @@ class UcumValidator {
     return result;
   }
 
+  /// Validates that every base and defined unit code parses and round-trips.
   void checkCodes() {
-    for (final BaseUnit unit in model.baseUnits) {
+    for (final unit in model.baseUnits) {
       checkUnitCode(unit.code, true);
     }
-    for (final DefinedUnit unit in model.definedUnits) {
+    for (final unit in model.definedUnits) {
       checkUnitCode(unit.code, true);
     }
   }
 
+  /// Validates each defined unit's definition string, and reports any special
+  /// unit that lacks a registered handler.
   void checkUnits() {
-    for (final DefinedUnit unit in model.definedUnits) {
+    for (final unit in model.definedUnits) {
       if (!(unit.isSpecial ?? false)) {
         checkUnitCode(unit.value.unit ?? '', false);
       } else if (!handlers.exists(unit.code)) {
@@ -64,10 +80,14 @@ class UcumValidator {
     }
   }
 
+  /// Parses [code], checks it composes back to itself and canonicalises
+  /// without error, appending any failure to [result]. When [primary] is true,
+  /// also enforces bracket balancing and rejects codes with digits outside
+  /// `[...]` (which would be ambiguous).
   void checkUnitCode(String code, bool primary) {
     try {
-      final Term term = ExpressionParser(model).parse(code);
-      final String c = ExpressionComposer().compose(term);
+      final term = ExpressionParser(model).parse(code);
+      final c = ExpressionComposer().compose(term);
       if (c != code) {
         result.add('Round trip failed: $code -> $c');
       }
@@ -79,10 +99,10 @@ class UcumValidator {
     if (primary) {
       try {
         // Additional checks for primary codes
-        bool inBrack = false;
-        bool nonDigits = false;
-        for (int i = 0; i < code.length; i++) {
-          final String ch = code[i];
+        var inBrack = false;
+        var nonDigits = false;
+        for (var i = 0; i < code.length; i++) {
+          final ch = code[i];
           if (ch == '[') {
             if (inBrack) {
               throw Exception('nested [');
@@ -104,7 +124,7 @@ class UcumValidator {
               !inBrack &&
               nonDigits) {
             throw Exception(
-                'code $code is ambiguous because it has digits outside []');
+                'code $code is ambiguous because it has digits outside []',);
           }
         }
       } catch (e) {

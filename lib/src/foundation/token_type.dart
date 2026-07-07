@@ -19,8 +19,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -28,21 +29,31 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// The kinds of token the [Lexer] emits while scanning a UCUM unit string.
 enum TokenType {
+  /// No token: the current position is at the end of input (or nothing has
+  /// been consumed yet).
   none,
+
+  /// A numeric literal such as a factor (`10`) or an exponent (`-3`).
   number,
+
+  /// A unit symbol such as `m`, `mg` or a bracketed atom like `[in_i]`.
   symbol,
+
+  /// The division operator `/`.
   solidus,
+
+  /// The multiplication operator `.`.
   period,
+
+  /// An opening parenthesis `(` beginning a sub-term.
   open,
+
+  /// A closing parenthesis `)` ending a sub-term.
   close,
+
+  /// A brace-delimited annotation such as `{RBC}`, which carries no
+  /// dimensional meaning.
   annotation,
-  // NONE,
-  // NUMBER,
-  // SYMBOL,
-  // SOLIDUS,
-  // PERIOD,
-  // OPEN,
-  // CLOSE,
-  // ANNOTATION;
 }

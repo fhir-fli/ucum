@@ -15,7 +15,7 @@ void main() {
     });
 
     test('Analyze', () {
-      for (final CommonUnit cu in units) {
+      for (final cu in units) {
         try {
           ucumService.analyse(cu.unit);
           expect(true, true);
@@ -26,13 +26,13 @@ void main() {
     });
 
     test('Canonical', () {
-      final Set<String> set = <String>{};
-      for (final CommonUnit cu in units) {
+      final set = <String>{};
+      for (final cu in units) {
         // BUG?
         if ('db' == cu.unit) {
           continue;
         }
-        final String can = ucumService.getCanonicalUnits(cu.unit);
+        final can = ucumService.getCanonicalUnits(cu.unit);
         if (null != cu.can) {
           expect(cu.can, can, reason: cu.unit);
         } else if (set.add('${cu.dim ?? ""} -> $can') && cu.dim != null) {
@@ -42,8 +42,8 @@ void main() {
     });
 
     test('Convert', () {
-      final UcumDecimal ONE = UcumDecimal.fromString('1', 15);
-      for (final CommonUnit cu in units) {
+      final ONE = UcumDecimal.fromString('1', 15);
+      for (final cu in units) {
         // BUG: avoid NPE
         if ('Cel' == cu.unit || '[degF]' == cu.unit || '[pH]' == cu.unit) {
           continue;
@@ -53,7 +53,7 @@ void main() {
           continue;
         }
         try {
-          final String can = ucumService.getCanonicalUnits(cu.unit);
+          final can = ucumService.getCanonicalUnits(cu.unit);
           if ('' != can) {
             ucumService.convert(ONE, cu.unit, can);
           }
@@ -65,9 +65,9 @@ void main() {
 
     test('Convert2', () {
       void convertAll(List<CommonUnit> list) {
-        final UcumDecimal K = UcumDecimal.fromString('2.3', 15);
-        for (final CommonUnit a in list) {
-          for (final CommonUnit b in list) {
+        final K = UcumDecimal.fromString('2.3', 15);
+        for (final a in list) {
+          for (final b in list) {
             try {
               // BUG?
               if ('[pH]' == a.unit) {
@@ -84,13 +84,13 @@ void main() {
         }
       }
 
-      final Map<String, List<CommonUnit>> map = <String, List<CommonUnit>>{};
-      for (final CommonUnit cu in units) {
+      final map = <String, List<CommonUnit>>{};
+      for (final cu in units) {
         // BUG?
         if ('dB' == cu.unit) {
           continue;
         }
-        final String can = ucumService.getCanonicalUnits(cu.unit);
+        final can = ucumService.getCanonicalUnits(cu.unit);
         if ('' == can) {
           continue;
         }
@@ -99,15 +99,15 @@ void main() {
         }
         map[can]!.add(cu);
       }
-      for (final String can in map.keys) {
-        final List<CommonUnit> list = map[can]!;
+      for (final can in map.keys) {
+        final list = map[can]!;
         convertAll(list);
       }
     });
 
     test('Duplicates', () {
-      final Set<String> set = <String>{};
-      for (final CommonUnit cu in units) {
+      final set = <String>{};
+      for (final cu in units) {
         if (!set.add(cu.unit)) {
           print('DUPLICATE: ${cu.unit}');
         }
@@ -116,12 +116,12 @@ void main() {
   });
 }
 
-class CommonUnit {
-  final String unit;
-  final String? dim; // not really using this
-  final String? can; // canonical unit
+class CommonUnit { // canonical unit
 
   CommonUnit(this.unit, this.dim, [this.can]);
+  final String unit;
+  final String? dim; // not really using this
+  final String? can;
 
   @override
   String toString() => 'CU(unit: $unit, dim: $dim, can: $can)';

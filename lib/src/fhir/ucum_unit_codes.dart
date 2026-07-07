@@ -1,3 +1,6 @@
+/// Flat list of unit code strings recognized by the library — the strict
+/// UCUM codes plus the human-friendly time-word spellings — used as a
+/// lookup/whitelist of known unit tokens.
 const List<String> ucumUnitCodes = <String>[
   'millisecond',
   'second',

@@ -19,8 +19,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -28,25 +29,34 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
+/// Recursive-descent parser that turns a UCUM unit string into a [Term] tree,
+/// driving a [Lexer] and resolving symbols/prefixes against a [UcumModel].
 class ExpressionParser {
-  UcumModel model;
-
+  /// Creates a parser resolving units and prefixes against [model].
   ExpressionParser(this.model);
 
+  /// The unit model used to resolve symbols and prefixes.
+  UcumModel model;
+
+  /// Parses [code] into a [Term] tree, throwing if trailing input remains
+  /// unconsumed (a syntax error).
   Term parse(String code) {
-    final Lexer lexer = Lexer(code);
-    final Term res = parseTerm(lexer, true);
+    final lexer = Lexer(code);
+    final res = parseTerm(lexer, true);
     if (!lexer.finished()) {
       throw UcumException(
-          'Expression was not parsed completely. Syntax Error? - Code: $code');
+          'Expression was not parsed completely. Syntax Error? - Code: $code',);
     }
     return res;
   }
 
+  /// Parses one term from [lexer]: a leading component followed by an optional
+  /// operator and continuation term. [first] marks the start of an expression
+  /// (or sub-expression), where an empty input yields the factor `1`.
   Term parseTerm(Lexer lexer, bool first) {
-    final Term res = Term();
+    final res = Term();
     if (first && lexer.type == TokenType.none) {
       res.comp = Factor(1);
     } else if (lexer.type == TokenType.solidus) {
@@ -81,24 +91,27 @@ class ExpressionParser {
     return res;
   }
 
+  /// Parses a single component from [lexer]: a numeric factor, a symbol, or a
+  /// parenthesised sub-term.
   Component parseComp(Lexer lexer) {
     if (lexer.type == TokenType.number) {
-      final Factor fact = Factor(lexer.getTokenAsInt());
+      final fact = Factor(lexer.getTokenAsInt());
       lexer.consume();
       return fact;
     } else if (lexer.type == TokenType.symbol) {
       return parseSymbol(lexer);
     } else if (lexer.type == TokenType.none) {
       throw UcumException(
-          'Unexpected end of expression looking for a symbol or a number');
+          'Unexpected end of expression looking for a symbol or a number',);
     } else if (lexer.type == TokenType.open) {
       lexer.consume();
-      final Term res = parseTerm(lexer, true);
+      final res = parseTerm(lexer, true);
       if (lexer.type == TokenType.close) {
         lexer.consume();
       } else {
         throw UcumException(
-            "Unexpected Token Type '${lexer.type}' looking for a close bracket");
+            "Unexpected Token Type '${lexer.type}' looking for a close "
+            'bracket',);
       }
       return res;
     } else {
@@ -106,9 +119,12 @@ class ExpressionParser {
     }
   }
 
+  /// Parses a unit symbol from [lexer], greedily splitting off a metric prefix
+  /// (matched by code) that leaves a valid base or metric unit, then reading an
+  /// optional trailing exponent (defaulting to 1).
   Component parseSymbol(Lexer lexer) {
-    final Symbol symbol = Symbol();
-    final String sym = lexer.token!;
+    final symbol = Symbol();
+    final sym = lexer.token!;
 
     // Now, can we pick a prefix that leaves behind a metric unit?
     // Prefixes match by CODE only ('k', 'm', 'u'...), as in Ucum-java —
@@ -117,7 +133,7 @@ class ExpressionParser {
     // UcumService.resolveCommonUnit.
     Prefix? selected;
     UcumUnit? unit;
-    for (final Prefix prefix in model.prefixes) {
+    for (final prefix in model.prefixes) {
       if (sym.startsWith(prefix.code)) {
         unit = model.getUnit(sym.substring(prefix.code.length));
         if (unit != null && (unit is BaseUnit || (unit.isMetric ?? false))) {
@@ -128,8 +144,9 @@ class ExpressionParser {
     }
 
     if (selected != null) {
-      symbol.prefix = selected;
-      symbol.unit = unit;
+      symbol
+        ..prefix = selected
+        ..unit = unit;
     } else {
       unit = model.getUnit(sym);
       if (unit != null) {

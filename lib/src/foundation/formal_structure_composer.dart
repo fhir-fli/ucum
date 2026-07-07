@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,13 +31,18 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// Renders a parsed [Term] tree into an expanded, human-readable form that
+/// spells out unit names and operators (e.g. `(milli gram) / (deci liter)`),
+/// unlike the compact codes produced by [ExpressionComposer].
 class FormalStructureComposer {
+  /// Composes [term] into its formal, spelled-out string representation.
   String compose(Term term) {
-    final StringBuffer buffer = StringBuffer();
+    final buffer = StringBuffer();
     composeTerm(buffer, term);
     return buffer.toString();
   }
 
+  /// Writes [term]'s component, operator and continuation into [buffer].
   void composeTerm(StringBuffer buffer, Term term) {
     if (term.comp != null) {
       composeComp(buffer, term.comp!);
@@ -51,6 +57,7 @@ class FormalStructureComposer {
     }
   }
 
+  /// Writes a component [comp] into [buffer].
   void composeComp(StringBuffer buffer, Component comp) {
     if (comp is Factor) {
       composeFactor(buffer, comp);
@@ -63,6 +70,8 @@ class FormalStructureComposer {
     }
   }
 
+  /// Writes a [symbol] into [buffer] in parenthesised, name-spelled form:
+  /// prefix name, unit name, and `^ exponent` when the exponent is not 1.
   void composeSymbol(StringBuffer buffer, Symbol symbol) {
     buffer.write('(');
     if (symbol.prefix != null) {
@@ -70,16 +79,20 @@ class FormalStructureComposer {
     }
     buffer.write(symbol.unit?.names.first);
     if (symbol.exponent != 1) {
-      buffer.write(' ^ ');
-      buffer.write(symbol.exponent);
+      buffer
+        ..write(' ^ ')
+        ..write(symbol.exponent);
     }
     buffer.write(')');
   }
 
+  /// Writes the integer factor [comp] into [buffer].
   void composeFactor(StringBuffer buffer, Factor comp) {
     buffer.write(comp.value);
   }
 
+  /// Writes [op] into [buffer] as ` / ` for division or ` * ` for
+  /// multiplication.
   void composeOp(StringBuffer buffer, Operator op) {
     if (op == Operator.division) {
       buffer.write(' / ');

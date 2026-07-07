@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 /// Abstract class for handling special units in UCUM.
 abstract class SpecialUnitHandler {

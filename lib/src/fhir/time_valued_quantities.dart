@@ -1,3 +1,5 @@
+/// Whether [code] denotes years — the calendar word forms or the definite
+/// UCUM annum code `a`.
 bool isYears(String code) => <String>[
       'years',
       'year',
@@ -5,6 +7,8 @@ bool isYears(String code) => <String>[
       'a',
     ].contains(code);
 
+/// Whether [code] denotes months — the calendar word forms or the definite
+/// UCUM code `mo`.
 bool isMonths(String code) => <String>[
       'months',
       'month',
@@ -12,6 +16,8 @@ bool isMonths(String code) => <String>[
       'mo',
     ].contains(code);
 
+/// Whether [code] denotes weeks — the calendar word forms or the definite
+/// UCUM code `wk`.
 bool isWeeks(String code) => <String>[
       'weeks',
       'week',
@@ -19,6 +25,8 @@ bool isWeeks(String code) => <String>[
       'wk',
     ].contains(code);
 
+/// Whether [code] denotes days — the calendar word forms or the definite
+/// UCUM code `d`.
 bool isDays(String code) => <String>[
       'days',
       'day',
@@ -26,6 +34,8 @@ bool isDays(String code) => <String>[
       'd',
     ].contains(code);
 
+/// Whether [code] denotes hours — the calendar word forms or the definite
+/// UCUM code `h`.
 bool isHours(String code) => <String>[
       'hours',
       'hour',
@@ -33,6 +43,8 @@ bool isHours(String code) => <String>[
       'h',
     ].contains(code);
 
+/// Whether [code] denotes minutes — the calendar word forms or the definite
+/// UCUM code `min`.
 bool isMinutes(String code) => <String>[
       'minutes',
       'minute',
@@ -40,6 +52,8 @@ bool isMinutes(String code) => <String>[
       'min',
     ].contains(code);
 
+/// Whether [code] denotes seconds — the calendar word forms or the definite
+/// UCUM code `s`.
 bool isSeconds(String code) => <String>[
       'seconds',
       'second',
@@ -47,6 +61,8 @@ bool isSeconds(String code) => <String>[
       's',
     ].contains(code);
 
+/// Whether [code] denotes milliseconds — the calendar word forms or the
+/// definite UCUM code `ms`.
 bool isMilliseconds(String code) => <String>[
       'milliseconds',
       'millisecond',
@@ -74,6 +90,9 @@ const Set<String> timeValuedQuantities = <String>{
   'year',
 };
 
+/// The quoted calendar-duration keywords (`'year'`, `'month'`, ...) as they
+/// appear in FHIRPath/CQL literals, distinguishing calendar durations from
+/// definite UCUM durations.
 const Set<String> calendarUnitRepresentations = <String>{
   "'year'",
   "'month'",
@@ -86,6 +105,9 @@ const Set<String> calendarUnitRepresentations = <String>{
 };
 
 // https://www.hl7.org/fhir/fhirpath.html#quantity
+/// The definite-duration UCUM codes (`a`, `mo`, `wk`, `d`, `h`, `min`, `s`,
+/// `ms`) whose lengths are fixed, as opposed to variable-length calendar
+/// durations.
 const Set<String> definiteDurationUnits = <String>{
   'a',
   'mo',

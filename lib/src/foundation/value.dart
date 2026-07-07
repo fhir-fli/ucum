@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 // ***************************************************************************
 // BSD 3-Clause License
@@ -21,8 +21,9 @@ import '../internal.dart';
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -30,28 +31,15 @@ import '../internal.dart';
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/// A magnitude paired with its unit as carried in the UCUM model — for example
+/// the numeric value and unit of a defined unit's definition.
 class Value {
-  String? unit;
-  String? unitUC;
-  UcumDecimal? value;
-  String? text;
-
+  /// Creates a value with an optional [unit] code, case-sensitive [unitUC]
+  /// code, decimal [value] and human-readable [text].
   Value({this.unit, this.unitUC, this.value, this.text});
 
-  String getDescription() {
-    return '$value$unit';
-  }
-
-  @override
-  String toString() =>
-      'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
-
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'unit': unit,
-        'UNIT': unitUC,
-        'value': value?.asUcumDecimal(),
-        'text': text,
-      };
+  /// Builds a [Value] from its JSON map, parsing the `value` field into a
+  /// [UcumDecimal] when present.
   factory Value.fromJson(Map<String, dynamic> json) => Value(
         unit: json['unit'] as String?,
         unitUC: json['UNIT'] as String?,
@@ -60,4 +48,33 @@ class Value {
             : UcumDecimal.fromString(json['value'].toString()),
         text: json['text'] as String?,
       );
+
+  /// The unit code (case-insensitive form).
+  String? unit;
+
+  /// The case-sensitive UCUM unit code.
+  String? unitUC;
+
+  /// The numeric magnitude, as an arbitrary-precision decimal.
+  UcumDecimal? value;
+
+  /// A human-readable description of the value/unit.
+  String? text;
+
+  /// Returns the magnitude concatenated with its unit, e.g. `10mg`.
+  String getDescription() {
+    return '$value$unit';
+  }
+
+  @override
+  String toString() =>
+      'Value(unit: $unit, unitUC: $unitUC, value: $value, text: $text)';
+
+  /// Serializes this value back to its JSON map representation.
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'unit': unit,
+        'UNIT': unitUC,
+        'value': value?.asUcumDecimal(),
+        'text': text,
+      };
 }

@@ -19,8 +19,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -28,23 +29,27 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import 'canonical.dart';
-import 'component.dart';
-import 'factor.dart';
-import 'operator.dart';
-import 'symbol.dart';
-import 'term.dart';
+import 'package:ucum/src/foundation/canonical.dart';
+import 'package:ucum/src/foundation/component.dart';
+import 'package:ucum/src/foundation/factor.dart';
+import 'package:ucum/src/foundation/operator.dart';
+import 'package:ucum/src/foundation/symbol.dart';
+import 'package:ucum/src/foundation/term.dart';
 
+/// Renders a parsed [Term] tree back into a compact, canonical UCUM string
+/// (e.g. `mg/dL`) — the inverse of [ExpressionParser].
 class ExpressionComposer {
+  /// Composes [term] into its UCUM string; a null term renders as `1`.
   String compose(Term? term) {
     if (term == null) {
       return '1';
     }
-    final StringBuffer buffer = StringBuffer();
+    final buffer = StringBuffer();
     composeTerm(buffer, term);
     return buffer.toString();
   }
 
+  /// Writes [term]'s component, operator and continuation into [buffer].
   void composeTerm(StringBuffer buffer, Term term) {
     if (term.comp != null) {
       composeComp(buffer, term.comp!);
@@ -57,6 +62,7 @@ class ExpressionComposer {
     }
   }
 
+  /// Writes a component [comp] into [buffer], parenthesising a nested term.
   void composeComp(StringBuffer buffer, Component comp) {
     if (comp is Factor) {
       composeFactor(buffer, comp);
@@ -71,6 +77,8 @@ class ExpressionComposer {
     }
   }
 
+  /// Writes a [symbol] (optional prefix code, unit code, and exponent unless
+  /// it is 1) into [buffer].
   void composeSymbol(StringBuffer buffer, Symbol symbol) {
     if (symbol.prefix != null) {
       buffer.write(symbol.prefix!.code);
@@ -81,21 +89,25 @@ class ExpressionComposer {
     }
   }
 
+  /// Writes the integer factor [comp] into [buffer].
   void composeFactor(StringBuffer buffer, Factor comp) {
     buffer.write(comp.value);
   }
 
+  /// Writes [op] into [buffer] as `/` for division or `.` for multiplication.
   void composeOp(StringBuffer buffer, Operator op) {
     buffer.write(op == Operator.division ? '/' : '.');
   }
 
+  /// Renders a [Canonical] form as a UCUM string: the scalar value (unless
+  /// [value] is false) followed by each base unit and its exponent.
   String composeCanonical(Canonical can, [bool value = true]) {
-    final StringBuffer buffer = StringBuffer();
+    final buffer = StringBuffer();
     if (value) {
       buffer.write(can.value.asUcumDecimal());
     }
-    bool first = true;
-    for (final CanonicalUnit c in can.units) {
+    var first = true;
+    for (final c in can.units) {
       if (!first) {
         buffer.write('.');
       }

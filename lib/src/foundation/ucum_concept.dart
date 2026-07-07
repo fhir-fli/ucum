@@ -19,8 +19,9 @@
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE
 // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -28,9 +29,24 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
+/// Abstract base of the UCUM concept hierarchy: any named entry in the model,
+/// namely a [Prefix], [BaseUnit], or [DefinedUnit].
+///
+/// Holds the identity common to all of them: the [kind], the case-sensitive
+/// and case-insensitive codes, a print symbol, and human-readable names.
 class UcumConcept {
+  /// Creates a concept; [names] defaults to an empty, mutable list when null.
+  UcumConcept(
+      {required this.kind,
+      required this.code,
+      this.codeUC,
+      this.printSymbol,
+      List<String>? names,})
+      : names = names ?? <String>[];
+
+  /// Which kind of concept this is (prefix, base unit, or defined unit).
   ConceptKind kind;
 
   /// Case sensitive code for this concept.
@@ -45,16 +61,12 @@ class UcumConcept {
   /// Names for the concept.
   List<String> names;
 
-  UcumConcept(
-      {required this.kind,
-      required this.code,
-      this.codeUC,
-      this.printSymbol,
-      List<String>? names})
-      : names = names ?? <String>[];
-
+  /// A short human-readable description combining the kind, code, and first
+  /// name, e.g. `unit L ('liter')`. Subclasses extend this with their extra
+  /// detail.
   String getDescription() {
-    return "${kind.toString().toLowerCase()} $code ('${names.isNotEmpty ? names.first : ""}')";
+    final firstName = names.isNotEmpty ? names.first : '';
+    return "${kind.toString().toLowerCase()} $code ('$firstName')";
   }
 
   @override

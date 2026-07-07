@@ -1,13 +1,16 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 /// A registry class for managing special unit handlers.
 class Registry {
-  final Map<String, SpecialUnitHandler> handlers =
-      <String, SpecialUnitHandler>{};
 
+  /// Creates a registry pre-populated with all built-in special unit handlers.
   Registry() {
     _init();
   }
+
+  /// The registered handlers, keyed by the UCUM code they convert (e.g. `Cel`).
+  final Map<String, SpecialUnitHandler> handlers =
+      <String, SpecialUnitHandler>{};
 
   void _register(SpecialUnitHandler handler) {
     handlers[handler.getCode()] = handler;
@@ -25,7 +28,7 @@ class Registry {
     _register(HoldingHandler('Np', '1'));
     _register(HoldingHandler('B', '1'));
     _register(HoldingHandler.withValue(
-        'B[SPL]', '10*-5.Pa', UcumDecimal.fromString('2', 1)));
+        'B[SPL]', '10*-5.Pa', UcumDecimal.fromString('2', 1),),);
     _register(HoldingHandler('B[V]', 'V'));
     _register(HoldingHandler('B[mV]', 'mV'));
     _register(HoldingHandler('B[uV]', 'uV'));
@@ -35,10 +38,12 @@ class Registry {
     // Add other handlers here...
   }
 
+  /// Whether a special handler is registered for the given unit [code].
   bool exists(String code) {
     return handlers.containsKey(code);
   }
 
+  /// Returns the handler registered for [code], or null if none exists.
   SpecialUnitHandler? get(String code) {
     return handlers[code];
   }

@@ -2,18 +2,23 @@
 
 import 'dart:math' as math;
 
-import '../foundation/ucum_exception.dart';
-import '../foundation/utilities.dart';
+import 'package:ucum/src/foundation/ucum_exception.dart';
+import 'package:ucum/src/foundation/utilities.dart';
 
+/// Arbitrary-precision decimal number used throughout the UCUM engine for
+/// unit conversion and comparison.
+///
+/// Unlike [double], it preserves the number of significant figures and never
+/// loses precision to binary rounding. A value is held as a string of
+/// significant [digits], an integer [decimal] marking where the decimal point
+/// sits within those digits, a [precision] (count of significant figures), a
+/// [negative] sign flag, and a [scientific] flag recording whether the value
+/// was parsed from scientific notation. Arithmetic (add/subtract/multiply/
+/// divide) is implemented digit-by-digit so results stay exact to the tracked
+/// precision.
 class UcumDecimal {
-  late int precision;
-  late bool scientific;
-  late bool negative;
-  late String digits;
-  late int decimal;
-  static const int _int32MinValue = -2147483647;
-  static const int _int32MaxValue = 2147483647;
 
+  /// Creates the value zero with zero precision.
   UcumDecimal()
       : precision = 0,
         scientific = false,
@@ -21,13 +26,19 @@ class UcumDecimal {
         digits = '',
         decimal = 0;
 
+  /// Parses [value] into a decimal, accepting either plain (`12.34`) or
+  /// scientific (`1.2e3`) notation; a `null` [value] yields the default zero.
+  ///
+  /// The parse is case-insensitive (the exponent marker may be `e` or `E`).
+  /// When [precision] is supplied it overrides the significant-figure count
+  /// inferred from the text.
   UcumDecimal.fromString(String? value, [int? precision]) {
     if (value != null) {
-      value = value.toLowerCase();
-      if (value.contains('e')) {
-        setValueScientific(value);
+      final v = value.toLowerCase();
+      if (v.contains('e')) {
+        setValueScientific(v);
       } else {
-        setValueUcumDecimal(value);
+        setValueUcumDecimal(v);
       }
     }
     if (precision != null) {
@@ -35,50 +46,88 @@ class UcumDecimal {
     }
   }
 
+  /// Creates a decimal from a [num], taking its string form as the source
+  /// value (and therefore its apparent precision).
   UcumDecimal.fromNum(num i) {
     setValueUcumDecimal(i.toString());
   }
 
+  /// Creates a decimal from an [int]; the value is treated as a whole number.
   UcumDecimal.fromInt(int i) {
     setValueUcumDecimal(i.toString());
   }
 
+  /// Creates a decimal from a [double] via its string representation.
   UcumDecimal.fromDouble(double d) {
     setValueUcumDecimal(d.toString());
   }
 
+  /// Creates a decimal from an arbitrarily large [BigInt].
   UcumDecimal.fromBigInt(BigInt i) {
     setValueUcumDecimal(i.toString());
   }
 
+  /// The constant zero.
+  factory UcumDecimal.zero() => UcumDecimal.fromString('0');
+
+  /// The constant one.
+  factory UcumDecimal.one() => UcumDecimal.fromString('1');
+
+  /// Number of significant figures carried by this value.
+  late int precision;
+
+  /// Whether the value originated from (and prefers rendering as) scientific
+  /// notation.
+  late bool scientific;
+
+  /// Whether the value is negative.
+  late bool negative;
+
+  /// The significant digits with no decimal point or sign, e.g. `"1234"`.
+  late String digits;
+
+  /// Position of the decimal point measured from the left of [digits]; may be
+  /// negative or exceed the digit count to represent leading/trailing zeros.
+  late int decimal;
+  static const int _int32MinValue = -2147483647;
+  static const int _int32MaxValue = 2147483647;
+
+  /// This value as a binary [double] (may lose precision).
   double get asDouble => double.parse(asUcumDecimal());
 
+  /// Parses a plain (non-scientific) decimal string into this object's
+  /// [digits]/[decimal]/[precision]/[negative] fields.
+  ///
+  /// Strips a leading sign and redundant leading zeros, locates the decimal
+  /// point, infers the significant-figure count, and throws a [UcumException]
+  /// if the text is not a valid decimal (e.g. a trailing `.`).
   void setValueUcumDecimal(String value) {
+    var v = value;
     scientific = false;
-    negative = value.startsWith('-');
+    negative = v.startsWith('-');
     if (negative) {
-      value = value.substring(1);
+      v = v.substring(1);
     }
 
-    while (value.startsWith('0') && value.length > 1) {
-      value = value.substring(1);
+    while (v.startsWith('0') && v.length > 1) {
+      v = v.substring(1);
     }
 
-    final int dec = value.indexOf('.');
+    final dec = v.indexOf('.');
     if (dec == -1) {
-      precision = value.length;
-      decimal = value.length;
-      digits = value;
-    } else if (dec == value.length - 1) {
-      throw UcumException("'$value' is not a valid decimal");
+      precision = v.length;
+      decimal = v.length;
+      digits = v;
+    } else if (dec == v.length - 1) {
+      throw UcumException("'$v' is not a valid decimal");
     } else {
       decimal = dec;
-      if (allZeros(value, 1)) {
-        precision = value.length - 1;
+      if (allZeros(v, 1)) {
+        precision = v.length - 1;
       } else {
-        precision = countSignificants(value);
+        precision = countSignificants(v);
       }
-      digits = delete(value, decimal, 1);
+      digits = delete(v, decimal, 1);
       if (allZeros(digits)) {
         precision = precision + 1;
       }
@@ -89,11 +138,13 @@ class UcumDecimal {
     }
   }
 
+  /// Returns whether every character of [s] from index [start] onward is `'0'`
+  /// (a `null` string is treated as not all-zero).
   bool allZeros(String? s, [int start = 0]) {
     if (s == null) {
       return false;
     } else {
-      for (int i = start; i < s.length; i++) {
+      for (var i = start; i < s.length; i++) {
         if (s[i] != '0') {
           return false;
         }
@@ -102,6 +153,8 @@ class UcumDecimal {
     }
   }
 
+  /// The number of significant figures in this value: the tracked [precision]
+  /// for plain decimals, or the counted significant digits when [scientific].
   int significantFigures() {
     if (scientific) {
       return countSignificants(digits);
@@ -110,25 +163,34 @@ class UcumDecimal {
     }
   }
 
+  /// Counts the significant digits in [value] by removing any decimal point
+  /// and leading zeros and returning the remaining length.
   int countSignificants(String value) {
-    final int i = value.indexOf('.');
+    var v = value;
+    final i = v.indexOf('.');
     if (i > -1) {
-      value = delete(value, i, 1);
+      v = delete(v, i, 1);
     }
-    while (value.isNotEmpty && value[0] == '0') {
-      value = value.substring(1);
+    while (v.isNotEmpty && v[0] == '0') {
+      v = v.substring(1);
     }
-    return value.length;
+    return v.length;
   }
 
+  /// Returns [value] with [length] characters removed starting at [offset].
   String delete(String value, int offset, int length) {
     return value.substring(0, offset) + value.substring(offset + length);
   }
 
+  /// Parses a scientific-notation string (mantissa `e` exponent) into this
+  /// object, validating both parts and shifting [decimal] by the exponent.
+  ///
+  /// Throws a [UcumException] when either the mantissa or the exponent is
+  /// missing or malformed.
   void setValueScientific(String value) {
-    final int i = value.indexOf('e');
-    final String s = value.substring(0, i);
-    final String e = value.substring(i + 1);
+    final i = value.indexOf('e');
+    final s = value.substring(0, i);
+    final e = value.substring(i + 1);
 
     if (Utilities.noString(s) ||
         s == '-' ||
@@ -143,13 +205,15 @@ class UcumDecimal {
     scientific = true;
 
     // Adjust for exponent
-    final int exp = int.parse(e);
+    final exp = int.parse(e);
     decimal = decimal + exp;
   }
 
+  /// Returns [char] repeated [count] times (used to build runs of `'0'`).
   String stringMultiply(String char, int count) =>
       Utilities.padLeft('', char, count);
 
+  /// Returns [value] with [ins] inserted at [offset].
   String insert(String ins, String value, int offset) => offset == 0
       ? ins + value
       : value.substring(0, offset) + ins + value.substring(offset);
@@ -157,19 +221,19 @@ class UcumDecimal {
   @override
   String toString() => asUcumDecimal();
 
+  /// Returns an independent copy of this value.
   UcumDecimal copy() => UcumDecimal.fromString(asUcumDecimal());
 
-  static UcumDecimal zero() => UcumDecimal.fromString('0');
-
+  /// Whether this value equals zero (all digits are `'0'`).
   bool isZero() => allZeros(digits);
 
-  static UcumDecimal one() => UcumDecimal.fromString('1');
-
+  /// Whether this value equals one.
   bool isOne() {
-    final UcumDecimal one = UcumDecimal.one();
+    final one = UcumDecimal.one();
     return comparesTo(one) == 0;
   }
 
+  /// Whether [other] is a [UcumDecimal] with the same canonical string form.
   bool equals(Object other) {
     if (other is UcumDecimal) {
       return asUcumDecimal() == other.asUcumDecimal();
@@ -177,10 +241,12 @@ class UcumDecimal {
     return false;
   }
 
+  /// Whether [other] is a [UcumDecimal] whose numeric value is equal, comparing
+  /// as parsed numbers rather than by string form.
   bool equalsValue(Object other) {
     if (other is UcumDecimal) {
-      final num? thisValue = num.tryParse(asUcumDecimal());
-      final num? otherValue = num.tryParse(other.asUcumDecimal());
+      final thisValue = num.tryParse(asUcumDecimal());
+      final otherValue = num.tryParse(other.asUcumDecimal());
       if (thisValue == null) {
         return false;
       } else {
@@ -191,6 +257,11 @@ class UcumDecimal {
     }
   }
 
+  /// Compares this value with [other], returning -1, 0, or 1.
+  ///
+  /// Digit strings are aligned on the decimal point (zero-padded to equal
+  /// length) and compared lexically; signs are honoured, and negative zero is
+  /// treated as equal to zero. A `null` [other] compares as equal.
   int comparesTo(UcumDecimal? other) {
     if (other == null) {
       return 0;
@@ -208,14 +279,14 @@ class UcumDecimal {
         return 1;
       } else {
         final int maxUcumDecimal = math.max(decimal, other.decimal);
-        String s1 = ('0' * (maxUcumDecimal - decimal + 1)) + digits;
-        String s2 = ('0' * (maxUcumDecimal - other.decimal + 1)) + other.digits;
+        var s1 = ('0' * (maxUcumDecimal - decimal + 1)) + digits;
+        var s2 = ('0' * (maxUcumDecimal - other.decimal + 1)) + other.digits;
         if (s1.length < s2.length) {
           s1 = s1 + stringMultiply('0', s2.length - s1.length);
         } else if (s2.length < s1.length) {
           s2 = s2 + stringMultiply('0', s1.length - s2.length);
         }
-        int result = s1.compareTo(s2);
+        var result = s1.compareTo(s2);
         if (negative) {
           result = -result;
         }
@@ -224,12 +295,15 @@ class UcumDecimal {
     }
   }
 
+  /// Whether this value has no fractional part.
   bool isWholeNumber() {
     return !asUcumDecimal().contains('.');
   }
 
+  /// Renders this value as a plain decimal string, inserting the decimal point
+  /// and any required leading/trailing zeros and sign.
   String asUcumDecimal() {
-    String result = digits;
+    var result = digits;
     if (decimal != digits.length) {
       if (decimal < 0) {
         result = '0.${'0' * (0 - decimal)}$digits';
@@ -250,24 +324,28 @@ class UcumDecimal {
     return result;
   }
 
+  /// Returns this value as an [int], throwing a [UcumException] if it is not a
+  /// whole number or falls outside the signed 32-bit range.
   int asInteger() {
     if (!isWholeNumber()) {
       throw UcumException('Unable to represent $this as an integer');
     }
     if (comparesTo(UcumDecimal.fromString(_int32MinValue.toString())) < 0) {
       throw UcumException(
-          'Unable to represent $this as a signed 32-bit integer');
+          'Unable to represent $this as a signed 32-bit integer',);
     }
     if (comparesTo(UcumDecimal.fromString(_int32MaxValue.toString())) > 0) {
       throw UcumException(
-          'Unable to represent $this as a signed 32-bit integer');
+          'Unable to represent $this as a signed 32-bit integer',);
     }
     return int.parse(asUcumDecimal());
   }
 
+  /// Renders this value in scientific notation (mantissa `e` exponent),
+  /// preserving the tracked precision for zero values.
   String asScientific() {
-    String result = digits;
-    final bool zero = allZeros(result);
+    var result = digits;
+    final zero = allZeros(result);
     if (zero) {
       result = precision < 2 ? '0e0' : "0.${'0' * (precision - 1)}e0";
     } else {
@@ -282,28 +360,33 @@ class UcumDecimal {
     return result;
   }
 
+  /// Returns this value truncated toward zero (fractional digits dropped).
   UcumDecimal trunc() {
     if (isZero() || decimal <= 0) {
-      return zero();
+      return UcumDecimal.zero();
     }
 
-    final UcumDecimal result = copy();
+    final result = copy();
 
     if (result.digits.length >= result.decimal) {
       result.digits = result.digits.substring(0, result.decimal);
     }
     if (Utilities.noString(result.digits)) {
-      result.digits = '0';
-      result.decimal = 1;
-      result.negative = false;
+      result
+        ..digits = '0'
+        ..decimal = 1
+        ..negative = false;
     }
     return result;
   }
 
+  /// Returns the sum of this value and [other].
+  ///
+  /// Dispatches to [doAdd] for like signs and [doSubtract] for unlike signs,
+  /// then normalizes any negative-zero result to positive zero.
   UcumDecimal add(UcumDecimal other) {
     if (negative == other.negative) {
-      final UcumDecimal result = doAdd(other);
-      result.negative = negative;
+      final result = doAdd(other)..negative = negative;
       return _normalizeZeroSign(result);
     } else if (negative) {
       return _normalizeZeroSign(other.doSubtract(this));
@@ -312,11 +395,12 @@ class UcumDecimal {
     }
   }
 
+  /// Returns the difference of this value minus [other], handling all sign
+  /// combinations and normalizing negative zero to positive zero.
   UcumDecimal subtract(UcumDecimal other) {
     UcumDecimal result;
     if (negative && !other.negative) {
-      result = doAdd(other);
-      result.negative = true;
+      result = doAdd(other)..negative = true;
     } else if (!negative && other.negative) {
       result = doAdd(other);
     } else if (negative && other.negative) {
@@ -338,29 +422,33 @@ class UcumDecimal {
     return result;
   }
 
+  /// Adds the magnitudes of this value and [other] ignoring sign.
+  ///
+  /// Both digit strings are aligned to a common scale and summed right-to-left
+  /// with carry propagation; callers ([add]/[subtract]) set the result sign.
   UcumDecimal doAdd(UcumDecimal other) {
     // Compute total number of decimal places for both numbers
-    final int thisScale = digits.length - decimal;
-    final int otherScale = other.digits.length - other.decimal;
+    final thisScale = digits.length - decimal;
+    final otherScale = other.digits.length - other.decimal;
 
     // Normalize numbers to have the same number of decimal places
-    final String normalizedThisDigits = digits + '0' * (otherScale - thisScale);
-    final String normalizedOtherDigits =
+    final normalizedThisDigits = digits + '0' * (otherScale - thisScale);
+    final normalizedOtherDigits =
         other.digits + '0' * (thisScale - otherScale);
 
     // Prepare to sum the digits
     final int maxLength =
         math.max(normalizedThisDigits.length, normalizedOtherDigits.length);
-    final String paddedThisDigits =
+    final paddedThisDigits =
         normalizedThisDigits.padLeft(maxLength, '0');
-    final String paddedOtherDigits =
+    final paddedOtherDigits =
         normalizedOtherDigits.padLeft(maxLength, '0');
 
-    String resultDigits = '';
-    int carry = 0;
+    var resultDigits = '';
+    var carry = 0;
     // Perform addition from right to left
-    for (int i = maxLength - 1; i >= 0; i--) {
-      final int sum = int.parse(paddedThisDigits[i]) +
+    for (var i = maxLength - 1; i >= 0; i--) {
+      final sum = int.parse(paddedThisDigits[i]) +
           int.parse(paddedOtherDigits[i]) +
           carry;
       carry = sum ~/ 10;
@@ -373,11 +461,11 @@ class UcumDecimal {
     }
 
     // Calculate where the decimal should be placed
-    final int resultDecimal =
+    final resultDecimal =
         resultDigits.length - (thisScale > otherScale ? thisScale : otherScale);
 
     // Final construction of result UcumDecimal
-    final UcumDecimal result = UcumDecimal()
+    final result = UcumDecimal()
       ..digits = resultDigits
       ..decimal = resultDecimal
       ..precision = math.min(precision, other.precision)
@@ -388,14 +476,21 @@ class UcumDecimal {
     return result;
   }
 
+  /// Converts a single digit character [c] (`'0'`–`'9'`) to its int value.
   int dig(String c) => c.codeUnitAt(0) - '0'.codeUnitAt(0);
 
+  /// Converts a single-digit int [i] (0–9) back to its character form.
   String cdig(int i) => String.fromCharCode(i + '0'.codeUnitAt(0));
 
+  /// Subtracts the magnitudes of this value and [other] ignoring sign.
+  ///
+  /// Aligns both digit strings on the decimal point, subtracts the smaller
+  /// from the larger with borrow propagation, and records whether the result
+  /// should be negative in the returned value's [negative] flag.
   UcumDecimal doSubtract(UcumDecimal other) {
     int max = math.max(decimal, other.decimal);
-    String s1 = stringMultiply('0', max - decimal + 1) + digits;
-    String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
+    var s1 = stringMultiply('0', max - decimal + 1) + digits;
+    var s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
 
     if (s1.length < s2.length) {
       s1 = s1 + stringMultiply('0', s2.length - s1.length);
@@ -404,7 +499,7 @@ class UcumDecimal {
     }
 
     String s3;
-    final bool neg = s1.compareTo(s2) < 0;
+    final neg = s1.compareTo(s2) < 0;
     if (neg) {
       s3 = s2;
       s2 = s1;
@@ -429,15 +524,16 @@ class UcumDecimal {
       }
     }
 
-    final UcumDecimal result = UcumDecimal();
+    final result = UcumDecimal();
     try {
       result.setValueUcumDecimal(s3);
     } catch (e) {
       // won't happen
     }
 
-    result.negative = neg;
-    result.scientific = scientific || other.scientific;
+    result
+      ..negative = neg
+      ..scientific = scientific || other.scientific;
     if (decimal < other.decimal) {
       result.precision = precision;
     } else if (other.decimal < decimal) {
@@ -448,40 +544,52 @@ class UcumDecimal {
     return result;
   }
 
+  /// Adds two equal-length digit strings [s1] and [s2] and returns their sum
+  /// as a digit string of the same length.
+  ///
+  /// The inputs must be the same length and must not overflow that length
+  /// (both preconditions are asserted).
   String stringAddition(String s1, String s2) {
-    assert(s1.length == s2.length);
-    final List<String> result = List<String>.filled(s2.length, '0');
-    int c = 0;
-    for (int i = s1.length - 1; i >= 0; i--) {
-      final int t = c + dig(s1[i]) + dig(s2[i]);
+    assert(s1.length == s2.length, 'operands must be the same length');
+    final result = List<String>.filled(s2.length, '0');
+    var c = 0;
+    for (var i = s1.length - 1; i >= 0; i--) {
+      final t = c + dig(s1[i]) + dig(s2[i]);
       result[i] = cdig(t % 10);
       c = t ~/ 10;
     }
-    assert(c == 0);
+    assert(c == 0, 'sum overflowed the operand width');
     return result.join();
   }
 
+  /// Subtracts equal-length digit string [s2] from [s1], borrowing across
+  /// positions, and returns the difference as a digit string.
+  ///
+  /// [s1] must be greater than or equal to [s2]; a borrow out of the most
+  /// significant digit is an internal logic error and throws.
   String stringSubtraction(String s1, String s2) {
-    assert(s1.length == s2.length);
-    final List<String> result = List<String>.filled(s2.length, '0');
+    assert(s1.length == s2.length, 'operands must be the same length');
+    var top = s1;
+    final result = List<String>.filled(s2.length, '0');
 
-    const int c = 0;
-    for (int i = s1.length - 1; i >= 0; i--) {
-      int t = c + (dig(s1[i]) - dig(s2[i]));
+    const c = 0;
+    for (var i = top.length - 1; i >= 0; i--) {
+      var t = c + (dig(top[i]) - dig(s2[i]));
       if (t < 0) {
         t += 10;
         if (i == 0) {
           throw Exception('Internal logic error');
         } else {
-          s1 = replaceChar(s1, i - 1, cdig(dig(s1[i - 1]) - 1));
+          top = replaceChar(top, i - 1, cdig(dig(top[i - 1]) - 1));
         }
       }
       result[i] = cdig(t);
     }
-    assert(c == 0);
+    assert(c == 0, 'borrow carried past the most significant digit');
     return result.join();
   }
 
+  /// Returns [s] with the character at [offset] replaced by [c].
   String replaceChar(String s, int offset, String c) {
     if (offset == 0) {
       return '$c${s.substring(1)}';
@@ -490,14 +598,19 @@ class UcumDecimal {
     }
   }
 
+  /// Returns the product of this value and [other].
+  ///
+  /// Performs long multiplication digit-by-digit, then trims trailing zeros
+  /// down to the appropriate result precision (whole-number operands keep full
+  /// precision; otherwise the smaller operand precision is used).
   UcumDecimal multiply(UcumDecimal other) {
     if (isZero() || other.isZero()) {
-      return zero();
+      return UcumDecimal.zero();
     }
 
     final int max = math.max(decimal, other.decimal);
-    String s1 = stringMultiply('0', max - decimal + 1) + digits;
-    String s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
+    var s1 = stringMultiply('0', max - decimal + 1) + digits;
+    var s2 = stringMultiply('0', max - other.decimal + 1) + other.digits;
 
     if (s1.length < s2.length) {
       s1 = s1 + stringMultiply('0', s2.length - s1.length);
@@ -506,19 +619,19 @@ class UcumDecimal {
     }
 
     if (s2.compareTo(s1) > 0) {
-      final String temp = s1;
+      final temp = s1;
       s1 = s2;
       s2 = temp;
     }
 
-    List<String> s = List<String>.generate(s2.length, (_) => '');
+    var s = List<String>.generate(s2.length, (_) => '');
 
     int carry;
-    for (int i = s2.length - 1; i >= 0; i--) {
+    for (var i = s2.length - 1; i >= 0; i--) {
       s[i] = stringMultiply('0', s2.length - (i + 1));
       carry = 0;
-      for (int j = s1.length - 1; j >= 0; j--) {
-        final int t = carry + (dig(s1[j]) * dig(s2[i]));
+      for (var j = s1.length - 1; j >= 0; j--) {
+        final t = carry + (dig(s1[j]) * dig(s2[i]));
         s[i] = '${cdig(t % 10)}${s[i]}';
         carry = t ~/ 10;
       }
@@ -528,15 +641,15 @@ class UcumDecimal {
       }
     }
 
-    final int maxLength = s.map((String str) => str.length).reduce(math.max);
+    final maxLength = s.map((str) => str.length).reduce(math.max);
     s = s
-        .map((String str) => stringMultiply('0', maxLength - str.length) + str)
+        .map((str) => stringMultiply('0', maxLength - str.length) + str)
         .toList();
 
-    String result = '';
+    var result = '';
     carry = 0;
-    for (int i = maxLength - 1; i >= 0; i--) {
-      for (final String str in s) {
+    for (var i = maxLength - 1; i >= 0; i--) {
+      for (final str in s) {
         carry += dig(str[i]);
       }
       result = '${cdig(carry % 10)}$result';
@@ -547,7 +660,7 @@ class UcumDecimal {
       throw Exception('Internal logic error');
     }
 
-    int decimalPos = result.length - ((s1.length - (max + 1)) * 2);
+    var decimalPos = result.length - ((s1.length - (max + 1)) * 2);
     while (result.isNotEmpty && result != '0' && result.startsWith('0')) {
       result = result.substring(1);
       decimalPos--;
@@ -556,7 +669,7 @@ class UcumDecimal {
     int precisionResult;
     if (isWholeNumber() && other.isWholeNumber()) {
       precisionResult = math.max(math.max(digits.length, other.digits.length),
-          math.min(precision, other.precision));
+          math.min(precision, other.precision),);
     } else if (isWholeNumber()) {
       precisionResult = other.precision;
     } else if (other.isWholeNumber()) {
@@ -569,15 +682,16 @@ class UcumDecimal {
       result = result.substring(0, result.length - 1);
     }
 
-    final UcumDecimal newUcumDecimal = UcumDecimal();
-    newUcumDecimal.setValueUcumDecimal(result);
-    newUcumDecimal.precision = precisionResult;
-    newUcumDecimal.decimal = decimalPos;
-    newUcumDecimal.negative = negative != other.negative;
-    newUcumDecimal.scientific = scientific || other.scientific;
+    final newUcumDecimal = UcumDecimal()
+      ..setValueUcumDecimal(result)
+      ..precision = precisionResult
+      ..decimal = decimalPos
+      ..negative = negative != other.negative
+      ..scientific = scientific || other.scientific;
     return newUcumDecimal;
   }
 
+  /// Operator form of [multiply].
   UcumDecimal operator *(UcumDecimal other) {
     return multiply(other);
   }
@@ -591,37 +705,45 @@ class UcumDecimal {
     }
   }
 
+  /// Whether this value is equivalent to [other] (same canonical string form).
   bool equivalent(Object other) {
     return this == other;
   }
 
+  /// Returns the product of this value and the integer [other].
   UcumDecimal multiplyInt(int other) {
     return multiply(UcumDecimal.fromInt(other));
   }
 
+  /// Returns the quotient of this value divided by [other].
+  ///
+  /// Uses long division against precomputed multiples (`tens`) of the divisor,
+  /// producing a quotient rounded to the appropriate result precision. Throws
+  /// a [UcumException] on division by zero.
   UcumDecimal divide(UcumDecimal other) {
     if (isZero()) {
-      return zero();
+      return UcumDecimal.zero();
     } else if (other.isZero()) {
       throw UcumException('Attempt to divide $toString() by zero');
     } else {
-      final String s = '0${other.digits}';
-      final int m = math.max(digits.length, other.digits.length) +
+      final s = '0${other.digits}';
+      final m = math.max(digits.length, other.digits.length) +
           40; // max loops we'll do
-      final List<String> tens = List<String>.filled(10, '');
+      final tens = List<String>.filled(10, '');
       tens[0] = stringAddition(stringMultiply('0', s.length), s);
-      for (int i = 1; i < 10; i++) {
+      for (var i = 1; i < 10; i++) {
         tens[i] = stringAddition(tens[i - 1], s);
       }
-      String v = digits;
-      String r = '';
-      int l = 0;
-      int d = (digits.length - decimal + 1) -
+      var v = digits;
+      var r = '';
+      var l = 0;
+      var d = (digits.length - decimal + 1) -
           (other.digits.length - other.decimal + 1);
 
-      while (v.length < tens[0].length) {
-        v = '${v}0';
-        d++;
+      if (v.length < tens[0].length) {
+        final pad = tens[0].length - v.length;
+        v = v.padRight(tens[0].length, '0');
+        d += pad;
       }
 
       String w;
@@ -638,7 +760,7 @@ class UcumDecimal {
         vi = w.length - 1;
       }
 
-      bool handled = false;
+      var handled = false;
       bool proc;
 
       while (!(handled &&
@@ -647,7 +769,7 @@ class UcumDecimal {
         l++;
         handled = true;
         proc = false;
-        for (int i = 8; i >= 0; i--) {
+        for (var i = 8; i >= 0; i--) {
           if (tens[i].compareTo(w) <= 0) {
             proc = true;
             r = r + cdig(i + 1);
@@ -672,7 +794,7 @@ class UcumDecimal {
           }
         }
         if (!proc) {
-          assert(w[0] == '0');
+          assert(w[0] == '0', 'expected a leading zero when no digit fits');
           w = delete(w, 0, 1);
           r = '${r}0';
           if (!(handled &&
@@ -696,7 +818,7 @@ class UcumDecimal {
       int prec;
 
       if (isWholeNumber() && other.isWholeNumber() && (l < m)) {
-        for (int i = 0; i < d; i++) {
+        for (var i = 0; i < d; i++) {
           if (r[r.length - 1] == '0') {
             r = delete(r, r.length - 1, 1);
             d--;
@@ -716,14 +838,14 @@ class UcumDecimal {
 
         if (r.length > prec) {
           d = d - (r.length - prec);
-          final int digit = r[prec].codeUnitAt(0);
-          final bool up = digit >= '5'.codeUnitAt(0);
+          final digit = r[prec].codeUnitAt(0);
+          final up = digit >= '5'.codeUnitAt(0);
           if (up) {
-            final List<int> rs = r.substring(0, prec).codeUnits.toList();
-            int i = rs.length - 1;
-            bool carry = true;
+            final rs = r.substring(0, prec).codeUnits.toList();
+            var i = rs.length - 1;
+            var carry = true;
             while (carry && i >= 0) {
-              int ls = rs[i];
+              var ls = rs[i];
               if (ls == '9'.codeUnitAt(0)) {
                 rs[i] = '0'.codeUnitAt(0);
               } else {
@@ -745,30 +867,34 @@ class UcumDecimal {
         }
       }
 
-      final UcumDecimal result = UcumDecimal();
-      result.setValueUcumDecimal(r);
-      result.decimal = r.length - d;
-      result.negative = negative != other.negative;
-      result.precision = prec;
-      result.scientific = scientific || other.scientific;
+      final result = UcumDecimal()
+        ..setValueUcumDecimal(r)
+        ..decimal = r.length - d
+        ..negative = negative != other.negative
+        ..precision = prec
+        ..scientific = scientific || other.scientific;
       return result;
     }
   }
 
+  /// Operator form of [divide].
   UcumDecimal operator /(UcumDecimal other) {
     return divide(other);
   }
 
+  /// Integer (truncating) division: `this / other` truncated toward zero.
   UcumDecimal operator ~/(UcumDecimal other) {
     return divide(other).trunc();
   }
 
+  /// Returns the quotient of this value divided by the integer [other].
   UcumDecimal divideInt(int other) {
     return divide(UcumDecimal.fromInt(other));
   }
 
+  /// Returns [s] with its leading zeros removed, or `"0"` if it is all zeros.
   String trimLeadingZeros(String s) {
-    int i = 0;
+    var i = 0;
     while (i < s.length && s[i] == '0') {
       i++;
     }
@@ -779,30 +905,35 @@ class UcumDecimal {
     }
   }
 
+  /// Returns the integer part of `this / other` (quotient truncated to a whole
+  /// number).
   UcumDecimal divInt(UcumDecimal other) {
-    final UcumDecimal t = divide(other);
+    final t = divide(other);
     return t.trunc();
   }
 
+  /// Returns the remainder of this value modulo [other]
+  /// (`this - trunc(this / other) * other`); throws on a zero divisor.
   UcumDecimal modulo(UcumDecimal other) {
     if (other.isZero()) {
       throw UcumException('Modulo by zero');
     }
 
-    final UcumDecimal divisionResult = divide(other);
-    final UcumDecimal truncatedResult = divisionResult.trunc();
+    final divisionResult = divide(other);
+    final truncatedResult = divisionResult.trunc();
     return subtract(truncatedResult.multiply(other));
   }
 
+  /// Returns the absolute value (a copy with the sign cleared).
   UcumDecimal absolute() {
-    final UcumDecimal result = copy();
-    result.negative = false;
+    final result = copy()..negative = false;
     return result;
   }
 
   @override
   int get hashCode => asUcumDecimal().hashCode;
 
+  /// Caps this value's [precision] so it does not exceed that of [other].
   void limitPrecisionTo(UcumDecimal other) {
     // Precision can't be greater than other
     if (precision > other.precision) {
@@ -810,11 +941,15 @@ class UcumDecimal {
     }
   }
 
+  /// Corrects trailing rounding artefacts on high-precision values that are
+  /// really whole numbers, folding a long run of trailing `9`s or `0`s back
+  /// into an exact integer.
   void checkForCouldBeWholeNumber() {
-    // Whole numbers have implied infinite precision, but we need to check for digit errors in the last couple of digits
+    // Whole numbers have implied infinite precision, but we need to check for
+    // digit errors in the last couple of digits
     if (precision > 17 && digits.length > 3) {
-      int i = digits.length - 2;
-      final String ch = digits[i]; // Second last character
+      var i = digits.length - 2;
+      final ch = digits[i]; // Second last character
       if (ch == '9') {
         while (i > 0 && digits[i - 1] == '9') {
           i--;

@@ -8,14 +8,14 @@ import 'package:ucum/ucum.dart';
 /// converter folded the affine offset into the multiplicative factor and
 /// `convert(37, 'Cel', 'K')` returned -10069.55.
 void main() {
-  final UcumService ucumService = UcumService();
+  final ucumService = UcumService();
 
   UcumDecimal convert(String value, String from, String to) =>
       ucumService.convert(UcumDecimal.fromString(value), from, to);
 
   void expectValue(UcumDecimal actual, String expected) {
     expect(actual.equalsValue(UcumDecimal.fromString(expected)), isTrue,
-        reason: 'expected $expected, got ${actual.asUcumDecimal()}');
+        reason: 'expected $expected, got ${actual.asUcumDecimal()}',);
   }
 
   group('affine temperature conversions', () {
@@ -46,12 +46,12 @@ void main() {
     test('[degF] -> K', () {
       expectValue(convert('32', '[degF]', 'K'), '273.15');
       // 0 degF = 459.67 * 5/9 K = 255.37222... (non-terminating)
-      final UcumDecimal zeroF = convert('0', '[degF]', 'K');
+      final zeroF = convert('0', '[degF]', 'K');
       expect(zeroF.asUcumDecimal(), startsWith('255.3722'));
     });
 
     test('round trip preserves value', () {
-      final UcumDecimal roundTripped =
+      final roundTripped =
           ucumService.convert(convert('37', 'Cel', '[degF]'), '[degF]', 'Cel');
       expectValue(roundTripped, '37');
     });
@@ -62,17 +62,17 @@ void main() {
       // A multiplicative canonical form cannot represent an affine scale;
       // Ucum-java throws here too.
       expect(() => ucumService.getCanonicalUnits('Cel'),
-          throwsA(isA<UcumException>()));
+          throwsA(isA<UcumException>()),);
     });
 
     test('getCanonicalForm of a measurement Pair converts through K', () {
       // A Pair carries the value, so the affine conversion IS possible at
       // the measurement level (unlike the unit level above).
-      final Pair canonical = ucumService.getCanonicalForm(
-          Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'));
+      final canonical = ucumService.getCanonicalForm(
+          Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'),);
       expect(canonical.unit, 'K');
       expect(canonical.value.equalsValue(UcumDecimal.fromString('310.15')),
-          isTrue);
+          isTrue,);
     });
 
     test('compound expressions containing an affine unit throw', () {
@@ -100,22 +100,22 @@ void main() {
     test('isEqual across scales', () {
       expect(
           ucumService.isEqual(ValidatedQuantity.fromString('37 Cel'),
-              ValidatedQuantity.fromString('310.15 K')),
-          isTrue);
+              ValidatedQuantity.fromString('310.15 K'),),
+          isTrue,);
       expect(
           ucumService.isEqual(ValidatedQuantity.fromString('32 [degF]'),
-              ValidatedQuantity.fromString('0 Cel')),
-          isTrue);
+              ValidatedQuantity.fromString('0 Cel'),),
+          isTrue,);
       expect(
           ucumService.isEqual(ValidatedQuantity.fromString('37 Cel'),
-              ValidatedQuantity.fromString('311 K')),
-          isFalse);
+              ValidatedQuantity.fromString('311 K'),),
+          isFalse,);
     });
   });
 
   group('negative zero', () {
     test('subtraction producing zero is not negative', () {
-      final UcumDecimal zero = convert('32', '[degF]', 'Cel');
+      final zero = convert('32', '[degF]', 'Cel');
       expect(zero.isZero(), isTrue);
       expect(zero.negative, isFalse);
       expect(zero.comparesTo(UcumDecimal.fromString('0')), 0);

@@ -1,4 +1,4 @@
-import '../internal.dart';
+import 'package:ucum/src/internal.dart';
 
 /// A class for handling Celsius units.
 class CelsiusHandler extends SpecialUnitHandler {

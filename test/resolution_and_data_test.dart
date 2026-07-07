@@ -10,7 +10,7 @@ import 'package:ucum/ucum.dart';
 /// and validate() are spec-strict (Ucum-java parity) and leniency is the
 /// explicit UcumService.resolveCommonUnit substitution layer.
 void main() {
-  final UcumService ucumService = UcumService();
+  final ucumService = UcumService();
 
   group('strict validation (Ucum-java parity)', () {
     test('display names and plurals are not valid UCUM', () {
@@ -61,15 +61,15 @@ void main() {
 
   group('mcg regression (was canonicalizing to unity)', () {
     test('5 mcg == 5 ug', () {
-      final ValidatedQuantity mcg = ValidatedQuantity.fromString('5 mcg');
-      final ValidatedQuantity ug = ValidatedQuantity.fromString('5 ug');
+      final mcg = ValidatedQuantity.fromString('5 mcg');
+      final ug = ValidatedQuantity.fromString('5 ug');
       expect(mcg == ug, isTrue);
       expect(mcg.hashCode, ug.hashCode);
       expect(mcg.isValid(), isTrue);
     });
 
     test('mcg/mL converts like ug/mL', () {
-      final ValidatedQuantity a = ValidatedQuantity.fromString('1 mcg/mL');
+      final a = ValidatedQuantity.fromString('1 mcg/mL');
       expect(a == ValidatedQuantity.fromString('1 ug/mL'), isTrue);
       expect(a == ValidatedQuantity.fromString('0.1 mg/dL'), isTrue);
     });
@@ -78,11 +78,11 @@ void main() {
       expect(
           ValidatedQuantity.fromString('4 hours') ==
               ValidatedQuantity.fromString('240 min'),
-          isTrue);
+          isTrue,);
       expect(
           ValidatedQuantity.fromString('2.54 cm') ==
               ValidatedQuantity.fromString('1 inch'),
-          isTrue);
+          isTrue,);
     });
   });
 
@@ -100,7 +100,7 @@ void main() {
     });
 
     test('mole uses the 2019 SI Avogadro number', () {
-      final UcumDecimal converted =
+      final converted =
           ucumService.convert(UcumDecimal.fromString('1'), 'mol', '10*23');
       expect(converted.asUcumDecimal(), startsWith('6.02214076'));
     });
@@ -114,14 +114,14 @@ void main() {
       expect(definedUnitsList.length, 305);
       expect(baseUnitsList.length, 7);
       expect(prefixesList.length, 24);
-      for (final DefinedUnit unit in definedUnitsList) {
+      for (final unit in definedUnitsList) {
         expect(unit.code.contains('DefinedUnit'), isFalse,
-            reason: 'corrupted code: ${unit.code}');
+            reason: 'corrupted code: ${unit.code}',);
         expect(
             (unit.isSpecial ?? false) ||
                 (unit.value.value != null || unit.value.unit != null),
             isTrue,
-            reason: 'empty definition: ${unit.code}');
+            reason: 'empty definition: ${unit.code}',);
       }
     });
   });

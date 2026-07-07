@@ -13,6 +13,10 @@
 /// - Values must be valid UCUM.
 library;
 
+/// Maps common non-UCUM unit spellings (keys) to their equivalent strict
+/// UCUM codes (values). Keys are invalid as strict UCUM and are substituted
+/// case-insensitively on word boundaries, longest key first, by
+/// [UcumService.resolveCommonUnit].
 const Map<String, String> commonUnitSynonyms = <String, String>{
   // Time words (FHIRPath calendar keywords resolve to the definite UCUM
   // duration codes; ValidatedQuantity's == keeps the calendar-vs-definite

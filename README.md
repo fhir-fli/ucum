@@ -12,6 +12,18 @@ unit data is generated from **ucum-essence 2.2** (2024-06-17) by a checked-in
 generator (`tool/generate_definitions.dart`) — no runtime XML parsing, no
 assets, works on every platform including web.
 
+`ucum` is a standalone, dependency-free foundation package: it is one of the
+model-independent building blocks (alongside `fhir_node` and `fhirpath`) that
+the FHIRPath and CQL engines rely on for `Quantity` semantics without pulling
+in any FHIR-version model.
+
+## Install
+
+```yaml
+dependencies:
+  ucum: ^0.9.0
+```
+
 ## Usage
 
 ```dart
@@ -95,4 +107,5 @@ dart format lib/src/resources
   retained in the ported source files.
 - UCUM and the ucum-essence data are © Regenstrief Institute, Inc., used
   under the [UCUM license](https://unitsofmeasure.org/license).
-- This package: BSD-3-Clause, © 2023+ Grey Faulkenberry / FHIR-FLI.
+- This package: MIT, © FHIR-FLI (see `LICENSE`). The ported source files
+  retain their original BSD-3-Clause copyright headers from Ucum-java.

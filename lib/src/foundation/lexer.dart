@@ -76,8 +76,9 @@ class Lexer {
               checkNumber(ch) ||
               checkNumberOrSymbol(ch)))) {
         throw UcumException(
-            "Error processing unit '$source': unexpected character '$ch' "
-            'at position $start',);
+          "Error processing unit '$source': unexpected character '$ch' "
+          'at position $start',
+        );
       }
     }
   }
@@ -92,16 +93,14 @@ class Lexer {
     var inBrackets = false;
     if (isValidSymbolChar(c, true, false)) {
       token = c;
-      isSymbol =
-          isSymbol || !(c!.compareTo('0') >= 0 && c.compareTo('9') <= 0);
+      isSymbol = isSymbol || !(c!.compareTo('0') >= 0 && c.compareTo('9') <= 0);
       inBrackets = checkBrackets(c, inBrackets);
       c = peekChar();
       inBrackets = checkBrackets(c, inBrackets);
       while (isValidSymbolChar(c, !isSymbol || inBrackets, inBrackets)) {
         token = token! + c!;
         isSymbol = isSymbol ||
-            (c != noChar &&
-                !(c.compareTo('0') >= 0 && c.compareTo('9') <= 0));
+            (c != noChar && !(c.compareTo('0') >= 0 && c.compareTo('9') <= 0));
         index++;
         c = peekChar();
         inBrackets = checkBrackets(c, inBrackets);
@@ -124,7 +123,8 @@ class Lexer {
     if (ch == '[') {
       if (inBrackets) {
         throw UcumException(
-            "Error processing unit '$source': Nested [ at position $start",);
+          "Error processing unit '$source': Nested [ at position $start",
+        );
       } else {
         return true;
       }
@@ -132,7 +132,8 @@ class Lexer {
     if (ch == ']') {
       if (!inBrackets) {
         throw UcumException(
-            "Error processing unit '$source': ] without [ at position $start",);
+          "Error processing unit '$source': ] without [ at position $start",
+        );
       } else {
         return false;
       }
@@ -186,17 +187,17 @@ class Lexer {
     if (c == '+' || c == '-') {
       token = c;
       c = peekChar();
-      while (
-          (c?.compareTo('0') ?? -1) >= 0 && (c?.compareTo('9') ?? 1) <= 0) {
+      while ((c?.compareTo('0') ?? -1) >= 0 && (c?.compareTo('9') ?? 1) <= 0) {
         token = token! + c!;
         index++;
         c = peekChar();
       }
       if (token!.length == 1) {
         throw UcumException(
-            "Error processing unit '$source': unexpected character '$c' "
-            'at position $start: a + or - must be followed by at least '
-            'one digit',);
+          "Error processing unit '$source': unexpected character '$c' "
+          'at position $start: a + or - must be followed by at least '
+          'one digit',
+        );
       }
       type = TokenType.number;
       return true;
@@ -218,12 +219,14 @@ class Lexer {
         // the same way or an unmatched '{' spins forever.
         if (c == null) {
           throw UcumException(
-              "Error processing unit '$source': unterminated annotation",);
+            "Error processing unit '$source': unterminated annotation",
+          );
         }
         if (!Utilities.isAsciiChar(c)) {
           throw UcumException(
-              "Error processing unit '$source': Annotation contains "
-              'non-ascii characters',);
+            "Error processing unit '$source': Annotation contains "
+            'non-ascii characters',
+          );
         }
         buffer.write(c);
       }

@@ -21,7 +21,8 @@ void main() {
   print(ucum.convert(UcumDecimal.fromString('37'), 'Cel', 'K')); // 310.15
   // 37.0000
   print(
-      ucum.convert(UcumDecimal.fromString('98.6'), '[degF]', 'Cel'),);
+    ucum.convert(UcumDecimal.fromString('98.6'), '[degF]', 'Cel'),
+  );
   print(ucum.convert(UcumDecimal.fromString('15'), '/min', '/h')); // 900
 
   // Canonical forms and comparability.
@@ -41,6 +42,8 @@ void main() {
   // Quantity arithmetic.
   final dose = ValidatedQuantity.fromString('250 mcg');
   print(dose + '0.25 mg'); // 500 'mcg' equivalent, in dose's unit
-  print(ValidatedQuantity.fromString('10 mg') /
-      ValidatedQuantity.fromString('5 mL'),); // canonical g/m3 form
+  print(
+    ValidatedQuantity.fromString('10 mg') /
+        ValidatedQuantity.fromString('5 mL'),
+  ); // canonical g/m3 form
 }

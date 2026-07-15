@@ -47,7 +47,8 @@ class ExpressionParser {
     final res = parseTerm(lexer, true);
     if (!lexer.finished()) {
       throw UcumException(
-          'Expression was not parsed completely. Syntax Error? - Code: $code',);
+        'Expression was not parsed completely. Syntax Error? - Code: $code',
+      );
     }
     return res;
   }
@@ -102,7 +103,8 @@ class ExpressionParser {
       return parseSymbol(lexer);
     } else if (lexer.type == TokenType.none) {
       throw UcumException(
-          'Unexpected end of expression looking for a symbol or a number',);
+        'Unexpected end of expression looking for a symbol or a number',
+      );
     } else if (lexer.type == TokenType.open) {
       lexer.consume();
       final res = parseTerm(lexer, true);
@@ -110,8 +112,9 @@ class ExpressionParser {
         lexer.consume();
       } else {
         throw UcumException(
-            "Unexpected Token Type '${lexer.type}' looking for a close "
-            'bracket',);
+          "Unexpected Token Type '${lexer.type}' looking for a close "
+          'bracket',
+        );
       }
       return res;
     } else {

@@ -2,7 +2,6 @@ import 'package:ucum/src/internal.dart';
 
 /// A registry class for managing special unit handlers.
 class Registry {
-
   /// Creates a registry pre-populated with all built-in special unit handlers.
   Registry() {
     _init();
@@ -27,8 +26,13 @@ class Registry {
     _register(HoldingHandler('[pH]', 'mol/l'));
     _register(HoldingHandler('Np', '1'));
     _register(HoldingHandler('B', '1'));
-    _register(HoldingHandler.withValue(
-        'B[SPL]', '10*-5.Pa', UcumDecimal.fromString('2', 1),),);
+    _register(
+      HoldingHandler.withValue(
+        'B[SPL]',
+        '10*-5.Pa',
+        UcumDecimal.fromString('2', 1),
+      ),
+    );
     _register(HoldingHandler('B[V]', 'V'));
     _register(HoldingHandler('B[mV]', 'mV'));
     _register(HoldingHandler('B[uV]', 'uV'));

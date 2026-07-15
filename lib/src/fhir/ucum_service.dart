@@ -55,8 +55,9 @@ class UcumService {
     var candidate = unit;
     for (final key in _synonymKeysByLength) {
       candidate = candidate.replaceAll(
-          RegExp('\\b${RegExp.escape(key)}\\b', caseSensitive: false),
-          commonUnitSynonyms[key]!,);
+        RegExp('\\b${RegExp.escape(key)}\\b', caseSensitive: false),
+        commonUnitSynonyms[key]!,
+      );
     }
     if (candidate != unit && validate(candidate) == null) {
       return candidate;
@@ -74,8 +75,10 @@ class UcumService {
   /// Searches the [model] for concepts of the given [kind] matching [text],
   /// interpreting [text] as a regular expression when [isRegex] is true.
   List<UcumConcept> search(ConceptKind kind, String text, bool isRegex) {
-    assert(text.isNotEmpty,
-        paramError('search', 'text', 'must not be null or empty'),);
+    assert(
+      text.isNotEmpty,
+      paramError('search', 'text', 'must not be null or empty'),
+    );
     return Search().doSearch(model, kind, text, isRegex);
   }
 
@@ -100,8 +103,10 @@ class UcumService {
   /// parses as valid UCUM, otherwise the error message explaining why it did
   /// not.
   String? validate(String unit) {
-    assert(unit.isNotEmpty,
-        paramError('validate', 'unit', 'must not be null or empty'),);
+    assert(
+      unit.isNotEmpty,
+      paramError('validate', 'unit', 'must not be null or empty'),
+    );
     try {
       ExpressionParser(model).parse(unit);
       return null;
@@ -118,12 +123,18 @@ class UcumService {
   /// 'length', 'concentration'). Returns an empty string on success, or an
   /// explanatory message when [unit] resolves to a different property.
   String validateInProperty(String unit, String property) {
-    assert(unit.isNotEmpty,
-        paramError('validate', 'unit', 'must not be null or empty'),);
     assert(
-        property.isNotEmpty,
-        paramError(
-            'validateInProperty', 'property', 'must not be null or empty',),);
+      unit.isNotEmpty,
+      paramError('validate', 'unit', 'must not be null or empty'),
+    );
+    assert(
+      property.isNotEmpty,
+      paramError(
+        'validateInProperty',
+        'property',
+        'must not be null or empty',
+      ),
+    );
 
     try {
       final term = ExpressionParser(model).parse(unit);
@@ -152,12 +163,18 @@ class UcumService {
   /// base-unit form. Returns an empty string on match, or a message stating
   /// the actual canonical form otherwise.
   String validateCanonicalUnits(String unit, String canonical) {
-    assert(unit.isNotEmpty,
-        paramError('validate', 'unit', 'must not be null or empty'),);
     assert(
-        canonical.isNotEmpty,
-        paramError('validateCanonicalUnits', 'canonical',
-            'must not be null or empty',),);
+      unit.isNotEmpty,
+      paramError('validate', 'unit', 'must not be null or empty'),
+    );
+    assert(
+      canonical.isNotEmpty,
+      paramError(
+        'validateCanonicalUnits',
+        'canonical',
+        'must not be null or empty',
+      ),
+    );
 
     try {
       final term = ExpressionParser(model).parse(unit);
@@ -179,8 +196,10 @@ class UcumService {
     if (Utilities.noString(unit)) {
       return '(unity)';
     }
-    assert(checkStringParam(unit),
-        paramError('analyse', 'unit', 'must not be null or empty'),);
+    assert(
+      checkStringParam(unit),
+      paramError('analyse', 'unit', 'must not be null or empty'),
+    );
     final term = ExpressionParser(model).parse(unit);
     return FormalStructureComposer().compose(term);
   }
@@ -189,8 +208,10 @@ class UcumService {
   /// becomes 'g/L'-equivalent base units. Throws [UcumException] if [unit]
   /// cannot be parsed or converted.
   String getCanonicalUnits(String unit) {
-    assert(checkStringParam(unit),
-        paramError('getCanonicalUnits', 'unit', 'must not be null or empty'),);
+    assert(
+      checkStringParam(unit),
+      paramError('getCanonicalUnits', 'unit', 'must not be null or empty'),
+    );
     try {
       final term = ExpressionParser(model).parse(unit);
       return ExpressionComposer()
@@ -204,8 +225,10 @@ class UcumService {
   /// canonical base-unit [code] — i.e. all the named units measuring that
   /// same physical quantity.
   List<DefinedUnit> getDefinedForms(String code) {
-    assert(checkStringParam(code),
-        paramError('getDefinedForms', 'code', 'must not be null or empty'),);
+    assert(
+      checkStringParam(code),
+      paramError('getDefinedForms', 'code', 'must not be null or empty'),
+    );
     final result = <DefinedUnit>[];
     for (final unit in model.definedUnits) {
       if (!(unit.isSpecial ?? false) && code == getCanonicalUnits(unit.code)) {
@@ -227,9 +250,13 @@ class UcumService {
   /// multiplicative canonical form.
   Pair getCanonicalForm(Pair value) {
     assert(
-        checkStringParam(value.unit),
-        paramError(
-            'getCanonicalForm', 'value.unit', 'must not be null or empty',),);
+      checkStringParam(value.unit),
+      paramError(
+        'getCanonicalForm',
+        'value.unit',
+        'must not be null or empty',
+      ),
+    );
 
     final term = ExpressionParser(model).parse(value.unit);
 
@@ -241,14 +268,16 @@ class UcumService {
     final special = _offsetHandlerFor(term);
     if (special != null) {
       return getCanonicalForm(
-          Pair(value: special.toRatio(value.value), unit: special.getUnits()),);
+        Pair(value: special.toRatio(value.value), unit: special.getUnits()),
+      );
     }
 
     final c = Converter(model, handlers).convert(term);
     Pair p;
     p = Pair(
-        value: value.value.multiply(c.value),
-        unit: ExpressionComposer().composeCanonical(c, false),);
+      value: value.value.multiply(c.value),
+      unit: ExpressionComposer().composeCanonical(c, false),
+    );
     if (value.value.isWholeNumber()) {
       p.value.checkForCouldBeWholeNumber();
     }
@@ -260,10 +289,14 @@ class UcumService {
   /// through their ratio scale (K). Throws [UcumException] when the two units
   /// do not share a canonical form (are not convertible).
   UcumDecimal convert(UcumDecimal value, String sourceUnit, String destUnit) {
-    assert(checkStringParam(sourceUnit),
-        paramError('convert', 'sourceUnit', 'must not be null or empty'),);
-    assert(checkStringParam(destUnit),
-        paramError('convert', 'destUnit', 'must not be null or empty'),);
+    assert(
+      checkStringParam(sourceUnit),
+      paramError('convert', 'sourceUnit', 'must not be null or empty'),
+    );
+    assert(
+      checkStringParam(destUnit),
+      paramError('convert', 'destUnit', 'must not be null or empty'),
+    );
 
     if (sourceUnit == destUnit) {
       return value;
@@ -281,8 +314,7 @@ class UcumService {
     final srcSpecial = _offsetHandlerFor(srcTerm);
     final dstSpecial = _offsetHandlerFor(dstTerm);
     if (srcSpecial != null || dstSpecial != null) {
-      final ratioValue =
-          srcSpecial == null ? value : srcSpecial.toRatio(value);
+      final ratioValue = srcSpecial == null ? value : srcSpecial.toRatio(value);
       final ratioSource = srcSpecial?.getUnits() ?? sourceUnit;
       final ratioDest = dstSpecial?.getUnits() ?? destUnit;
       final converted = ratioSource == ratioDest
@@ -303,8 +335,9 @@ class UcumService {
 
     if (s != d) {
       throw UcumException(
-          'Unable to convert between units $sourceUnit and $destUnit as they '
-          'do not have matching canonical forms ($s and $d respectively)',);
+        'Unable to convert between units $sourceUnit and $destUnit as they '
+        'do not have matching canonical forms ($s and $d respectively)',
+      );
     }
 
     final canValue = value.multiply(src.value);
@@ -323,8 +356,7 @@ class UcumService {
   Pair divideBy(Pair dividend, Pair divisor) {
     final unit =
         "${dividend.unit.contains("/") || dividend.unit.contains("*") ? "(${dividend.unit})" : dividend.unit}/${divisor.unit.contains("/") || divisor.unit.contains("*") ? "(${divisor.unit})" : divisor.unit}";
-    final res =
-        Pair(value: dividend.value.divide(divisor.value), unit: unit);
+    final res = Pair(value: dividend.value.divide(divisor.value), unit: unit);
     return getCanonicalForm(res);
   }
 
@@ -347,8 +379,7 @@ class UcumService {
   /// though the affine unit itself has no canonical form. [convert] handles
   /// the actual affine arithmetic.
   String _ratioUnits(String unit) {
-    final special =
-        _offsetHandlerFor(ExpressionParser(model).parse(unit));
+    final special = _offsetHandlerFor(ExpressionParser(model).parse(unit));
     return special?.getUnits() ?? unit;
   }
 

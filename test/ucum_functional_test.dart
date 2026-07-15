@@ -83,8 +83,9 @@ Future<void> main() async {
       final o3 = ucumServiceTest.ucumService.divideBy(o1, o2);
 
       debug(
-          "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> "
-          "'${o3.value} ${o3.unit}'",);
+        "Division Test $id: the value '$v1 $u1' * '$v2 $u2' ==> "
+        "'${o3.value} ${o3.unit}'",
+      );
 
       // if (!res.toPlainString().equals(outcome)) { - that assumes that we
       // can get the precision right, which we can't
@@ -114,13 +115,15 @@ Future<void> main() async {
       // can get the precision right, which we can't
       if (res.comparesTo(UcumDecimal.fromString(outcome)) != 0) {
         fail(
-            "Test $id: The value '$outcome' was expected the result was "
-            "'$res'",);
+          "Test $id: The value '$outcome' was expected the result was "
+          "'$res'",
+        );
       }
     } else {
       fail(
-          'Test $id: The value: $value, srcUnit: $srcUnit, or dstUnit: '
-          '$dstUnit, were null',);
+        'Test $id: The value: $value, srcUnit: $srcUnit, or dstUnit: '
+        '$dstUnit, were null',
+      );
     }
   }
 
@@ -139,8 +142,9 @@ Future<void> main() async {
       }
     } else {
       fail(
-          'Test $id: The unit found was null, but was expected to be '
-          "displayed as '$display'",);
+        'Test $id: The unit found was null, but was expected to be '
+        "displayed as '$display'",
+      );
     }
   }
 
@@ -159,24 +163,28 @@ Future<void> main() async {
         //     "(reason: $reason)");
       } else {
         debug(
-            "Validation Test $id: the unit is not valid because: '$res' "
-            '(reason: $reason)',);
+          "Validation Test $id: the unit is not valid because: '$res' "
+          '(reason: $reason)',
+        );
       }
       if (valid != result) {
         if (valid) {
           fail(
-              "Unit $unit was expected to be valid, but was invalid ('$id') "
-              '(reason: $reason)',);
+            "Unit $unit was expected to be valid, but was invalid ('$id') "
+            '(reason: $reason)',
+          );
         } else {
           fail(
-              "Unit $unit was expected to be invalid, but was valid ('$id') "
-              '(reason: $reason)',);
+            "Unit $unit was expected to be invalid, but was valid ('$id') "
+            '(reason: $reason)',
+          );
         }
       }
     } else {
       debug(
-          'Validation Test $id: the unit is not valid because it is null '
-          '(reason: $reason)',);
+        'Validation Test $id: the unit is not valid because it is null '
+        '(reason: $reason)',
+      );
     }
   }
 
@@ -185,8 +193,7 @@ Future<void> main() async {
       // Test history element. Not a test. Do nothing.
     } else if (testCase.testType == FunctionalTestType.validation) {
       runValidationCase(testCase.testCase);
-    } else if (testCase.testType ==
-        FunctionalTestType.displayNameGeneration) {
+    } else if (testCase.testType == FunctionalTestType.displayNameGeneration) {
       runDisplayNameGenerationCase(testCase.testCase);
     } else if (testCase.testType == FunctionalTestType.conversion) {
       runConversionCase(testCase.testCase);
@@ -214,8 +221,7 @@ Future<void> main() async {
   while (focus != null) {
     final testTypeString = focus.name.toString();
     final testType = getFunctionalTestType(testTypeString);
-    for (final testCase
-        in XmlUtils.getNamedChildren(focus, 'case')) {
+    for (final testCase in XmlUtils.getNamedChildren(focus, 'case')) {
       final testId = testCase.getAttribute('id');
       if (testId != null) {
         elements.add(TestCase('$testTypeString: $testId', testType, testCase));
@@ -242,7 +248,6 @@ enum FunctionalTestType {
 }
 
 class TestCase {
-
   const TestCase(this.testName, this.testType, this.testCase);
   final String testName;
   final FunctionalTestType testType;

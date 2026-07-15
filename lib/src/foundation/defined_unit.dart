@@ -73,6 +73,7 @@ class DefinedUnit extends UcumUnit {
       printSymbol: json['printSymbol'] as String?,
     );
   }
+
   /// Whether this is a special (non-linear) unit whose conversion requires a
   /// [SpecialUnitHandler] rather than a plain multiplier.
   bool? isSpecial;

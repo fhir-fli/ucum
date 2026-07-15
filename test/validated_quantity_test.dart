@@ -63,8 +63,7 @@ void main() {
   group('== and hashCode are consistent', () {
     test('equal quantities in different units hash identically', () {
       final meter = ValidatedQuantity.fromString('1 m');
-      final centimeters =
-          ValidatedQuantity.fromString('100 cm');
+      final centimeters = ValidatedQuantity.fromString('100 cm');
       expect(meter == centimeters, isTrue);
       expect(meter.hashCode, centimeters.hashCode);
       expect(<ValidatedQuantity>{meter}.contains(centimeters), isTrue);
@@ -93,15 +92,18 @@ void main() {
         ValidatedQuantity.fromString('50 cm'),
         ValidatedQuantity.fromString('1000 mm'),
       ]..sort();
-      expect(sorted.map((q) => q.unit).toList(),
-          <String>['cm', 'mm', 'm'],);
+      expect(
+        sorted.map((q) => q.unit).toList(),
+        <String>['cm', 'mm', 'm'],
+      );
     });
 
     test('incomparable units throw a clear UcumException', () {
       expect(
-          () => ValidatedQuantity.fromString('1 m')
-              .compareTo(ValidatedQuantity.fromString('1 g')),
-          throwsA(isA<UcumException>()),);
+        () => ValidatedQuantity.fromString('1 m')
+            .compareTo(ValidatedQuantity.fromString('1 g')),
+        throwsA(isA<UcumException>()),
+      );
     });
   });
 }

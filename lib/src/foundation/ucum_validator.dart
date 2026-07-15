@@ -124,7 +124,8 @@ class UcumValidator {
               !inBrack &&
               nonDigits) {
             throw Exception(
-                'code $code is ambiguous because it has digits outside []',);
+              'code $code is ambiguous because it has digits outside []',
+            );
           }
         }
       } catch (e) {

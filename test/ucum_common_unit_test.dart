@@ -116,7 +116,8 @@ void main() {
   });
 }
 
-class CommonUnit { // canonical unit
+class CommonUnit {
+  // canonical unit
 
   CommonUnit(this.unit, this.dim, [this.can]);
   final String unit;

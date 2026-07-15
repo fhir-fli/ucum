@@ -33,7 +33,8 @@ import 'package:ucum/src/internal.dart';
 
 /// An SI multiplier prefix (`k`, `m`, `u`, …) applied to a metric unit,
 /// spanning 10^-24 to 10^24. One of the three [UcumConcept] kinds.
-class Prefix extends UcumConcept { // 1^-24 through to 1^24
+class Prefix extends UcumConcept {
+  // 1^-24 through to 1^24
   /// Creates a prefix with its scaling [value] and optional display [name].
   Prefix({
     required super.code,
@@ -42,8 +43,9 @@ class Prefix extends UcumConcept { // 1^-24 through to 1^24
     String? name,
     super.printSymbol,
   }) : super(
-            kind: ConceptKind.prefix,
-            names: name == null ? null : <String>[name],);
+          kind: ConceptKind.prefix,
+          names: name == null ? null : <String>[name],
+        );
 
   /// The scaling factor this prefix represents (e.g. 1000 for kilo).
   UcumDecimal value;

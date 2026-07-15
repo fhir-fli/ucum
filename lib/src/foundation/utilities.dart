@@ -34,8 +34,7 @@ abstract class Utilities {
   /// Whether every character in [s] is whitespace (an empty string trivially
   /// satisfies this since it has no non-whitespace runes).
   static bool isWhitespace(String s) {
-    return s.runes
-        .every((rune) => String.fromCharCode(rune).trim().isEmpty);
+    return s.runes.every((rune) => String.fromCharCode(rune).trim().isEmpty);
   }
 
   /// Whether [string] is non-empty and parses as a decimal (floating-point)

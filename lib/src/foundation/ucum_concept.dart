@@ -38,13 +38,13 @@ import 'package:ucum/src/internal.dart';
 /// and case-insensitive codes, a print symbol, and human-readable names.
 class UcumConcept {
   /// Creates a concept; [names] defaults to an empty, mutable list when null.
-  UcumConcept(
-      {required this.kind,
-      required this.code,
-      this.codeUC,
-      this.printSymbol,
-      List<String>? names,})
-      : names = names ?? <String>[];
+  UcumConcept({
+    required this.kind,
+    required this.code,
+    this.codeUC,
+    this.printSymbol,
+    List<String>? names,
+  }) : names = names ?? <String>[];
 
   /// Which kind of concept this is (prefix, base unit, or defined unit).
   ConceptKind kind;

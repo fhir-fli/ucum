@@ -5,7 +5,6 @@ import 'package:ucum/src/internal.dart';
 /// This is a placeholder implementation. If you want to actually use one of
 /// these units, then you'll have to figure out how to implement them.
 class HoldingHandler extends SpecialUnitHandler {
-
   /// Constructor for the handler with a specified code and unit.
   HoldingHandler(String code, String units)
       : _code = code,
@@ -39,7 +38,9 @@ class HoldingHandler extends SpecialUnitHandler {
   @override
   UcumDecimal getOffset() {
     return UcumDecimal.fromString(
-        '0', 24,); // Assuming UcumDecimal.fromString exists
+      '0',
+      24,
+    ); // Assuming UcumDecimal.fromString exists
   }
 
   @override

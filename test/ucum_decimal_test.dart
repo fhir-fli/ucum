@@ -11,13 +11,19 @@ void main() {
       expect(1, UcumDecimal.fromInt(1).asInteger(), reason: '${message}1');
       expect(2, UcumDecimal.fromInt(2).asInteger(), reason: '${message}2');
       expect(64, UcumDecimal.fromInt(64).asInteger(), reason: '${message}64');
-      expect(maxValue, UcumDecimal.fromInt(maxValue).asInteger(),
-          reason: '$message$maxValue',);
+      expect(
+        maxValue,
+        UcumDecimal.fromInt(maxValue).asInteger(),
+        reason: '$message$maxValue',
+      );
       expect(-1, UcumDecimal.fromInt(-1).asInteger(), reason: '$message-1');
       expect(-2, UcumDecimal.fromInt(-2).asInteger(), reason: '$message-2');
       expect(-64, UcumDecimal.fromInt(-64).asInteger(), reason: '$message-64');
-      expect(minValue, UcumDecimal.fromInt(minValue).asInteger(),
-          reason: '$message$minValue',);
+      expect(
+        minValue,
+        UcumDecimal.fromInt(minValue).asInteger(),
+        reason: '$message$minValue',
+      );
     });
   });
 
@@ -25,419 +31,879 @@ void main() {
     var message = 'decimal: ';
     test('decimal', () {
       expect('1', UcumDecimal.fromString('1').toString(), reason: message);
-      expect('1', UcumDecimal.fromString('1e0').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '1',
+        UcumDecimal.fromString('1e0').asUcumDecimal(),
+        reason: message,
+      );
       expect('0', UcumDecimal.fromString('0').toString(), reason: message);
       expect('0', UcumDecimal.fromString('-0').toString(), reason: message);
-      expect('0', UcumDecimal.fromString('0e0').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '0',
+        UcumDecimal.fromString('0e0').asUcumDecimal(),
+        reason: message,
+      );
       expect('10', UcumDecimal.fromString('10').toString(), reason: message);
-      expect('10', UcumDecimal.fromString('1.0e1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '10',
+        UcumDecimal.fromString('1.0e1').asUcumDecimal(),
+        reason: message,
+      );
       expect('99', UcumDecimal.fromString('99').toString(), reason: message);
-      expect('99', UcumDecimal.fromString('9.9e1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '99',
+        UcumDecimal.fromString('9.9e1').asUcumDecimal(),
+        reason: message,
+      );
       expect('-1', UcumDecimal.fromString('-1').toString(), reason: message);
-      expect('-1', UcumDecimal.fromString('-1e0').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '-1',
+        UcumDecimal.fromString('-1e0').asUcumDecimal(),
+        reason: message,
+      );
       expect('-10', UcumDecimal.fromString('-10').toString(), reason: message);
-      expect('-10', UcumDecimal.fromString('-1.0e1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '-10',
+        UcumDecimal.fromString('-1.0e1').asUcumDecimal(),
+        reason: message,
+      );
       expect('-99', UcumDecimal.fromString('-99').toString(), reason: message);
-      expect('-99', UcumDecimal.fromString('-9.9e1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '-99',
+        UcumDecimal.fromString('-9.9e1').asUcumDecimal(),
+        reason: message,
+      );
       expect('1.1', UcumDecimal.fromString('1.1').toString(), reason: message);
-      expect('1.1', UcumDecimal.fromString('1.1e0').asUcumDecimal(),
-          reason: message,);
-      expect('-1.1', UcumDecimal.fromString('-1.1').toString(),
-          reason: message,);
-      expect('-1.1', UcumDecimal.fromString('-1.1e0').asUcumDecimal(),
-          reason: message,);
-      expect('11.1', UcumDecimal.fromString('11.1').toString(),
-          reason: message,);
-      expect('11.1', UcumDecimal.fromString('1.11e1').asUcumDecimal(),
-          reason: message,);
-      expect('1.11', UcumDecimal.fromString('1.11').toString(),
-          reason: message,);
-      expect('1.11', UcumDecimal.fromString('1.11e0').asUcumDecimal(),
-          reason: message,);
-      expect('1.111', UcumDecimal.fromString('1.111').toString(),
-          reason: message,);
-      expect('1.111', UcumDecimal.fromString('1.111e0').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '1.1',
+        UcumDecimal.fromString('1.1e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1.1',
+        UcumDecimal.fromString('-1.1').toString(),
+        reason: message,
+      );
+      expect(
+        '-1.1',
+        UcumDecimal.fromString('-1.1e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '11.1',
+        UcumDecimal.fromString('11.1').toString(),
+        reason: message,
+      );
+      expect(
+        '11.1',
+        UcumDecimal.fromString('1.11e1').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1.11',
+        UcumDecimal.fromString('1.11').toString(),
+        reason: message,
+      );
+      expect(
+        '1.11',
+        UcumDecimal.fromString('1.11e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1.111',
+        UcumDecimal.fromString('1.111').toString(),
+        reason: message,
+      );
+      expect(
+        '1.111',
+        UcumDecimal.fromString('1.111e0').asUcumDecimal(),
+        reason: message,
+      );
       expect('0.1', UcumDecimal.fromString('0.1').toString(), reason: message);
-      expect('0.1', UcumDecimal.fromString('1e-1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '0.1',
+        UcumDecimal.fromString('1e-1').asUcumDecimal(),
+        reason: message,
+      );
       expect('0.1', UcumDecimal.fromString('00.1').toString(), reason: message);
       expect('0.1', UcumDecimal.fromString('.1').toString(), reason: message);
       expect('1.0', UcumDecimal.fromString('1.0').toString(), reason: message);
-      expect('1.0', UcumDecimal.fromString('1.0e0').asUcumDecimal(),
-          reason: message,);
-      expect('1.00', UcumDecimal.fromString('1.00').toString(),
-          reason: message,);
-      expect('1.00', UcumDecimal.fromString('1.00e0').asUcumDecimal(),
-          reason: message,);
       expect(
-          '1.000000000000000000000000000000000000000',
-          UcumDecimal.fromString('1.000000000000000000000000000000000000000')
-              .toString(),
-          reason: message,);
+        '1.0',
+        UcumDecimal.fromString('1.0e0').asUcumDecimal(),
+        reason: message,
+      );
       expect(
-          '1.000000000000000000000000000000000000000',
-          UcumDecimal.fromString('1.000000000000000000000000000000000000000e0')
-              .asUcumDecimal(),
-          reason: message,);
-      expect('-11.1', UcumDecimal.fromString('-11.1').toString(),
-          reason: message,);
-      expect('-11.1', UcumDecimal.fromString('-1.11e1').asUcumDecimal(),
-          reason: message,);
-      expect('-1.11', UcumDecimal.fromString('-1.11').toString(),
-          reason: message,);
-      expect('-1.11', UcumDecimal.fromString('-1.11e0').asUcumDecimal(),
-          reason: message,);
-      expect('-1.111', UcumDecimal.fromString('-1.111').toString(),
-          reason: message,);
-      expect('-1.111', UcumDecimal.fromString('-1.111e0').asUcumDecimal(),
-          reason: message,);
-      expect('-0.1', UcumDecimal.fromString('-0.1').toString(),
-          reason: message,);
-      expect('-0.1', UcumDecimal.fromString('-1e-1').asUcumDecimal(),
-          reason: message,);
-      expect('-0.1', UcumDecimal.fromString('-00.1').toString(),
-          reason: message,);
+        '1.00',
+        UcumDecimal.fromString('1.00').toString(),
+        reason: message,
+      );
+      expect(
+        '1.00',
+        UcumDecimal.fromString('1.00e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1.000000000000000000000000000000000000000',
+        UcumDecimal.fromString('1.000000000000000000000000000000000000000')
+            .toString(),
+        reason: message,
+      );
+      expect(
+        '1.000000000000000000000000000000000000000',
+        UcumDecimal.fromString('1.000000000000000000000000000000000000000e0')
+            .asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-11.1',
+        UcumDecimal.fromString('-11.1').toString(),
+        reason: message,
+      );
+      expect(
+        '-11.1',
+        UcumDecimal.fromString('-1.11e1').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1.11',
+        UcumDecimal.fromString('-1.11').toString(),
+        reason: message,
+      );
+      expect(
+        '-1.11',
+        UcumDecimal.fromString('-1.11e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1.111',
+        UcumDecimal.fromString('-1.111').toString(),
+        reason: message,
+      );
+      expect(
+        '-1.111',
+        UcumDecimal.fromString('-1.111e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-0.1',
+        UcumDecimal.fromString('-0.1').toString(),
+        reason: message,
+      );
+      expect(
+        '-0.1',
+        UcumDecimal.fromString('-1e-1').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-0.1',
+        UcumDecimal.fromString('-00.1').toString(),
+        reason: message,
+      );
       expect('-0.1', UcumDecimal.fromString('-.1').toString(), reason: message);
-      expect('-1.0', UcumDecimal.fromString('-1.0').toString(),
-          reason: message,);
-      expect('-1.0', UcumDecimal.fromString('-1.0e0').asUcumDecimal(),
-          reason: message,);
-      expect('-1.00', UcumDecimal.fromString('-1.00').toString(),
-          reason: message,);
-      expect('-1.00', UcumDecimal.fromString('-1.00e0').asUcumDecimal(),
-          reason: message,);
       expect(
-          '-1.000000000000000000000000000000000000000',
-          UcumDecimal.fromString('-1.000000000000000000000000000000000000000')
-              .toString(),
-          reason: message,);
+        '-1.0',
+        UcumDecimal.fromString('-1.0').toString(),
+        reason: message,
+      );
       expect(
-          '-1.000000000000000000000000000000000000000',
-          UcumDecimal.fromString('-1.000000000000000000000000000000000000000e0')
-              .asUcumDecimal(),
-          reason: message,);
+        '-1.0',
+        UcumDecimal.fromString('-1.0e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1.00',
+        UcumDecimal.fromString('-1.00').toString(),
+        reason: message,
+      );
+      expect(
+        '-1.00',
+        UcumDecimal.fromString('-1.00e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1.000000000000000000000000000000000000000',
+        UcumDecimal.fromString('-1.000000000000000000000000000000000000000')
+            .toString(),
+        reason: message,
+      );
+      expect(
+        '-1.000000000000000000000000000000000000000',
+        UcumDecimal.fromString('-1.000000000000000000000000000000000000000e0')
+            .asUcumDecimal(),
+        reason: message,
+      );
       expect('0.0', UcumDecimal.fromString('0.0').toString(), reason: message);
-      expect('0.0', UcumDecimal.fromString('0.0e0').asUcumDecimal(),
-          reason: message,);
-      expect('0.0000', UcumDecimal.fromString('0.0000').toString(),
-          reason: message,);
-      expect('0.0000', UcumDecimal.fromString('0.0000e0').asUcumDecimal(),
-          reason: message,);
-      expect('0.100', UcumDecimal.fromString('0.100').toString(),
-          reason: message,);
-      expect('0.100', UcumDecimal.fromString('1.00e-1').asUcumDecimal(),
-          reason: message,);
+      expect(
+        '0.0',
+        UcumDecimal.fromString('0.0e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.0000',
+        UcumDecimal.fromString('0.0000').toString(),
+        reason: message,
+      );
+      expect(
+        '0.0000',
+        UcumDecimal.fromString('0.0000e0').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.100',
+        UcumDecimal.fromString('0.100').toString(),
+        reason: message,
+      );
+      expect(
+        '0.100',
+        UcumDecimal.fromString('1.00e-1').asUcumDecimal(),
+        reason: message,
+      );
       expect('100', UcumDecimal.fromString('100').toString(), reason: message);
-      expect('100', UcumDecimal.fromString('1.00e2').asUcumDecimal(),
-          reason: message,);
-      expect('0.01', UcumDecimal.fromString('0.01').toString(),
-          reason: message,);
-      expect('0.01', UcumDecimal.fromString('1e-2').asUcumDecimal(),
-          reason: message,);
-      expect('0.001', UcumDecimal.fromString('0.001').toString(),
-          reason: message,);
-      expect('0.001', UcumDecimal.fromString('1e-3').asUcumDecimal(),
-          reason: message,);
-      expect('0.0001', UcumDecimal.fromString('0.0001').toString(),
-          reason: message,);
-      expect('0.0001', UcumDecimal.fromString('1e-4').asUcumDecimal(),
-          reason: message,);
-      expect('0.0001', UcumDecimal.fromString('00.0001').toString(),
-          reason: message,);
-      expect('0.0001', UcumDecimal.fromString('000.0001').toString(),
-          reason: message,);
-      expect('-0.01', UcumDecimal.fromString('-0.01').toString(),
-          reason: message,);
-      expect('-0.01', UcumDecimal.fromString('-1e-2').asUcumDecimal(),
-          reason: message,);
-      expect('10.01', UcumDecimal.fromString('10.01').toString(),
-          reason: message,);
-      expect('10.01', UcumDecimal.fromString('1.001e1').asUcumDecimal(),
-          reason: message,);
-      expect('0.00001', UcumDecimal.fromString('0.00001').toString(),
-          reason: message,);
-      expect('0.00001', UcumDecimal.fromString('1e-5').asUcumDecimal(),
-          reason: message,);
-      expect('0.000001', UcumDecimal.fromString('0.000001').toString(),
-          reason: message,);
-      expect('0.000001', UcumDecimal.fromString('1e-6').asUcumDecimal(),
-          reason: message,);
-      expect('0.0000001', UcumDecimal.fromString('0.0000001').toString(),
-          reason: message,);
-      expect('0.0000001', UcumDecimal.fromString('1e-7').asUcumDecimal(),
-          reason: message,);
-      expect('0.000000001', UcumDecimal.fromString('0.000000001').toString(),
-          reason: message,);
-      expect('0.000000001', UcumDecimal.fromString('1e-9').asUcumDecimal(),
-          reason: message,);
       expect(
-          '0.00000000001', UcumDecimal.fromString('0.00000000001').toString(),
-          reason: message,);
-      expect('0.00000000001', UcumDecimal.fromString('1e-11').asUcumDecimal(),
-          reason: message,);
-      expect('0.0000000000001',
-          UcumDecimal.fromString('0.0000000000001').toString(),
-          reason: message,);
-      expect('0.0000000000001', UcumDecimal.fromString('1e-13').asUcumDecimal(),
-          reason: message,);
-      expect('0.000000000000001',
-          UcumDecimal.fromString('0.000000000000001').toString(),
-          reason: message,);
+        '100',
+        UcumDecimal.fromString('1.00e2').asUcumDecimal(),
+        reason: message,
+      );
       expect(
-          '0.000000000000001', UcumDecimal.fromString('1e-15').asUcumDecimal(),
-          reason: message,);
-      expect('0.00000000000000001',
-          UcumDecimal.fromString('0.00000000000000001').toString(),
-          reason: message,);
-      expect('0.00000000000000001',
-          UcumDecimal.fromString('1e-17').asUcumDecimal(),
-          reason: message,);
-      expect('10.1', UcumDecimal.fromString('10.1').toString(),
-          reason: message,);
-      expect('10.1', UcumDecimal.fromString('1.01e1').asUcumDecimal(),
-          reason: message,);
-      expect('100.1', UcumDecimal.fromString('100.1').toString(),
-          reason: message,);
-      expect('100.1', UcumDecimal.fromString('1.001e2').asUcumDecimal(),
-          reason: message,);
-      expect('1000.1', UcumDecimal.fromString('1000.1').toString(),
-          reason: message,);
-      expect('1000.1', UcumDecimal.fromString('1.0001e3').asUcumDecimal(),
-          reason: message,);
-      expect('10000.1', UcumDecimal.fromString('10000.1').toString(),
-          reason: message,);
-      expect('10000.1', UcumDecimal.fromString('1.00001e4').asUcumDecimal(),
-          reason: message,);
-      expect('100000.1', UcumDecimal.fromString('100000.1').toString(),
-          reason: message,);
-      expect('100000.1', UcumDecimal.fromString('1.000001e5').asUcumDecimal(),
-          reason: message,);
-      expect('1000000.1', UcumDecimal.fromString('1000000.1').toString(),
-          reason: message,);
-      expect('1000000.1', UcumDecimal.fromString('1.0000001e6').asUcumDecimal(),
-          reason: message,);
-      expect('10000000.1', UcumDecimal.fromString('10000000.1').toString(),
-          reason: message,);
+        '0.01',
+        UcumDecimal.fromString('0.01').toString(),
+        reason: message,
+      );
       expect(
-          '10000000.1', UcumDecimal.fromString('1.00000001e7').asUcumDecimal(),
-          reason: message,);
-      expect('100000000.1', UcumDecimal.fromString('100000000.1').toString(),
-          reason: message,);
-      expect('100000000.1',
-          UcumDecimal.fromString('1.000000001e8').asUcumDecimal(),
-          reason: message,);
-      expect('1000000000.1', UcumDecimal.fromString('1000000000.1').toString(),
-          reason: message,);
-      expect('1000000000.1',
-          UcumDecimal.fromString('1.0000000001e9').asUcumDecimal(),
-          reason: message,);
+        '0.01',
+        UcumDecimal.fromString('1e-2').asUcumDecimal(),
+        reason: message,
+      );
       expect(
-          '10000000000.1', UcumDecimal.fromString('10000000000.1').toString(),
-          reason: message,);
-      expect('10000000000.1',
-          UcumDecimal.fromString('1.00000000001e10').asUcumDecimal(),
-          reason: message,);
+        '0.001',
+        UcumDecimal.fromString('0.001').toString(),
+        reason: message,
+      );
       expect(
-          '100000000000.1', UcumDecimal.fromString('100000000000.1').toString(),
-          reason: message,);
-      expect('100000000000.1',
-          UcumDecimal.fromString('1.000000000001e11').asUcumDecimal(),
-          reason: message,);
-      expect('1000000000000.1',
-          UcumDecimal.fromString('1000000000000.1').toString(),
-          reason: message,);
-      expect('1000000000000.1',
-          UcumDecimal.fromString('1.0000000000001e12').asUcumDecimal(),
-          reason: message,);
-      expect('10000000000000.1',
-          UcumDecimal.fromString('10000000000000.1').toString(),
-          reason: message,);
-      expect('10000000000000.1',
-          UcumDecimal.fromString('1.00000000000001e13').asUcumDecimal(),
-          reason: message,);
-      expect('100000000000000.1',
-          UcumDecimal.fromString('100000000000000.1').toString(),
-          reason: message,);
-      expect('100000000000000.1',
-          UcumDecimal.fromString('1.000000000000001e14').asUcumDecimal(),
-          reason: message,);
+        '0.001',
+        UcumDecimal.fromString('1e-3').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.0001',
+        UcumDecimal.fromString('0.0001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.0001',
+        UcumDecimal.fromString('1e-4').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.0001',
+        UcumDecimal.fromString('00.0001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.0001',
+        UcumDecimal.fromString('000.0001').toString(),
+        reason: message,
+      );
+      expect(
+        '-0.01',
+        UcumDecimal.fromString('-0.01').toString(),
+        reason: message,
+      );
+      expect(
+        '-0.01',
+        UcumDecimal.fromString('-1e-2').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10.01',
+        UcumDecimal.fromString('10.01').toString(),
+        reason: message,
+      );
+      expect(
+        '10.01',
+        UcumDecimal.fromString('1.001e1').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.00001',
+        UcumDecimal.fromString('0.00001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.00001',
+        UcumDecimal.fromString('1e-5').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.000001',
+        UcumDecimal.fromString('0.000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.000001',
+        UcumDecimal.fromString('1e-6').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.0000001',
+        UcumDecimal.fromString('0.0000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.0000001',
+        UcumDecimal.fromString('1e-7').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.000000001',
+        UcumDecimal.fromString('0.000000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.000000001',
+        UcumDecimal.fromString('1e-9').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.00000000001',
+        UcumDecimal.fromString('0.00000000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.00000000001',
+        UcumDecimal.fromString('1e-11').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.0000000000001',
+        UcumDecimal.fromString('0.0000000000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.0000000000001',
+        UcumDecimal.fromString('1e-13').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.000000000000001',
+        UcumDecimal.fromString('0.000000000000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.000000000000001',
+        UcumDecimal.fromString('1e-15').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0.00000000000000001',
+        UcumDecimal.fromString('0.00000000000000001').toString(),
+        reason: message,
+      );
+      expect(
+        '0.00000000000000001',
+        UcumDecimal.fromString('1e-17').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10.1',
+        UcumDecimal.fromString('10.1').toString(),
+        reason: message,
+      );
+      expect(
+        '10.1',
+        UcumDecimal.fromString('1.01e1').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100.1',
+        UcumDecimal.fromString('100.1').toString(),
+        reason: message,
+      );
+      expect(
+        '100.1',
+        UcumDecimal.fromString('1.001e2').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1000.1',
+        UcumDecimal.fromString('1000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '1000.1',
+        UcumDecimal.fromString('1.0001e3').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10000.1',
+        UcumDecimal.fromString('10000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '10000.1',
+        UcumDecimal.fromString('1.00001e4').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100000.1',
+        UcumDecimal.fromString('100000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '100000.1',
+        UcumDecimal.fromString('1.000001e5').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1000000.1',
+        UcumDecimal.fromString('1000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '1000000.1',
+        UcumDecimal.fromString('1.0000001e6').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10000000.1',
+        UcumDecimal.fromString('10000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '10000000.1',
+        UcumDecimal.fromString('1.00000001e7').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100000000.1',
+        UcumDecimal.fromString('100000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '100000000.1',
+        UcumDecimal.fromString('1.000000001e8').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1000000000.1',
+        UcumDecimal.fromString('1000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '1000000000.1',
+        UcumDecimal.fromString('1.0000000001e9').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10000000000.1',
+        UcumDecimal.fromString('10000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '10000000000.1',
+        UcumDecimal.fromString('1.00000000001e10').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100000000000.1',
+        UcumDecimal.fromString('100000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '100000000000.1',
+        UcumDecimal.fromString('1.000000000001e11').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1000000000000.1',
+        UcumDecimal.fromString('1000000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '1000000000000.1',
+        UcumDecimal.fromString('1.0000000000001e12').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '10000000000000.1',
+        UcumDecimal.fromString('10000000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '10000000000000.1',
+        UcumDecimal.fromString('1.00000000000001e13').asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100000000000000.1',
+        UcumDecimal.fromString('100000000000000.1').toString(),
+        reason: message,
+      );
+      expect(
+        '100000000000000.1',
+        UcumDecimal.fromString('1.000000000000001e14').asUcumDecimal(),
+        reason: message,
+      );
     });
 
     test('scientific', () {
       message = 'scientific: ';
-      expect('1e0', UcumDecimal.fromString('1').asScientific(),
-          reason: message,);
-      expect('0e0', UcumDecimal.fromString('0').asScientific(),
-          reason: message,);
-      expect('0e0', UcumDecimal.fromString('-0').asScientific(),
-          reason: message,);
-      expect('1.0e1', UcumDecimal.fromString('10').asScientific(),
-          reason: message,);
-      expect('9.9e1', UcumDecimal.fromString('99').asScientific(),
-          reason: message,);
-      expect('-1e0', UcumDecimal.fromString('-1').asScientific(),
-          reason: message,);
-      expect('-1.0e1', UcumDecimal.fromString('-10').asScientific(),
-          reason: message,);
-      expect('-9.9e1', UcumDecimal.fromString('-99').asScientific(),
-          reason: message,);
-      expect('1.1e0', UcumDecimal.fromString('1.1').asScientific(),
-          reason: message,);
-      expect('-1.1e0', UcumDecimal.fromString('-1.1').asScientific(),
-          reason: message,);
-      expect('1.11e1', UcumDecimal.fromString('11.1').asScientific(),
-          reason: message,);
-      expect('1.11e0', UcumDecimal.fromString('1.11').asScientific(),
-          reason: message,);
-      expect('1.111e0', UcumDecimal.fromString('1.111').asScientific(),
-          reason: message,);
-      expect('1e-1', UcumDecimal.fromString('0.1').asScientific(),
-          reason: message,);
-      expect('1e-1', UcumDecimal.fromString('00.1').asScientific(),
-          reason: message,);
-      expect('1e-1', UcumDecimal.fromString('.1').asScientific(),
-          reason: message,);
-      expect('1.0e0', UcumDecimal.fromString('1.0').asScientific(),
-          reason: message,);
-      expect('1.00e0', UcumDecimal.fromString('1.00').asScientific(),
-          reason: message,);
       expect(
-          '1.000000000000000000000000000000000000000e0',
-          UcumDecimal.fromString('1.000000000000000000000000000000000000000')
-              .asScientific(),
-          reason: message,);
-      expect('-1.11e1', UcumDecimal.fromString('-11.1').asScientific(),
-          reason: message,);
-      expect('-1.11e0', UcumDecimal.fromString('-1.11').asScientific(),
-          reason: message,);
-      expect('-1.111e0', UcumDecimal.fromString('-1.111').asScientific(),
-          reason: message,);
-      expect('-1e-1', UcumDecimal.fromString('-0.1').asScientific(),
-          reason: message,);
-      expect('-1e-1', UcumDecimal.fromString('-00.1').asScientific(),
-          reason: message,);
-      expect('-1e-1', UcumDecimal.fromString('-.1').asScientific(),
-          reason: message,);
-      expect('-1.0e0', UcumDecimal.fromString('-1.0').asScientific(),
-          reason: message,);
-      expect('-1.00e0', UcumDecimal.fromString('-1.00').asScientific(),
-          reason: message,);
+        '1e0',
+        UcumDecimal.fromString('1').asScientific(),
+        reason: message,
+      );
       expect(
-          '-1.000000000000000000000000000000000000000e0',
-          UcumDecimal.fromString('-1.000000000000000000000000000000000000000')
-              .asScientific(),
-          reason: message,);
-      expect('0.0e0', UcumDecimal.fromString('0.0').asScientific(),
-          reason: message,);
-      expect('0.0000e0', UcumDecimal.fromString('0.0000').asScientific(),
-          reason: message,);
-      expect('1.00e-1', UcumDecimal.fromString('0.100').asScientific(),
-          reason: message,);
-      expect('1.00e2', UcumDecimal.fromString('100').asScientific(),
-          reason: message,);
-      expect('1e-2', UcumDecimal.fromString('0.01').asScientific(),
-          reason: message,);
-      expect('1e-3', UcumDecimal.fromString('0.001').asScientific(),
-          reason: message,);
-      expect('1e-4', UcumDecimal.fromString('0.0001').asScientific(),
-          reason: message,);
-      expect('1e-4', UcumDecimal.fromString('00.0001').asScientific(),
-          reason: message,);
-      expect('1e-4', UcumDecimal.fromString('000.0001').asScientific(),
-          reason: message,);
-      expect('-1e-2', UcumDecimal.fromString('-0.01').asScientific(),
-          reason: message,);
-      expect('1.001e1', UcumDecimal.fromString('10.01').asScientific(),
-          reason: message,);
-      expect('1e-5', UcumDecimal.fromString('0.00001').asScientific(),
-          reason: message,);
-      expect('1e-6', UcumDecimal.fromString('0.000001').asScientific(),
-          reason: message,);
-      expect('1e-7', UcumDecimal.fromString('0.0000001').asScientific(),
-          reason: message,);
-      expect('1e-9', UcumDecimal.fromString('0.000000001').asScientific(),
-          reason: message,);
-      expect('1e-11', UcumDecimal.fromString('0.00000000001').asScientific(),
-          reason: message,);
-      expect('1e-13', UcumDecimal.fromString('0.0000000000001').asScientific(),
-          reason: message,);
+        '0e0',
+        UcumDecimal.fromString('0').asScientific(),
+        reason: message,
+      );
       expect(
-          '1e-15', UcumDecimal.fromString('0.000000000000001').asScientific(),
-          reason: message,);
+        '0e0',
+        UcumDecimal.fromString('-0').asScientific(),
+        reason: message,
+      );
       expect(
-          '1e-17', UcumDecimal.fromString('0.00000000000000001').asScientific(),
-          reason: message,);
-      expect('1.01e1', UcumDecimal.fromString('10.1').asScientific(),
-          reason: message,);
-      expect('1.001e2', UcumDecimal.fromString('100.1').asScientific(),
-          reason: message,);
-      expect('1.0001e3', UcumDecimal.fromString('1000.1').asScientific(),
-          reason: message,);
-      expect('1.00001e4', UcumDecimal.fromString('10000.1').asScientific(),
-          reason: message,);
-      expect('1.000001e5', UcumDecimal.fromString('100000.1').asScientific(),
-          reason: message,);
-      expect('1.0000001e6', UcumDecimal.fromString('1000000.1').asScientific(),
-          reason: message,);
+        '1.0e1',
+        UcumDecimal.fromString('10').asScientific(),
+        reason: message,
+      );
       expect(
-          '1.00000001e7', UcumDecimal.fromString('10000000.1').asScientific(),
-          reason: message,);
+        '9.9e1',
+        UcumDecimal.fromString('99').asScientific(),
+        reason: message,
+      );
       expect(
-          '1.000000001e8', UcumDecimal.fromString('100000000.1').asScientific(),
-          reason: message,);
-      expect('1.0000000001e9',
-          UcumDecimal.fromString('1000000000.1').asScientific(),
-          reason: message,);
-      expect('1.00000000001e10',
-          UcumDecimal.fromString('10000000000.1').asScientific(),
-          reason: message,);
-      expect('1.000000000001e11',
-          UcumDecimal.fromString('100000000000.1').asScientific(),
-          reason: message,);
-      expect('1.0000000000001e12',
-          UcumDecimal.fromString('1000000000000.1').asScientific(),
-          reason: message,);
-      expect('1.00000000000001e13',
-          UcumDecimal.fromString('10000000000000.1').asScientific(),
-          reason: message,);
-      expect('1.000000000000001e14',
-          UcumDecimal.fromString('100000000000000.1').asScientific(),
-          reason: message,);
+        '-1e0',
+        UcumDecimal.fromString('-1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.0e1',
+        UcumDecimal.fromString('-10').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-9.9e1',
+        UcumDecimal.fromString('-99').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.1e0',
+        UcumDecimal.fromString('1.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.1e0',
+        UcumDecimal.fromString('-1.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.11e1',
+        UcumDecimal.fromString('11.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.11e0',
+        UcumDecimal.fromString('1.11').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.111e0',
+        UcumDecimal.fromString('1.111').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-1',
+        UcumDecimal.fromString('0.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-1',
+        UcumDecimal.fromString('00.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-1',
+        UcumDecimal.fromString('.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.0e0',
+        UcumDecimal.fromString('1.0').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00e0',
+        UcumDecimal.fromString('1.00').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.000000000000000000000000000000000000000e0',
+        UcumDecimal.fromString('1.000000000000000000000000000000000000000')
+            .asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.11e1',
+        UcumDecimal.fromString('-11.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.11e0',
+        UcumDecimal.fromString('-1.11').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.111e0',
+        UcumDecimal.fromString('-1.111').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1e-1',
+        UcumDecimal.fromString('-0.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1e-1',
+        UcumDecimal.fromString('-00.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1e-1',
+        UcumDecimal.fromString('-.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.0e0',
+        UcumDecimal.fromString('-1.0').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.00e0',
+        UcumDecimal.fromString('-1.00').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1.000000000000000000000000000000000000000e0',
+        UcumDecimal.fromString('-1.000000000000000000000000000000000000000')
+            .asScientific(),
+        reason: message,
+      );
+      expect(
+        '0.0e0',
+        UcumDecimal.fromString('0.0').asScientific(),
+        reason: message,
+      );
+      expect(
+        '0.0000e0',
+        UcumDecimal.fromString('0.0000').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00e-1',
+        UcumDecimal.fromString('0.100').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00e2',
+        UcumDecimal.fromString('100').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-2',
+        UcumDecimal.fromString('0.01').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-3',
+        UcumDecimal.fromString('0.001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-4',
+        UcumDecimal.fromString('0.0001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-4',
+        UcumDecimal.fromString('00.0001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-4',
+        UcumDecimal.fromString('000.0001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '-1e-2',
+        UcumDecimal.fromString('-0.01').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.001e1',
+        UcumDecimal.fromString('10.01').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-5',
+        UcumDecimal.fromString('0.00001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-6',
+        UcumDecimal.fromString('0.000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-7',
+        UcumDecimal.fromString('0.0000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-9',
+        UcumDecimal.fromString('0.000000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-11',
+        UcumDecimal.fromString('0.00000000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-13',
+        UcumDecimal.fromString('0.0000000000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-15',
+        UcumDecimal.fromString('0.000000000000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1e-17',
+        UcumDecimal.fromString('0.00000000000000001').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.01e1',
+        UcumDecimal.fromString('10.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.001e2',
+        UcumDecimal.fromString('100.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.0001e3',
+        UcumDecimal.fromString('1000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00001e4',
+        UcumDecimal.fromString('10000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.000001e5',
+        UcumDecimal.fromString('100000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.0000001e6',
+        UcumDecimal.fromString('1000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00000001e7',
+        UcumDecimal.fromString('10000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.000000001e8',
+        UcumDecimal.fromString('100000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.0000000001e9',
+        UcumDecimal.fromString('1000000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00000000001e10',
+        UcumDecimal.fromString('10000000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.000000000001e11',
+        UcumDecimal.fromString('100000000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.0000000000001e12',
+        UcumDecimal.fromString('1000000000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.00000000000001e13',
+        UcumDecimal.fromString('10000000000000.1').asScientific(),
+        reason: message,
+      );
+      expect(
+        '1.000000000000001e14',
+        UcumDecimal.fromString('100000000000000.1').asScientific(),
+        reason: message,
+      );
     });
   });
 
   group('testTruncate', () {
     const message = 'wrong trunc - ';
     test('trunc', () {
-      expect('1', UcumDecimal.fromString('1').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('1', UcumDecimal.fromString('1.01').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('-1', UcumDecimal.fromString('-1.01').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('0', UcumDecimal.fromString('0.01').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('0', UcumDecimal.fromString('-0.01').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('0', UcumDecimal.fromString('0.1').trunc().asUcumDecimal(),
-          reason: message,);
-      expect('0', UcumDecimal.fromString('0.0001').trunc().asUcumDecimal(),
-          reason: message,);
       expect(
-          '100',
-          UcumDecimal.fromString(
-                  '100.000000000000000000000000000000000000000001',)
-              .trunc()
-              .asUcumDecimal(),
-          reason: message,);
+        '1',
+        UcumDecimal.fromString('1').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '1',
+        UcumDecimal.fromString('1.01').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '-1',
+        UcumDecimal.fromString('-1.01').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0',
+        UcumDecimal.fromString('0.01').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0',
+        UcumDecimal.fromString('-0.01').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0',
+        UcumDecimal.fromString('0.1').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '0',
+        UcumDecimal.fromString('0.0001').trunc().asUcumDecimal(),
+        reason: message,
+      );
+      expect(
+        '100',
+        UcumDecimal.fromString(
+          '100.000000000000000000000000000000000000000001',
+        ).trunc().asUcumDecimal(),
+        reason: message,
+      );
     });
   });
 
@@ -492,8 +958,7 @@ void main() {
 
   group('testAddition', () {
     test('testAddition', () {
-      var res =
-          UcumDecimal.fromString('1').add(UcumDecimal.fromString('1'));
+      var res = UcumDecimal.fromString('1').add(UcumDecimal.fromString('1'));
       var message = getAddSubMessage('1', '1', '2', '+', res);
       expect('2', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('0').add(UcumDecimal.fromString('1'));
@@ -522,10 +987,18 @@ void main() {
       expect('321', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('15300000000000000000000000000000000001')
           .add(UcumDecimal.fromString('1680'));
-      message = getAddSubMessage("'15300000000000000000000000000000000001",
-          '1680', '15300000000000000000000000000000001681', '+', res,);
-      expect('15300000000000000000000000000000001681', res.asUcumDecimal(),
-          reason: message,);
+      message = getAddSubMessage(
+        "'15300000000000000000000000000000000001",
+        '1680',
+        '15300000000000000000000000000000001681',
+        '+',
+        res,
+      );
+      expect(
+        '15300000000000000000000000000000001681',
+        res.asUcumDecimal(),
+        reason: message,
+      );
       res = UcumDecimal.fromString('1').add(UcumDecimal.fromString('.1'));
       message = getAddSubMessage('1', '.1', '1.1', '+', res);
       expect('1.1', res.asUcumDecimal(), reason: message);
@@ -743,27 +1216,46 @@ void main() {
       expect('4', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('35328734682734')
           .multiply(UcumDecimal.fromString('2349834295876423'));
-      message = getAddSubMessage('35328734682734', '2349834295876423',
-          '83016672387407213199375780482', '*', res,);
-      expect('83016672387407213199375780482', res.asUcumDecimal(),
-          reason: message,);
+      message = getAddSubMessage(
+        '35328734682734',
+        '2349834295876423',
+        '83016672387407213199375780482',
+        '*',
+        res,
+      );
+      expect(
+        '83016672387407213199375780482',
+        res.asUcumDecimal(),
+        reason: message,
+      );
       res = UcumDecimal.fromString('35328734682734000000000')
           .multiply(UcumDecimal.fromString('2349834295876423000000000'));
       message = getAddSubMessage(
-          '35328734682734000000000',
-          '2349834295876423000000000',
-          '83016672387407213199375780482000000000000000000',
-          '*',
-          res,);
-      expect('83016672387407213199375780482000000000000000000',
-          res.asUcumDecimal(),
-          reason: message,);
+        '35328734682734000000000',
+        '2349834295876423000000000',
+        '83016672387407213199375780482000000000000000000',
+        '*',
+        res,
+      );
+      expect(
+        '83016672387407213199375780482000000000000000000',
+        res.asUcumDecimal(),
+        reason: message,
+      );
       res = UcumDecimal.fromString('3532873468.2734')
           .multiply(UcumDecimal.fromString('23498342958.76423'));
-      message = getAddSubMessage('3532873468.2734', '23498342958.76423',
-          '83016672387407213199.375780482', '*', res,);
-      expect('83016672387407213199.375780482', res.asUcumDecimal(),
-          reason: message,);
+      message = getAddSubMessage(
+        '3532873468.2734',
+        '23498342958.76423',
+        '83016672387407213199.375780482',
+        '*',
+        res,
+      );
+      expect(
+        '83016672387407213199.375780482',
+        res.asUcumDecimal(),
+        reason: message,
+      );
     });
   });
 
@@ -863,23 +1355,34 @@ void main() {
       expect('11', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('83016672387407213199375780482')
           .divide(UcumDecimal.fromString('2349834295876423'));
-      message = getAddSubMessage('83016672387407213199375780482',
-          '2349834295876423', '35328734682734', '/', res,);
+      message = getAddSubMessage(
+        '83016672387407213199375780482',
+        '2349834295876423',
+        '35328734682734',
+        '/',
+        res,
+      );
       expect('35328734682734', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString(
-              '83016672387407213199375780482000000000000000000',)
-          .divide(UcumDecimal.fromString('2349834295876423000000000'));
+        '83016672387407213199375780482000000000000000000',
+      ).divide(UcumDecimal.fromString('2349834295876423000000000'));
       message = getAddSubMessage(
-          '83016672387407213199375780482000000000000000000',
-          '2349834295876423000000000',
-          '35328734682734000000000',
-          '/',
-          res,);
+        '83016672387407213199375780482000000000000000000',
+        '2349834295876423000000000',
+        '35328734682734000000000',
+        '/',
+        res,
+      );
       expect('35328734682734000000000', res.asUcumDecimal(), reason: message);
       res = UcumDecimal.fromString('83016672387407213199.375780482')
           .divide(UcumDecimal.fromString('23498342958.76423'));
-      message = getAddSubMessage('83016672387407213199.375780482',
-          '23498342958.76423', '3532873468.2734', '/', res,);
+      message = getAddSubMessage(
+        '83016672387407213199.375780482',
+        '23498342958.76423',
+        '3532873468.2734',
+        '/',
+        res,
+      );
       expect('3532873468.2734', res.asUcumDecimal(), reason: message);
     });
     test('Integer Divide', () {
@@ -966,5 +1469,10 @@ String getCompareMessage(String v1, String v2, int outcome, int result) =>
     'Compare fail: $v1.compares($v2) should be $outcome but was $result';
 
 String getAddSubMessage(
-        String s1, String s2, String s3, String op, UcumDecimal result,) =>
+  String s1,
+  String s2,
+  String s3,
+  String op,
+  UcumDecimal result,
+) =>
     '$s1 $op $s2 = $s3, but the library returned ${result.asUcumDecimal()}';

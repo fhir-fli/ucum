@@ -10,24 +10,19 @@ void main() {
     });
 
     test('make units', () {
-      final quantity1 =
-          ValidatedQuantity.fromString('4 hours');
+      final quantity1 = ValidatedQuantity.fromString('4 hours');
       expect(quantity1.value.asUcumDecimal(), '4');
       expect(quantity1.unit, 'hours');
-      final quantity2 =
-          ValidatedQuantity.fromString('16.5559988 mph');
+      final quantity2 = ValidatedQuantity.fromString('16.5559988 mph');
       expect(ucumService.validate(quantity2.unit), isNull);
     });
 
     test('Equal', () {
       final quantity3 = ValidatedQuantity.fromString('4 m');
-      final quantity4 =
-          ValidatedQuantity.fromString('400 cm');
+      final quantity4 = ValidatedQuantity.fromString('400 cm');
       expect(ucumService.isEqual(quantity3, quantity4), true);
-      final quantity5 =
-          ValidatedQuantity.fromString('2.54 cm');
-      final quantity6 =
-          ValidatedQuantity.fromString('1 inch');
+      final quantity5 = ValidatedQuantity.fromString('2.54 cm');
+      final quantity6 = ValidatedQuantity.fromString('1 inch');
       expect(ucumService.isEqual(quantity5, quantity6), true);
       expect(ucumService.isEqual(quantity6, quantity5), true);
     });

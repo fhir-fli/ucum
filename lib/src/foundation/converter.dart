@@ -116,8 +116,9 @@ class Converter {
     }
 
     debugCanonical(indent, 'sort', result);
-    result.units.sort((lhs, rhs) =>
-        lhs.base.code.compareTo(rhs.base.code),);
+    result.units.sort(
+      (lhs, rhs) => lhs.base.code.compareTo(rhs.base.code),
+    );
     debugCanonical(indent, 'done', result);
 
     return result;
@@ -134,8 +135,7 @@ class Converter {
       if (sym.unit is BaseUnit) {
         result.units.add(CanonicalUnit(sym.unit! as BaseUnit, sym.exponent!));
       } else {
-        final can =
-            expandDefinedUnit(indent, sym.unit! as DefinedUnit);
+        final can = expandDefinedUnit(indent, sym.unit! as DefinedUnit);
         for (final c in can.units) {
           c.exponent = c.exponent * sym.exponent!;
         }
@@ -190,8 +190,9 @@ class Converter {
           // the same reason; absolute conversions are handled separately in
           // UcumService.convert via SpecialUnitHandler.toRatio/fromRatio.
           throw UcumException(
-              'Not handled yet (special unit with offset from 0 at '
-              'intersect)',);
+            'Not handled yet (special unit with offset from 0 at '
+            'intersect)',
+          );
         }
       }
     }

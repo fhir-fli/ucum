@@ -17,7 +17,6 @@ import 'package:ucum/src/foundation/utilities.dart';
 /// divide) is implemented digit-by-digit so results stay exact to the tracked
 /// precision.
 class UcumDecimal {
-
   /// Creates the value zero with zero precision.
   UcumDecimal()
       : precision = 0,
@@ -332,11 +331,13 @@ class UcumDecimal {
     }
     if (comparesTo(UcumDecimal.fromString(_int32MinValue.toString())) < 0) {
       throw UcumException(
-          'Unable to represent $this as a signed 32-bit integer',);
+        'Unable to represent $this as a signed 32-bit integer',
+      );
     }
     if (comparesTo(UcumDecimal.fromString(_int32MaxValue.toString())) > 0) {
       throw UcumException(
-          'Unable to represent $this as a signed 32-bit integer',);
+        'Unable to represent $this as a signed 32-bit integer',
+      );
     }
     return int.parse(asUcumDecimal());
   }
@@ -433,16 +434,13 @@ class UcumDecimal {
 
     // Normalize numbers to have the same number of decimal places
     final normalizedThisDigits = digits + '0' * (otherScale - thisScale);
-    final normalizedOtherDigits =
-        other.digits + '0' * (thisScale - otherScale);
+    final normalizedOtherDigits = other.digits + '0' * (thisScale - otherScale);
 
     // Prepare to sum the digits
     final int maxLength =
         math.max(normalizedThisDigits.length, normalizedOtherDigits.length);
-    final paddedThisDigits =
-        normalizedThisDigits.padLeft(maxLength, '0');
-    final paddedOtherDigits =
-        normalizedOtherDigits.padLeft(maxLength, '0');
+    final paddedThisDigits = normalizedThisDigits.padLeft(maxLength, '0');
+    final paddedOtherDigits = normalizedOtherDigits.padLeft(maxLength, '0');
 
     var resultDigits = '';
     var carry = 0;
@@ -668,8 +666,10 @@ class UcumDecimal {
 
     int precisionResult;
     if (isWholeNumber() && other.isWholeNumber()) {
-      precisionResult = math.max(math.max(digits.length, other.digits.length),
-          math.min(precision, other.precision),);
+      precisionResult = math.max(
+        math.max(digits.length, other.digits.length),
+        math.min(precision, other.precision),
+      );
     } else if (isWholeNumber()) {
       precisionResult = other.precision;
     } else if (other.isWholeNumber()) {

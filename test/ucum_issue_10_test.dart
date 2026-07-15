@@ -29,8 +29,7 @@ void main() {
       for (var i = 90.5; i < 100; i += 0.001) {
         final decimal = UcumDecimal.fromString(i.toString());
         final expectPound = i * 2.2046226218487758072297380134503;
-        final actual =
-            ucumService.convert(decimal, 'kg', '[lb_av]');
+        final actual = ucumService.convert(decimal, 'kg', '[lb_av]');
         if ((double.parse(actual.asUcumDecimal()) - expectPound).abs() >
             0.001) {
           throw Exception('$i actual:$actual expected:$expectPound');

@@ -85,18 +85,21 @@ String _decimal(String literal, {bool alwaysPrecision24 = false}) {
 }
 
 Future<void> _writeMetadata(
-    String version, String revision, String revisionDate,) async {
+  String version,
+  String revision,
+  String revisionDate,
+) async {
   final fh = File('lib/resources/essence_metadata.dart').openWrite()
     ..write('// GENERATED FILE - DO NOT EDIT BY HAND.\n'
-      '// Generated from tool/ucum-essence.xml by '
-      'tool/generate_definitions.dart.\n\n'
-      '/// Version of the UCUM essence data these tables were generated '
-      'from.\n'
-      'const String ucumEssenceVersion = ${_dart(version)};\n\n'
-      '/// Revision marker from the essence file.\n'
-      'const String ucumEssenceRevision = ${_dart(revision)};\n\n'
-      '/// Revision date of the essence file (yyyy-MM-dd).\n'
-      'const String ucumEssenceRevisionDate = ${_dart(revisionDate)};\n');
+        '// Generated from tool/ucum-essence.xml by '
+        'tool/generate_definitions.dart.\n\n'
+        '/// Version of the UCUM essence data these tables were generated '
+        'from.\n'
+        'const String ucumEssenceVersion = ${_dart(version)};\n\n'
+        '/// Revision marker from the essence file.\n'
+        'const String ucumEssenceRevision = ${_dart(revision)};\n\n'
+        '/// Revision date of the essence file (yyyy-MM-dd).\n'
+        'const String ucumEssenceRevisionDate = ${_dart(revisionDate)};\n');
   await fh.close();
   stdout.writeln('wrote lib/resources/essence_metadata.dart');
 }
@@ -112,8 +115,7 @@ Future<void> _writePrefixes(XmlElement root) async {
     if (e.localName != 'prefix') {
       continue;
     }
-    final value =
-        e.childElements.firstWhere((c) => c.localName == 'value');
+    final value = e.childElements.firstWhere((c) => c.localName == 'value');
     fh.write('  Prefix(\n'
         '      code: ${_dart(e.getAttribute('Code')!)},\n'
         '      codeUC: ${_dart(e.getAttribute('CODE')!)},\n'
@@ -168,16 +170,15 @@ Future<void> _writeDefinedUnits(XmlElement root) async {
       continue;
     }
     final isSpecial = e.getAttribute('isSpecial') == 'yes';
-    final value =
-        e.childElements.firstWhere((c) => c.localName == 'value');
+    final value = e.childElements.firstWhere((c) => c.localName == 'value');
 
     String? unit;
     String? unitUC;
     String? valueLiteral;
     final text = _collapse(value.innerText);
     if (isSpecial) {
-      final function = value.childElements
-          .firstWhere((c) => c.localName == 'function');
+      final function =
+          value.childElements.firstWhere((c) => c.localName == 'function');
       unit = function.getAttribute('Unit');
       unitUC = null;
       valueLiteral = function.getAttribute('value');

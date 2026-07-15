@@ -46,13 +46,15 @@ class BaseUnit extends UcumUnit {
     List<String>? synonyms,
     super.printSymbol,
   }) : super(
-            kind: ConceptKind.baseUnit,
-            names: name != null || (synonyms != null && synonyms.isNotEmpty)
-                ? <String>[
-                    if (name != null) name,
-                    if (synonyms != null && synonyms.isNotEmpty) ...synonyms,
-                  ]
-                : null,);
+          kind: ConceptKind.baseUnit,
+          names: name != null || (synonyms != null && synonyms.isNotEmpty)
+              ? <String>[
+                  if (name != null) name,
+                  if (synonyms != null && synonyms.isNotEmpty) ...synonyms,
+                ]
+              : null,
+        );
+
   /// Abbreviation for property.
   String dim;
 

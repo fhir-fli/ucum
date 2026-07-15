@@ -33,14 +33,17 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       s = s.substring(0, s.length - 1);
     }
     return ValidatedQuantity(
-        value: UcumDecimal.fromString(matches.namedGroup('value')),
-        unit: s.isEmpty ? '1' : s,);
+      value: UcumDecimal.fromString(matches.namedGroup('value')),
+      unit: s.isEmpty ? '1' : s,
+    );
   }
 
   /// Creates a quantity from a [num] [number] and optional [unit].
   factory ValidatedQuantity.fromNumber(num number, {String? unit}) =>
       ValidatedQuantity(
-          value: UcumDecimal.fromString(number.toString()), unit: unit,);
+        value: UcumDecimal.fromString(number.toString()),
+        unit: unit,
+      );
 
   /// Creates a quantity from a [BigInt] [number] and optional [unit].
   factory ValidatedQuantity.fromBigInt(BigInt number, {String? unit}) =>
@@ -212,7 +215,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
           : copyWith(value: value.add(convertedValue));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: value.add(UcumDecimal.fromString(other.toString())),);
+        value: value.add(UcumDecimal.fromString(other.toString())),
+      );
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -243,7 +247,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
           : copyWith(value: value.subtract(convertedValue));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: value.subtract(UcumDecimal.fromString(other.toString())),);
+        value: value.subtract(UcumDecimal.fromString(other.toString())),
+      );
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -271,7 +276,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
           '(reason: it is not an accepted type)');
     }
     return ValidatedQuantity.fromPair(
-        UcumService().multiply(_strictCopy('*'), that._strictCopy('*')),);
+      UcumService().multiply(_strictCopy('*'), that._strictCopy('*')),
+    );
   }
 
   /// Divides this quantity by [other], producing a quantity in the combined
@@ -284,7 +290,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
           '(reason: it is not an accepted type)');
     }
     return ValidatedQuantity.fromPair(
-        UcumService().divideBy(_strictCopy('/'), that._strictCopy('/')),);
+      UcumService().divideBy(_strictCopy('/'), that._strictCopy('/')),
+    );
   }
 
   /// Truncating division: divides by [other] and truncates the result value
@@ -297,7 +304,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
           '(reason: it is not an accepted type)');
     }
     final divided = ValidatedQuantity.fromPair(
-        UcumService().divideBy(_strictCopy('~/'), that._strictCopy('~/')),);
+      UcumService().divideBy(_strictCopy('~/'), that._strictCopy('~/')),
+    );
     return divided.copyWith(value: divided.value.trunc());
   }
 
@@ -316,7 +324,8 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       return copyWith(value: value.modulo(convertedValue));
     } else if (other is num || other is BigInt) {
       return copyWith(
-          value: value.modulo(UcumDecimal.fromString(other.toString())),);
+        value: value.modulo(UcumDecimal.fromString(other.toString())),
+      );
     } else if (other is String) {
       final newQuantity = ValidatedQuantity.fromString(other);
       if (newQuantity.isValid()) {
@@ -431,9 +440,9 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       return ValidatedQuantity.fromString(other).isValid();
     } else if (other is Map<String, dynamic>) {
       return ValidatedQuantity(
-              value: UcumDecimal.fromString(other['value']?.toString()),
-              unit: other['code']?.toString() ?? other['value']?.toString(),)
-          .isValid();
+        value: UcumDecimal.fromString(other['value']?.toString()),
+        unit: other['code']?.toString() ?? other['value']?.toString(),
+      ).isValid();
     } else {
       return false;
     }
@@ -449,7 +458,9 @@ class ValidatedQuantity extends Pair implements Comparable<ValidatedQuantity> {
       throw UcumException('Cannot convert $this to $newCode');
     }
     return ValidatedQuantity(
-        value: UcumService().convert(value, u1, u2), unit: newCode,);
+      value: UcumService().convert(value, u1, u2),
+      unit: newCode,
+    );
   }
 
   @override

@@ -14,8 +14,11 @@ void main() {
       ucumService.convert(UcumDecimal.fromString(value), from, to);
 
   void expectValue(UcumDecimal actual, String expected) {
-    expect(actual.equalsValue(UcumDecimal.fromString(expected)), isTrue,
-        reason: 'expected $expected, got ${actual.asUcumDecimal()}',);
+    expect(
+      actual.equalsValue(UcumDecimal.fromString(expected)),
+      isTrue,
+      reason: 'expected $expected, got ${actual.asUcumDecimal()}',
+    );
   }
 
   group('affine temperature conversions', () {
@@ -61,18 +64,23 @@ void main() {
     test('unit-level canonicalization of an affine unit throws', () {
       // A multiplicative canonical form cannot represent an affine scale;
       // Ucum-java throws here too.
-      expect(() => ucumService.getCanonicalUnits('Cel'),
-          throwsA(isA<UcumException>()),);
+      expect(
+        () => ucumService.getCanonicalUnits('Cel'),
+        throwsA(isA<UcumException>()),
+      );
     });
 
     test('getCanonicalForm of a measurement Pair converts through K', () {
       // A Pair carries the value, so the affine conversion IS possible at
       // the measurement level (unlike the unit level above).
       final canonical = ucumService.getCanonicalForm(
-          Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'),);
+        Pair(value: UcumDecimal.fromString('37'), unit: 'Cel'),
+      );
       expect(canonical.unit, 'K');
-      expect(canonical.value.equalsValue(UcumDecimal.fromString('310.15')),
-          isTrue,);
+      expect(
+        canonical.value.equalsValue(UcumDecimal.fromString('310.15')),
+        isTrue,
+      );
     });
 
     test('compound expressions containing an affine unit throw', () {
@@ -99,17 +107,26 @@ void main() {
 
     test('isEqual across scales', () {
       expect(
-          ucumService.isEqual(ValidatedQuantity.fromString('37 Cel'),
-              ValidatedQuantity.fromString('310.15 K'),),
-          isTrue,);
+        ucumService.isEqual(
+          ValidatedQuantity.fromString('37 Cel'),
+          ValidatedQuantity.fromString('310.15 K'),
+        ),
+        isTrue,
+      );
       expect(
-          ucumService.isEqual(ValidatedQuantity.fromString('32 [degF]'),
-              ValidatedQuantity.fromString('0 Cel'),),
-          isTrue,);
+        ucumService.isEqual(
+          ValidatedQuantity.fromString('32 [degF]'),
+          ValidatedQuantity.fromString('0 Cel'),
+        ),
+        isTrue,
+      );
       expect(
-          ucumService.isEqual(ValidatedQuantity.fromString('37 Cel'),
-              ValidatedQuantity.fromString('311 K'),),
-          isFalse,);
+        ucumService.isEqual(
+          ValidatedQuantity.fromString('37 Cel'),
+          ValidatedQuantity.fromString('311 K'),
+        ),
+        isFalse,
+      );
     });
   });
 

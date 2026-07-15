@@ -76,13 +76,15 @@ void main() {
 
     test('lenient duration quantities work', () {
       expect(
-          ValidatedQuantity.fromString('4 hours') ==
-              ValidatedQuantity.fromString('240 min'),
-          isTrue,);
+        ValidatedQuantity.fromString('4 hours') ==
+            ValidatedQuantity.fromString('240 min'),
+        isTrue,
+      );
       expect(
-          ValidatedQuantity.fromString('2.54 cm') ==
-              ValidatedQuantity.fromString('1 inch'),
-          isTrue,);
+        ValidatedQuantity.fromString('2.54 cm') ==
+            ValidatedQuantity.fromString('1 inch'),
+        isTrue,
+      );
     });
   });
 
@@ -115,13 +117,17 @@ void main() {
       expect(baseUnitsList.length, 7);
       expect(prefixesList.length, 24);
       for (final unit in definedUnitsList) {
-        expect(unit.code.contains('DefinedUnit'), isFalse,
-            reason: 'corrupted code: ${unit.code}',);
         expect(
-            (unit.isSpecial ?? false) ||
-                (unit.value.value != null || unit.value.unit != null),
-            isTrue,
-            reason: 'empty definition: ${unit.code}',);
+          unit.code.contains('DefinedUnit'),
+          isFalse,
+          reason: 'corrupted code: ${unit.code}',
+        );
+        expect(
+          (unit.isSpecial ?? false) ||
+              (unit.value.value != null || unit.value.unit != null),
+          isTrue,
+          reason: 'empty definition: ${unit.code}',
+        );
       }
     });
   });

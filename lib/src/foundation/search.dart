@@ -7,7 +7,11 @@ class Search {
   /// When [isRegex] is true [text] is treated as a regular expression,
   /// otherwise as a case-insensitive substring.
   List<UcumConcept> doSearch(
-      UcumModel model, ConceptKind? kind, String text, bool isRegex,) {
+    UcumModel model,
+    ConceptKind? kind,
+    String text,
+    bool isRegex,
+  ) {
     final concepts = <UcumConcept>[];
     if (kind == null || kind == ConceptKind.prefix) {
       searchPrefixes(concepts, model.prefixes, text, isRegex);
@@ -22,8 +26,12 @@ class Search {
   }
 
   /// Appends every unit in [units] that matches [text] to [concepts].
-  void searchUnits(List<UcumConcept> concepts, List<UcumUnit> units,
-      String text, bool isRegex,) {
+  void searchUnits(
+    List<UcumConcept> concepts,
+    List<UcumUnit> units,
+    String text,
+    bool isRegex,
+  ) {
     for (final unit in units) {
       if (matchesUnit(unit, text, isRegex)) {
         // Assuming here that UcumUnit extends or implements UcumConcept
@@ -40,8 +48,12 @@ class Search {
   }
 
   /// Appends every prefix in [prefixes] that matches [text] to [concepts].
-  void searchPrefixes(List<UcumConcept> concepts, List<Prefix> prefixes,
-      String text, bool isRegex,) {
+  void searchPrefixes(
+    List<UcumConcept> concepts,
+    List<Prefix> prefixes,
+    String text,
+    bool isRegex,
+  ) {
     for (final concept in prefixes) {
       if (matchesUcumConcept(concept, text, isRegex)) {
         concepts.add(concept);

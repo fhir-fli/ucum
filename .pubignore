@@ -1,0 +1,26 @@
+# Publish exclusions. NOTE: when .pubignore exists, pub uses it INSTEAD of
+# .gitignore — so this must carry over the .gitignore entries that matter.
+
+# Carried over from .gitignore
+.dart_tool/
+.packages
+build/
+pubspec.lock
+doc/api/
+.env*
+*.dart.js
+*.info.json
+*.js
+*.js_
+*.js.deps
+*.js.map
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Not part of the published package (tests and dev tooling stay in the repo;
+# example/ ships)
+test/
+tool/
+.github/
+CLAUDE.md
+.claude/
